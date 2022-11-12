@@ -126,14 +126,9 @@ in
                 and in the outputs:
 
                 ```nix
-                # outputs = inputs@{ self, flake-parts, ... }:
-                #   flake-parts.lib.mkFlake { inherit self; } ({ ...}: {
-
                       imports = [
                         inputs.${config.sourceName}.flakeModule
                       ];
-
-                #   });
                 ```
 
                 Run `nix flake lock` and you're set.
