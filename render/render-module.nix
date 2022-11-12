@@ -76,6 +76,8 @@ in
           flakeRef = mkOption {
             type = types.str;
             default =
+              # This only works for github for now, but we can set a non-default
+              # value in the list just fine.
               let
                 match = builtins.match "https://github.com/([^/]*)/([^/]*)/blob/([^/]*)" config.baseUrl;
                 owner = lib.elemAt match 0;
@@ -120,15 +122,15 @@ in
                 To use these options, add to your flake inputs:
 
                 ```nix
-                    ${config.sourceName}.url = "${config.flakeRef}";
+                ${config.sourceName}.url = "${config.flakeRef}";
                 ```
 
-                and in the outputs:
+                and inside the `mkFlake`:
 
                 ```nix
-                      imports = [
-                        inputs.${config.sourceName}.flakeModule
-                      ];
+                imports = [
+                   inputs.${config.sourceName}.flakeModule
+                ];
                 ```
 
                 Run `nix flake lock` and you're set.
