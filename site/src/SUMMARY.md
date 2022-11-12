@@ -6,6 +6,7 @@
 - [Define Custom Flake Attribute](./define-custom-flake-attribute.md)
 - [Reference Documentation](./module-arguments.md)
   - [Module Arguments](./module-arguments.md)
+  - [Getting Things](./getting-things.md)
   - [Options](./options/flake-parts.md)
     - [Core `flake-parts`](./options/flake-parts.md)
     - [`dream2nix beta`](./options/dream2nix.md)
