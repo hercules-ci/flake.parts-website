@@ -3,6 +3,7 @@
 - [Introduction](./README.md)
 - [Getting Started](./getting-started.md)
 - [Working with `system`](./system.md)
+- [Define Custom Flake Attribute](./define-custom-flake-attribute.md)
 - [Reference Documentation](./module-arguments.md)
   - [Module Arguments](./module-arguments.md)
   - [Options](./options/flake-parts.md)
