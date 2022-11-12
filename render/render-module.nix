@@ -76,6 +76,8 @@ in
           flakeRef = mkOption {
             type = types.str;
             default =
+              # This only works for github for now, but we can set a non-default
+              # value in the list just fine.
               let
                 match = builtins.match "https://github.com/([^/]*)/([^/]*)/blob/([^/]*)" config.baseUrl;
                 owner = lib.elemAt match 0;
