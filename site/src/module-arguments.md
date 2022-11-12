@@ -89,7 +89,7 @@ perSystem = { inputs', ... }: {
 };
 ```
 
-## `self`
+## `self'`
 
 The flake `self` parameter, but with `system` pre-selected.
 
