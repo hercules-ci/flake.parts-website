@@ -28,7 +28,7 @@
           done
           mdbook build --dest-dir $out
 
-          echo '<html><head><script>window.location.pathname = window.location.pathname.replace(/options.html$/, "") + "/options/flake-parts.html"</script></head><body><a href="options/flake-parts.html">to the options</a></body></html>' \
+          echo '<html><head><script>window.location.pathname = window.location.pathname.replace(/options.html$/, "") + "options/flake-parts.html"</script></head><body><a href="options/flake-parts.html">to the options</a></body></html>' \
             >$out/options.html
 
           runHook postBuild

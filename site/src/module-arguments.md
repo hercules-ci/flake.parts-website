@@ -56,3 +56,66 @@ Enter the scope of a system. Worked example:
     }));
 }
 ```
+
+# `perSystem` module parameters
+
+##  `pkgs`
+
+Default: `inputs.nixpkgs.legacyPackages.${system}`.
+
+Can be set via `config._module.args.pkgs`.
+
+Example:
+
+```nix
+perSystem = { pkgs, ... }: {
+  packages.hello = pkgs.hello;
+};
+```
+
+## `inputs'`
+
+The flake `inputs` parameter, but with `system` pre-selected. Note the last character of the name, `'`, pronounced _prime_.
+
+`inputs.foo.packages.x86_64-linux.hello` -> `inputs'.foo.packages.hello`
+
+How? `system` selection is handled by the extensible function [`perInput`](options/flake-parts.html#opt-perInput).
+
+Example:
+
+```nix
+perSystem = { inputs', ... }: {
+  packages.default = inputs'.foo.packages.bar;
+};
+```
+
+## `self`
+
+The flake `self` parameter, but with `system` pre-selected.
+
+Example:
+
+```nix
+perSystem = { pkgs, self', ... }: {
+  packages.hello = pkgs.hello;
+  packages.default = self'.packages.hello;
+};
+```
+
+## `system`
+
+The [system](system.md) parameter, describing the architecture and platform of the host system (where the thing will run).
+
+Example:
+
+```nix
+perSystem = { system, ... }: {
+  packages.nixosDefaultPackages =
+    let nixos = inputs.nixpkgs.lib.nixosSystem {
+          modules = [ { nixpkgs.hostPlatform = system; } ];
+        };
+        checked = builtins.seq nixos.config.system.build.toplevel;
+       # I have no idea why you would want this, but you do you
+    in checked nixos.config.system.path;
+};
+```
