@@ -73,6 +73,73 @@ in
             default = name;
           };
 
+          flakeRef = mkOption {
+            type = types.str;
+            default =
+              let
+                match = builtins.match "https://github.com/([^/]*)/([^/]*)/blob/([^/]*)" config.baseUrl;
+                owner = lib.elemAt match 0;
+                repo = lib.elemAt match 1;
+                branch = lib.elemAt match 2; # ignored for now because they're all default branches
+              in
+              if match != null
+              then "github:${owner}/${repo}"
+              else throw "Couldn't figure out flakeref for ${name}";
+          };
+
+          preface = mkOption {
+            type = types.str;
+            description = ''
+              Stuff between the title and the options.
+            '';
+            default = ''
+
+              ${config.intro}
+
+              ${config.installation}
+
+            '';
+          };
+
+          intro = mkOption {
+            type = types.str;
+            description = ''
+              Introductory paragraph between title and installation.
+            '';
+          };
+
+          installation = mkOption {
+            type = types.str;
+            description = ''
+              Installation paragraph between installation and options.
+            '';
+            default =
+              ''
+                ## Installation
+
+                To use these options, add to your flake inputs:
+
+                ```nix
+                    ${config.sourceName}.url = "${config.flakeRef}";
+                ```
+
+                and in the outputs:
+
+                ```nix
+                # outputs = inputs@{ self, flake-parts, ... }:
+                #   flake-parts.lib.mkFlake { inherit self; } ({ ...}: {
+
+                      imports = [
+                        inputs.${config.sourceName}.flakeModule
+                      ];
+
+                #   });
+                ```
+
+                Run `nix flake lock` and you're set.
+              '';
+          };
+
           sourceName = mkOption {
             type = types.str;
             description = ''
@@ -120,13 +187,18 @@ in
             {
               nativeBuildInputs = [ pkgs.libxslt.bin pkgs.pandoc ];
               inputDoc = config._nixosOptionsDoc.optionsDocBook;
-              inherit (config) title;
+              inherit (config) title preface;
             } ''
             xsltproc --stringparam title "$title" \
               -o options.db.xml ${./options.xsl} \
               "$inputDoc"
             mkdir $out
-            pandoc --verbose --from docbook --to html options.db.xml >$out/options.html;
+            pandoc --verbose --from docbook --to html options.db.xml >options.html
+            substitute options.html $out/options.html --replace '<p>@intro@</p>' "$preface"
+            grep -v '@intro@' <$out/options.html >/dev/null || {
+              grep '@intro@' <$out/options.html
+              echo intro replacement failed; exit 1;
+            }
           '';
         };
       };
