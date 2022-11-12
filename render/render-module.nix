@@ -120,15 +120,15 @@ in
                 To use these options, add to your flake inputs:
 
                 ```nix
-                    ${config.sourceName}.url = "${config.flakeRef}";
+                ${config.sourceName}.url = "${config.flakeRef}";
                 ```
 
-                and in the outputs:
+                and inside the `mkFlake`:
 
                 ```nix
-                      imports = [
-                        inputs.${config.sourceName}.flakeModule
-                      ];
+                imports = [
+                   inputs.${config.sourceName}.flakeModule
+                ];
                 ```
 
                 Run `nix flake lock` and you're set.
