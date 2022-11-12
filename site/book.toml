@@ -4,3 +4,8 @@ language = "en"
 multilingual = false
 src = "src"
 title = "flake-parts"
+
+[output.html]
+git-repository-url = "https://github.com/hercules-ci/flake-parts"
+edit-url-template = "https://github.com/hercules-ci/flake.parts-website/edit/main/site/{path}"
+additional-js = [ "no-edit-options.js" ]
