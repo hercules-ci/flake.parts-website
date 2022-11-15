@@ -85,8 +85,11 @@
 
       hercules-ci.flake-update = {
         enable = true;
+        updateBranch = "main";
+        createPullRequest = false;
         when = {
           hour = [ 8 20 ];
+          minute = 0;
         };
       };
     };
