@@ -82,5 +82,12 @@
         inputs.pre-commit-hooks-nix.flakeModule
       ];
       systems = [ "x86_64-linux" "aarch64-darwin" ];
+
+      hercules-ci.flake-update = {
+        enable = true;
+        when = {
+          hour = [ 8 20 ];
+        };
+      };
     };
 }
