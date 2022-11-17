@@ -1,7 +1,7 @@
 { inputs, ... }: {
   perSystem = { config, self', inputs', pkgs, lib, ... }: {
     packages = {
-      siteContent = pkgs.stdenvNoCC.mkDerivation {
+      default = pkgs.stdenvNoCC.mkDerivation {
         name = "site";
         nativeBuildInputs = [ pkgs.mdbook ];
         src = ./.;
