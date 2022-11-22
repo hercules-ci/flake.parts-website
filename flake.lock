@@ -319,15 +319,16 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1668682776,
-        "narHash": "sha256-5mxDT83yqJtKr37+SaWJag6huoMt1gVxGFplZpxedsA=",
+        "lastModified": 1669136443,
+        "narHash": "sha256-VuRDjiqBF3CTe0e2oLA+ZyyvFIoXW8LHrl3NQsYU1sg=",
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
-        "rev": "648049bf80dc944ce2eeb85aa9e5c293950d7890",
+        "rev": "d822a2a6e49e2d71408bf0977101057240942f8e",
         "type": "github"
       },
       "original": {
         "owner": "hercules-ci",
+        "ref": "flake-update-pr-auto-merge",
         "repo": "hercules-ci-effects",
         "type": "github"
       }
