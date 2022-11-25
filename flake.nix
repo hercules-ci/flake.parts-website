@@ -66,7 +66,7 @@
         dream2nix = {
           title = "dream2nix beta";
           baseUrl = "https://github.com/nix-community/dream2nix/blob/master";
-          getModules = flake: [ flake.flakeModuleBeta ];
+          attributePath = [ "flakeModuleBeta" ];
           intro = ''
             [`dream2nix`](https://github.com/nix-community/dream2nix#readme) scans your flake files and turns them into packages.
           '';

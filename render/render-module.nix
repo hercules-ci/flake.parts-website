@@ -129,7 +129,7 @@ in
 
                 ```nix
                 imports = [
-                   inputs.${config.sourceName}.flakeModule
+                   inputs.${config.sourceName}.${lib.concatMapStringsSep "." lib.strings.escapeNixIdentifier config.attributePath}
                 ];
                 ```
 
@@ -157,7 +157,19 @@ in
             description = ''
               Get the modules to render.
             '';
-            default = flake: [ (builtins.addErrorContext "while getting modules for input '${name}'" flake.flakeModule) ];
+            default = flake: [
+              (builtins.addErrorContext "while getting modules for input '${name}'"
+                (lib.getAttrFromPath config.attributePath flake)
+              )
+            ];
+          };
+
+          attributePath = mkOption {
+            type = types.listOf types.str;
+            description = ''
+              Flake output attribute path to import.
+            '';
+            default = [ "flakeModule" ];
           };
 
           rendered = mkOption {
