@@ -6,7 +6,7 @@
 
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
-    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects/flake-update-pr-auto-merge";
+    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     haskell-flake.url = "github:srid/haskell-flake";
     haskell-flake.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix.url = "github:nix-community/dream2nix";
