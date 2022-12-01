@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
+    # TODO merge https://github.com/cachix/pre-commit-hooks.nix/pull/202
+    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix/fced41b07b9a77133d366db28430f3b18c2e8e45";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     haskell-flake.url = "github:srid/haskell-flake";
