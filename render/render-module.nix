@@ -57,6 +57,8 @@ in
 
       opts = eval.options;
 
+      coreOptDecls = config.render.inputs.flake-parts._nixosOptionsDoc.optionsNix;
+
       filterTransformOptions = { sourceName, sourcePath, baseUrl }:
         let sourcePathStr = toString sourcePath;
         in
@@ -72,7 +74,9 @@ in
             )
             opt.declarations;
         in
-        if declarations == [ ]
+        if declarations == [ ] || (
+          sourceName != "flake-parts" && coreOptDecls?${lib.showOption opt.loc}
+        )
         then opt // { visible = false; }
         else opt // { inherit declarations; };
 
@@ -255,7 +259,12 @@ in
         packages = lib.mapAttrs' (name: inputCfg: { name = "generated-docs-${name}"; value = inputCfg.rendered; }) cfg.inputs // {
           generated-docs =
             pkgs.runCommand "generated-docs"
-              { }
+              {
+                passthru = {
+                  inherit config;
+                  inherit eval;
+                };
+              }
               ''
                 mkdir $out
                 ${lib.concatStringsSep "\n"
