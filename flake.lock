@@ -624,6 +624,21 @@
         "type": "github"
       }
     },
+    "proc-flake": {
+      "locked": {
+        "lastModified": 1670881311,
+        "narHash": "sha256-XEFhqKLDL8sWUIIyPEt9nLzd1gSBySO7sfApuaS8lyw=",
+        "owner": "srid",
+        "repo": "proc-flake",
+        "rev": "22f482ab22571f1e0a11e394fed7bfa777a38f90",
+        "type": "github"
+      },
+      "original": {
+        "owner": "srid",
+        "repo": "proc-flake",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "dream2nix": "dream2nix",
@@ -631,7 +646,8 @@
         "haskell-flake": "haskell-flake",
         "hercules-ci-effects": "hercules-ci-effects",
         "nixpkgs": "nixpkgs_3",
-        "pre-commit-hooks-nix": "pre-commit-hooks-nix_2"
+        "pre-commit-hooks-nix": "pre-commit-hooks-nix_2",
+        "proc-flake": "proc-flake"
       }
     },
     "rust-analyzer-src": {
