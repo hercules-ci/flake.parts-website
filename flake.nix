@@ -11,6 +11,7 @@
     dream2nix.url = "github:nix-community/dream2nix";
     dream2nix.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
+    proc-flake.url = "github:srid/proc-flake";
   };
 
   outputs = inputs@{ self, flake-parts, hercules-ci-effects, ... }:
@@ -47,6 +48,17 @@
             provides a script to activate it, and adds a [check](flake-parts.html#opt-perSystem.checks).
 
             Pre-defined hooks are maintained at [`cachix/pre-commit-hooks.nix`](https://github.com/cachix/pre-commit-hooks.nix).
+          '';
+        };
+
+        proc-flake = {
+          baseUrl = "https://github.com/srid/proc-flake/blob/master";
+          intro = ''
+            A module for running multiple processes in a dev shell.
+
+            [honcho](https://github.com/nickstenning/honcho) is used to launch the processes.
+
+            See [proc-flake README](https://github.com/srid/proc-flake#readme)
           '';
         };
 
