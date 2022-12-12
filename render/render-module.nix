@@ -159,7 +159,7 @@ in
 
                 ```nix
                 imports = [
-                   inputs.${config.sourceName}.${lib.concatMapStringsSep "." lib.strings.escapeNixIdentifier config.attributePath}
+                  inputs.${config.sourceName}.${lib.concatMapStringsSep "." lib.strings.escapeNixIdentifier config.attributePath}
                 ];
                 ```
 
