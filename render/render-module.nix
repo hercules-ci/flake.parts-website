@@ -17,12 +17,42 @@ in
     let
       cfg = config.render;
 
+      fixups = { lib, flake-parts-lib, ... }: {
+        options.perSystem = flake-parts-lib.mkPerSystemOption {
+          config = {
+            _module.args.pkgs = {
+              formats = lib.mapAttrs
+                (formatName: formatFn:
+                  formatArgs:
+                  let
+                    result = formatFn formatArgs;
+                    stubs =
+                      lib.mapAttrs
+                        (name: _:
+                          throw "The attribute `(pkgs.formats.${lib.strings.escapeNixIdentifier formatName} x).${lib.strings.escapeNixIdentifier name}` is not supported during documentation generation. Please check with `--show-trace` to see which option leads to this `${lib.strings.escapeNixIdentifier name}` reference. Often it can be cut short with a `defaultText` argument to `lib.mkOption`, or by escaping an option `example` using `lib.literalExpression`."
+                        )
+                        result;
+                  in
+                  stubs // {
+                    inherit (result) type;
+                  }
+                )
+                pkgs.formats;
+            };
+          };
+        };
+      };
+
       eval = inputs.flake-parts.lib.evalFlakeModule
         {
           self = { inputs = { inherit (inputs) nixpkgs; }; };
         }
         {
-          imports = concatLists (mapAttrsToList (name: inputCfg: inputCfg.getModules inputCfg.flake) cfg.inputs);
+          imports =
+            concatLists (mapAttrsToList (name: inputCfg: inputCfg.getModules inputCfg.flake) cfg.inputs)
+            ++ [
+              fixups
+            ];
         };
 
       opts = eval.options;
