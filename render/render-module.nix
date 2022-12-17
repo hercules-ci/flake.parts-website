@@ -266,6 +266,11 @@ in
                 passthru = {
                   inherit config;
                   inherit eval;
+                  # This won't be in sync with the actual nixosOptionsDoc
+                  # invocations, but it's useful for troubleshooting.
+                  allOptionsPerhaps = (pkgs.nixosOptionsDoc {
+                    options = opts;
+                  }).optionsNix;
                 };
               }
               ''
