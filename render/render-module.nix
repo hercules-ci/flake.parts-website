@@ -45,7 +45,10 @@ in
 
       eval = inputs.flake-parts.lib.evalFlakeModule
         {
-          self = { inputs = { inherit (inputs) nixpkgs; }; };
+          inputs = {
+            inherit (inputs) nixpkgs;
+            self = eval.config.flake;
+          };
         }
         {
           imports =

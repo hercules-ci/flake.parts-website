@@ -20,8 +20,8 @@ flake-parts.url = "github:hercules-ci/flake-parts";
 then slide `mkFlake` between your outputs function head and body,
 
 ```nix
-outputs = { self, flake-parts, ... }:
-  flake-parts.lib.mkFlake { inherit self; } {
+outputs = inputs@{ flake-parts, ... }:
+  flake-parts.lib.mkFlake { inherit inputs; } {
     flake = {
       # Put your original flake attributes here.
     };
