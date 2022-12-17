@@ -18,6 +18,15 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       perSystem.render.inputs = {
 
+        dream2nix = {
+          title = "dream2nix beta";
+          baseUrl = "https://github.com/nix-community/dream2nix/blob/master";
+          attributePath = [ "flakeModuleBeta" ];
+          intro = ''
+            [`dream2nix`](https://github.com/nix-community/dream2nix#readme) scans your flake files and turns them into packages.
+          '';
+        };
+
         flake-parts = {
           title = "Core Options";
           baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main";
@@ -27,6 +36,18 @@
             plus a small number of helpful options, notably [`perSystem`](#opt-perSystem).
           '';
           installation = "";
+        };
+
+        haskell-flake = {
+          baseUrl = "https://github.com/srid/haskell-flake/blob/master";
+          intro = ''
+            [`haskell-flake`](https://github.com/srid/haskell-flake) scans your flake files for Haskell projects and
+            turns them into packages using the Nixpkgs Haskell infrastructure.
+
+            It also provides [`checks`](flake-parts.html#opt-perSystem.checks) and [`devShells`](flake-parts.html#opt-perSystem.devShells)
+
+            Multiple projects can be declared to represent each package set, which is great for GHCJS frontends.
+          '';
         };
 
         hercules-ci-effects = {
@@ -59,27 +80,6 @@
             [honcho](https://github.com/nickstenning/honcho) is used to launch the processes.
 
             See [proc-flake README](https://github.com/srid/proc-flake#readme)
-          '';
-        };
-
-        haskell-flake = {
-          baseUrl = "https://github.com/srid/haskell-flake/blob/master";
-          intro = ''
-            [`haskell-flake`](https://github.com/srid/haskell-flake) scans your flake files for Haskell projects and
-            turns them into packages using the Nixpkgs Haskell infrastructure.
-
-            It also provides [`checks`](flake-parts.html#opt-perSystem.checks) and [`devShells`](flake-parts.html#opt-perSystem.devShells)
-
-            Multiple projects can be declared to represent each package set, which is great for GHCJS frontends.
-          '';
-        };
-
-        dream2nix = {
-          title = "dream2nix beta";
-          baseUrl = "https://github.com/nix-community/dream2nix/blob/master";
-          attributePath = [ "flakeModuleBeta" ];
-          intro = ''
-            [`dream2nix`](https://github.com/nix-community/dream2nix#readme) scans your flake files and turns them into packages.
           '';
         };
 
