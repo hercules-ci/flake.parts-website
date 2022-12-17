@@ -4,13 +4,13 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
-    pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
-    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
-    haskell-flake.url = "github:srid/haskell-flake";
-    dream2nix.url = "github:nix-community/dream2nix";
     dream2nix.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
+    dream2nix.url = "github:nix-community/dream2nix";
+    haskell-flake.url = "github:srid/haskell-flake";
+    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
+    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
+    pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
   };
 
