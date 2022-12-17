@@ -12,5 +12,6 @@
     - [`dream2nix beta`](./options/dream2nix.md)
     - [`haskell-flake`](./options/haskell-flake.md)
     - [`hercules-ci-effects`](./options/hercules-ci-effects.md)
+    - [`mission-control`](./options/mission-control.md)
     - [`pre-commit-hooks.nix`](./options/pre-commit-hooks-nix.md)
     - [`proc-flake`](./options/proc-flake.md)
