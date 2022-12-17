@@ -14,8 +14,8 @@
     proc-flake.url = "github:srid/proc-flake";
   };
 
-  outputs = inputs@{ self, flake-parts, hercules-ci-effects, ... }:
-    flake-parts.lib.mkFlake { inherit self; } {
+  outputs = inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
       perSystem.render.inputs = {
 
         flake-parts = {
