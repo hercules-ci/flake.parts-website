@@ -123,7 +123,7 @@ in
               in
               if match != null
               then "github:${owner}/${repo}"
-              else throw "Couldn't figure out flakeref for ${name}";
+              else throw "Couldn't figure out flakeref for ${name}: ${config.baseUrl}";
           };
 
           preface = mkOption {

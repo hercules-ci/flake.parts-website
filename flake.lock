@@ -219,6 +219,21 @@
         "type": "github"
       }
     },
+    "flake-root": {
+      "locked": {
+        "lastModified": 1671295174,
+        "narHash": "sha256-5K+wdsB5TYSmI6HeexOMvJTZTBdXb9RbiFwXRtQkE3M=",
+        "owner": "srid",
+        "repo": "flake-root",
+        "rev": "bb96b89f65d7c47457303f2385798a09f4a1dd5a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "srid",
+        "repo": "flake-root",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1619345332,
@@ -402,6 +417,27 @@
       "original": {
         "id": "mach-nix",
         "type": "indirect"
+      }
+    },
+    "mission-control": {
+      "inputs": {
+        "flake-root": "flake-root",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1671312930,
+        "narHash": "sha256-DbxGLz5LOrJWAI/ceH41Ph2khpuN+rmz3IRhwxKNGb8=",
+        "owner": "Platonic-Systems",
+        "repo": "mission-control",
+        "rev": "5c4bbee813d1db46b4e8ac1eeef7a9b048cbcaab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Platonic-Systems",
+        "repo": "mission-control",
+        "type": "github"
       }
     },
     "nix-darwin": {
@@ -645,6 +681,7 @@
         "flake-parts": "flake-parts_2",
         "haskell-flake": "haskell-flake",
         "hercules-ci-effects": "hercules-ci-effects",
+        "mission-control": "mission-control",
         "nixpkgs": "nixpkgs_3",
         "pre-commit-hooks-nix": "pre-commit-hooks-nix_2",
         "proc-flake": "proc-flake"

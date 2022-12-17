@@ -9,6 +9,8 @@
     dream2nix.url = "github:nix-community/dream2nix";
     haskell-flake.url = "github:srid/haskell-flake";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
+    mission-control.url = "github:Platonic-Systems/mission-control";
+    mission-control.inputs.nixpkgs.follows = "nixpkgs";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
@@ -57,6 +59,19 @@
              - a mergeable `herculesCI` attribute; read by [Hercules CI](https://hercules-ci.com) and the [`hci`](https://docs.hercules-ci.com/hercules-ci-agent/hci/) command,
              - the [`hci-effects`](https://docs.hercules-ci.com/hercules-ci-effects/guide/import-or-pin/#_flakes_with_flake_parts) library as a module argument in `perSystem` / `withSystem`,
              - ready to go, configurable continuous deployment jobs
+          '';
+        };
+
+        mission-control = {
+          baseUrl = "https://github.com/Platonic-Systems/mission-control/blob/main";
+          intro = ''
+            A flake-parts module for your Nix devshell scripts.
+
+            Lets you configure commands that will be run in the repository root.
+
+            Provides an informative "message of the day" when launching your shell.
+
+            See the [Platonic-Systems/mission-control readme](https://github.com/Platonic-Systems/mission-control#readme).
           '';
         };
 
