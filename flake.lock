@@ -411,11 +411,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1671489674,
-        "narHash": "sha256-fulv1Q4Hn6cejd32YmESl5oHrfX4qK8Hqh+jouo4tqs=",
+        "lastModified": 1671493916,
+        "narHash": "sha256-7uvy37mfprmI3fbBw9E+baV1KZHR5zKfSNfPlSiliqo=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "35b3c0bcfac7f8a9ba5319bf79312bf53359c50a",
+        "rev": "9acdaa469ebd3c2d6816f8a30c0c217a0da59fe2",
         "type": "github"
       },
       "original": {
