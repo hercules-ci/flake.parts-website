@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
 
+    devenv.url = "github:hercules-ci/devenv/flake-module";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
     dream2nix.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
@@ -27,6 +28,15 @@
   outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
       perSystem.render.inputs = {
+
+        devenv = {
+          title = "devenv";
+          baseUrl = "https://github.com/cachix/devenv/blob/main";
+          attributePath = [ "flakeModule" ];
+          intro = ''
+            [`devenv`](https://devenv.sh) provides a devShell, with many options.
+          '';
+        };
 
         devshell = {
           title = "devshell";
