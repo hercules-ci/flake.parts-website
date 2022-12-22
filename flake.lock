@@ -565,11 +565,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1672350804,
-        "narHash": "sha256-jo6zkiCabUBn3ObuKXHGqqORUMH27gYDIFFfLq5P4wg=",
+        "lastModified": 1672525397,
+        "narHash": "sha256-WASDnyxHKWVrEe0dIzkpH+jzKlCKAk0husv0f/9pyxg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "677ed08a50931e38382dbef01cba08a8f7eac8f6",
+        "rev": "8ba56d7c0d7490680f2d51ba46a141eca7c46afa",
         "type": "github"
       },
       "original": {
@@ -659,6 +659,22 @@
         "type": "github"
       }
     },
+    "process-compose-flake": {
+      "locked": {
+        "lastModified": 1671746418,
+        "narHash": "sha256-pcPALqEFSlAz+68SStQPoy9eT13dJ+tOe4OJbJCGToQ=",
+        "owner": "hercules-ci",
+        "repo": "process-compose-flake",
+        "rev": "2bd5ac6649dc124c7a51fcf3db97c43cb7683ed4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "ref": "fix-docs",
+        "repo": "process-compose-flake",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "dream2nix": "dream2nix",
@@ -669,6 +685,7 @@
         "nixpkgs": "nixpkgs_3",
         "pre-commit-hooks-nix": "pre-commit-hooks-nix_2",
         "proc-flake": "proc-flake",
+        "process-compose-flake": "process-compose-flake",
         "treefmt-nix": "treefmt-nix"
       }
     },
@@ -691,11 +708,11 @@
     },
     "treefmt-nix": {
       "locked": {
-        "lastModified": 1672170030,
-        "narHash": "sha256-hvTMwlutePPQ4eNMVHiI0crixCyeSTKJIDhLD/66t2g=",
+        "lastModified": 1672695148,
+        "narHash": "sha256-2XDaaXYevsXrsVRRUofq9+ob4Ma+RF4xrK7e423aBNc=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "c97bb3db343ccd2f04dd4e5fa8750e821560e9ca",
+        "rev": "01f208b72247677f085bf30e2ed630f7d1497dca",
         "type": "github"
       },
       "original": {
