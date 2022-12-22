@@ -11,16 +11,26 @@ let
     removePrefix
     ;
 
+  failPkgAttr = name: _v:
+    throw ''
+      Most nixpkgs attributes are not supported when generating documentation.
+      Please check with `--show-trace` to see which option leads to this `pkgs.${lib.strings.escapeNixIdentifier name}` reference. Often it can be cut short with a `defaultText` argument to `lib.mkOption`, or by escaping an option `example` using `lib.literalExpression`.
+    '';
+
 in
 {
   options.perSystem = flake-parts-lib.mkPerSystemOption ({ config, pkgs, lib, ... }:
     let
       cfg = config.render;
 
+      pkgsStub = lib.mapAttrs failPkgAttr pkgs;
+
       fixups = { lib, flake-parts-lib, ... }: {
         options.perSystem = flake-parts-lib.mkPerSystemOption {
           config = {
-            _module.args.pkgs = {
+            _module.args.pkgs = pkgsStub // {
+              _type = "pkgs";
+              inherit lib;
               formats = lib.mapAttrs
                 (formatName: formatFn:
                   formatArgs:
