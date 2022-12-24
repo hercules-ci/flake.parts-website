@@ -14,6 +14,7 @@
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   outputs = inputs@{ flake-parts, ... }:
@@ -95,6 +96,20 @@
             [honcho](https://github.com/nickstenning/honcho) is used to launch the processes.
 
             See [proc-flake README](https://github.com/srid/proc-flake#readme)
+          '';
+        };
+
+        treefmt-nix = {
+          baseUrl = "https://github.com/numtide/treefmt-nix/blob/master";
+          intro = ''
+            When working on large code trees, it's common to have multiple code formatters run against it. And have one script that loops over all of them. `treefmt` makes that nicer.
+
+             - A unified CLI and output
+             - Run all the formatters in parallel.
+             - Cache which files have changed for super fast re-formatting.
+             - Just type treefmt in any folder and it reformats the whole code tree.
+
+            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself. 
           '';
         };
 

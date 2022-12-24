@@ -15,3 +15,4 @@
     - [`mission-control`](./options/mission-control.md)
     - [`pre-commit-hooks.nix`](./options/pre-commit-hooks-nix.md)
     - [`proc-flake`](./options/proc-flake.md)
+    - [`treefmt-nix`](./options/treefmt-nix.md)
