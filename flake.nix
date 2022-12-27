@@ -19,7 +19,7 @@
   };
 
   outputs = inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
+    flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
       perSystem.render.inputs = {
 
         dream2nix = {
@@ -41,6 +41,42 @@
           '';
           installation = "";
         };
+
+        flake-parts-easyOverlay =
+          let sourceSubpath = "/extras/easyOverlay.nix";
+          in
+          {
+            _module.args.name = lib.mkForce "flake-parts";
+            flake = inputs.flake-parts;
+            title = "flake-parts.easyOverlay";
+            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${sourceSubpath}";
+            getModules = f: [ f.flakeModules.easyOverlay ];
+            intro = ''
+              Derives a default overlay from `perSystem.packages`.
+            '';
+            installationDeclareInput = false;
+            attributePath = [ "flakeModules" "easyOverlay" ];
+            separateEval = true;
+            filterTransformOptions =
+              { sourceName, sourcePath, baseUrl, coreOptDecls }:
+              let sourcePathStr = toString sourcePath + sourceSubpath;
+              in
+              opt:
+              let
+                declarations = lib.concatMap
+                  (decl:
+                    if lib.hasPrefix sourcePathStr (toString decl)
+                    then
+                      let subpath = lib.removePrefix sourcePathStr (toString decl);
+                      in [{ url = baseUrl + subpath; name = sourceName + subpath; }]
+                    else [ ]
+                  )
+                  opt.declarations;
+              in
+              if declarations == [ ]
+              then opt // { visible = false; }
+              else opt // { inherit declarations; };
+          };
 
         haskell-flake = {
           baseUrl = "https://github.com/srid/haskell-flake/blob/master";
@@ -143,5 +179,5 @@
         };
         autoMergeMethod = "merge";
       };
-    };
+    });
 }
