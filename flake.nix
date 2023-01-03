@@ -14,6 +14,7 @@
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
+    process-compose-flake.url = "github:hercules-ci/process-compose-flake/fix-docs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
@@ -96,6 +97,17 @@
             [honcho](https://github.com/nickstenning/honcho) is used to launch the processes.
 
             See [proc-flake README](https://github.com/srid/proc-flake#readme)
+          '';
+        };
+
+        process-compose-flake = {
+          baseUrl = "https://github.com/Platonic-Systems/process-compose-flake/blob/main";
+          intro = ''
+            Declare one or more process-compose configurations using options.
+
+            Generates a wrapper for [process-compose](https://github.com/F1bonacc1/process-compose).
+
+            See [process-compose-flake](https://github.com/Platonic-Systems/process-compose-flake) for a [usage example](https://github.com/Platonic-Systems/process-compose-flake#usage).
           '';
         };
 
