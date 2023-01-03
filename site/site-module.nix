@@ -26,7 +26,8 @@
           for f in ${config.packages.generated-docs}/*.html; do
             cp "$f" "src/options/$(basename "$f" .html).md"
           done
-          mdbook build --dest-dir $out
+          mdbook build --dest-dir $TMPDIR/out
+          cp -r $TMPDIR/out/html $out
 
           echo '<html><head><script>window.location.pathname = window.location.pathname.replace(/options.html$/, "") + "options/flake-parts.html"</script></head><body><a href="options/flake-parts.html">to the options</a></body></html>' \
             >$out/options.html
