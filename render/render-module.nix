@@ -53,7 +53,10 @@ in
         };
       };
 
-      eval = inputs.flake-parts.lib.evalFlakeModule
+      eval = evalWith {
+        modules = concatLists (mapAttrsToList (name: inputCfg: inputCfg.getModules inputCfg.flake) cfg.inputs);
+      };
+      evalWith = { modules }: inputs.flake-parts.lib.evalFlakeModule
         {
           inputs = {
             inherit (inputs) nixpkgs;
@@ -61,18 +64,16 @@ in
           };
         }
         {
-          imports =
-            concatLists (mapAttrsToList (name: inputCfg: inputCfg.getModules inputCfg.flake) cfg.inputs)
-            ++ [
-              fixups
-            ];
+          imports = modules ++ [
+            fixups
+          ];
         };
 
       opts = eval.options;
 
       coreOptDecls = config.render.inputs.flake-parts._nixosOptionsDoc.optionsNix;
 
-      filterTransformOptions = { sourceName, sourcePath, baseUrl }:
+      filterTransformOptions = { sourceName, sourcePath, baseUrl, coreOptDecls }:
         let sourcePathStr = toString sourcePath;
         in
         opt:
@@ -157,6 +158,14 @@ in
             '';
           };
 
+          installationDeclareInput = mkOption {
+            type = types.bool;
+            description = ''
+              Whether to show how to declare the input.
+            '';
+            default = true;
+          };
+
           installation = mkOption {
             type = types.str;
             description = ''
@@ -166,13 +175,19 @@ in
               ''
                 ## Installation
 
-                To use these options, add to your flake inputs:
+                ${if config.installationDeclareInput
+                then ''
+                  To use these options, add to your flake inputs:
 
-                ```nix
-                ${config.sourceName}.url = "${config.flakeRef}";
-                ```
+                  ```nix
+                  ${config.sourceName}.url = "${config.flakeRef}";
+                  ```
 
-                and inside the `mkFlake`:
+                  and inside the `mkFlake`:
+                ''
+                else ''
+                  To use these options, add inside the `mkFlake`:
+                ''}
 
                 ```nix
                 imports = [
@@ -228,13 +243,37 @@ in
           };
 
           _nixosOptionsDoc = mkOption { };
+
+          separateEval = mkOption {
+            type = types.bool;
+            default = false;
+            description = ''
+              Whether to include this in the main evaluation.
+            '';
+          };
+
+          filterTransformOptions = mkOption {
+            default = filterTransformOptions;
+            description = ''
+              Function to customize the set of options to render for this input.
+            '';
+          };
+
         };
         config = {
           _nixosOptionsDoc = pkgs.nixosOptionsDoc {
-            options = opts;
+            options =
+              if config.separateEval
+              then
+                (evalWith {
+                  modules = config.getModules config.flake;
+                }).options
+              else
+                opts;
             documentType = "none";
-            transformOptions = filterTransformOptions {
+            transformOptions = config.filterTransformOptions {
               inherit (config) sourceName baseUrl sourcePath;
+              inherit coreOptDecls;
             };
             warningsAreErrors = true; # not sure if feasible long term
             markdownByDefault = true;
