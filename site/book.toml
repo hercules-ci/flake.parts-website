@@ -14,3 +14,6 @@ no-section-label = true
 
 [output.html.print]
 enable = false  # big single page; don't need that
+
+[output.linkcheck]
+follow-web-links = false # no Internet during the build
