@@ -15,6 +15,7 @@
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
     process-compose-flake.url = "github:hercules-ci/process-compose-flake/fix-docs";
+    std.url = "github:divnix/std";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
@@ -144,6 +145,17 @@
             Generates a wrapper for [process-compose](https://github.com/F1bonacc1/process-compose).
 
             See [process-compose-flake](https://github.com/Platonic-Systems/process-compose-flake) for a [usage example](https://github.com/Platonic-Systems/process-compose-flake#usage).
+          '';
+        };
+
+        std = {
+          baseUrl = "https://github.com/divnix/std/blob/main";
+          intro = ''
+            Add definitions from the [Standard](https://github.com/divnix/std#readme) DevOps framework to your flake.
+
+            It organizes and disciplines your Nix and thereby speeds you up.
+            It also comes with great horizontal integrations of high quality 
+            vertical DevOps tooling crafted by the Nix Ecosystem.
           '';
         };
 

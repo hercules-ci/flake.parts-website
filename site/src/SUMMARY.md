@@ -19,4 +19,5 @@
     - [`pre-commit-hooks.nix`](./options/pre-commit-hooks-nix.md)
     - [`proc-flake`](./options/proc-flake.md)
     - [`process-compose-flake`](./options/process-compose-flake.md)
+    - [`std`](./options/std.md)
     - [`treefmt-nix`](./options/treefmt-nix.md)
