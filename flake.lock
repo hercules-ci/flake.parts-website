@@ -158,11 +158,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1672661134,
-        "narHash": "sha256-WqBUyKeiv+jI11ug+qP0OnZ4nngK6eBRVTGHgdzEGvc=",
+        "lastModified": 1673399290,
+        "narHash": "sha256-rKVmk6yIGPCRm5/d4hzKRE2N3l3zANah5xrCZAOwWEg=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "9f6911c78dcb0832f7fcc955e847db1a5a9ce29a",
+        "rev": "87c3724e8c4e3bebcdde46462bd67c3ba181c4b1",
         "type": "github"
       },
       "original": {
