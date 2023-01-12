@@ -456,11 +456,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1671710218,
-        "narHash": "sha256-c9QR6qTauyLru/2BrIQcgKX4eYR/JFdhbTt+piilO14=",
+        "lastModified": 1673537619,
+        "narHash": "sha256-eC0gXa4XpmKG2fCU8FfIfze364x6Gv72Oaq40efV+Mc=",
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
-        "rev": "9684190de4cd0e75859f1939d13973fce3a7ce46",
+        "rev": "074e24f1b48f039a020714d127097c0d0867190d",
         "type": "github"
       },
       "original": {
@@ -720,11 +720,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1673315479,
-        "narHash": "sha256-GNCFRtDHjTygXGJp/H+f2XQPMGxpYSmNiibIqYzihtM=",
+        "lastModified": 1673450908,
+        "narHash": "sha256-b8em+kwrNtnB7gR8SyVf6WuTyQ+6tHS6dzt9D9wgKF0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c07552f6f7d4eead7806645ec03f7f1eb71ba6bd",
+        "rev": "6c8644fc37b6e141cbfa6c7dc8d98846c4ff0c2e",
         "type": "github"
       },
       "original": {
@@ -919,11 +919,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1673317235,
-        "narHash": "sha256-wrVmvBOaiDIQaYO+oVFCXnu8uLlNpeQSxpR+8JThFWY=",
+        "lastModified": 1673539080,
+        "narHash": "sha256-a26v5TRoqPrHguhRR+BogzZkhlXxaxz+Gvod99/f+X8=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "30b8998b2a15434ba70dd973895accf79bddd641",
+        "rev": "4bf29eb35e218f208121aefd1a2617d788891c59",
         "type": "github"
       },
       "original": {
