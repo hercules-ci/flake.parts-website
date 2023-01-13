@@ -8,7 +8,7 @@
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix.url = "github:nix-community/dream2nix";
     haskell-flake.url = "github:srid/haskell-flake";
-    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects/fix-git-auth-gh";
+    hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     mission-control.url = "github:Platonic-Systems/mission-control";
     mission-control.inputs.nixpkgs.follows = "nixpkgs";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";

@@ -456,16 +456,15 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1673631537,
+        "lastModified": 1673632511,
         "narHash": "sha256-BUXIoEcGzZj0snSUqZIksTO92Yn6vZ6QOE8QcjjuuMA=",
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
-        "rev": "7d06e6b52e8b2ec4ce8da1ac0efdd8183c8b904f",
+        "rev": "c19d2ef4baa49b5342bfe75ee39d7f3ca91aa958",
         "type": "github"
       },
       "original": {
         "owner": "hercules-ci",
-        "ref": "fix-git-auth-gh",
         "repo": "hercules-ci-effects",
         "type": "github"
       }
