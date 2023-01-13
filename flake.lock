@@ -456,11 +456,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1673630054,
-        "narHash": "sha256-7XGzUQrkW2LVQQPEM+87P/O9qbwz4L2hd4adTjOkitA=",
+        "lastModified": 1673631050,
+        "narHash": "sha256-sXhiEvM0SbRLG7wJ1an8Aqdlv2l0PVMpHcgxjB7d3Ys=",
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
-        "rev": "9a975f78050b3d52c598c19d776f66d7768d9d63",
+        "rev": "80a008e729c3e2e468b904fe689022fcdcbe674a",
         "type": "github"
       },
       "original": {
