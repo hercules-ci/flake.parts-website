@@ -2,7 +2,7 @@
   description = "The https://flake.parts website";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs";
 
     dream2nix.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
