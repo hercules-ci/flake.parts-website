@@ -4,6 +4,7 @@
 - [Getting Started](./getting-started.md)
 - [Working with `system`](./system.md)
 - [Overlays](./overlays.md)
+- [Library Overlays](./lib-overlays.md)
 - [Explore and debug option values](./debug.md)
 - [Define Custom Flake Attribute](./define-custom-flake-attribute.md)
 - [Reference Documentation](./module-arguments.md)

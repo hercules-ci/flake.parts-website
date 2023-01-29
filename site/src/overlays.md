@@ -1,5 +1,5 @@
 # Overlays
-
+	
 Overlays in Nixpkgs allow the customization of the entire package set in a consistent manner. For example, if you set a library's attribute in an overlay, this change will be applied to all packages that previously depended on that attribute. This is in contrast with the way the Flake `packages` attribute works. Such definitions do not feed back into the Nixpkgs package set.
 
 Advantages of overlays:
