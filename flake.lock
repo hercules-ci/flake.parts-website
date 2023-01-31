@@ -155,14 +155,15 @@
         "poetry2nix": "poetry2nix",
         "pre-commit-hooks": [
           "pre-commit-hooks-nix"
-        ]
+        ],
+        "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1674848374,
-        "narHash": "sha256-1+xlsmUWzpptK8mLjznwqOLogeicLkxB8tV6XUZbobc=",
+        "lastModified": 1675154579,
+        "narHash": "sha256-MCg88W/ioAoiT0o35l7rtONo1i6L69AzbUMqwT1Bmho=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "d91e7381fa303be02f70e472207e05b26ce35b41",
+        "rev": "28da5efffd1a8ead08cf0bb13047a51f351b9ce6",
         "type": "github"
       },
       "original": {
@@ -719,11 +720,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1675111640,
-        "narHash": "sha256-yZUat+ikXwa68YxdhgBCSD7FRfniWCOIC+qwcZfhOTk=",
+        "lastModified": 1675154876,
+        "narHash": "sha256-D4gKQMk1uynwgxGNlNdpqaj+l9DHAzpNEMBy/4M+pCo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "41b23132eb94a7f4444e1b73cd8bc8a67f5acef4",
+        "rev": "c84edce4ecf0c92d9cf7a07b536ae9e0d2c1a855",
         "type": "github"
       },
       "original": {
@@ -855,6 +856,23 @@
         "owner": "hercules-ci",
         "ref": "fix-docs",
         "repo": "process-compose-flake",
+        "type": "github"
+      }
+    },
+    "pruned-racket-catalog": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1672537287,
+        "narHash": "sha256-SuOvXVcLfakw18oJB/PuRMyvGyGG1+CQD3R+TGHIv44=",
+        "owner": "nix-community",
+        "repo": "pruned-racket-catalog",
+        "rev": "c8b89557fb53b36efa2ee48a769c7364df0f6262",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "catalog",
+        "repo": "pruned-racket-catalog",
         "type": "github"
       }
     },
