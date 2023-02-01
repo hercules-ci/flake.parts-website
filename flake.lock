@@ -159,11 +159,11 @@
         "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1675154579,
-        "narHash": "sha256-MCg88W/ioAoiT0o35l7rtONo1i6L69AzbUMqwT1Bmho=",
+        "lastModified": 1675238477,
+        "narHash": "sha256-LM5GDNjLcmgZVQEeANWAOO09KppwGaYEzJBjYmuSwys=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "28da5efffd1a8ead08cf0bb13047a51f351b9ce6",
+        "rev": "f61d9311e224a2c5f6691f8f8d7411e7284650fb",
         "type": "github"
       },
       "original": {
@@ -416,11 +416,11 @@
     },
     "haskell-flake": {
       "locked": {
-        "lastModified": 1674483307,
-        "narHash": "sha256-NlohHWCqOsMY4q2fmKR6VAAX4y09Cr85Ezgbx4Q2hbc=",
+        "lastModified": 1675205109,
+        "narHash": "sha256-Vpz3CbXoSUr4/QU1d0ZpoK1EFUNhibhJn0sEb8d95c0=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "8688fb2deaa193795467eedb4d2473dbeaba19b4",
+        "rev": "575584fb6165b7957460e77bffe88827bfa87e4d",
         "type": "github"
       },
       "original": {
@@ -715,11 +715,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1675198055,
-        "narHash": "sha256-fLIyOGfWVTaHzyiRnUJMt2N0ZI192J2AE5r8B/r884o=",
+        "lastModified": 1675241007,
+        "narHash": "sha256-M3vFs9dUIWd/bp0d0dZ+szaZDhUagngiQZnSySarJhk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ff7cb26327c201050325ef015a7cfb1ec1e0a035",
+        "rev": "62d4c6aea073ff3df6e2626bdaca1b8c044616a4",
         "type": "github"
       },
       "original": {
