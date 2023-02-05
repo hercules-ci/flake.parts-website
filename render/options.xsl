@@ -9,6 +9,16 @@
   <xsl:template match="/">
     <xsl:apply-templates/>
   </xsl:template>
+  <xsl:template match="db:link">
+    <xsl:choose>
+      <xsl:when test="$killLinks = 'true'">
+        <xsl:copy-of select="./node()"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:copy-of select="."/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
   <xsl:template match="db:variablelist">
     <chapter>
       <title>

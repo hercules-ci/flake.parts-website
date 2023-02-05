@@ -36,6 +36,7 @@
           intro = ''
             [`devenv`](https://devenv.sh) provides a devShell, with many options.
           '';
+          killLinks = true;
         };
 
         devshell = {
