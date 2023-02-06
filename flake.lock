@@ -159,11 +159,11 @@
         "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1675238477,
-        "narHash": "sha256-LM5GDNjLcmgZVQEeANWAOO09KppwGaYEzJBjYmuSwys=",
+        "lastModified": 1675669832,
+        "narHash": "sha256-xuSoRDxrkXSCPG1JVZ426FWOr79bFeSuo0TORHWYyo4=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "f61d9311e224a2c5f6691f8f8d7411e7284650fb",
+        "rev": "6c35ffb8040716fd48ce4578b60a76b52b7362c3",
         "type": "github"
       },
       "original": {
@@ -715,11 +715,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1675628371,
-        "narHash": "sha256-KsAGKX6R5OZ4mvX0v9I8rXoQD62NG8bNq2vDh731fUk=",
+        "lastModified": 1675673198,
+        "narHash": "sha256-U/wkxO7VzrZfIAfjH5CvL0/WYqUPmBGqvYvA4wAwhNQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "461ef24010bec9df46f9f982e27441d83a856563",
+        "rev": "8b031cac44ae8fb02b6017863aeefe727806ad41",
         "type": "github"
       },
       "original": {
@@ -945,11 +945,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1675395455,
-        "narHash": "sha256-BXesJEYQ3lPrA3aJcZVQ2CLJ1EYOoKnjnPsDFdS1K4A=",
+        "lastModified": 1675651836,
+        "narHash": "sha256-Zv71oPiV2lsO6TJfEqqCAlohAo+OnBZSGZgsALxdCGs=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "f437f107feafc2984bb2b2f98fe8b13022021746",
+        "rev": "97348aa1056414f1c97caa7e1a4c21efda3f24e5",
         "type": "github"
       },
       "original": {
