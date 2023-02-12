@@ -715,11 +715,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1676185490,
-        "narHash": "sha256-/8c/n2wc6ilK5kO8Qa3XtDCv4It7nD9GAGoiUGJXwT0=",
+        "lastModified": 1676232992,
+        "narHash": "sha256-eAVVxlOOZM7TrJG8te76LRivF8TZQjBgigDSyTwJhVA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d073cbbe94ef9ce233c75dc260bc2ee721da42d6",
+        "rev": "af57670e59fcc9b7b219ef38affc1c7820c44100",
         "type": "github"
       },
       "original": {
@@ -762,16 +762,42 @@
     },
     "nosys": {
       "locked": {
-        "lastModified": 1667881534,
-        "narHash": "sha256-FhwJ15uPLRsvaxtt/bNuqE/ykMpNAPF0upozFKhTtXM=",
+        "lastModified": 1668010795,
+        "narHash": "sha256-JBDVBnos8g0toU7EhIIqQ1If5m/nyBqtHhL3sicdPwI=",
         "owner": "divnix",
         "repo": "nosys",
-        "rev": "2d0d5207f6a230e9d0f660903f8db9807b54814f",
+        "rev": "feade0141487801c71ff55623b421ed535dbdefa",
         "type": "github"
       },
       "original": {
         "owner": "divnix",
         "repo": "nosys",
+        "type": "github"
+      }
+    },
+    "paisano": {
+      "inputs": {
+        "nixpkgs": [
+          "std",
+          "nixpkgs"
+        ],
+        "nosys": "nosys",
+        "yants": [
+          "std",
+          "yants"
+        ]
+      },
+      "locked": {
+        "lastModified": 1676226775,
+        "narHash": "sha256-MiY0Y9JOo71wu0K9cSxW+N4gOCuS7taI3bSUMFGtbPI=",
+        "owner": "divnix",
+        "repo": "paisano",
+        "rev": "143afa3083274af3be808687ab23fddbbc9d22ed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "divnix",
+        "repo": "paisano",
         "type": "github"
       }
     },
@@ -826,11 +852,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1675688762,
-        "narHash": "sha256-oit/SxMk0B380ASuztBGQLe8TttO1GJiXF8aZY9AYEc=",
+        "lastModified": 1676233402,
+        "narHash": "sha256-43JNeMD1g4skb5xhq4w6atlIHe7Fb0UOgVNSsif1RVU=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "ab608394886fb04b8a5df3cb0bab2598400e3634",
+        "rev": "15f2da96967d4c828ae678af50f75214372fd3ce",
         "type": "github"
       },
       "original": {
@@ -941,15 +967,15 @@
         "n2c": "n2c",
         "nixago": "nixago",
         "nixpkgs": "nixpkgs_4",
-        "nosys": "nosys",
+        "paisano": "paisano",
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1676143434,
-        "narHash": "sha256-YxP7V376E66qGjKb6AANV0jPpVRNSs5A8Ll9dwNr1yM=",
+        "lastModified": 1676232625,
+        "narHash": "sha256-M9xLaFVhD58UwGKoodAzeZD1iBdrCTtAsqKwWX5mUXA=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "64d82a80ea71956c4959796198bc44ce17ad30bc",
+        "rev": "b462198baa6b3a3c6f3f46662500f683e105a2fa",
         "type": "github"
       },
       "original": {
