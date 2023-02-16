@@ -159,11 +159,11 @@
         "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1676425617,
-        "narHash": "sha256-Y7wJVynHh283RNKHi+q6Npyn64rsatXC/sm8kYf62Lw=",
+        "lastModified": 1676513996,
+        "narHash": "sha256-FtdXG8d/tyAu7z21VY05nGAMk/eLiXbFk4JOi/M37wI=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "02aaf296c33577c1608f27ae718941a594b51c56",
+        "rev": "b4b491bd77dc3292a55b0fddd9f67e5f78c83214",
         "type": "github"
       },
       "original": {
@@ -715,11 +715,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1676492541,
-        "narHash": "sha256-Czq2j4cn9v8lCbxXWn34VgnPv8sRVxtwSVOo82UU500=",
+        "lastModified": 1676534113,
+        "narHash": "sha256-bKHSdUUFSsVdxb5hcuBb2NnSpOzQrAR0srLawOPVWmE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e5bde651a57cb4e136797d794acf33fce4110eea",
+        "rev": "4987c7aacdeeed0b08fcd12ab1c5813b683be7d6",
         "type": "github"
       },
       "original": {
@@ -852,11 +852,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1676279938,
-        "narHash": "sha256-RDyvVdituVQQZtGA7DNaJruJLDz/pfkREpUcI4ZQvsk=",
+        "lastModified": 1676513100,
+        "narHash": "sha256-MK39nQV86L2ag4TmcK5/+r1ULpzRLPbbfvWbPvIoYJE=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "1583077009b6ef4236d1899c0f43cf1ce1db8085",
+        "rev": "5f0cba88ac4d6dd8cad5c6f6f1540b3d6a21a798",
         "type": "github"
       },
       "original": {
