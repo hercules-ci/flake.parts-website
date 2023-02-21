@@ -159,11 +159,11 @@
         "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1676803770,
-        "narHash": "sha256-YDDpyZUFRvf3oDqCAc+ixr31AaauaEnWJ4yNZVaxv8E=",
+        "lastModified": 1676928084,
+        "narHash": "sha256-TiYqlcRbJHtNUc8TepiYU+luDJKmSfUGvux9iDgUwDA=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "34224b95bfc041533b619549fdc5b669017160cf",
+        "rev": "74d74154e054ee3e6ad5fdc2d48d53197fcfaec0",
         "type": "github"
       },
       "original": {
@@ -700,11 +700,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1676925512,
-        "narHash": "sha256-EqZaL/6BAdB8igB7UeM54uRyq+1QzIgltRVdlBKRkG8=",
+        "lastModified": 1676968832,
+        "narHash": "sha256-puApA4zb7tCc+q8kDK2nLqt6lFmXSsdJ6LfztJGhMuU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "48c6c4519dbdc28d8658ec0cf667e7ec2a27d47a",
+        "rev": "1ad58fd33b129f13fe0e1af44ff0a8ff27210a76",
         "type": "github"
       },
       "original": {
