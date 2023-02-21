@@ -182,7 +182,15 @@
         inputs.hercules-ci-effects.flakeModule
         inputs.pre-commit-hooks-nix.flakeModule
       ];
-      systems = [ "x86_64-linux" "aarch64-darwin" ];
+      systems = [
+        # Supported, see `ciSystems`
+        "x86_64-linux"
+
+        # Available, but may be broken by Nixpkgs updates sometimes
+        "x86_64-darwin"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
 
       hercules-ci.flake-update = {
         enable = true;
@@ -190,6 +198,10 @@
           hour = [ 8 20 ];
         };
         autoMergeMethod = "merge";
+      };
+
+      herculesCI = {
+        ciSystems = [ "x86_64-linux" ];
       };
     });
 }
