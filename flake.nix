@@ -119,7 +119,7 @@
         nix-cargo-integration = {
           title = "nix-cargo-integration";
           baseUrl = "https://github.com/yusdacra/nix-cargo-integration/blob/master";
-          attributePath = ["flakeModuleNciOnly"];
+          attributePath = [ "flakeModuleNciOnly" ];
           intro = ''
             Easily integrate your Rust projects into Nix.
           '';
