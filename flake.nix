@@ -11,6 +11,8 @@
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     mission-control.url = "github:Platonic-Systems/mission-control";
     mission-control.inputs.nixpkgs.follows = "nixpkgs";
+    nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
+    nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
@@ -111,6 +113,20 @@
             Provides an informative "message of the day" when launching your shell.
 
             See the [Platonic-Systems/mission-control readme](https://github.com/Platonic-Systems/mission-control#readme).
+          '';
+        };
+
+        nix-cargo-integration = {
+          title = "nix-cargo-integration";
+          baseUrl = "https://github.com/yusdacra/nix-cargo-integration/blob/master";
+          attributePath = [ "flakeModuleNciOnly" ];
+          intro = ''
+            Easily integrate your Rust projects into Nix.
+          '';
+          installation = ''
+            ## Installation
+
+            See the [readme](https://github.com/yusdacra/nix-cargo-integration#readme).
           '';
         };
 

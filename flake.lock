@@ -71,6 +71,22 @@
         "type": "github"
       }
     },
+    "crane_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1670900067,
+        "narHash": "sha256-VXVa+KBfukhmWizaiGiHRVX/fuk66P8dgSFfkVN4/MY=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "59b31b41a589c0a65e4a1f86b0e5eac68081468b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "devshell": {
       "flake": false,
       "locked": {
@@ -157,6 +173,65 @@
           "pre-commit-hooks-nix"
         ],
         "pruned-racket-catalog": "pruned-racket-catalog"
+      },
+      "locked": {
+        "lastModified": 1676992344,
+        "narHash": "sha256-TEn5kEi/jL9Dt6O+ZZ7kQwnlAgEv0r4VgQZnav/cfV4=",
+        "owner": "nix-community",
+        "repo": "dream2nix",
+        "rev": "db72710500a80bdf4589b6807d2491a4a0dae3ad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "dream2nix",
+        "type": "github"
+      }
+    },
+    "dream2nix_2": {
+      "inputs": {
+        "alejandra": [
+          "nix-cargo-integration"
+        ],
+        "all-cabal-json": [
+          "nix-cargo-integration"
+        ],
+        "crane": "crane_2",
+        "devshell": [
+          "nix-cargo-integration"
+        ],
+        "flake-parts": [
+          "nix-cargo-integration",
+          "parts"
+        ],
+        "flake-utils-pre-commit": [
+          "nix-cargo-integration"
+        ],
+        "ghc-utils": [
+          "nix-cargo-integration"
+        ],
+        "gomod2nix": [
+          "nix-cargo-integration"
+        ],
+        "mach-nix": [
+          "nix-cargo-integration"
+        ],
+        "nix-pypi-fetcher": [
+          "nix-cargo-integration"
+        ],
+        "nixpkgs": [
+          "nix-cargo-integration",
+          "nixpkgs"
+        ],
+        "poetry2nix": [
+          "nix-cargo-integration"
+        ],
+        "pre-commit-hooks": [
+          "nix-cargo-integration"
+        ],
+        "pruned-racket-catalog": [
+          "nix-cargo-integration"
+        ]
       },
       "locked": {
         "lastModified": 1676992344,
@@ -523,6 +598,22 @@
         "type": "github"
       }
     },
+    "mk-naked-shell": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1676572903,
+        "narHash": "sha256-oQoDHHUTxNVSURfkFcYLuAK+btjs30T4rbEUtCUyKy8=",
+        "owner": "yusdacra",
+        "repo": "mk-naked-shell",
+        "rev": "aeca9f8aa592f5e8f71f407d081cb26fd30c5a57",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yusdacra",
+        "repo": "mk-naked-shell",
+        "type": "github"
+      }
+    },
     "n2c": {
       "inputs": {
         "flake-utils": [
@@ -545,6 +636,30 @@
       "original": {
         "owner": "nlewo",
         "repo": "nix2container",
+        "type": "github"
+      }
+    },
+    "nix-cargo-integration": {
+      "inputs": {
+        "dream2nix": "dream2nix_2",
+        "mk-naked-shell": "mk-naked-shell",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "parts": "parts",
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1676993536,
+        "narHash": "sha256-RHJ1IjiuoyP/cwZzJdIo4qK0NG51wTkQwYCOXKykD20=",
+        "owner": "yusdacra",
+        "repo": "nix-cargo-integration",
+        "rev": "82e200339cb95278a99a48b2f277502b0f75a0a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yusdacra",
+        "repo": "nix-cargo-integration",
         "type": "github"
       }
     },
@@ -786,6 +901,27 @@
         "type": "github"
       }
     },
+    "parts": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "nix-cargo-integration",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1675933616,
+        "narHash": "sha256-/rczJkJHtx16IFxMmAWu5nNYcSXNg1YYXTHoGjLrLUA=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "47478a4a003e745402acf63be7f9a092d51b83d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "poetry2nix": {
       "flake": false,
       "locked": {
@@ -905,6 +1041,7 @@
         "haskell-flake": "haskell-flake",
         "hercules-ci-effects": "hercules-ci-effects",
         "mission-control": "mission-control",
+        "nix-cargo-integration": "nix-cargo-integration",
         "nixpkgs": "nixpkgs_3",
         "pre-commit-hooks-nix": "pre-commit-hooks-nix_2",
         "proc-flake": "proc-flake",
@@ -927,6 +1064,22 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "rust-overlay": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1676946801,
+        "narHash": "sha256-OODjEAsnvYyl61HQp8hdIUdr4ItMe2iY1gPzkLy5CXQ=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "f02d590b871a6241dc55d41e799bc530e28214ce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
         "type": "github"
       }
     },

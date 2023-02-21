@@ -16,6 +16,7 @@
     - [`haskell-flake`](./options/haskell-flake.md)
     - [`hercules-ci-effects`](./options/hercules-ci-effects.md)
     - [`mission-control`](./options/mission-control.md)
+    - [`nix-cargo-integration`](./options/nix-cargo-integration.md)
     - [`pre-commit-hooks.nix`](./options/pre-commit-hooks-nix.md)
     - [`proc-flake`](./options/proc-flake.md)
     - [`process-compose-flake`](./options/process-compose-flake.md)
