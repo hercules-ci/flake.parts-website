@@ -35,7 +35,7 @@
         };
 
         emanote = {
-          baseUrl = "https://github.com/srid/emanote";
+          baseUrl = "https://github.com/srid/emanote/blob/master";
           intro = ''
             [`Emanote`](https://github.com/srid/emanote) renders your Markdown
             files as a nice static site with hot reload.
