@@ -44,6 +44,10 @@
 
             Use `nix run` to run the live server, and `nix build` to build the
             static site.
+
+            See
+            [emanote-template](https://github.com/srid/emanote-template/blob/master/flake.nix)
+            for an example `flake.nix`.
           '';
         };
 
