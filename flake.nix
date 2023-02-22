@@ -7,6 +7,8 @@
     dream2nix.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix.url = "github:nix-community/dream2nix";
+    emanote.url = "github:srid/emanote";
+    emanote.inputs.nixpkgs.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     mission-control.url = "github:Platonic-Systems/mission-control";
@@ -30,6 +32,21 @@
           attributePath = [ "flakeModuleBeta" ];
           intro = ''
             [`dream2nix`](https://github.com/nix-community/dream2nix#readme) scans your flake files and turns them into packages.
+          '';
+        };
+
+        emanote = {
+          baseUrl = "https://github.com/srid/emanote/blob/master";
+          intro = ''
+            [`Emanote`](https://github.com/srid/emanote) renders your Markdown
+            files as a nice static site with hot reload.
+
+            Use `nix run` to run the live server, and `nix build` to build the
+            static site.
+
+            See
+            [emanote-template](https://github.com/srid/emanote-template/blob/master/flake.nix)
+            for an example `flake.nix`.
           '';
         };
 

@@ -13,6 +13,7 @@
     - [Core `flake-parts`](./options/flake-parts.md)
       - [`easyOverlay`](./options/flake-parts-easyOverlay.md)
     - [`dream2nix beta`](./options/dream2nix.md)
+    - [`emanote`](./options/emanote.md)
     - [`haskell-flake`](./options/haskell-flake.md)
     - [`hercules-ci-effects`](./options/hercules-ci-effects.md)
     - [`mission-control`](./options/mission-control.md)
