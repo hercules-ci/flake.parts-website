@@ -10,7 +10,6 @@
     haskell-flake.url = "github:srid/haskell-flake";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     mission-control.url = "github:Platonic-Systems/mission-control";
-    mission-control.inputs.nixpkgs.follows = "nixpkgs";
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
