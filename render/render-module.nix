@@ -67,6 +67,7 @@ in
           imports = modules ++ [
             fixups
           ];
+          systems = [ (throw "The `systems` option value is not available when generating documentation. This is generally caused by a missing `defaultText`. Please run this evaluation with `--show-trace`, look for `while evaluating the default value of option` and add a `defaultText` to the offending option.") ];
         };
 
       opts = eval.options;
