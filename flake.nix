@@ -100,7 +100,7 @@
         haskell-flake = {
           baseUrl = "https://github.com/srid/haskell-flake/blob/master";
           intro = ''
-            [`haskell-flake`](https://github.com/srid/haskell-flake) scans your flake files for Haskell projects and
+            [`haskell-flake`](https://haskell.flake.page/) scans your flake files for Haskell projects and
             turns them into packages using the Nixpkgs Haskell infrastructure.
 
             It also provides [`checks`](flake-parts.html#opt-perSystem.checks) and [`devShells`](flake-parts.html#opt-perSystem.devShells)
