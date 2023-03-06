@@ -12,6 +12,7 @@
   - [Options](./options/flake-parts.md)
     - [Core `flake-parts`](./options/flake-parts.md)
       - [`easyOverlay`](./options/flake-parts-easyOverlay.md)
+    - [`devshell`](./options/devshell.md)
     - [`dream2nix beta`](./options/dream2nix.md)
     - [`emanote`](./options/emanote.md)
     - [`haskell-flake`](./options/haskell-flake.md)
