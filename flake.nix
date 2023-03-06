@@ -9,6 +9,7 @@
     dream2nix.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix.url = "github:nix-community/dream2nix";
+    drv-parts.url = "github:roberth/drv-parts/docs";
     emanote.url = "github:srid/emanote";
     emanote.inputs.nixpkgs.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
@@ -69,6 +70,15 @@
           attributePath = [ "flakeModuleBeta" ];
           intro = ''
             [`dream2nix`](https://github.com/nix-community/dream2nix#readme) scans your flake files and turns them into packages.
+          '';
+        };
+
+        drv-parts = {
+          title = "drv-parts";
+          baseUrl = "https://github.com/roberth/drv-parts/blob/docs";
+          attributePath = [ "flakeModule" ];
+          intro = ''
+            A new way to define packages. Experimental.
           '';
         };
 

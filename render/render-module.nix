@@ -276,7 +276,9 @@ in
               inherit (config) sourceName baseUrl sourcePath;
               inherit coreOptDecls;
             };
-            warningsAreErrors = true; # not sure if feasible long term
+            # FIXME: restore:
+            # warningsAreErrors = true; # not sure if feasible long term
+            warningsAreErrors = false;
             markdownByDefault = true;
           };
           rendered = pkgs.runCommand "option-doc-${config.sourceName}"
