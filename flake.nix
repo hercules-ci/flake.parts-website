@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
 
+    devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
     dream2nix.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix.url = "github:nix-community/dream2nix";
@@ -25,6 +27,41 @@
   outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
       perSystem.render.inputs = {
+
+        devshell = {
+          title = "devshell";
+          baseUrl = "https://github.com/numtide/devshell/blob/main";
+          intro = ''
+            Simple per-project developer environments.
+
+            Example:
+
+            ```nix
+            perSystem = { config, pkgs, ... }: {
+              devshells.default = {
+                env = [
+                  {
+                    name = "HTTP_PORT";
+                    value = 8080;
+                  }
+                ];
+                commands = [
+                  {
+                    help = "print hello";
+                    name = "hello";
+                    command = "echo hello";
+                  }
+                ];
+                packages = [
+                  pkgs.cowsay
+                ];
+              };
+            };
+            ```
+
+            See also the [`devshell` project page](https://github.com/numtide/devshell)
+          '';
+        };
 
         dream2nix = {
           title = "dream2nix beta";
