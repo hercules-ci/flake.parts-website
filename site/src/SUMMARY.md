@@ -14,6 +14,7 @@
       - [`easyOverlay`](./options/flake-parts-easyOverlay.md)
     - [`devshell`](./options/devshell.md)
     - [`dream2nix beta`](./options/dream2nix.md)
+    - [`drv-parts`](./options/drv-parts.md)
     - [`emanote`](./options/emanote.md)
     - [`haskell-flake`](./options/haskell-flake.md)
     - [`hercules-ci-effects`](./options/hercules-ci-effects.md)
