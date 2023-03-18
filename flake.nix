@@ -34,7 +34,9 @@
           baseUrl = "https://github.com/cachix/devenv/blob/main";
           attributePath = [ "flakeModule" ];
           intro = ''
-            [`devenv`](https://devenv.sh) provides a devShell, with many options.
+            [`devenv`](https://devenv.sh) provides a devShell with many options, and container packages.
+
+            See also the [setup guide at devenv.sh](https://devenv.sh/guides/using-with-flake-parts/).
           '';
           killLinks = true;
         };
