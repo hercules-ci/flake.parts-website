@@ -260,6 +260,13 @@ in
             '';
           };
 
+          killLinks = mkOption {
+            type = types.bool;
+            default = false;
+            description = ''
+              Remove local anchor links, a workaround for proper {option}`` support in the doc tooling.
+            '';
+          };
         };
         config = {
           _nixosOptionsDoc = pkgs.nixosOptionsDoc {
@@ -286,6 +293,7 @@ in
               inherit (config) title preface;
             } ''
             xsltproc --stringparam title "$title" \
+              --stringparam killLinks '${lib.boolToString config.killLinks}' \
               -o options.db.xml ${./options.xsl} \
               "$inputDoc"
             mkdir $out
