@@ -227,11 +227,11 @@
         "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1679631209,
-        "narHash": "sha256-dC7r1tPNNQu62R8yWqJFw6cmOBEXdlO5YE71QHcXf5U=",
+        "lastModified": 1679677223,
+        "narHash": "sha256-faMXi46j71QvoQmPbUQ3kp/CCFmbRYgninYT4kCc3k8=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "56d9e582bdc2a6ddfb959758f495a484caa56d96",
+        "rev": "53611af00ca897d2e94346da6ac85ecc09877057",
         "type": "github"
       },
       "original": {
@@ -286,11 +286,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1679631209,
-        "narHash": "sha256-dC7r1tPNNQu62R8yWqJFw6cmOBEXdlO5YE71QHcXf5U=",
+        "lastModified": 1679674518,
+        "narHash": "sha256-vzklP/BKUn/qa2uDBOUIdbKs+B6+bPAuq0SCHYWbB5Y=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "56d9e582bdc2a6ddfb959758f495a484caa56d96",
+        "rev": "3b112c98b86b0565ddf9aff8ac2c158261fab941",
         "type": "github"
       },
       "original": {
@@ -315,11 +315,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1679549291,
-        "narHash": "sha256-I3kKsVZ6iuLpvSsR0ikKYMBjAMfnuQbeqt2rvHJRulc=",
+        "lastModified": 1679631398,
+        "narHash": "sha256-LmA1XEzVoJhtLA6GLuMTrnYM0/2piTxdWxKXCVLiaxw=",
         "owner": "davhau",
         "repo": "drv-parts",
-        "rev": "025af1da98fd81546bf2f81b1902d1df0b0e5f0c",
+        "rev": "2544be2a9e7c8f347a3af98ba0298f2ee9d3f0fa",
         "type": "github"
       },
       "original": {
@@ -828,11 +828,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1679327105,
-        "narHash": "sha256-y7XF3yhBuZGpHyKeU0oqTZGZ/Wk65jC/PZpMCA54+JU=",
+        "lastModified": 1679690126,
+        "narHash": "sha256-u6pQejlTLC1QSKLMB/8Ch+2VvgILlxuZsBHAbDn0zHM=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "a26aefdd56b813ba120240f09ad816f45a8fbfb3",
+        "rev": "d63943b612dbe30e2aba8aab0e60f1011c369973",
         "type": "github"
       },
       "original": {
@@ -952,11 +952,11 @@
     },
     "mission-control": {
       "locked": {
-        "lastModified": 1675195908,
-        "narHash": "sha256-nQv35C7svZFluwy2uoZFxwPqiT16XoKAoMlIQYmvg3A=",
+        "lastModified": 1679674077,
+        "narHash": "sha256-hGz63fsyRGthjE6LLqB08IHApcBvHhI87gWrFN/Uu5w=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "feb06872ac4dc977f70f6388c87d36fc3c3c3693",
+        "rev": "d07854a616f559370b71c1c440d916ab6869f084",
         "type": "github"
       },
       "original": {
@@ -1041,11 +1041,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1679638283,
-        "narHash": "sha256-VXIs3/lxlTwlxjO2TPcKakE0BxDGG8NHA0gQ12oqkfs=",
+        "lastModified": 1679674596,
+        "narHash": "sha256-duUGq+pdUHFqL/rlPYfHytFwsqjv6in429roB5kWxU0=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "4dcc8861cc4163fbb6f434eed883c2d8707f7a52",
+        "rev": "788064089df6c9f688962cea663572cf3f8ff196",
         "type": "github"
       },
       "original": {
@@ -1333,11 +1333,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1679646612,
-        "narHash": "sha256-X0gxW7NgUBZjACpt6cyyGPdkW7GEw8EA2n6pyCgTwWw=",
+        "lastModified": 1679690460,
+        "narHash": "sha256-2hhj3vcMGp0ydwio4vU7sp984iG1B4s01fSFdsnpquk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2111a1451816d9772096cf2c02bee6818afedbd5",
+        "rev": "977497735f17f21075625b1a2f8b98dd4d6f2a46",
         "type": "github"
       },
       "original": {
@@ -1669,11 +1669,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1679624733,
-        "narHash": "sha256-9ZUM3pRZWraicLAkAKRS125knJtWSKtrNXf72pOEP4I=",
+        "lastModified": 1679679543,
+        "narHash": "sha256-ThKVqj12qb3Cc4IwqI6KZQ8gk65tdWpCxbgObNpmWCw=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "4998395d6973665753ae15d4504e8582cb2727d9",
+        "rev": "b4b94b366de8c989909cfec7e1cc312618a0247c",
         "type": "github"
       },
       "original": {
