@@ -227,11 +227,11 @@
         "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1679993255,
-        "narHash": "sha256-PSbuA/Sac5xML/18mICp5uVfyIldvCpDY48jaapJbWs=",
+        "lastModified": 1679994139,
+        "narHash": "sha256-97t86N4SMPLOWcd+JberJ7JkiSvPbZw79El+U71j7sc=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "10c4e9d793072354041e38b730355ea69476bfa2",
+        "rev": "3bca398d9d8d8a91c6cfa33c9d39a8d8fc415e76",
         "type": "github"
       },
       "original": {
@@ -1333,11 +1333,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1679993240,
-        "narHash": "sha256-GyDHEzsexObb4fbaXlezqtusQAP9EEZ8Ek2xOB00JqY=",
+        "lastModified": 1680035241,
+        "narHash": "sha256-Mu14FSi5+i+7kiS9/BS/r3r76EDhJZ3xreoLoF7n0u0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ebc32dda78447c2a969cd301ca50ac2892b05c74",
+        "rev": "7a25cbdf711c9886c315b3c1ce61c2f438a4fd91",
         "type": "github"
       },
       "original": {
@@ -1669,11 +1669,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1679693874,
-        "narHash": "sha256-rMLgHkT/9Pe9gJVREjxSSqrvQuTuqdkJiNunzKQSIwY=",
+        "lastModified": 1680033732,
+        "narHash": "sha256-QNRFhF00pRoYKdpYrBKp9RhrXXr7yUNHutn2GrvP3nA=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "03357883b97482cc033aee77e8f4bb96a664e83b",
+        "rev": "b553795c95bcffac795ac48f3c6a0d3c073924a9",
         "type": "github"
       },
       "original": {
