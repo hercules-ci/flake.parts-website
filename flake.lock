@@ -903,11 +903,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1680963459,
-        "narHash": "sha256-amqQMQi8D8dACHR717LcZ3X51Vg4UJqHtlQLJbCjV8c=",
+        "lastModified": 1681218658,
+        "narHash": "sha256-pamV05vdcTQUk3q2Q6y5ez6e9u+h3mLcx520KEFQ0wY=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "c74e7c596792e0baf5cd22a9fd0f213e05679b7a",
+        "rev": "de35e3189e4515bbc1ce39351cae63526e155414",
         "type": "github"
       },
       "original": {
@@ -1408,11 +1408,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1681202481,
-        "narHash": "sha256-U+3PZowKA9AAn+GZC2D0c23APQpFL6wD+c4Ur68Ao3c=",
+        "lastModified": 1681246058,
+        "narHash": "sha256-onhvSIIO+ncmAp4a2KKFIf0viwwkxkFzJJCxKz+Z2yE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "412a5ee6cb40e529094d0bb70dfa545297815e6a",
+        "rev": "01e82e979136a3115d1b3c860b0fa7e10d1e5938",
         "type": "github"
       },
       "original": {
@@ -1686,11 +1686,11 @@
         "nixpkgs-stable": "nixpkgs-stable_3"
       },
       "locked": {
-        "lastModified": 1680981441,
-        "narHash": "sha256-Tqr2mCVssUVp1ZXXMpgYs9+ZonaWrZGPGltJz94FYi4=",
+        "lastModified": 1681227715,
+        "narHash": "sha256-kQZOoTa177VF5uk1JK7bA9ZTU5g6d5IuDp/6YdxUWao=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "2144d9ddcb550d6dce64a2b44facdc8c5ea2e28a",
+        "rev": "c77e64a5adab96866ea97449a5a7a327d4629828",
         "type": "github"
       },
       "original": {
