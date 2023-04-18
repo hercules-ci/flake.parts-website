@@ -1409,11 +1409,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1681806583,
-        "narHash": "sha256-pv1D7DJJHNOGwBl99NLSX/Ezrjwpp/DNbizgDTh57TU=",
+        "lastModified": 1681850570,
+        "narHash": "sha256-WsbKHJaied8ih+Vf/GAIU24pLiIgoVsL06hKa88hZL8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "660b0645ea4f9fde0e6a0d2540df9ef6f66b563a",
+        "rev": "f49a8a5647c47efb960c1831e60f39d86f0df02b",
         "type": "github"
       },
       "original": {
@@ -1571,15 +1571,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1681695765,
-        "narHash": "sha256-XixzZ+rSjY08yWcpqXk4/ts8+hjZgPrdHFW67KTOkE0=",
+        "lastModified": 1681847764,
+        "narHash": "sha256-mdd7PJW1BZvxy0cIKsPfAO+ohVl/V7heE5ZTAHzTdv8=",
         "owner": "paisano-nix",
         "repo": "tui",
-        "rev": "ad7ba7a1cbc0302103a25d1262c9eb55c0939223",
+        "rev": "3096bad91cae73ab8ab3367d31f8a143d248a244",
         "type": "github"
       },
       "original": {
         "owner": "paisano-nix",
+        "ref": "0.1.1",
         "repo": "tui",
         "type": "github"
       }
@@ -1687,11 +1688,11 @@
         "nixpkgs-stable": "nixpkgs-stable_3"
       },
       "locked": {
-        "lastModified": 1681413034,
-        "narHash": "sha256-/t7OjNQcNkeWeSq/CFLYVBfm+IEnkjoSm9iKvArnUUI=",
+        "lastModified": 1681831107,
+        "narHash": "sha256-pXl3DPhhul9NztSetUJw2fcN+RI3sGOYgKu29xpgnqw=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "d3de8f69ca88fb6f8b09e5b598be5ac98d28ede5",
+        "rev": "b7ca8f6fff42f6af75c17f9438fed1686b7d855d",
         "type": "github"
       },
       "original": {
@@ -1857,11 +1858,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1681752944,
-        "narHash": "sha256-b2YG5sA0CsbsfdOfp010wt2rBnD2kt31hDPvBhnDrZk=",
+        "lastModified": 1681848057,
+        "narHash": "sha256-my6rAR3OjJc/HQLLhD7haKgO7VwLkSvD9U7IIbINsnY=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "33be14a48ffc9daea706acea51a7a8f557798692",
+        "rev": "aa8e3be90326f76a09bed625a77a532bd3a10da7",
         "type": "github"
       },
       "original": {
