@@ -121,7 +121,38 @@
             baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${sourceSubpath}";
             getModules = f: [ f.flakeModules.easyOverlay ];
             intro = ''
-              Derives a default overlay from `perSystem.packages`.
+              ## WARNING
+
+              This module does NOT make _consuming_ an overlay easy. This module is intended for _creating_ overlays.
+              While it is possible to consume the overlay created by this module using the `final` module argument, this is somewhat unconventional. Instead:
+
+              - _Avoid_ overlays. Many flakes can do without them.
+              - Initialize `pkgs` yourself:
+                ```
+                perSystem = { system, ... }: {
+                  _module.args.pkgs = import inputs.nixpkgs {
+                    inherit system;
+                    overlays = [ (prev: final: {
+                      # ... things you really need to patch ...
+                    }) ];
+                    config = { };
+                  };
+                };
+                ```
+
+              ## Who this is for
+
+              This module is for flake authors who need to provide a simple overlay in addition to the common flake attributes. It is not for users who want to consume an overlay.
+
+              ## What it actually does
+
+              This module overrides the `pkgs` module argument and provides the `final` module argument so that the `perSystem` module can be evaluated as an overlay. Attributes added by the overlay must be defined in `overlayAttrs`. The resulting overlay is defined in the `overlays.default` output.
+
+              The resulting behavior tends to be not 100% idiomatic. A hand-written overlay would usually use `final` more often, but nonetheless it gets the job done for simple use cases; certainly the simple use cases where overlays aren't strictly necessary.
+
+              ## The status of this module
+
+              It has an unfortunate name and may be renamed. Alternatively, its functionality may be moved out of flake-parts, into some Nixpkgs module. Certainly until then, feel free to use the module if you understand what it does.
             '';
             installationDeclareInput = false;
             attributePath = [ "flakeModules" "easyOverlay" ];
