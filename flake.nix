@@ -132,7 +132,7 @@
                 perSystem = { system, ... }: {
                   _module.args.pkgs = import inputs.nixpkgs {
                     inherit system;
-                    overlays = [ (prev: final: {
+                    overlays = [ (final: prev: {
                       # ... things you really need to patch ...
                     }) ];
                     config = { };
