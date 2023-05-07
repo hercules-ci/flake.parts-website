@@ -6,6 +6,7 @@
 - [Overlays](./overlays.md)
 - [Explore and debug option values](./debug.md)
 - [Define Custom Flake Attribute](./define-custom-flake-attribute.md)
+- [Best Practices for Module Writing](./best-practices-for-module-writing.md)
 - [Reference Documentation](./module-arguments.md)
   - [Module Arguments](./module-arguments.md)
   - [Getting Things](./getting-things.md)
