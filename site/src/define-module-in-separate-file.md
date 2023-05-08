@@ -77,3 +77,7 @@ in
   flake.nixosModules.default = importApply ./nixos-module.nix { localFlake = self; inherit withSystem; };
 }
 ```
+
+## See Also
+
+ - [Dogfooding a Reusable Flake Module](dogfood-a-reusable-module.md), which helps avoid an infinite recursion.

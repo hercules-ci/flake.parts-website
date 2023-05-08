@@ -42,7 +42,7 @@ Instead of the arrows joining at the file name, we'll need a `let` binding.
 
 ## Example with `importApply`
 
-Here's an example of how this looks using the `importApply` technique.
+Here's an example of how this looks using the [`importApply` technique](define-module-in-separate-file.md#importapply).
 This flake shows how to export a flake module that references its own flake, instead of just the user's flake (which would be available in the module arguments).
 The example only demonstrates the principle, by reexporting a locally defined package in the user's flake.
 
@@ -93,3 +93,5 @@ localFlake:
   };
 }
 ```
+
+The ["Factor it out" technique](define-module-in-separate-file.md#factor-it-out) is equally applicable; replace `importApply` by an inline module.
