@@ -45,7 +45,7 @@ Enter the scope of a system. Worked example:
 {
   # perSystem = ...;
 
-  nixosConfigurations.foo = withSystem "x86_64-linux" (ctx@{ pkgs, ... }:
+  flake.nixosConfigurations.foo = withSystem "x86_64-linux" (ctx@{ pkgs, ... }:
     pkgs.nixos ({ config, lib, packages, pkgs, ... }: {
       _module.args.packages = ctx.config.packages;
       imports = [ ./nixos-configuration.nix ];
