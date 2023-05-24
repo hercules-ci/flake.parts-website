@@ -38,22 +38,36 @@ global variables.
 
 ## `withSystem`
 
-Enter the scope of a system. Worked example:
+Enter the scope of a system. Example:
 
 ```nix
-{ withSystem, ... }:
+{ withSystem, inputs, ... }:
 {
-  # perSystem = ...;
+  # perSystem = { ... }: { config.packages.hello = ...; };
 
-  nixosConfigurations.foo = withSystem "x86_64-linux" (ctx@{ pkgs, ... }:
-    pkgs.nixos ({ config, lib, packages, pkgs, ... }: {
-      _module.args.packages = ctx.config.packages;
-      imports = [ ./nixos-configuration.nix ];
-      services.nginx.enable = true;
-      environment.systemPackages = [
-        packages.hello
+  flake.nixosConfigurations.foo = withSystem "x86_64-linux" (ctx@{ config, inputs', ... }:
+    inputs.nixpkgs.lib.nixosSystem {
+      # Expose `packages`, `inputs` and `inputs'` as module arguments.
+      # Use specialArgs permits use in `imports`.
+      # Note: if you publish modules for reuse, do not rely on specialArgs, but
+      # on the flake scope instead. See also https://flake.parts/define-module-in-separate-file.html
+      specialArgs = {
+        packages = config.packages;
+        inherit inputs inputs';
+      };
+      modules = [
+        # This module could be moved into a separate file; otherwise we might
+        # as well have used ctx.config.packages directly.
+        ({ config, lib, packages, pkgs, ... }: {
+          imports = [ ./nixos-configuration.nix ];
+          services.nginx.enable = true;
+          environment.systemPackages = [
+            # hello package defined in perSystem
+            packages.hello
+          ];
+        })
       ];
-    }));
+    });
 }
 ```
 
