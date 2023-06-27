@@ -1141,11 +1141,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1687855684,
-        "narHash": "sha256-6DLWA+Zr6pV6jkeJnaAmjeyDPPNFIZL3yrNwK5+yfSE=",
+        "lastModified": 1687898314,
+        "narHash": "sha256-B4BHon3uMXQw8ZdbwxRK1BmxVOGBV4viipKpGaIlGwk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c9824ffab202aa125cceacfe627f599e15439e12",
+        "rev": "e18dc963075ed115afb3e312b64643bf8fd4b474",
         "type": "github"
       },
       "original": {
@@ -1230,11 +1230,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1687475968,
-        "narHash": "sha256-tFrPoD24Ph6VZjgmL3J4ICDWY6W/DnnHyupWeAL3Lw8=",
+        "lastModified": 1687538786,
+        "narHash": "sha256-/v5uoRyVSQurJ6W4Zad7vWpdUN+9AO4wm+lv5hgNGwA=",
         "owner": "paisano-nix",
         "repo": "core",
-        "rev": "9954e48e1ebc74a698b9d4ac02aee85514fc0237",
+        "rev": "9683ecfbc05f8c86396f0284d7125fe1567cd8d0",
         "type": "github"
       },
       "original": {
@@ -1466,14 +1466,18 @@
         "nixpkgs": "nixpkgs_6",
         "paisano": "paisano",
         "paisano-tui": "paisano-tui",
+        "terranix": [
+          "std",
+          "blank"
+        ],
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1687849768,
-        "narHash": "sha256-Iumvy6UR7NOVVgoiN8n2y7lY0BCKvGjMGspymWw8dDY=",
+        "lastModified": 1687893349,
+        "narHash": "sha256-Byu7rGfgT6ARj6dPLAOROm7qgaZg+RquIaD6B6LiuLo=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "53a321136cadb53316c129d7a5bdcd12d46b1bd7",
+        "rev": "e0cde0457aa3a2050022f3f519ddfecb01ef0445",
         "type": "github"
       },
       "original": {
