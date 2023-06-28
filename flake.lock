@@ -126,11 +126,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1687940098,
-        "narHash": "sha256-PKFsoE0jM78GEzFYQuqKc2IaNqufjjpZbGM9GxuPJmg=",
+        "lastModified": 1687944744,
+        "narHash": "sha256-4ZtRVG/5yWHPZpkit1Ak5Mo1DDnkx1AG1HpNu/P+n5U=",
         "owner": "numtide",
         "repo": "devshell",
-        "rev": "9585c291631056f4be256dacd41fba034ec2a51f",
+        "rev": "3864857b2754ab0e16c7c7c626f0e5a1d4e42f38",
         "type": "github"
       },
       "original": {
@@ -398,11 +398,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1687816035,
-        "narHash": "sha256-stnMN3XXO+YwNsNymCCaz3pjL9N79IJIbbDmLpBBOHY=",
+        "lastModified": 1687979624,
+        "narHash": "sha256-KQBgsW3IeffOKjVritDVg55Y0au/K6uYHD7fxdL7o2o=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "3f33109f5496fa1c75ba5fac7e46658fec18e7c4",
+        "rev": "7baf5ee9db3031d2dc1a6a530c9a161712822a0f",
         "type": "github"
       },
       "original": {
@@ -725,11 +725,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1687796506,
-        "narHash": "sha256-xvqRg4bNyyxMcRQ3cMerz4Ee7Gr3z+BDuBMG6OYQm3Y=",
+        "lastModified": 1687970128,
+        "narHash": "sha256-VB8NboX9jKJvw0UyEsU/X+swFKM5vUexPn0cuH3qBHk=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "658dfcf5b097f8c26400b7c2092b30ccc7f078f2",
+        "rev": "4217ce42fef4cba0dc5d98b916320985a7476393",
         "type": "github"
       },
       "original": {
@@ -1141,11 +1141,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1687941968,
-        "narHash": "sha256-bpmGMsqzD2xEqZBryZyqCfLIBi80vM2UQYJSPFxeWoE=",
+        "lastModified": 1687985252,
+        "narHash": "sha256-e+nW73feyE93RxshKDYzwN1WB2chhuN/uTXasO64Jes=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7b68b7245925e9f30440d72453ced3659db5a584",
+        "rev": "717c5dc77712cf8c609e3549bee8f4a714a95142",
         "type": "github"
       },
       "original": {
@@ -1473,11 +1473,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1687933322,
-        "narHash": "sha256-N+EkCcdzStdukBlCCzERL1UAFsKQFD1b0gSVAmTMLVo=",
+        "lastModified": 1687984367,
+        "narHash": "sha256-no/kuAS3mzX7vkLW2obwA5ISqY6whDsq/JTis4lzHnk=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "f54da22d93407f3a2531a7e42d447f11d97e09b4",
+        "rev": "c95ae2e11c937484490158722f5a05547e5c4940",
         "type": "github"
       },
       "original": {
