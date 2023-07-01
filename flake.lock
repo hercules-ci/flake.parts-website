@@ -210,11 +210,11 @@
         "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1688047181,
-        "narHash": "sha256-ozYi4fLAkEag798m0wy+VTsNLAOxgJ5F31kKZ0m3W5k=",
+        "lastModified": 1688239720,
+        "narHash": "sha256-567cSK+BetmKb2FKo660VjZR4RM05+X3iVYDBJ/F4H0=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "429171bd077399002470266b8c6244b60b511cf4",
+        "rev": "76fba001f31eb561ef62470a49e0ea9f65aab923",
         "type": "github"
       },
       "original": {
@@ -931,11 +931,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1688191886,
-        "narHash": "sha256-9MTlnFUSSWkpC+nZ4INMcEfCbruEgneMppvFerIZ1SY=",
+        "lastModified": 1688233720,
+        "narHash": "sha256-OjV/taTMQdnQBoY2BKkeuT+gd7xAJl51TUsgvHu+f1A=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "032a1e2870a992db92700d74e9438b2c3676a690",
+        "rev": "003448403a8ea6657070347488fd066763015640",
         "type": "github"
       },
       "original": {
@@ -1141,11 +1141,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1688200623,
-        "narHash": "sha256-RMIBOaRr7pd5fa3gQZIeQDqVQoZNHBzzJrer7G7EYGw=",
+        "lastModified": 1688244455,
+        "narHash": "sha256-S3hloVmtzepusU2fu6w+BnPSN3MZtI0EsGTjxACuLUo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e8f97f0ff1bc062c28dedb278ff004ee73154417",
+        "rev": "89d7ff1f38871c861d0052d06b8e1415eee779ed",
         "type": "github"
       },
       "original": {
