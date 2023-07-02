@@ -1,10 +1,10 @@
 
-# Getting Things
+# Cheat Sheet
 
 Flake-parts offers a couple of ways to access the same thing. This gives you
 freedom to pick the most convenient syntax for a use case.
 
-This page is like a cheat sheet, for you to get a feel for what's what.
+This page is for you to get a feel for what's what.
 
 ## Get a locally defined package
 
