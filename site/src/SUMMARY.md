@@ -4,7 +4,7 @@
 - [Getting Started](./getting-started.md)
 - [Cheat Sheet](./cheat-sheet.md)
 - [Tutorials]()
-  - [Best Practices for Module Writing](./best-practices-for-module-wrciting.md)
+  - [Best Practices for Module Writing](./best-practices-for-module-writing.md)
   - [Multi-platform: Working with `system`](./system.md)
 - [Guides]()
   - [Explore and debug option values](./debug.md)
