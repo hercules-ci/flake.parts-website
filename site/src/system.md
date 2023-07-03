@@ -1,5 +1,5 @@
 
-# `system`
+# Multi-platform: `system`
 
 In Nix, "system" generally refers to the cpu-os string, such as `"x86_64-linux"`.
 

@@ -60,6 +60,7 @@
           done
           mdbook build --dest-dir $TMPDIR/out
           cp -r $TMPDIR/out/html $out
+          cp _redirects $out
 
           echo '<html><head><script>window.location.pathname = window.location.pathname.replace(/options.html$/, "") + "options/flake-parts.html"</script></head><body><a href="options/flake-parts.html">to the options</a></body></html>' \
             >$out/options.html
