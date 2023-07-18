@@ -210,11 +210,11 @@
         "pruned-racket-catalog": "pruned-racket-catalog"
       },
       "locked": {
-        "lastModified": 1689238342,
-        "narHash": "sha256-KveoWI7Dqynk7in+zTESQ2lHn98OSdXib/yDmufYqmc=",
+        "lastModified": 1689701105,
+        "narHash": "sha256-LbqkAkLlKvdh/Xb9FvyKAGJbBRuTXOAq6unco/RifD4=",
         "owner": "nix-community",
         "repo": "dream2nix",
-        "rev": "3802b906b4107e2d8bedc292d9c43779c4b4ec47",
+        "rev": "c9c8689f09aa95212e75f3108788862583a1cf5a",
         "type": "github"
       },
       "original": {
@@ -394,11 +394,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1689646127,
-        "narHash": "sha256-7cao+XhqZoQkvOT2edu7+7lsEwKG001J/2axp3S3XFU=",
+        "lastModified": 1689693248,
+        "narHash": "sha256-OV51NIumOXjUpFERtucO5vfL51oFDzQS4+IP8f2R59E=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "34412693d180b9da51109e204d19800f2655843c",
+        "rev": "c2ede735dcba11daff6c6dd30c39e0aef4ecee9b",
         "type": "github"
       },
       "original": {
@@ -721,11 +721,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1689107492,
-        "narHash": "sha256-lmiJka/2cxlX6XtFQVbgqH95cf2VPbAsFdGwaH0j82M=",
+        "lastModified": 1689690087,
+        "narHash": "sha256-9eEr122CW/zyPtRlnRgn702FE/K59zWPNWx7/A7BlAU=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "815315c0c1ffb3d5c54d0868fb7f7fd6987d8cde",
+        "rev": "cfa163d0573c6e2d987bb1e5719b5b80b3e59285",
         "type": "github"
       },
       "original": {
