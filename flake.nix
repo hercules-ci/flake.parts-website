@@ -7,9 +7,9 @@
     devenv.url = "github:hercules-ci/devenv/flake-module";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
-    dream2nix.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
-    dream2nix.inputs.nixpkgs.follows = "nixpkgs";
-    dream2nix.url = "github:nix-community/dream2nix";
+    dream2nix_legacy.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
+    dream2nix_legacy.inputs.nixpkgs.follows = "nixpkgs";
+    dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
     emanote.url = "github:srid/emanote";
     emanote.inputs.nixpkgs.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
@@ -17,6 +17,7 @@
     mission-control.url = "github:Platonic-Systems/mission-control";
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
+    nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
@@ -77,11 +78,27 @@
         };
 
         dream2nix = {
-          title = "dream2nix beta";
-          baseUrl = "https://github.com/nix-community/dream2nix/blob/master";
+          title = "dream2nix";
+          baseUrl = "https://github.com/nix-community/dream2nix/blob/main";
+          flakeRef = "github:nix-community/dream2nix";
+          intro = ''
+            This page is a placeholder while dream2nix v1 is in the works.
+            See [dream2nix_legacy](./dream2nix_legacy.html) for the previous API.
+          '';
+          installation = "";
+          attributePath = [ "modules" "flake-parts" "all-modules" ];
+          flake = { modules.flake-parts.all-modules = { }; outPath = "/x"; };
+        };
+
+        dream2nix_legacy = {
+          title = "dream2nix legacy";
+          baseUrl = "https://github.com/nix-community/dream2nix/blob/c9c8689f09aa95212e75f3108788862583a1cf5a";
+          flakeRef = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
           attributePath = [ "flakeModuleBeta" ];
           intro = ''
             [`dream2nix`](https://github.com/nix-community/dream2nix#readme) scans your flake files and turns them into packages.
+
+            NOTE: a new version of dream2nix, v1, is in the works, and we're figuring out how best to use it.
           '';
         };
 
