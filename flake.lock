@@ -806,11 +806,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1690092640,
-        "narHash": "sha256-mr9Far3Vag29bpnyDAhpOzUN8vliTkcvaTdeyTDPtws=",
+        "lastModified": 1690179108,
+        "narHash": "sha256-67exEVPdrB6mHYatomoTwMaBqix4T0fCb4zbXdCD3ZA=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "aebcd72d7ab60907367361eff9d8dba99301e7da",
+        "rev": "8817073d5eb70f04e411b936913dec5135e53db4",
         "type": "github"
       },
       "original": {
@@ -1281,11 +1281,11 @@
     "rust-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1690079014,
-        "narHash": "sha256-xLgQEfdb6LAzpwaLqNl1EIk1sl7jC85zVt0aVCVCv+o=",
+        "lastModified": 1690165277,
+        "narHash": "sha256-P3X8iSAu12z+UFxquuntZnR8sXjKwgYHf0wTzgO8I7M=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "c707d9606ff9acea7f9508f5ad8218e36a96b126",
+        "rev": "317c523c09218f27f1da1ec0d06bbd2cbc0c1939",
         "type": "github"
       },
       "original": {
