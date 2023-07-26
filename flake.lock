@@ -598,11 +598,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1689950301,
-        "narHash": "sha256-sUYqHggNUIMuBVOsRoseBn3/tx58yMnMvOM31Rqf9dU=",
+        "lastModified": 1690398210,
+        "narHash": "sha256-1wnx2K3U2xmUI5rUulOZ66tcIva+OGWS47dyHdZJjsA=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "92aabc529c4487960c14016b65b3ac7e7e159b13",
+        "rev": "d3c8d8be31d3a5dcf9d49e9dacfc570b5c736658",
         "type": "github"
       },
       "original": {
@@ -740,11 +740,11 @@
     },
     "mission-control": {
       "locked": {
-        "lastModified": 1689802645,
-        "narHash": "sha256-USdf0MXZlllulmqhcqcLFQTt5FK1Lx3lQ7gxyZkz7Pk=",
+        "lastModified": 1690396260,
+        "narHash": "sha256-k0oniPsCaacLdhaCyq/tm8mGPGwTpBhw9oMaU6FL7Bg=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "b48d201323df0ed2d4f05283139eaa6580ee7c39",
+        "rev": "db46f39d46aacc289e1b054d830c3fe8ffdb3451",
         "type": "github"
       },
       "original": {
@@ -1001,11 +1001,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1690179384,
-        "narHash": "sha256-+arbgqFTAtoeKtepW9wCnA0njCOyoiDFyl0Q0SBSOtE=",
+        "lastModified": 1690272529,
+        "narHash": "sha256-MakzcKXEdv/I4qJUtq/k/eG+rVmyOZLnYNC2w1mB59Y=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b12803b6d90e2e583429bb79b859ca53c348b39a",
+        "rev": "ef99fa5c5ed624460217c31ac4271cfb5cb2502c",
         "type": "github"
       },
       "original": {
