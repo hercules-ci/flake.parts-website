@@ -740,11 +740,11 @@
     },
     "mission-control": {
       "locked": {
-        "lastModified": 1690396260,
-        "narHash": "sha256-k0oniPsCaacLdhaCyq/tm8mGPGwTpBhw9oMaU6FL7Bg=",
+        "lastModified": 1690573269,
+        "narHash": "sha256-9NSmHRQvzBzfuKD3zHE2fM5xPa+hHSy7xcWQqZaCjFw=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "db46f39d46aacc289e1b054d830c3fe8ffdb3451",
+        "rev": "9d25d9f8d610916fc144f6afc1f064392fbeec1c",
         "type": "github"
       },
       "original": {
@@ -803,14 +803,15 @@
           "nixpkgs"
         ],
         "parts": "parts",
-        "rust-overlay": "rust-overlay"
+        "rust-overlay": "rust-overlay",
+        "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1690438256,
-        "narHash": "sha256-PoGNwt5LYNANaSQlHTcFVZxXnqapx/EfpspCy10nUrc=",
+        "lastModified": 1690697387,
+        "narHash": "sha256-4qqZljfGOmvuSZLwPTsb4SmM8yoc7p8zGKeRAF8ZtSg=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "c1f79e4779458cf4b86ccd9040a9a8936b2f0334",
+        "rev": "3b9d82612758f2ca515c3c04dd6164f8761169dc",
         "type": "github"
       },
       "original": {
@@ -1001,11 +1002,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1690272529,
-        "narHash": "sha256-MakzcKXEdv/I4qJUtq/k/eG+rVmyOZLnYNC2w1mB59Y=",
+        "lastModified": 1690640159,
+        "narHash": "sha256-5DZUYnkeMOsVb/eqPYb9zns5YsnQXRJRC8Xx/nPMcno=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ef99fa5c5ed624460217c31ac4271cfb5cb2502c",
+        "rev": "e6ab46982debeab9831236869539a507f670a129",
         "type": "github"
       },
       "original": {
@@ -1198,11 +1199,11 @@
         "nixpkgs-stable": "nixpkgs-stable_2"
       },
       "locked": {
-        "lastModified": 1689668210,
-        "narHash": "sha256-XAATwDkaUxH958yXLs1lcEOmU6pSEIkatY3qjqk8X0E=",
+        "lastModified": 1690743255,
+        "narHash": "sha256-dsJzQsyJGWCym1+LMyj2rbYmvjYmzeOrk7ypPrSFOPo=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "eb433bff05b285258be76513add6f6c57b441775",
+        "rev": "fcbf4705d98398d084e6cb1c826a0b90a91d22d7",
         "type": "github"
       },
       "original": {
@@ -1281,11 +1282,11 @@
     "rust-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1690424156,
-        "narHash": "sha256-Bpml+L280tHTQpwpC5/BJbU4HSvEzMvW8IZ4gAXimhE=",
+        "lastModified": 1690683485,
+        "narHash": "sha256-Sp/QpbMg86v12xhCsa6q0yTH8LYaJIcxzbf9LO1zFzM=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "f335a0213504c7e6481c359dc1009be9cf34432c",
+        "rev": "05d480a7aef1aae1bfb67a39134dcf48c5322528",
         "type": "github"
       },
       "original": {
@@ -1389,6 +1390,27 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "treefmt": {
+      "inputs": {
+        "nixpkgs": [
+          "nix-cargo-integration",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1689620039,
+        "narHash": "sha256-BtNwghr05z7k5YMdq+6nbue+nEalvDepuA7qdQMAKoQ=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "719c2977f958c41fa60a928e2fbc50af14844114",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
         "type": "github"
       }
     },
