@@ -807,11 +807,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1690697387,
-        "narHash": "sha256-4qqZljfGOmvuSZLwPTsb4SmM8yoc7p8zGKeRAF8ZtSg=",
+        "lastModified": 1690783874,
+        "narHash": "sha256-duAl0g5VBsam6oeeRfqWUrfGfauZvv3tukJ0JUaOw6s=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "3b9d82612758f2ca515c3c04dd6164f8761169dc",
+        "rev": "42c895e96279b18c53e636b930ab43332798f24c",
         "type": "github"
       },
       "original": {
