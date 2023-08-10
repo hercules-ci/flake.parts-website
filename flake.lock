@@ -284,14 +284,15 @@
           "nixpkgs"
         ],
         "systems": "systems_2",
-        "treefmt-nix": "treefmt-nix"
+        "treefmt-nix": "treefmt-nix",
+        "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1689693248,
-        "narHash": "sha256-OV51NIumOXjUpFERtucO5vfL51oFDzQS4+IP8f2R59E=",
+        "lastModified": 1691619634,
+        "narHash": "sha256-x/bviCfDcI84ocw2AtfdFV+i8HVeox5i4IU8s5xraic=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "c2ede735dcba11daff6c6dd30c39e0aef4ecee9b",
+        "rev": "c27a94c019dff1891b6efd4039fb7de2811c2066",
         "type": "github"
       },
       "original": {
@@ -807,11 +808,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1691561483,
-        "narHash": "sha256-xc984M4ljhMSRgV5/Nk6B9xSi6HdJl8tWQGSetA59j4=",
+        "lastModified": 1691647866,
+        "narHash": "sha256-YIgBDZHYs9ppRfujw2LjhrESbsozYru2mlmxDafBP3E=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "19b45f12314e4067b93a873ae134cec582431ffb",
+        "rev": "e2e9743717d86709deb706dc65faaa0ccd36d196",
         "type": "github"
       },
       "original": {
@@ -1282,11 +1283,11 @@
     "rust-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1691547503,
-        "narHash": "sha256-l0AIKJucygbDFc2vuAkxmFMjNNJImDd7jYahA88/E+o=",
+        "lastModified": 1691634013,
+        "narHash": "sha256-EYrZnyYO84mewPetfjxloLKq4WIwmsXUNWnaHhdeO/Y=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "3380f16b39457b49c8186d5e20e7a68ccf4fc96e",
+        "rev": "48f3d76f512c7267d82d84c5d3d156ad2b9a8d12",
         "type": "github"
       },
       "original": {
@@ -1450,6 +1451,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "unionmount": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691618817,
+        "narHash": "sha256-zAYuBtUbdEZGmUWbGZ1RP2yr3Yl3OCE7nofFoz+zumE=",
+        "owner": "srid",
+        "repo": "unionmount",
+        "rev": "5ee27a945cb20c0715904a14547cb7d9f178d078",
+        "type": "github"
+      },
+      "original": {
+        "owner": "srid",
+        "repo": "unionmount",
         "type": "github"
       }
     },
