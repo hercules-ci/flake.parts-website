@@ -599,11 +599,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1690398210,
-        "narHash": "sha256-1wnx2K3U2xmUI5rUulOZ66tcIva+OGWS47dyHdZJjsA=",
+        "lastModified": 1691763544,
+        "narHash": "sha256-QQsSI5VXm0bBijeGSXXNf4fyw76/XmN67NGbmTCx71s=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "d3c8d8be31d3a5dcf9d49e9dacfc570b5c736658",
+        "rev": "f16e7ac05b1f22b66ef05b7fcc8a96281bb2b749",
         "type": "github"
       },
       "original": {
@@ -1200,11 +1200,11 @@
         "nixpkgs-stable": "nixpkgs-stable_2"
       },
       "locked": {
-        "lastModified": 1691397944,
-        "narHash": "sha256-4fa4bX3kPYKpEssgrFRxRCPVXczidArDeSWaUMSzQAU=",
+        "lastModified": 1691747570,
+        "narHash": "sha256-J3fnIwJtHVQ0tK2JMBv4oAmII+1mCdXdpeCxtIsrL2A=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "e5588ddffd4c3578547a86ef40ec9a6fbdae2986",
+        "rev": "c5ac3aa3324bd8aebe8622a3fc92eeb3975d317a",
         "type": "github"
       },
       "original": {
@@ -1336,11 +1336,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1691742542,
-        "narHash": "sha256-6TAyG+swxqjKv+hhjrzIGEazOE+sjg6UpFdyLt1Fl5U=",
+        "lastModified": 1691752017,
+        "narHash": "sha256-x8FlxAeLX5Qs0W1auXq1jiD3SrtXg6MiDUu41S03DQg=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "ac0909bced2374c639081c7b8b90f661a0c83a16",
+        "rev": "c2652f26fabacd4952c801977e5882e734104652",
         "type": "github"
       },
       "original": {
