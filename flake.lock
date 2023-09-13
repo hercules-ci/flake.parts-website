@@ -146,8 +146,7 @@
         ],
         "nixlib": [
           "std",
-          "haumea",
-          "nixpkgs"
+          "lib"
         ],
         "yants": [
           "std",
@@ -723,8 +722,7 @@
       "inputs": {
         "nixlib": [
           "std",
-          "haumea",
-          "nixpkgs"
+          "lib"
         ]
       },
       "locked": {
@@ -738,6 +736,21 @@
       "original": {
         "owner": "divnix",
         "repo": "incl",
+        "type": "github"
+      }
+    },
+    "lib": {
+      "locked": {
+        "lastModified": 1694306727,
+        "narHash": "sha256-26fkTOJOI65NOTNKFvtcJF9mzzf/kK9swHzfYt1Dl6Q=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "c30b6a84c0b84ec7aecbe74466033facc9ed103f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
         "type": "github"
       }
     },
@@ -1343,6 +1356,7 @@
         "dmerge": "dmerge",
         "haumea": "haumea",
         "incl": "incl",
+        "lib": "lib",
         "makes": [
           "std",
           "blank"
@@ -1369,11 +1383,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1694017910,
-        "narHash": "sha256-GNMSHQ+bSGoZ8RO3ZVvxx7mAsKtKO3Vd8rHKcbSt+eg=",
+        "lastModified": 1694600221,
+        "narHash": "sha256-hNImDBC5KsQkoimwyxzmY2xQ1nTc20fK/3Bkfk3JdKE=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "676d8356a3c2d3bac7aa9e27508c2f6651cfbe0e",
+        "rev": "62db3df916295dfafda87ba23b14baed1a73e360",
         "type": "github"
       },
       "original": {
