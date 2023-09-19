@@ -79,6 +79,23 @@
         "type": "github"
       }
     },
+    "crane_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1686108916,
+        "narHash": "sha256-looLH5MdY4erLiJw0XwQohGdr0fJL9y6TJY3898RA2U=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "8ab1a49432695bd80ff4b7f6c6515da0e926d922",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "ref": "v0.12.2",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "devenv": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -845,6 +862,7 @@
     },
     "nix-cargo-integration": {
       "inputs": {
+        "crane": "crane_2",
         "dream2nix": [
           "dream2nix_legacy"
         ],
@@ -857,11 +875,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1695103872,
-        "narHash": "sha256-gctBKuZ8pLiFop3sr0ujx9tEQyA2v9MJkwm+2UV0Trc=",
+        "lastModified": 1695132573,
+        "narHash": "sha256-IBUHGlu7GngpOAl0S57qjLk9LakfGkLaBd6yhyFVxz8=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "e2bdb54304dd2d7fda34730052a524416270d82f",
+        "rev": "b009fba4e1644fe1ac9e9986a898a87f6128b853",
         "type": "github"
       },
       "original": {
