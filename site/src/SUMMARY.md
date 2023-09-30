@@ -19,6 +19,7 @@
     - [`flake-parts` (built in)](./options/flake-parts.md)
       - [`flakeModules`](./options/flake-parts-flakeModules.md)
       - [`easyOverlay` (warning)](./options/flake-parts-easyOverlay.md)
+    - [`agenix-shell`](./options/agenix-shell.md)
     - [`devenv`](./options/devenv.md)
     - [`devshell`](./options/devshell.md)
     - [`dream2nix`](./options/dream2nix.md)
