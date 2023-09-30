@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    agenix-shell.url = "github:aciceri/agenix-shell";
     devenv.url = "github:hercules-ci/devenv/flake-module";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
@@ -29,6 +30,18 @@
   outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
       perSystem.render.inputs = {
+
+        agenix-shell = {
+          title = "agenix-shell";
+          baseUrl = "https://github.com/aciceri/agenix-shell/blob/master";
+          attributePath = [ "flakeModules" "default" ];
+          intro = ''
+            [agenix-shell](https://github.com/aciceri/agenix-shell) is the [agenix](https://github.com/ryantm/agenix) counterpart for `devShell`.
+            It provides options used to define a `shellHook` that, when added to your `devShell`, automatically decrypts secrets and export them.
+
+            [Here](https://github.com/aciceri/agenix-shell/blob/master/templates/basic/flake.nix)'s a template you can start from.
+          '';
+        };
 
         devenv = {
           title = "devenv";
