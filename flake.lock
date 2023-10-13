@@ -912,11 +912,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1697177511,
-        "narHash": "sha256-nZGWB2U/ZZ3sCWUNPkyLvQhy6Bd2aeHljU6MgbarNnE=",
+        "lastModified": 1697220707,
+        "narHash": "sha256-hycPu8SirzPYwCzRJ89ardLvnTJ3oR1WuGtsE4GH67c=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "1e69be4959dab5bb820e31edfa8198e032026ca2",
+        "rev": "b5a5e688c26c11961f85cc66b25111b91d4eedb2",
         "type": "github"
       },
       "original": {
@@ -1141,11 +1141,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1696879762,
-        "narHash": "sha256-Ud6bH4DMcYHUDKavNMxAhcIpDGgHMyL/yaDEAVSImQY=",
+        "lastModified": 1697059129,
+        "narHash": "sha256-9NJcFF9CEYPvHJ5ckE8kvINvI84SZZ87PvqMbH6pro0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f99e5f03cc0aa231ab5950a15ed02afec45ed51a",
+        "rev": "5e4c2ada4fcd54b99d56d7bd62f384511a7e2593",
         "type": "github"
       },
       "original": {
