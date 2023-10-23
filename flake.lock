@@ -912,11 +912,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1697955033,
-        "narHash": "sha256-IflIstlnprNPkcXZABROiKRHYRV/ZG1FcwGusahKCrU=",
+        "lastModified": 1698041504,
+        "narHash": "sha256-KIEEBquM7mkrAA7uyf6wtfHaKLmMEIugh9stU261XkQ=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "49678f17d8ca9364043b680d42c0f921de080b9c",
+        "rev": "8d25cd32140b4edbfceb39051ff49eb0cea40b16",
         "type": "github"
       },
       "original": {
