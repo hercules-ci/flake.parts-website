@@ -11,6 +11,7 @@
   - [Define a Module in a Separate File](./define-module-in-separate-file.md)
   - [Define Custom Flake Attribute](./define-custom-flake-attribute.md)
   - [Dogfood a Reusable Flake Module](./dogfood-a-reusable-module.md)
+  - [System management with nix flakes](./nixos-flake.md)
 - [Explanation]()
   - [Overlays](./overlays.md)
 - [Reference Documentation]()

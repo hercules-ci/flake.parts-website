@@ -222,7 +222,7 @@
             getModules = f: [ f.flakeModules.flakeModules ];
             intro = ''
               Adds the `flakeModules` attribute and `flakeModule` alias.
-              
+
               This module makes deduplication and `disabledModules` work, even if the definitions are inline modules or [`importApply`](../define-module-in-separate-file.html#importapply).
             '';
             installationDeclareInput = false;
@@ -299,6 +299,19 @@
           '';
         };
 
+        nixos-flake = {
+          title = "nix-cargo-integration";
+          baseUrl = "https://github.com/srid/nixos-flake/blob/master";
+          intro = ''
+            A flake-parts module to manage NixOS and macOS machines, along with home-manager support, in a unified fashion
+          '';
+          installation = ''
+            ## Installation
+
+            See the [documentation](https://zero-to-flakes.com/nixos-flake).
+          '';
+        };
+
         pre-commit-hooks-nix = {
           baseUrl = "https://github.com/cachix/pre-commit-hooks.nix/blob/master";
           intro = ''
@@ -339,7 +352,7 @@
             Add definitions from the [Standard](https://github.com/divnix/std#readme) DevOps framework to your flake.
 
             It organizes and disciplines your Nix and thereby speeds you up.
-            It also comes with great horizontal integrations of high quality 
+            It also comes with great horizontal integrations of high quality
             vertical DevOps tooling crafted by the Nix Ecosystem.
           '';
         };
@@ -354,7 +367,7 @@
              - Cache which files have changed for super fast re-formatting.
              - Just type treefmt in any folder and it reformats the whole code tree.
 
-            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself. 
+            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself.
           '';
         };
 
