@@ -26,6 +26,9 @@
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
     process-compose-flake.url = "github:hercules-ci/process-compose-flake/fix-docs";
+    pydev.url = "github:oceansprint/pydev";
+    pydev.inputs.nixpkgs.follows = "nixpkgs";
+    pydev.inputs.pre-commit-hooks-nix.follows = "pre-commit-hooks-nix";
     std.url = "github:divnix/std";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
@@ -352,6 +355,14 @@
             Generates a wrapper for [process-compose](https://github.com/F1bonacc1/process-compose).
 
             See [process-compose-flake](https://github.com/Platonic-Systems/process-compose-flake) for a [usage example](https://github.com/Platonic-Systems/process-compose-flake#usage).
+          '';
+        };
+
+        pydev = {
+          title = "pydev";
+          baseUrl = "https://github.com/oceansprint/pydev/blob/main";
+          intro = ''
+            [pydev](https://github.com/oceansprint/pydev) is an opinionated environment for developing Python packages.
           '';
         };
 
