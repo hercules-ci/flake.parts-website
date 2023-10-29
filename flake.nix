@@ -19,6 +19,9 @@
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
     nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
+    ocaml-flake.url = "github:9glenda/ocaml-flake";
+    ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
+    ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
@@ -296,6 +299,25 @@
             ## Installation
 
             See the [readme](https://github.com/yusdacra/nix-cargo-integration#readme).
+          '';
+        };
+
+        ocaml-flake = {
+          title = "ocaml-flake";
+          baseUrl = "https://github.com/9glenda/ocaml-flake";
+          attributePath = [ "flakeModule" ];
+          intro = ''
+            [`ocaml-flake`](https://github.com/9glenda/ocaml-flake) uses [`opam-nix`](https://github.com/tweag/opam-nix) to build ocaml packages. The module structure is inspired by [`haskell-flake`](https://haskell.flake.page/).
+
+            Since the flake is fairly new future versions may introduce breaking changes.
+          '';
+          installation = ''
+            ## Installation
+            To initialize a new dune project using `ocaml-flake` simply run:
+            ```sh
+            nix flake init -t github:9glenda/ocaml-flake#simple
+            ```
+            This will set up a devshell and package for you.
           '';
         };
 
