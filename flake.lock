@@ -130,6 +130,28 @@
         "type": "github"
       }
     },
+    "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "ez-configs",
+          "nixpkgs-darwin"
+        ]
+      },
+      "locked": {
+        "lastModified": 1699437533,
+        "narHash": "sha256-lMoPz9c89CpPVuJ95OFFesM9JagCF0soGbQatj3ZhqM=",
+        "owner": "lnl7",
+        "repo": "nix-darwin",
+        "rev": "eb2b9b64238349bd351561e32e260cac15db6f9a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lnl7",
+        "ref": "master",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
     "devenv": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -353,6 +375,32 @@
         "type": "github"
       }
     },
+    "ez-configs": {
+      "inputs": {
+        "darwin": "darwin",
+        "flake-parts": "flake-parts_4",
+        "home-manager": "home-manager",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-darwin": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1699641582,
+        "narHash": "sha256-IXo/D8D0DehWeg0kHroURedmF3xDRl7+LDtj9Ihp3zU=",
+        "owner": "ehllie",
+        "repo": "ez-configs",
+        "rev": "d0c84aaf1f3240d4625b61341bd5af469a33da62",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ehllie",
+        "repo": "ez-configs",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -476,6 +524,27 @@
     },
     "flake-parts_4": {
       "inputs": {
+        "nixpkgs-lib": [
+          "ez-configs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1698882062,
+        "narHash": "sha256-HkhafUayIqxXyHH1X8d9RDl1M2CkFgZLjKD3MzabiEo=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "8c9fa2545007b49a5db5f650ae91f227672c3877",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_5": {
+      "inputs": {
         "nixpkgs-lib": "nixpkgs-lib_3"
       },
       "locked": {
@@ -491,7 +560,7 @@
         "type": "indirect"
       }
     },
-    "flake-parts_5": {
+    "flake-parts_6": {
       "inputs": {
         "nixpkgs-lib": [
           "hercules-ci-effects",
@@ -511,7 +580,7 @@
         "type": "indirect"
       }
     },
-    "flake-parts_6": {
+    "flake-parts_7": {
       "inputs": {
         "nixpkgs-lib": [
           "ocaml-flake",
@@ -532,7 +601,7 @@
         "type": "github"
       }
     },
-    "flake-parts_7": {
+    "flake-parts_8": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib_4"
       },
@@ -841,7 +910,7 @@
     },
     "hercules-ci-effects": {
       "inputs": {
-        "flake-parts": "flake-parts_5",
+        "flake-parts": "flake-parts_6",
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
@@ -855,6 +924,27 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "ez-configs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1699368917,
+        "narHash": "sha256-nUtGIWf86BOkUbtksWtfglvCZ/otP0FTZlQH8Rzc7PA=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "6a8444467c83c961e2f5ff64fb4f422e303c98d3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
         "type": "github"
       }
     },
@@ -1336,7 +1426,7 @@
     "ocaml-flake": {
       "inputs": {
         "call-flake": "call-flake",
-        "flake-parts": "flake-parts_6",
+        "flake-parts": "flake-parts_7",
         "flake-root": "flake-root_2",
         "haumea": "haumea",
         "mirage-opam-overlays": "mirage-opam-overlays",
@@ -1665,7 +1755,7 @@
     },
     "pydev": {
       "inputs": {
-        "flake-parts": "flake-parts_7",
+        "flake-parts": "flake-parts_8",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -1695,7 +1785,8 @@
         "devshell": "devshell",
         "dream2nix_legacy": "dream2nix_legacy",
         "emanote": "emanote",
-        "flake-parts": "flake-parts_4",
+        "ez-configs": "ez-configs",
+        "flake-parts": "flake-parts_5",
         "haskell-flake": "haskell-flake_2",
         "hercules-ci-effects": "hercules-ci-effects",
         "mission-control": "mission-control",

@@ -25,6 +25,7 @@
     - [`dream2nix`](./options/dream2nix.md)
     - [`dream2nix legacy`](./options/dream2nix_legacy.md)
     - [`emanote`](./options/emanote.md)
+    - [`ez-configs`](./options/ez-configs.md)
     - [`haskell-flake`](./options/haskell-flake.md)
     - [`hercules-ci-effects`](./options/hercules-ci-effects.md)
     - [`mission-control`](./options/mission-control.md)
