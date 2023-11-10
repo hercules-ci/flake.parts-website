@@ -13,6 +13,9 @@
     dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
     emanote.url = "github:srid/emanote";
     emanote.inputs.nixpkgs.follows = "nixpkgs";
+    ez-configs.url = "github:ehllie/ez-configs";
+    ez-configs.inputs.nixpkgs.follows = "nixpkgs";
+    ez-configs.inputs.nixpkgs-darwin.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     mission-control.url = "github:Platonic-Systems/mission-control";
@@ -133,6 +136,14 @@
             See
             [emanote-template](https://github.com/srid/emanote-template/blob/master/flake.nix)
             for an example `flake.nix`.
+          '';
+        };
+
+        ez-configs = {
+          baseUrl = "https://github.com/ehllie/ez-configs/blob/main";
+          intro = ''
+            [`ez-configs`](https://github.com/ehllie/ez-configs) lets you define multiple nixos,
+            darwin, and home manager configurations, and reuse common modules using your flake directory structure.
           '';
         };
 
