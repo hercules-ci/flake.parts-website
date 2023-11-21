@@ -361,11 +361,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700261309,
-        "narHash": "sha256-YaPfaNl8KSS0/tGKT6WO/UJ6xd/c4O13IrIERK0pFrM=",
+        "lastModified": 1700589218,
+        "narHash": "sha256-yyOvtPq25/oQP5Ka6z5tioso8GFmF6JBdM5CnCIrTbs=",
         "owner": "ehllie",
         "repo": "ez-configs",
-        "rev": "fd37acbb7db32e68c9fcf66a916eceb0b4754573",
+        "rev": "0d86a823297c1b0b4dcc8b75fea618ab347f637a",
         "type": "github"
       },
       "original": {
@@ -809,11 +809,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1700254486,
-        "narHash": "sha256-gpqFoePfu5wOgoLRwaFWQUP5vnCVvXVtxS9vAa8kVGc=",
+        "lastModified": 1700580977,
+        "narHash": "sha256-gNWKEYvyaHZjK41UGzQR0QYN/eplvWl6JDS3vHMJM9I=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "a3f6dbfeae83df600d23c7964279fa5b89c1f743",
+        "rev": "91c98bb0af0847f8d442ca474cd56ef5243ffbbc",
         "type": "github"
       },
       "original": {
@@ -1395,11 +1395,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700513744,
-        "narHash": "sha256-LyBL46Wwiv0+X1s1BF+huxa8rf8X7PFGbPHvnF+Gbe0=",
+        "lastModified": 1700589318,
+        "narHash": "sha256-2VXYRCRMlaFSm+dWnkmwva0AlAvQj7ZpwniHHmP5qv8=",
         "owner": "9glenda",
         "repo": "ocaml-flake",
-        "rev": "65e9dff2908d64fcc8b5d047925d2ba8f2519d75",
+        "rev": "3a4391911d7b178d13701536a5f9f0b8507a4591",
         "type": "github"
       },
       "original": {
