@@ -261,12 +261,13 @@ in
               Flake output attribute path to import.
             '';
             default = [ "flakeModule" ];
+            example = [ "flakeModules" "default" ];
           };
 
           rendered = mkOption {
             type = types.package;
             description = ''
-              Built Markdown docs.
+              A package containing the generated documentation page.
             '';
             readOnly = true;
           };
@@ -280,6 +281,8 @@ in
             default = false;
             description = ''
               Whether to include this in the main evaluation.
+
+              By default, all modules are evaluated together, except ones that enable this option.
             '';
           };
 
@@ -287,6 +290,8 @@ in
             default = filterTransformOptions;
             description = ''
               Function to customize the set of options to render for this input.
+
+              This is mostly for overriding the default behavior, which excludes the options of the flake-parts module itself, unless it's the flake-parts core itself that's being rendered.
             '';
           };
 
@@ -294,7 +299,7 @@ in
             type = types.bool;
             default = false;
             description = ''
-              Remove local anchor links, a workaround for proper {option}`` support in the doc tooling.
+              Remove local anchor links, a workaround for ```{option}`` ``` support with some sort of namespace handling in the doc tooling.
             '';
           };
         };

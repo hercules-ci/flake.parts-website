@@ -283,6 +283,8 @@
           intro = ''
             This module is used to build the flake.parts website.
 
+            Refer to the [Generate Documentation guide](../generate-documentation.md) for more information.
+
             Its interface is subject to change but moves slowly and changes should be simple.
           '';
           flake = { _type = "flake"; outPath = throw "nope"; flakeModules = publishedModules; };
