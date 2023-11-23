@@ -4,30 +4,24 @@
     /*
       Check the links, including anchors (not currently supported by mdbook)
 
-      Putting this in a separate check has the benefits that
-       - output can always be inspect with browser
-       - this slow check (1 minute) is not part of the iteration cycle
-
-      Ideally https://github.com/linkchecker/linkchecker/pull/661 is merged
-      upstream, so that it's quick and can run often without blocking the
-      iteration cycle unnecessarily.
+      Separate check so that output can always be inspected with browser.
     */
     checks.linkcheck = pkgs.runCommand "linkcheck"
       {
-        nativeBuildInputs = [ pkgs.linkchecker pkgs.python3 ];
+        nativeBuildInputs = [ pkgs.lychee ];
         site = config.packages.default;
+        config = (pkgs.formats.toml { }).generate "lychee.toml" {
+          include_fragments = true;
+          remap = [
+            "https://flake.parts file://${config.packages.default}"
+          ];
+        };
       } ''
-      # https://linkchecker.github.io/linkchecker/man/linkcheckerrc.html
-      cat >>$TMPDIR/linkcheckrc <<EOF
-      [checking]
-      threads=''${NIX_BUILD_CORES:-4}
-
-      [AnchorCheck]
-
-      EOF
-
       echo Checking $site
-      linkchecker -f $TMPDIR/linkcheckrc $site/
+      lychee --offline --config $config $site || {
+        # When verbose (-v), https://github.com/NixOS/nix/issues/10289
+        r=$?; sleep 1; return $r;
+      }
 
       touch $out
     '';
