@@ -345,5 +345,11 @@
       };
 
       flake.flakeModules = publishedModules;
+      flake.templates = {
+        private-site = {
+          path = ./templates/private-site;
+          description = "Reuse flake.parts-website to build your own documentation website";
+        };
+      };
     });
 }

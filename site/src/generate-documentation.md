@@ -76,3 +76,7 @@ If you're still getting an error, or a bad output, consider opening a draft PR.
 
 The `flake.parts-website` flake exposes modules for reuse in your own flake, and could be used to internally publish documentation for private modules.
 These modules are subject to change, but also slow moving.
+
+```console
+$ nix flake init -t flake.parts-website#private-site
+```
