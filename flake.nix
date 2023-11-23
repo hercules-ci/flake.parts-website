@@ -37,6 +37,18 @@
   };
 
   outputs = inputs@{ flake-parts, ... }:
+    let
+      publishedModules = {
+        empty-site = {
+          imports = [
+            ./render/render-module.nix
+            ./site/site-module.nix
+            ./core-modules.nix
+          ];
+          perSystem.render.officialFlakeInputs = inputs;
+        };
+      };
+    in
     flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
       perSystem.render.inputs = {
 
@@ -103,13 +115,15 @@
           title = "dream2nix";
           baseUrl = "https://github.com/nix-community/dream2nix/blob/main";
           flakeRef = "github:nix-community/dream2nix";
+          # FIXME all below
           intro = ''
-            This page is a placeholder while dream2nix v1 is in the works.
+            This page is a placeholder while dream2nix v2 is in the works.
             See [dream2nix_legacy](./dream2nix_legacy.html) for the previous API.
           '';
           installation = "";
           attributePath = [ "modules" "flake-parts" "all-modules" ];
           flake = { modules.flake-parts.all-modules = { }; outPath = "/x"; };
+          isEmpty = true;
         };
 
         dream2nix_legacy = {
@@ -147,125 +161,20 @@
           '';
         };
 
-        flake-parts = {
-          title = "Core Options";
-          baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main";
-          getModules = _: [ ];
+        "flake.parts-website" = {
+          baseUrl = "https://github.com/hercules-ci/flake.parts-website/blob/main";
           intro = ''
-            These options are provided by default. They reflect what Nix expects,
-            plus a small number of helpful options, notably [`perSystem`](#opt-perSystem).
+            This module is used to build the flake.parts website.
+
+            Refer to the [Generate Documentation guide](../generate-documentation.md) for more information.
+
+            Its interface is subject to change but moves slowly and changes should be simple.
           '';
-          installation = "";
+          flake = { _type = "flake"; outPath = throw "nope"; flakeModules = publishedModules; };
+          attributePath = [ "flakeModules" "empty-site" ];
+          getModules = _: [ publishedModules.empty-site ];
+          sourcePath = builtins.path { name = "source"; path = ./.; };
         };
-
-        flake-parts-easyOverlay =
-          let sourceSubpath = "/extras/easyOverlay.nix";
-          in
-          {
-            _module.args.name = lib.mkForce "flake-parts";
-            flake = inputs.flake-parts;
-            title = "flake-parts.easyOverlay";
-            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${sourceSubpath}";
-            getModules = f: [ f.flakeModules.easyOverlay ];
-            intro = ''
-              ## WARNING
-
-              This module does NOT make _consuming_ an overlay easy. This module is intended for _creating_ overlays.
-              While it is possible to consume the overlay created by this module using the `final` module argument, this is somewhat unconventional. Instead:
-
-              - _Avoid_ overlays. Many flakes can do without them.
-              - Initialize `pkgs` yourself:
-                ```
-                perSystem = { system, ... }: {
-                  _module.args.pkgs = import inputs.nixpkgs {
-                    inherit system;
-                    overlays = [
-                      inputs.foo.overlays.default
-                      (final: prev: {
-                        # ... things you really need to patch ...
-                      })
-                    ];
-                    config = { };
-                  };
-                };
-                ```
-
-              ## Who this is for
-
-              This module is for flake authors who need to provide a simple overlay in addition to the common flake attributes. It is not for users who want to consume an overlay.
-
-              ## What it actually does
-
-              This module overrides the `pkgs` module argument and provides the `final` module argument so that the `perSystem` module can be evaluated as an overlay. Attributes added by the overlay must be defined in `overlayAttrs`. The resulting overlay is defined in the `overlays.default` output.
-
-              The resulting behavior tends to be not 100% idiomatic. A hand-written overlay would usually use `final` more often, but nonetheless it gets the job done for simple use cases; certainly the simple use cases where overlays aren't strictly necessary.
-
-              ## The status of this module
-
-              It has an unfortunate name and may be renamed. Alternatively, its functionality may be moved out of flake-parts, into some Nixpkgs module. Certainly until then, feel free to use the module if you understand what it does.
-            '';
-            installationDeclareInput = false;
-            attributePath = [ "flakeModules" "easyOverlay" ];
-            separateEval = true;
-            filterTransformOptions =
-              { sourceName, sourcePath, baseUrl, coreOptDecls }:
-              let sourcePathStr = toString sourcePath + sourceSubpath;
-              in
-              opt:
-              let
-                declarations = lib.concatMap
-                  (decl:
-                    if lib.hasPrefix sourcePathStr (toString decl)
-                    then
-                      let subpath = lib.removePrefix sourcePathStr (toString decl);
-                      in [{ url = baseUrl + subpath; name = sourceName + subpath; }]
-                    else [ ]
-                  )
-                  opt.declarations;
-              in
-              if declarations == [ ]
-              then opt // { visible = false; }
-              else opt // { inherit declarations; };
-          };
-
-        flake-parts-flakeModules =
-          let sourceSubpath = "/extras/flakeModules.nix";
-          in
-          {
-            _module.args.name = lib.mkForce "flake-parts";
-            flake = inputs.flake-parts;
-            title = "flake-parts.flakeModules";
-            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${sourceSubpath}";
-            getModules = f: [ f.flakeModules.flakeModules ];
-            intro = ''
-              Adds the `flakeModules` attribute and `flakeModule` alias.
-              
-              This module makes deduplication and `disabledModules` work, even if the definitions are inline modules or [`importApply`](../define-module-in-separate-file.html#importapply).
-            '';
-            installationDeclareInput = false;
-            attributePath = [ "flakeModules" "easyOverlay" ];
-            separateEval = true;
-            filterTransformOptions =
-              { sourceName, sourcePath, baseUrl, coreOptDecls }:
-              let sourcePathStr = toString sourcePath + sourceSubpath;
-              in
-              opt:
-              let
-                declarations = lib.concatMap
-                  (decl:
-                    if lib.hasPrefix sourcePathStr (toString decl)
-                    then
-                      let subpath = lib.removePrefix sourcePathStr (toString decl);
-                      in [{ url = baseUrl + subpath; name = sourceName + subpath; }]
-                    else [ ]
-                  )
-                  opt.declarations;
-              in
-              if declarations == [ ]
-              then opt // { visible = false; }
-              else opt // { inherit declarations; };
-          };
-
 
         haskell-flake = {
           baseUrl = "https://github.com/srid/haskell-flake/blob/master";
@@ -386,6 +295,8 @@
             It also comes with great horizontal integrations of high quality 
             vertical DevOps tooling crafted by the Nix Ecosystem.
           '';
+          # FIXME?
+          isEmpty = true;
         };
 
         treefmt-nix = {
@@ -404,8 +315,8 @@
 
       };
       imports = [
-        ./render/render-module.nix
-        ./site/site-module.nix
+        inputs.flake-parts.flakeModules.flakeModules
+        publishedModules.empty-site
         ./dev-module.nix
         ./deploy-module.nix
         inputs.hercules-ci-effects.flakeModule
@@ -431,6 +342,14 @@
 
       herculesCI = {
         ciSystems = [ "x86_64-linux" ];
+      };
+
+      flake.flakeModules = publishedModules;
+      flake.templates = {
+        private-site = {
+          path = ./templates/private-site;
+          description = "Reuse flake.parts-website to build your own documentation website";
+        };
       };
     });
 }

@@ -1,4 +1,4 @@
-{ config, inputs, lib, flake-parts-lib, ... }:
+top@{ config, inputs, lib, flake-parts-lib, ... }:
 let
   inherit (lib)
     mkOption
@@ -22,6 +22,7 @@ in
   options.perSystem = flake-parts-lib.mkPerSystemOption ({ config, pkgs, lib, ... }:
     let
       cfg = config.render;
+      inputs = config.render.officialFlakeInputs // top.inputs;
 
       pkgsStub = lib.mapAttrs failPkgAttr pkgs;
 
@@ -107,6 +108,7 @@ in
               A flake.
             '';
             default = inputs.${name};
+            defaultText = lib.literalExpression "inputs.\${name}";
           };
 
           sourcePath = mkOption {
@@ -115,6 +117,7 @@ in
               Source path in which the modules are contained.
             '';
             default = config.flake.outPath;
+            defaultText = lib.literalExpression "config.flake.outPath";
           };
 
           title = mkOption {
@@ -127,6 +130,9 @@ in
 
           flakeRef = mkOption {
             type = types.str;
+            description = ''
+              Flake reference string that refers to the flake to import, used in the generated text for the installation instructions, see {option}`installation`.
+            '';
             default =
               # This only works for github for now, but we can set a non-default
               # value in the list just fine.
@@ -139,6 +145,23 @@ in
               if match != null
               then "github:${owner}/${repo}"
               else throw "Couldn't figure out flakeref for ${name}: ${config.baseUrl}";
+            defaultText = lib.literalMD ''
+              Determined from `config.baseUrl`.
+            '';
+          };
+
+          isEmpty = mkOption {
+            type = types.bool;
+            description = ''
+              Whether this input is empty, ie has no documented options.
+
+              Normally this is indicative of a inaccurate tracking of declaration
+              sources, or declaring options in `perSystem.config` instead of
+              `mkPerSystemOption`.
+
+              If your module really has no options of its own (ie only imports and config), set this to true.
+            '';
+            default = false;
           };
 
           preface = mkOption {
@@ -153,6 +176,7 @@ in
               ${config.installation}
 
             '';
+            defaultText = lib.literalMD "`intro` followed by `installation`";
           };
 
           intro = mkOption {
@@ -201,6 +225,7 @@ in
 
                 Run `nix flake lock` and you're set.
               '';
+            defaultText = lib.literalMD "Generated";
           };
 
           sourceName = mkOption {
@@ -228,6 +253,7 @@ in
                 (lib.getAttrFromPath config.attributePath flake)
               )
             ];
+            defaultText = lib.literalMD "Derived from `config.attributePath`, `<name>`";
           };
 
           attributePath = mkOption {
@@ -236,23 +262,28 @@ in
               Flake output attribute path to import.
             '';
             default = [ "flakeModule" ];
+            example = [ "flakeModules" "default" ];
           };
 
           rendered = mkOption {
             type = types.package;
             description = ''
-              Built Markdown docs.
+              A package containing the generated documentation page.
             '';
             readOnly = true;
           };
 
-          _nixosOptionsDoc = mkOption { };
+          _nixosOptionsDoc = mkOption {
+            internal = true;
+          };
 
           separateEval = mkOption {
             type = types.bool;
             default = false;
             description = ''
               Whether to include this in the main evaluation.
+
+              By default, all modules are evaluated together, except ones that enable this option.
             '';
           };
 
@@ -260,6 +291,8 @@ in
             default = filterTransformOptions;
             description = ''
               Function to customize the set of options to render for this input.
+
+              This is mostly for overriding the default behavior, which excludes the options of the flake-parts module itself, unless it's the flake-parts core itself that's being rendered.
             '';
           };
 
@@ -267,8 +300,27 @@ in
             type = types.bool;
             default = false;
             description = ''
-              Remove local anchor links, a workaround for proper {option}`` support in the doc tooling.
+              Remove local anchor links, a workaround for ```{option}`` ``` support with some sort of namespace handling in the doc tooling.
             '';
+          };
+
+          menu = {
+            title = mkOption {
+              type = types.str;
+              description = ''
+                Title of the menu entry.
+              '';
+              default = config.title;
+            };
+            enable = mkOption {
+              type = types.bool;
+              default = true;
+              description = ''
+                Whether to add this page to the navigation menu.
+
+                Modules in the flake-parts repo disable this, as they're hardcoded into the menu.
+              '';
+            };
           };
         };
         config = {
@@ -289,24 +341,35 @@ in
             warningsAreErrors = true; # not sure if feasible long term
             markdownByDefault = true;
           };
-          rendered = pkgs.runCommand "option-doc-${config.sourceName}"
-            {
-              nativeBuildInputs = [ pkgs.libxslt.bin pkgs.pandoc ];
-              inputDoc = config._nixosOptionsDoc.optionsDocBook;
-              inherit (config) title preface;
-            } ''
-            xsltproc --stringparam title "$title" \
-              --stringparam killLinks '${lib.boolToString config.killLinks}' \
-              -o options.db.xml ${./options.xsl} \
-              "$inputDoc"
-            mkdir $out
-            pandoc --verbose --from docbook --to html options.db.xml >options.html
-            substitute options.html $out/options.html --replace '<p>@intro@</p>' "$preface"
-            grep -v '@intro@' <$out/options.html >/dev/null || {
-              grep '@intro@' <$out/options.html
-              echo intro replacement failed; exit 1;
-            }
-          '';
+          rendered =
+            let
+              checkEmpty =
+                lib.throwIf
+                  (config.isEmpty != (config._nixosOptionsDoc.optionsNix == { }))
+                  (if config.isEmpty # ie expected
+                  then "The input ${name} now has options. Please remove `isEmpty = true;` from the input."
+                  else "Did not find any options to render for ${name}. If this is intentional, set `isEmpty = true;` on the input."
+                  );
+            in
+
+            checkEmpty pkgs.runCommand "option-doc-${config.sourceName}"
+              {
+                nativeBuildInputs = [ pkgs.libxslt.bin pkgs.pandoc ];
+                inputDoc = config._nixosOptionsDoc.optionsDocBook;
+                inherit (config) title preface;
+              } ''
+              xsltproc --stringparam title "$title" \
+                --stringparam killLinks '${lib.boolToString config.killLinks}' \
+                -o options.db.xml ${./options.xsl} \
+                "$inputDoc"
+              mkdir $out
+              pandoc --verbose --from docbook --to html options.db.xml >options.html
+              substitute options.html $out/options.html --replace '<p>@intro@</p>' "$preface"
+              grep -v '@intro@' <$out/options.html >/dev/null || {
+                grep '@intro@' <$out/options.html
+                echo intro replacement failed; exit 1;
+              }
+            '';
         };
       };
     in
@@ -316,6 +379,15 @@ in
           inputs = mkOption {
             description = "Which modules to render.";
             type = types.attrsOf (types.submodule inputModule);
+          };
+          officialFlakeInputs = mkOption {
+            type = types.raw;
+            description = ''
+              The inputs from the `flake.parts-website` flake.
+
+              This supplements the `inputs` module argument when the rendering module is used in a different flake.
+            '';
+            readOnly = true;
           };
         };
       };
@@ -333,6 +405,20 @@ in
                     options = opts;
                   }).optionsNix;
                 };
+                passAsFile = [ "menu" ];
+                menu =
+                  lib.concatStringsSep
+                    "\n"
+                    (lib.filter
+                      (x: x != "")
+                      (lib.mapAttrsToList
+                        (name: inputCfg:
+                          lib.optionalString inputCfg.menu.enable
+                            "    - [${inputCfg.menu.title}](options/${name}.md)"
+                        )
+                        cfg.inputs
+                      )
+                    );
               }
               ''
                 mkdir $out
@@ -343,6 +429,7 @@ in
                     '')
                     cfg.inputs)
                 }
+                cp $menuPath $out/menu.md
               '';
         };
       };

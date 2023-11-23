@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  perSystem = { config, self', inputs', pkgs, lib, ... }: {
+{ inputs, flake-parts-lib, ... }: {
+  options.perSystem = flake-parts-lib.mkPerSystemOption ({ config, self', inputs', pkgs, lib, ... }: {
 
     /*
       Check the links, including anchors (not currently supported by mdbook)
@@ -58,6 +58,8 @@
           for f in ${config.packages.generated-docs}/*.html; do
             cp "$f" "src/options/$(basename "$f" .html).md"
           done
+          sed -e 's/<!-- module list will be concatenated to the end -->//g' -i src/SUMMARY.md
+          cat ${config.packages.generated-docs}/menu.md >> src/SUMMARY.md
           mdbook build --dest-dir $TMPDIR/out
           cp -r $TMPDIR/out/html $out
           cp _redirects $out
@@ -70,5 +72,5 @@
         dontInstall = true;
       };
     };
-  };
+  });
 }
