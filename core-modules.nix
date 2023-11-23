@@ -1,3 +1,11 @@
+/*
+  The modules from the flake-parts repo get a special treatment in the menu and
+  the options for the core module need to be filtered differently.
+
+  Furthermore, this module is required by the render module, so we include it
+  in flakeModules.empty-site. (It's _comparatively_ empty.)
+ */
+
 { lib, ... }: {
   config.perSystem = { config, ... }:
     let
