@@ -141,6 +141,20 @@ in
               else throw "Couldn't figure out flakeref for ${name}: ${config.baseUrl}";
           };
 
+          isEmpty = mkOption {
+            type = types.bool;
+            description = ''
+              Whether this input is empty, ie has no documented options.
+
+              Normally this is indicative of a inaccurate tracking of declaration
+              sources, or declaring options in `perSystem.config` instead of
+              `mkPerSystemOption`.
+
+              If your module really has no options of its own (ie only imports and config), set this to true.
+            '';
+            default = false;
+          };
+
           preface = mkOption {
             type = types.str;
             description = ''
@@ -289,24 +303,35 @@ in
             warningsAreErrors = true; # not sure if feasible long term
             markdownByDefault = true;
           };
-          rendered = pkgs.runCommand "option-doc-${config.sourceName}"
-            {
-              nativeBuildInputs = [ pkgs.libxslt.bin pkgs.pandoc ];
-              inputDoc = config._nixosOptionsDoc.optionsDocBook;
-              inherit (config) title preface;
-            } ''
-            xsltproc --stringparam title "$title" \
-              --stringparam killLinks '${lib.boolToString config.killLinks}' \
-              -o options.db.xml ${./options.xsl} \
-              "$inputDoc"
-            mkdir $out
-            pandoc --verbose --from docbook --to html options.db.xml >options.html
-            substitute options.html $out/options.html --replace '<p>@intro@</p>' "$preface"
-            grep -v '@intro@' <$out/options.html >/dev/null || {
-              grep '@intro@' <$out/options.html
-              echo intro replacement failed; exit 1;
-            }
-          '';
+          rendered =
+            let
+              checkEmpty =
+                lib.throwIf
+                  (config.isEmpty != (config._nixosOptionsDoc.optionsNix == { }))
+                  (if config.isEmpty # ie expected
+                  then "The input ${name} now has options. Please remove `isEmpty = true;` from the input."
+                  else "Did not find any options to render for ${name}. If this is intentional, set `isEmpty = true;` on the input."
+                  );
+            in
+
+            checkEmpty pkgs.runCommand "option-doc-${config.sourceName}"
+              {
+                nativeBuildInputs = [ pkgs.libxslt.bin pkgs.pandoc ];
+                inputDoc = config._nixosOptionsDoc.optionsDocBook;
+                inherit (config) title preface;
+              } ''
+              xsltproc --stringparam title "$title" \
+                --stringparam killLinks '${lib.boolToString config.killLinks}' \
+                -o options.db.xml ${./options.xsl} \
+                "$inputDoc"
+              mkdir $out
+              pandoc --verbose --from docbook --to html options.db.xml >options.html
+              substitute options.html $out/options.html --replace '<p>@intro@</p>' "$preface"
+              grep -v '@intro@' <$out/options.html >/dev/null || {
+                grep '@intro@' <$out/options.html
+                echo intro replacement failed; exit 1;
+              }
+            '';
         };
       };
     in

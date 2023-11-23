@@ -103,13 +103,15 @@
           title = "dream2nix";
           baseUrl = "https://github.com/nix-community/dream2nix/blob/main";
           flakeRef = "github:nix-community/dream2nix";
+          # FIXME all below
           intro = ''
-            This page is a placeholder while dream2nix v1 is in the works.
+            This page is a placeholder while dream2nix v2 is in the works.
             See [dream2nix_legacy](./dream2nix_legacy.html) for the previous API.
           '';
           installation = "";
           attributePath = [ "modules" "flake-parts" "all-modules" ];
           flake = { modules.flake-parts.all-modules = { }; outPath = "/x"; };
+          isEmpty = true;
         };
 
         dream2nix_legacy = {
@@ -386,6 +388,8 @@
             It also comes with great horizontal integrations of high quality 
             vertical DevOps tooling crafted by the Nix Ecosystem.
           '';
+          # FIXME?
+          isEmpty = true;
         };
 
         treefmt-nix = {
