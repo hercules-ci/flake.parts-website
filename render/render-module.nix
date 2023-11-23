@@ -302,6 +302,25 @@ in
               Remove local anchor links, a workaround for ```{option}`` ``` support with some sort of namespace handling in the doc tooling.
             '';
           };
+
+          menu = {
+            title = mkOption {
+              type = types.str;
+              description = ''
+                Title of the menu entry.
+              '';
+              default = config.title;
+            };
+            enable = mkOption {
+              type = types.bool;
+              default = true;
+              description = ''
+                Whether to add this page to the navigation menu.
+
+                Modules in the flake-parts repo disable this, as they're hardcoded into the menu.
+              '';
+            };
+          };
         };
         config = {
           _nixosOptionsDoc = pkgs.nixosOptionsDoc {
@@ -376,6 +395,20 @@ in
                     options = opts;
                   }).optionsNix;
                 };
+                passAsFile = [ "menu" ];
+                menu =
+                  lib.concatStringsSep
+                    "\n"
+                    (lib.filter
+                      (x: x != "")
+                      (lib.mapAttrsToList
+                        (name: inputCfg:
+                          lib.optionalString inputCfg.menu.enable
+                            "    - [${inputCfg.menu.title}](options/${name}.md)"
+                        )
+                        cfg.inputs
+                      )
+                    );
               }
               ''
                 mkdir $out
@@ -386,6 +419,7 @@ in
                     '')
                     cfg.inputs)
                 }
+                cp $menuPath $out/menu.md
               '';
         };
       };

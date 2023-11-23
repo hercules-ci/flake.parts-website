@@ -168,6 +168,7 @@
             plus a small number of helpful options, notably [`perSystem`](#opt-perSystem).
           '';
           installation = "";
+          menu.enable = false;
         };
 
         flake-parts-easyOverlay =
@@ -238,6 +239,7 @@
               if declarations == [ ]
               then opt // { visible = false; }
               else opt // { inherit declarations; };
+            menu.enable = false;
           };
 
         flake-parts-flakeModules =
@@ -276,6 +278,7 @@
               if declarations == [ ]
               then opt // { visible = false; }
               else opt // { inherit declarations; };
+            menu.enable = false;
           };
 
         "flake.parts-website" = {
