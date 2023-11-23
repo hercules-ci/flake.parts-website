@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  perSystem = { config, self', inputs', pkgs, lib, ... }: {
+{ inputs, flake-parts-lib, ... }: {
+  options.perSystem = flake-parts-lib.mkPerSystemOption ({ config, self', inputs', pkgs, lib, ... }: {
 
     /*
       Check the links, including anchors (not currently supported by mdbook)
@@ -70,5 +70,5 @@
         dontInstall = true;
       };
     };
-  };
+  });
 }

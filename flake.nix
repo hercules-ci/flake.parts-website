@@ -37,6 +37,16 @@
   };
 
   outputs = inputs@{ flake-parts, ... }:
+    let
+      publishedModules = {
+        empty-site = {
+          imports = [
+            ./render/render-module.nix
+            ./site/site-module.nix
+          ];
+        };
+      };
+    in
     flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
       perSystem.render.inputs = {
 
@@ -268,6 +278,18 @@
               else opt // { inherit declarations; };
           };
 
+        "flake.parts-website" = {
+          baseUrl = "https://github.com/hercules-ci/flake.parts-website/blob/main";
+          intro = ''
+            This module is used to build the flake.parts website.
+
+            Its interface is subject to change but moves slowly and changes should be simple.
+          '';
+          flake = { _type = "flake"; outPath = throw "nope"; flakeModules = publishedModules; };
+          attributePath = [ "flakeModules" "empty-site" ];
+          getModules = _: [ publishedModules.empty-site ];
+          sourcePath = builtins.path { name = "source"; path = ./.; };
+        };
 
         haskell-flake = {
           baseUrl = "https://github.com/srid/haskell-flake/blob/master";
@@ -408,8 +430,8 @@
 
       };
       imports = [
-        ./render/render-module.nix
-        ./site/site-module.nix
+        inputs.flake-parts.flakeModules.flakeModules
+        publishedModules.empty-site
         ./dev-module.nix
         ./deploy-module.nix
         inputs.hercules-ci-effects.flakeModule
@@ -436,5 +458,7 @@
       herculesCI = {
         ciSystems = [ "x86_64-linux" ];
       };
+
+      flake.flakeModules = publishedModules;
     });
 }

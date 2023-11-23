@@ -107,6 +107,7 @@ in
               A flake.
             '';
             default = inputs.${name};
+            defaultText = lib.literalExpression "inputs.\${name}";
           };
 
           sourcePath = mkOption {
@@ -115,6 +116,7 @@ in
               Source path in which the modules are contained.
             '';
             default = config.flake.outPath;
+            defaultText = lib.literalExpression "config.flake.outPath";
           };
 
           title = mkOption {
@@ -127,6 +129,9 @@ in
 
           flakeRef = mkOption {
             type = types.str;
+            description = ''
+              Flake reference string that refers to the flake to import, used in the generated text for the installation instructions, see {option}`installation`.
+            '';
             default =
               # This only works for github for now, but we can set a non-default
               # value in the list just fine.
@@ -139,6 +144,9 @@ in
               if match != null
               then "github:${owner}/${repo}"
               else throw "Couldn't figure out flakeref for ${name}: ${config.baseUrl}";
+            defaultText = lib.literalMD ''
+              Determined from `config.baseUrl`.
+            '';
           };
 
           isEmpty = mkOption {
@@ -167,6 +175,7 @@ in
               ${config.installation}
 
             '';
+            defaultText = lib.literalMD "`intro` followed by `installation`";
           };
 
           intro = mkOption {
@@ -215,6 +224,7 @@ in
 
                 Run `nix flake lock` and you're set.
               '';
+            defaultText = lib.literalMD "Generated";
           };
 
           sourceName = mkOption {
@@ -242,6 +252,7 @@ in
                 (lib.getAttrFromPath config.attributePath flake)
               )
             ];
+            defaultText = lib.literalMD "Derived from `config.attributePath`, `<name>`";
           };
 
           attributePath = mkOption {
@@ -260,7 +271,9 @@ in
             readOnly = true;
           };
 
-          _nixosOptionsDoc = mkOption { };
+          _nixosOptionsDoc = mkOption {
+            internal = true;
+          };
 
           separateEval = mkOption {
             type = types.bool;
