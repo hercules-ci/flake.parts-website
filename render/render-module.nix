@@ -1,4 +1,4 @@
-{ config, inputs, lib, flake-parts-lib, ... }:
+top@{ config, inputs, lib, flake-parts-lib, ... }:
 let
   inherit (lib)
     mkOption
@@ -22,6 +22,7 @@ in
   options.perSystem = flake-parts-lib.mkPerSystemOption ({ config, pkgs, lib, ... }:
     let
       cfg = config.render;
+      inputs = config.render.officialFlakeInputs // top.inputs;
 
       pkgsStub = lib.mapAttrs failPkgAttr pkgs;
 
@@ -378,6 +379,15 @@ in
           inputs = mkOption {
             description = "Which modules to render.";
             type = types.attrsOf (types.submodule inputModule);
+          };
+          officialFlakeInputs = mkOption {
+            type = types.raw;
+            description = ''
+              The inputs from the `flake.parts-website` flake.
+
+              This supplements the `inputs` module argument when the rendering module is used in a different flake.
+            '';
+            readOnly = true;
           };
         };
       };
