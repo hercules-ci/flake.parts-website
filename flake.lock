@@ -1395,11 +1395,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1701212582,
-        "narHash": "sha256-rHtWmjQOav96RQtV2Q7JYXYFFCbhA7mJUfDC9yUk4nE=",
+        "lastModified": 1701538808,
+        "narHash": "sha256-Y17qMqcb0JoaGhbQ2eCONTfSyOk2nLSSIVofCW92fyw=",
         "owner": "9glenda",
         "repo": "ocaml-flake",
-        "rev": "ade8d2c6d02fea33b991c8995b9a580d2b01e0c4",
+        "rev": "4bc856f6cc34de46dea8a4bb8fe39608b5f0894b",
         "type": "github"
       },
       "original": {
