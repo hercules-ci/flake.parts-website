@@ -329,7 +329,6 @@
         "ema": "ema",
         "flake-parts": "flake-parts_3",
         "flake-root": "flake-root",
-        "flake-schemas": "flake-schemas",
         "haskell-flake": "haskell-flake",
         "heist-extra": "heist-extra",
         "nixpkgs": [
@@ -340,11 +339,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1701898338,
-        "narHash": "sha256-TWjWNwWx66CDXhOdL39wANYpthgH5HQZy7buGRoUVLs=",
+        "lastModified": 1701981204,
+        "narHash": "sha256-lOFJYJdWt8qYhwuDfGAXYspwgO5szwyg9SvaZsh0fGw=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "5166f13f86dee42ceda099eb3fe979686327196e",
+        "rev": "2c2588c35e1d3fee6595f052281839c8cd27ab81",
         "type": "github"
       },
       "original": {
@@ -618,21 +617,6 @@
       "original": {
         "owner": "srid",
         "repo": "flake-root",
-        "type": "github"
-      }
-    },
-    "flake-schemas": {
-      "locked": {
-        "lastModified": 1693615523,
-        "narHash": "sha256-LeyH24etXCxNJviWptyLy2DPT9xt+oOs/zE66To1iPY=",
-        "owner": "DeterminateSystems",
-        "repo": "flake-schemas",
-        "rev": "8940e872c4f8c7cd7d0a1ec169fa0a24697b1f1c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DeterminateSystems",
-        "repo": "flake-schemas",
         "type": "github"
       }
     },
@@ -1078,11 +1062,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1701929531,
-        "narHash": "sha256-IiSCk0t6QTqUz7V/6kFy3gr+lQq9xeAPMSVF9flvryE=",
+        "lastModified": 1701974979,
+        "narHash": "sha256-5IIM/5r9yX5vkFpfXXp+ZPj2eLBs3xD3x8r6aotendw=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "de3d4e8f658cdc84eec7d2d8ab4eae73468ce56e",
+        "rev": "47731af3a691c74aef19baae835b5f20ee0b3016",
         "type": "github"
       },
       "original": {
@@ -1930,11 +1914,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1701682826,
-        "narHash": "sha256-2lxeTUGs8Jzz/wjLgWYmZoXn60BYNRMzwHFtxNFUDLU=",
+        "lastModified": 1701958734,
+        "narHash": "sha256-3h3EH1FXQkIeAuzaWB+nK0XK54uSD46pp+dMD3gAcB4=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "affe7fc3f5790e1d0b5ba51bcff0f7ebe465e92d",
+        "rev": "e8cea581dd2b7c9998c1e6662db2c1dc30e7fdb0",
         "type": "github"
       },
       "original": {
