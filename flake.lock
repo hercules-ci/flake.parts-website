@@ -53,11 +53,11 @@
     },
     "call-flake": {
       "locked": {
-        "lastModified": 1702171492,
+        "lastModified": 1703380979,
         "narHash": "sha256-bmhE1TmrJG4ba93l9WQTLuYM53kwGQAjYHRvHOeuxWU=",
         "owner": "divnix",
         "repo": "call-flake",
-        "rev": "001a8a03685ab14f188926c1225c87b88e2aa9e4",
+        "rev": "29c4dca91e589694b8395ac3cdce259ba6024da3",
         "type": "github"
       },
       "original": {
@@ -324,11 +324,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1703704817,
-        "narHash": "sha256-tdu2Ys/c+O7XtGRwrUttUMapQB2WN4mvGWC5zDwM6Z0=",
+        "lastModified": 1703792616,
+        "narHash": "sha256-mhQ/gvjzBk9efVXHPp4EPmLw2ww7kdwieAfjemT/z3Q=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "5807f6913f0a07a36995422079c12a236177e939",
+        "rev": "486273f3d40c1b01b820bafdfa4c9f2020b98306",
         "type": "github"
       },
       "original": {
@@ -1364,11 +1364,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1702569821,
-        "narHash": "sha256-VgcAZYg9bfxgtbAIOnzlByQvWoE5SJ/UjMft5a8Vrc4=",
+        "lastModified": 1703772672,
+        "narHash": "sha256-JpK8gYJoX7JzYPG8o7lSBxTg5GTK9d2tLY1MU498fQA=",
         "owner": "9glenda",
         "repo": "ocaml-flake",
-        "rev": "e9531f22c94956b3fcc4220c82ffb110dce156af",
+        "rev": "82d25b5805323fa13d7b4350a7fe68d2b59a82e6",
         "type": "github"
       },
       "original": {
@@ -1403,11 +1403,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1701855685,
-        "narHash": "sha256-38RprSyq38aGCsniQQaoYYmITzbgq2wssDQtVqnHfWE=",
+        "lastModified": 1702988812,
+        "narHash": "sha256-XdGK59SJsZZU9eeulWxopzdS3PZSbRls7i53KEJZ60A=",
         "owner": "tweag",
         "repo": "opam-nix",
-        "rev": "73b179d9a5e4b9849e7b857eef9ad2a065e489be",
+        "rev": "a2c8f7d640f1dcb92f036044f13eb9135f6db474",
         "type": "github"
       },
       "original": {
@@ -1435,11 +1435,11 @@
     "opam-repository": {
       "flake": false,
       "locked": {
-        "lastModified": 1702305645,
-        "narHash": "sha256-maAmsS0luE+lrs+1/6w1KfifuSnPxmX3CDvPpDT8gKE=",
+        "lastModified": 1703580703,
+        "narHash": "sha256-GYNjvB+tDpa9Cg1aT+Mrf9DBiRRSqHcs3hCeUHmWlx0=",
         "owner": "ocaml",
         "repo": "opam-repository",
-        "rev": "18a778e7b2e4c4a2805b386c4ead729e30a8c7bd",
+        "rev": "d0429eafa0b0f25319b6e9a289945af1bf117270",
         "type": "github"
       },
       "original": {
