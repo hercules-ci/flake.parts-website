@@ -97,6 +97,22 @@
         "type": "github"
       }
     },
+    "commonmark-wikilink": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705502834,
+        "narHash": "sha256-79fzI4fPhCkfusDXctQwwmjIcWMrLfTvUtKBY32asuM=",
+        "owner": "srid",
+        "repo": "commonmark-wikilink",
+        "rev": "f6d7bdf7f1fce09ba2a4259b0306b0eef24c0cf7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "srid",
+        "repo": "commonmark-wikilink",
+        "type": "github"
+      }
+    },
     "crane": {
       "flake": false,
       "locked": {
@@ -328,6 +344,7 @@
     "emanote": {
       "inputs": {
         "commonmark-simple": "commonmark-simple",
+        "commonmark-wikilink": "commonmark-wikilink",
         "ema": "ema",
         "emanote-template": "emanote-template",
         "flake-parts": "flake-parts_3",
@@ -342,11 +359,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1705423689,
-        "narHash": "sha256-3F2ilCG1lwku1RZ2cnNTaETmZv2tO/i4/WXBsop31TE=",
+        "lastModified": 1705503201,
+        "narHash": "sha256-IZXo5rlmYZahFwYSDniJPGx5/WxP4J8ekuC3N10ADQc=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "92ac39969cafa69b9772a98aacf3b26a8b6ae8e2",
+        "rev": "c6fa75e6aec447d29568934d9fcb719516fe4868",
         "type": "github"
       },
       "original": {
