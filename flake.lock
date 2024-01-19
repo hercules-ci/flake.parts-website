@@ -359,11 +359,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1705598638,
-        "narHash": "sha256-IEFgFPrL+y+pD+Su+SCkNfR1QVlfWyDa//5hTuFMyog=",
+        "lastModified": 1705667811,
+        "narHash": "sha256-ZH/m5e4l4v2HRcv45trQKl92PRG6e1lpRJ4+U4zewL8=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "ac61c6befdf30dc8a1e14211a52c0e018a8fc7b2",
+        "rev": "bf573e7653d183baa0fa68e2e172333f585b7a25",
         "type": "github"
       },
       "original": {
@@ -1968,11 +1968,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1705596546,
-        "narHash": "sha256-5CFL2QdueAuhPzt0d1TXpJvkoUJ01AAZOUuQSQcBaPA=",
+        "lastModified": 1705659004,
+        "narHash": "sha256-XQsZudrb9u5Pw631U0tFYZkjq49CcwF24XT01vz2jPk=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "5861b733f22ae4c192c7d207bae515d3bb77a6c0",
+        "rev": "8cd95da6c30852adb2a06c4b6bdacfe8b64a0a35",
         "type": "github"
       },
       "original": {
