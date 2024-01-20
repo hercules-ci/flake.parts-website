@@ -10,7 +10,7 @@ Many things, such as packages, can exist on multiple systems. For these, use
 the [`perSystem`](options/flake-parts.html#opt-perSystem) submodule.
 
 Other things do not exist on multiple systems. Examples are the configuration
-of a specific machine, or a the execution of a deployment. These are not
+of a specific machine, or the execution of a deployment. These are not
 written in `perSystem`, but in other top-level options, or directly into the
 flake outputs' top level (e.g. [`flake.nixosConfigurations`](options/flake-parts.html#opt-flake.nixosConfigurations)).
 
