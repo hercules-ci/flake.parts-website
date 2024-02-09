@@ -327,16 +327,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1702334080,
-        "narHash": "sha256-zrtzyLrSORxtocLMji5U9p4pDicMulOqgsuiB4LCu1o=",
+        "lastModified": 1707484760,
+        "narHash": "sha256-2wHRjoFJUpVnH7H/80bnaw8h3WELZqP9dM6DfjXWtAo=",
         "owner": "srid",
         "repo": "ema",
-        "rev": "33f4cf31ace7e612e78ad25f5fc45089745ab644",
+        "rev": "e3539ddd27b72a6bb90c8614ae63c70ff3351936",
         "type": "github"
       },
       "original": {
         "owner": "srid",
-        "ref": "no-ws",
         "repo": "ema",
         "type": "github"
       }
@@ -359,11 +358,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1706372356,
-        "narHash": "sha256-CzZ9e1NhIInl2GzOk5jaAsmt2YUpXOTPxg1yYrAGWCs=",
+        "lastModified": 1707492649,
+        "narHash": "sha256-CxW8dw/knjI1k1deF9c1QkFCkvn1QCc8JzEmcnluFH0=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "64636575dfb334d9ee8058d40758a72d0befd17c",
+        "rev": "9849d42910bfc1a52acae4e3e93e7588811edb3c",
         "type": "github"
       },
       "original": {
@@ -847,11 +846,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1707242163,
-        "narHash": "sha256-w+cBynh7yqnpVtFdu1SEZxPgtlz/nWnv47D5crnPXHM=",
+        "lastModified": 1707501052,
+        "narHash": "sha256-gjZ9Q1IK5AupIDT5FAVZ3b1OK7nyOtWzkNdQIqwTF4Q=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "f9d17c3aa68e65529f424816c8b9346ae602d1de",
+        "rev": "c5b36777ba5edcc6bc25719fb82e7b9090f311b6",
         "type": "github"
       },
       "original": {
@@ -1023,11 +1022,11 @@
     },
     "mission-control": {
       "locked": {
-        "lastModified": 1705982654,
-        "narHash": "sha256-7MvdCF0dxK8FRbBQXCC9JTuEh/7i5TAA1iU/8RNW/lI=",
+        "lastModified": 1707501043,
+        "narHash": "sha256-S3e8pfjXT335TuacspMyPbMnRX5c+qhvN4Jbm/R+3HM=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "7aff11c21bd7b2045fdd90e6d0a1c714e96020d4",
+        "rev": "c275dd195776b1b9735790231d874a3c5a7ee779",
         "type": "github"
       },
       "original": {
