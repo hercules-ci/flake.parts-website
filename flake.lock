@@ -1115,11 +1115,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1708150232,
-        "narHash": "sha256-QneqiEgVD/nEZr4i6fvuSPlhwSHwXT/5WFJm9Vwn7d0=",
+        "lastModified": 1708236661,
+        "narHash": "sha256-5IvigkRGMJ4MdC3JRUviqKbrc/UDhCG5DQTUdvjyxJ4=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "ce52b6072761dc4d8f5689dcc6ea2a53130a58e2",
+        "rev": "5e39bb99b72f2c160664c8617b9117de4c31e1d4",
         "type": "github"
       },
       "original": {
@@ -1567,16 +1567,16 @@
     "paisano-tui": {
       "flake": false,
       "locked": {
-        "lastModified": 1694014205,
-        "narHash": "sha256-u0+T6vMznzfjDMUd01ZXQsrQPMEhMjrQwUPTFsPBR1k=",
+        "lastModified": 1708207889,
+        "narHash": "sha256-nAEplUKdhmLalh/CwBDI1geO4YGkeJUFWt+jnITGjHg=",
         "owner": "paisano-nix",
         "repo": "tui",
-        "rev": "587ab9fd07bd969d59df73bfe527b5f8a4e752d1",
+        "rev": "387e1d6fd72c0a33f6afeba4e32577039e21b044",
         "type": "github"
       },
       "original": {
         "owner": "paisano-nix",
-        "ref": "0.2.0",
+        "ref": "v0.4.1",
         "repo": "tui",
         "type": "github"
       }
@@ -1793,11 +1793,11 @@
     "rust-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1708135817,
-        "narHash": "sha256-EUMO/K3+Wgh0THOLoRXhxrh6G/pQ7BlJ8No+ciy1nKA=",
+        "lastModified": 1708231627,
+        "narHash": "sha256-beDYL9tOe1pw1kLChFbSSSl5wM81rat6t96baqG4+xM=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "c77e68d33a84ce3f9e86905c0f2ef78d5defad28",
+        "rev": "5d4170f50065cb04cef941831786a50637c4e20b",
         "type": "github"
       },
       "original": {
@@ -1847,11 +1847,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1707298950,
-        "narHash": "sha256-UIgHO0Th/bdamo5H3eamvjczpbnyglRbk4/xZ54g3+c=",
+        "lastModified": 1708209538,
+        "narHash": "sha256-zOiHnzr2GgoGPLmuGofXIjN8GIqx3BwOeRTCxx2EXU4=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "b548f1eb8e035a2288b9cb91aa178f27b61d81aa",
+        "rev": "d05f5292860b15870105875bbd93146deabe1cbb",
         "type": "github"
       },
       "original": {
