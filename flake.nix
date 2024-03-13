@@ -179,7 +179,7 @@
         haskell-flake = {
           baseUrl = "https://github.com/srid/haskell-flake/blob/master";
           intro = ''
-            [`haskell-flake`](https://haskell.flake.page/) scans your flake files for Haskell projects and
+            [`haskell-flake`](https://community.flake.parts/haskell-flake) scans your flake files for Haskell projects and
             turns them into packages using the Nixpkgs Haskell infrastructure.
 
             It also provides [`checks`](flake-parts.html#opt-perSystem.checks) and [`devShells`](flake-parts.html#opt-perSystem.devShells)
@@ -230,7 +230,7 @@
           baseUrl = "https://github.com/9glenda/ocaml-flake";
           attributePath = [ "flakeModule" ];
           intro = ''
-            [`ocaml-flake`](https://github.com/9glenda/ocaml-flake) uses [`opam-nix`](https://github.com/tweag/opam-nix) to build ocaml packages. The module structure is inspired by [`haskell-flake`](https://haskell.flake.page/).
+            [`ocaml-flake`](https://github.com/9glenda/ocaml-flake) uses [`opam-nix`](https://github.com/tweag/opam-nix) to build ocaml packages. The module structure is inspired by [`haskell-flake`](https://community.flake.parts/haskell-flake).
 
             Since the flake is fairly new future versions may introduce breaking changes.
           '';
