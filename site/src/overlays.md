@@ -103,6 +103,6 @@ The `final` module argument is only defined when [`easyOverlay`] is imported. It
  - [`perSystem.overlayAttrs`]
 
 
-[`easyOverlay`]: https://flake.parts/options/flake-parts-easyoverlay
-[`overlayAttrs`]: options/flake-parts-easyOverlay.html#opt-perSystem.overlayAttrs
-[`perSystem.overlayAttrs`]: options/flake-parts-easyOverlay.html#opt-perSystem.overlayAttrs
+[`easyOverlay`]: options/flake-parts-easyOverlay.md
+[`overlayAttrs`]: options/flake-parts-easyOverlay.md#opt-perSystem.overlayAttrs
+[`perSystem.overlayAttrs`]: options/flake-parts-easyOverlay.md#opt-perSystem.overlayAttrs
