@@ -8,7 +8,7 @@
         pkgs.netlify-cli
         pkgs.pandoc
         pkgs.mdbook
-        pkgs.linkchecker
+        pkgs.lychee
       ];
       shellHook = ''
         ${config.pre-commit.installationScript}
