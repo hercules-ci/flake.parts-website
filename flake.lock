@@ -1304,11 +1304,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1711433532,
-        "narHash": "sha256-+p1wVxEccihIBSPmz0fguAg5zEba5hyI3KP1we5HHmY=",
+        "lastModified": 1711519895,
+        "narHash": "sha256-rh7HYC9zwn59swAEJ7V8MDaYvUcbxtB2hbjCqsqJUdE=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "611e39450b9b3c8aa69bccbf13e44abd77ee0aec",
+        "rev": "b6b5def0dd6a25c6ad98697272abd0b07a9ac73e",
         "type": "github"
       },
       "original": {
@@ -1905,11 +1905,11 @@
         "nixpkgs-stable": "nixpkgs-stable_2"
       },
       "locked": {
-        "lastModified": 1711409088,
-        "narHash": "sha256-+rTCra8TY4vuSNTtQ0tcex1syCRPoKyb8vyHmoxkga4=",
+        "lastModified": 1711519547,
+        "narHash": "sha256-Q7YmSCUJmDl71fJv/zD9lrOCJ1/SE/okZ2DsrmRjzhY=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "db656fc3e34907000df26e8bc5cc3c94fb27f353",
+        "rev": "7d47a32e5cd1ea481fab33c516356ce27c8cef4a",
         "type": "github"
       },
       "original": {
@@ -2017,11 +2017,11 @@
     "rust-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1711419061,
-        "narHash": "sha256-+5M/czgYGqs/jKmi8bvYC+JUYboUKNTfkRiesXopeXQ=",
+        "lastModified": 1711505476,
+        "narHash": "sha256-yK1zue1c8EdpZvEyQWrjawG9Ykzl7eB2xJ/V+2vU5Jo=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "4c11d2f698ff1149f76b69e72852d5d75f492d0c",
+        "rev": "56f48d6e7559b807763ea03191bfaf95549ce610",
         "type": "github"
       },
       "original": {
