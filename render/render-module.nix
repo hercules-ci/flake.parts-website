@@ -296,11 +296,11 @@ in
             '';
           };
 
-          killLinks = mkOption {
-            type = types.bool;
-            default = false;
+          fixupAnchorsBaseUrl = mkOption {
+            type = types.nullOr types.str;
+            default = null;
             description = ''
-              Remove local anchor links, a workaround for ```{option}`` ``` support with some sort of namespace handling in the doc tooling.
+              Replace same-page links without `opt-` prefix with this prefix.
             '';
           };
 
@@ -352,24 +352,34 @@ in
                   );
             in
 
-            checkEmpty pkgs.runCommand "option-doc-${config.sourceName}"
-              {
-                nativeBuildInputs = [ pkgs.libxslt.bin pkgs.pandoc ];
-                inputDoc = config._nixosOptionsDoc.optionsDocBook;
-                inherit (config) title preface;
-              } ''
-              xsltproc --stringparam title "$title" \
-                --stringparam killLinks '${lib.boolToString config.killLinks}' \
-                -o options.db.xml ${./options.xsl} \
-                "$inputDoc"
-              mkdir $out
-              pandoc --verbose --from docbook --to html options.db.xml >options.html
-              substitute options.html $out/options.html --replace '<p>@intro@</p>' "$preface"
-              grep -v '@intro@' <$out/options.html >/dev/null || {
-                grep '@intro@' <$out/options.html
-                echo intro replacement failed; exit 1;
-              }
-            '';
+            checkEmpty pkgs.stdenv.mkDerivation (finalAttrs: {
+              name = "option-doc-${config.sourceName}";
+              nativeBuildInputs = [ pkgs.libxslt.bin pkgs.pandoc ];
+              optionsDoc = config._nixosOptionsDoc.optionsMarkdown.overrideAttrs {
+                anchorPrefix = "opt-";
+              };
+              inherit (config) title preface;
+              passAsFile = [ "preface" ];
+              buildCommand = ''
+                mkdir $out
+                cat >$out/options.md <<EOF
+                # $title
+
+                $(cat $prefacePath)
+
+                ## Options
+
+                $(cat $optionsDoc)
+
+                EOF
+                # cat -n $out/options.md | grep caddy
+                # set -x
+                ${lib.optionalString (config.fixupAnchorsBaseUrl != null) ''
+                  sed -i 's|(\(\\#[^o)][^p)][^t)][^-)][^)]*\))|(${config.fixupAnchorsBaseUrl}\1)|g' $out/options.md
+                ''}
+              '';
+              passthru.file = finalAttrs.finalPackage + "/options.md";
+            });
         };
       };
     in
@@ -425,7 +435,7 @@ in
                 ${lib.concatStringsSep "\n"
                   (lib.mapAttrsToList
                     (name: inputCfg: ''
-                      cp ${inputCfg.rendered}/options.html $out/${name}.html
+                      cp ${inputCfg.rendered.file} $out/${name}.html
                     '')
                     cfg.inputs)
                 }

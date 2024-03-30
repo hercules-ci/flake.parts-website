@@ -2,7 +2,8 @@
   description = "The https://flake.parts website";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # https://github.com/NixOS/nixpkgs/pull/300309
+    nixpkgs.url = "github:NixOS/nixpkgs/640f2068a7b9d0034f376f6d10efb87a82d57f92";
 
     agenix-shell.url = "github:aciceri/agenix-shell";
     devenv.url = "github:hercules-ci/devenv/flake-module";
@@ -73,7 +74,7 @@
 
             See also the [setup guide at devenv.sh](https://devenv.sh/guides/using-with-flake-parts/).
           '';
-          killLinks = true;
+          fixupAnchorsBaseUrl = "https://devenv.sh/reference/options/";
         };
 
         devshell = {
