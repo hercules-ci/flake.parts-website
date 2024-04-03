@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1696088021,
-        "narHash": "sha256-XbsSsm6FYxOInWabZwb2lJxnm4nk1iGswQyUOigszNw=",
+        "lastModified": 1712174300,
+        "narHash": "sha256-yPSNaI61LjaCnwl7au6tITFMb4sdq46MkyN/+kpsqZs=",
         "owner": "aciceri",
         "repo": "agenix-shell",
-        "rev": "3e5f72250ee4e5999e7151302027a284e9062c51",
+        "rev": "e98b235cc3d63be63613d93910b05cdb9d9c5dc2",
         "type": "github"
       },
       "original": {
