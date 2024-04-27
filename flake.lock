@@ -1304,11 +1304,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1714111987,
-        "narHash": "sha256-IjI8tdfEDhEQG7eJzN11ic60d/zb8YKLJG/PxJ8exmA=",
+        "lastModified": 1714198335,
+        "narHash": "sha256-5Xl7tJjG1GBTT8evOXehNAIZoZ8W5EtLlqiYjMPNUlI=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "be0f0ce3f4d8d446c56d2b01f649fe842b841c5e",
+        "rev": "370d0ff9f97edb363f08af17dadaed3928ee1942",
         "type": "github"
       },
       "original": {
