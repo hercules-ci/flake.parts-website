@@ -5,6 +5,8 @@
     # https://github.com/NixOS/nixpkgs/pull/300309
     nixpkgs.url = "github:NixOS/nixpkgs/640f2068a7b9d0034f376f6d10efb87a82d57f92";
 
+    agenix-rekey.url = "github:oddlama/agenix-rekey";
+    agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
     agenix-shell.url = "github:aciceri/agenix-shell";
     devenv.url = "github:hercules-ci/devenv/flake-module";
     devshell.url = "github:numtide/devshell";
@@ -52,6 +54,23 @@
     in
     flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
       perSystem.render.inputs = {
+
+        agenix-rekey = {
+          title = "agenix-rekey";
+          baseUrl = "https://github.com/oddlama/agenix-rekey/blob/main";
+          attributePath = [ "flakeModule" ];
+          intro = ''
+            This is an extension for [agenix](https://github.com/ryantm/agenix) which allows you to get
+            rid of maintaining a `secrets.nix` file by automatically re-encrypting secrets where needed.
+            It also allows you to define versatile generators for secrets, so they can be bootstrapped
+            automatically. This can be used alongside regular use of agenix.
+
+            Please also refer to the upstream [installation section](https://github.com/oddlama/agenix-rekey?tab=readme-ov-file#installation)
+            and [usage guide](https://github.com/oddlama/agenix-rekey?tab=readme-ov-file#usage) for
+            information on how to access the wrapper utility in a devshell and how to setup your
+            hosts to make use of agenix-rekey.
+          '';
+        };
 
         agenix-shell = {
           title = "agenix-shell";
