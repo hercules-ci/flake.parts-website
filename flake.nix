@@ -37,6 +37,7 @@
     pydev.inputs.pre-commit-hooks-nix.follows = "pre-commit-hooks-nix";
     std.url = "github:divnix/std";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    nixos-tests.url = "github:esselius/nixos-tests";
   };
 
   outputs = inputs@{ flake-parts, ... }:
@@ -333,6 +334,18 @@
           '';
         };
 
+        nixos-tests = {
+          baseUrl = "https://github.com/esselius/nixos-tests/blob/main";
+          attributePath = [ "flakeModule" ];
+          isEmpty = true;
+          intro = ''
+            [nixos-tests](https://github.com/esselius/nixos-tests) lets you put nixos tests in a folder and run them with `nix run .#nixosTests.my-test`.
+
+            For interactive test development: `nix run .#nixosTests.my-test -- --interactive`
+
+            Example usage when combined with [ez-configs](https://flake.parts/options/ez-configs): https://github.com/esselius/nixos-tests-flake-parts
+          '';
+        };
       };
       imports = [
         inputs.flake-parts.flakeModules.flakeModules
