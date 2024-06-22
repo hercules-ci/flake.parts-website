@@ -2073,11 +2073,11 @@
     },
     "process-compose-flake": {
       "locked": {
-        "lastModified": 1717682476,
-        "narHash": "sha256-EjmlQSBs6XxsOEk7KQSpk2m/mkRtUpH++jZQix2jFgE=",
+        "lastModified": 1718031437,
+        "narHash": "sha256-+RrlkAVZx0QhyeHAGFJnjST+/7Dc3zsDU3zAKXoDXaI=",
         "owner": "Platonic-systems",
         "repo": "process-compose-flake",
-        "rev": "8a6fae467d4862f2be9aa2954ab2d1e324c399f4",
+        "rev": "9344fac44edced4c686721686a6ad904d067c546",
         "type": "github"
       },
       "original": {
