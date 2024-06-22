@@ -2073,16 +2073,15 @@
     },
     "process-compose-flake": {
       "locked": {
-        "lastModified": 1671746418,
-        "narHash": "sha256-pcPALqEFSlAz+68SStQPoy9eT13dJ+tOe4OJbJCGToQ=",
-        "owner": "hercules-ci",
+        "lastModified": 1717682476,
+        "narHash": "sha256-EjmlQSBs6XxsOEk7KQSpk2m/mkRtUpH++jZQix2jFgE=",
+        "owner": "Platonic-systems",
         "repo": "process-compose-flake",
-        "rev": "2bd5ac6649dc124c7a51fcf3db97c43cb7683ed4",
+        "rev": "8a6fae467d4862f2be9aa2954ab2d1e324c399f4",
         "type": "github"
       },
       "original": {
-        "owner": "hercules-ci",
-        "ref": "fix-docs",
+        "owner": "Platonic-systems",
         "repo": "process-compose-flake",
         "type": "github"
       }

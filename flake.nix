@@ -31,7 +31,7 @@
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
-    process-compose-flake.url = "github:hercules-ci/process-compose-flake/fix-docs";
+    process-compose-flake.url = "github:Platonic-systems/process-compose-flake";
     pydev.url = "github:oceansprint/pydev";
     pydev.inputs.nixpkgs.follows = "nixpkgs";
     pydev.inputs.pre-commit-hooks-nix.follows = "pre-commit-hooks-nix";
@@ -290,11 +290,9 @@
         process-compose-flake = {
           baseUrl = "https://github.com/Platonic-Systems/process-compose-flake/blob/main";
           intro = ''
-            Declare one or more process-compose configurations using options.
+            This flake-parts module allows you to declare one or more process-compose configurations using Nix attribute sets. It will generate corresponding packages that wrap the [process-compose](https://github.com/F1bonacc1/process-compose) binary with the given configuration.
 
-            Generates a wrapper for [process-compose](https://github.com/F1bonacc1/process-compose).
-
-            See [process-compose-flake](https://github.com/Platonic-Systems/process-compose-flake) for a [usage example](https://github.com/Platonic-Systems/process-compose-flake#usage).
+            See [quick example](https://community.flake.parts/process-compose-flake#quick-example) to get started with [process-compose-flake](https://github.com/Platonic-Systems/process-compose-flake)
           '';
         };
 
