@@ -28,6 +28,8 @@
     ocaml-flake.url = "github:9glenda/ocaml-flake";
     ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
+    package-sets.url = "github:ConnorBaker/package-sets";
+    package-sets.inputs.nixpkgs.follows = "nixpkgs";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
@@ -261,6 +263,25 @@
             nix flake init -t github:9glenda/ocaml-flake#simple
             ```
             This will set up a devshell and package for you.
+          '';
+        };
+
+        package-sets = {
+          flakeRef = "github:ConnorBaker/package-sets";
+          baseUrl = "https://github.com/ConnorBaker/package-sets";
+          intro = ''
+            Populate `packages` and `overlays` with ease.
+
+            [package-sets](https://github.com/ConnorBaker/package-sets) was born out of frustration with the manual
+            process of adding packages and overlays to a flake. If your flakes have more than a few packages,
+            dependencies between packages, or require Nixpkgs use a non-standard configuration, this module is for you.
+
+            ## Limitations
+            
+            A great deal of this module's functionality is based on `lib.packagesFromDirectoryRecursive`.
+            Unfortunately, [`flake.packages`](../options/flake-parts.html#opt-flake.packages) does not allow nested
+            attributes, so there are some limitations to what this module can do. See the notes on the options in
+            [`strategies`](#opt-packageSets.strategies) for more information.
           '';
         };
 
