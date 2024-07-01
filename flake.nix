@@ -21,6 +21,7 @@
     ez-configs.inputs.nixpkgs-darwin.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
+    make-shell.url = "github:nicknovitski/make-shell";
     mission-control.url = "github:Platonic-Systems/mission-control";
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
@@ -215,6 +216,47 @@
              - a mergeable `herculesCI` attribute; read by [Hercules CI](https://hercules-ci.com) and the [`hci`](https://docs.hercules-ci.com/hercules-ci-agent/hci/) command,
              - the [`hci-effects`](https://docs.hercules-ci.com/hercules-ci-effects/guide/import-or-pin/#_flakes_with_flake_parts) library as a module argument in `perSystem` / `withSystem`,
              - ready to go, configurable continuous deployment jobs
+          '';
+        };
+
+        make-shell = {
+          baseUrl = "https://github.com/nicknovitski/make-shell/blob/main";
+          attributePath = [ "flakeModules" "default" ];
+          intro = ''
+            Modules for mkShell!  Set `make-shells.<name>` attributes to create `devShells.<name>` and `checks.<name>-devshell` flake outputs.  Import and merge complex or shared modules!  Create and share new options!
+
+            For example:
+            ```nix
+            # aliases.nix
+            {
+              config,
+              lib,
+              pkgs,
+              ...
+            }: {
+              options.aliases = lib.mkOption {
+                type = lib.types.attrsOf lib.types.singleLineStr;
+                default = {};
+              };
+              config.packages = let
+                inherit (lib.attrsets) mapAttrsToList;
+                alias = name: command: (pkgs.writeShellScriptBin name \'\'exec ''${command} "$@"\'\') // {meta.description = "alias for `''${command}`";};
+              in
+                mapAttrsToList alias config.aliases;
+            }
+            ```
+            ```nix
+            # flake.nix
+            perSystem = {...}: {
+              make-shells.default = {
+                 imports = [./aliases.nix];
+                 aliases = {
+                   n = "nix";
+                   g = "git";
+                 };
+               };
+            };
+            ```
           '';
         };
 
