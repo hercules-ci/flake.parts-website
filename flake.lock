@@ -1277,6 +1277,21 @@
         "type": "indirect"
       }
     },
+    "make-shell": {
+      "locked": {
+        "lastModified": 1720023242,
+        "narHash": "sha256-+I7RjtgrsnqezUQQ1r3MwibXxlotpdGBwrv7R9trc3Q=",
+        "owner": "nicknovitski",
+        "repo": "make-shell",
+        "rev": "cb67e941268e7c6f1485fd48d4c6db85a6ad1005",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicknovitski",
+        "repo": "make-shell",
+        "type": "github"
+      }
+    },
     "mirage-opam-overlays": {
       "flake": false,
       "locked": {
@@ -2140,6 +2155,7 @@
         "flake-parts": "flake-parts_6",
         "haskell-flake": "haskell-flake_3",
         "hercules-ci-effects": "hercules-ci-effects",
+        "make-shell": "make-shell",
         "mission-control": "mission-control",
         "nix-cargo-integration": "nix-cargo-integration",
         "nixpkgs": "nixpkgs_5",
