@@ -26,6 +26,8 @@
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
     nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
+    nix-topology.url = "github:oddlama/nix-topology";
+    nix-topology.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.url = "github:9glenda/ocaml-flake";
     ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
@@ -284,6 +286,21 @@
             ## Installation
 
             See the [readme](https://github.com/yusdacra/nix-cargo-integration#readme).
+          '';
+        };
+
+        nix-topology = {
+          title = "nix-topology";
+          baseUrl = "https://github.com/oddlama/nix-topology/blob/main";
+          attributePath = [ "flakeModule" ];
+          intro = ''
+            With nix-topology you can automatically generate infrastructure and network diagrams as SVGs
+            directly from your NixOS configurations, and get something similar to the diagram [here](https://github.com/oddlama/nix-topology).
+            It defines a new global module system where you can specify what nodes and networks you have.
+            Most of the work is done by the included NixOS module which automatically collects all the
+            information from your hosts.
+
+            After including this flake-parts module, you can build your diagram by running `nix build .#topology.<current-system>.config.output`.
           '';
         };
 
