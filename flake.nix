@@ -295,7 +295,7 @@
           attributePath = [ "flakeModule" ];
           intro = ''
             With nix-topology you can automatically generate infrastructure and network diagrams as SVGs
-            directly from your NixOS configurations, and get something similar to the diagram [here](https://github.com/oddlama/nix-topology).
+            directly from your NixOS configurations, and get something similar to the diagram [here](https://github.com/oddlama/nix-topology#readme).
             It defines a new global module system where you can specify what nodes and networks you have.
             Most of the work is done by the included NixOS module which automatically collects all the
             information from your hosts.
