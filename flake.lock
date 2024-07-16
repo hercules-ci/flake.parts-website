@@ -1577,11 +1577,11 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1720813295,
-        "narHash": "sha256-FGTaNJG/9WNpysGt5b9T/NCyd+XXdFflGF3nwmigIPk=",
+        "lastModified": 1721160643,
+        "narHash": "sha256-ZkjJnwgDUkjzgySZv9GjKnDsDmNJVkU2u2pLD4a1QKA=",
         "owner": "oddlama",
         "repo": "nix-topology",
-        "rev": "8a692498f2e902e2770194c3a22ed7dfcd329a87",
+        "rev": "fe9ace7f40a63e3eb9b39a20a1032834e090d806",
         "type": "github"
       },
       "original": {
