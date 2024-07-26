@@ -254,11 +254,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1721902368,
-        "narHash": "sha256-noQ5SghRPe0jzQEbFQb3fYbV6LZEzr7lIRQoxlU7fyI=",
+        "lastModified": 1721986491,
+        "narHash": "sha256-lVAlUOIPszv5HMYQGscskeGdRIYpTY6xrPfEok0hHgI=",
         "owner": "numtide",
         "repo": "devshell",
-        "rev": "cf8c7405479cfde7ea4dc815e195391d2328df10",
+        "rev": "cc8700135fb0740199ac248063f20c6b1a3c7e42",
         "type": "github"
       },
       "original": {
@@ -2389,11 +2389,11 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1720302576,
-        "narHash": "sha256-8HgfMr07vNTB2xp+vRBVmJ0A6ctX/oa/QqFBlqqmz4M=",
+        "lastModified": 1722019916,
+        "narHash": "sha256-FCdDU5TW9vmBffIOfVALG/6FnCkn82fG8vJBR9IoK7s=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "4e20f558f00bc8d52b0fadc468b872d280ca2d34",
+        "rev": "58e6300b8a525059b33e97e475322c00115f7ee9",
         "type": "github"
       },
       "original": {
