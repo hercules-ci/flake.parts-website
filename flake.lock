@@ -1356,11 +1356,11 @@
     },
     "make-shell": {
       "locked": {
-        "lastModified": 1721584638,
-        "narHash": "sha256-EzRCMxlL2q77Pem4kUqycjw2zan55ZHrgO+axne1uHc=",
+        "lastModified": 1722792362,
+        "narHash": "sha256-pIoKSHtz++viJE/9ZFCg7jqKJVkI+AsFViE5FYssOM8=",
         "owner": "nicknovitski",
         "repo": "make-shell",
-        "rev": "7c99aa69ca7fd940cffb9506b90fabf9ffbc2097",
+        "rev": "b417258c0f764aedeb131c87515cd53fe6368607",
         "type": "github"
       },
       "original": {
