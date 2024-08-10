@@ -1480,11 +1480,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1723184082,
-        "narHash": "sha256-vPdJAXNBVp/7oEvXkvwG52vNCAK0WB/A01mvRiU1q0Y=",
+        "lastModified": 1723270388,
+        "narHash": "sha256-SZ0eq4klSeEXyy5VGOHMTBUQiPVYAbcnBYHfwgJdVd8=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "72c455289c5c55552fee8bde92a9ac7bcdb18ed3",
+        "rev": "b0648944c966fda01bad6a1fe86dd77f997eb024",
         "type": "github"
       },
       "original": {
@@ -2316,11 +2316,11 @@
     "rust-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1723170066,
-        "narHash": "sha256-SFkQfOA+8AIYJsPlQtxNP+z5jRLfz91z/aOrV94pPmw=",
+        "lastModified": 1723256423,
+        "narHash": "sha256-9iDTrfVM+mbcad31a47oqW8t8tfSA4C/si6F8F2DO/w=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "fecfe4d7c96fea2982c7907997b387a6b52c1093",
+        "rev": "615cfd85b4d9c51811a8d875374268fab5bd4089",
         "type": "github"
       },
       "original": {
