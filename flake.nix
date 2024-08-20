@@ -23,6 +23,8 @@
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     make-shell.url = "github:nicknovitski/make-shell";
     mission-control.url = "github:Platonic-Systems/mission-control";
+    mkdocs-flake.url = "github:applicative-systems/mkdocs-flake";
+    mkdocs-flake.inputs.nixpkgs.follows = "nixpkgs";
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
     nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
@@ -272,6 +274,20 @@
             Provides an informative "message of the day" when launching your shell.
 
             See the [Platonic-Systems/mission-control readme](https://github.com/Platonic-Systems/mission-control#readme).
+          '';
+        };
+
+        mkdocs-flake = {
+          title = "mkdocs-flake";
+          baseUrl = "https://github.com/applicative-systems/mkdocs-flake/blob/main";
+          intro = ''
+            [mkdocs-flake](https://applicative-systems.github.io/mkdocs-flake/) adds documentation targets for your project [mkdocs](https://www.mkdocs.org/) documentation.
+            The provided mkdocs distribution comes pre-packaged with the latest [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) and many useful plugins.
+
+            After integration, run `nix build .#documentation` to build your documentation.
+            To serve the documentation locally with live-rebuilds, run `nix run .#watch-documentation`
+
+            Quick example how to integrate it into your flake: [mkdocs-flake documentation: flake.parts integration](https://applicative-systems.github.io/mkdocs-flake/integration/flake-parts.html).
           '';
         };
 
