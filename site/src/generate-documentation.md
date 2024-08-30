@@ -64,7 +64,7 @@ To make docs available, use this syntax:
 1. Clone `https://github.com/hercules-ci/flake.parts-website`, or for via ssh: `git@github.com:hercules-ci/flake.parts-website`
 1. Add your flake to the `inputs` in `flake.nix`
 1. Define the details in `render.inputs` in `flake.nix`.
-   See [options/flake.parts-website.md](flake.parts-website reference docs) for option details.
+   See [flake.parts-website reference docs](options/flake.parts-website.md) for option details.
 1. `nix build -L --show-trace`
 1. Open a pull request
 
