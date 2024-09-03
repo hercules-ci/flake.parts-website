@@ -40,6 +40,7 @@
     pydev.url = "github:oceansprint/pydev";
     pydev.inputs.nixpkgs.follows = "nixpkgs";
     pydev.inputs.pre-commit-hooks-nix.follows = "pre-commit-hooks-nix";
+    rust-flake.url = "github:juspay/rust-flake";
     std.url = "github:divnix/std";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
@@ -210,6 +211,18 @@
             It also provides [`checks`](flake-parts.html#opt-perSystem.checks) and [`devShells`](flake-parts.html#opt-perSystem.devShells)
 
             Multiple projects can be declared to represent each package set, which is great for GHCJS frontends.
+          '';
+        };
+
+        rust-flake = {
+          baseUrl = "https://github.com/juspay/rust-flake/blob/main";
+          intro = ''
+            [`rust-flake`](https://github.com/juspay/rust-flake) scans your flake files for Rust projects and
+            turns them into packages using [crane](https://crane.dev/).
+
+            It also provides [`checks`](flake-parts.html#opt-perSystem.checks) (clippy) and [`devShells`](flake-parts.html#opt-perSystem.devShells)
+
+            Multi-crate workspaces are supported.
           '';
         };
 
@@ -420,7 +433,7 @@
             Add definitions from the [Standard](https://github.com/divnix/std#readme) DevOps framework to your flake.
 
             It organizes and disciplines your Nix and thereby speeds you up.
-            It also comes with great horizontal integrations of high quality 
+            It also comes with great horizontal integrations of high quality
             vertical DevOps tooling crafted by the Nix Ecosystem.
           '';
           # FIXME?
@@ -437,7 +450,7 @@
              - Cache which files have changed for super fast re-formatting.
              - Just type treefmt in any folder and it reformats the whole code tree.
 
-            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself. 
+            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself.
           '';
         };
 
