@@ -10,11 +10,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1722597419,
-        "narHash": "sha256-YbMzll0Dh2ln/TryDP+S3IGm8nRHkzcSQIubI4ZEOAw=",
+        "lastModified": 1725722682,
+        "narHash": "sha256-AzBlGNCl20Rb3XQQNcTofntkZnaYolanvMJrADH11vM=",
         "owner": "oddlama",
         "repo": "agenix-rekey",
-        "rev": "126b4a5133eb361cbf5bf90e44c71b6f830845ec",
+        "rev": "10ea05a0077aefe03b443fdb63b58ab78d0440f3",
         "type": "github"
       },
       "original": {
@@ -1219,11 +1219,11 @@
     },
     "haskell-flake_3": {
       "locked": {
-        "lastModified": 1725314890,
-        "narHash": "sha256-jjVrhLOlPjQiZ/8pe+g6Xc5sa563WXnNZDwGXVl4PXQ=",
+        "lastModified": 1725735225,
+        "narHash": "sha256-L6SOci0cKlenq705FplCstBw4y8OFSXEKL1xlitQ1pI=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "ed94388c2e622f28cb45108a4e73c9d2b2a796da",
+        "rev": "9efd3baa214f92feb270970fc6bc9d65f724ef8a",
         "type": "github"
       },
       "original": {
