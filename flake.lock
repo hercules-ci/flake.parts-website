@@ -667,6 +667,22 @@
     "flake-compat_5": {
       "flake": false,
       "locked": {
+        "lastModified": 1696426674,
+        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-compat_6": {
+      "flake": false,
+      "locked": {
         "lastModified": 1627913399,
         "narHash": "sha256-hY8g6H2KFL8ownSiFeMOjwPC8P0ueXpCVEbxgda3pko=",
         "owner": "edolstra",
@@ -680,7 +696,7 @@
         "type": "github"
       }
     },
-    "flake-compat_6": {
+    "flake-compat_7": {
       "flake": false,
       "locked": {
         "lastModified": 1696426674,
@@ -1394,12 +1410,15 @@
       }
     },
     "make-shell": {
+      "inputs": {
+        "flake-compat": "flake-compat_4"
+      },
       "locked": {
-        "lastModified": 1722792362,
-        "narHash": "sha256-pIoKSHtz++viJE/9ZFCg7jqKJVkI+AsFViE5FYssOM8=",
+        "lastModified": 1725847848,
+        "narHash": "sha256-bS4OEJHFBxr6pi92K02jgNMh5q0hH2DNc33hUgh0M7U=",
         "owner": "nicknovitski",
         "repo": "make-shell",
-        "rev": "b417258c0f764aedeb131c87515cd53fe6368607",
+        "rev": "b6874fcad88297eadc83a68d2f0d0b924332019f",
         "type": "github"
       },
       "original": {
@@ -1541,11 +1560,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1725776020,
-        "narHash": "sha256-Bmdw9Nqe8E/jweaP+z0cfM1IsyXWVncH5NQnxYBaUVg=",
+        "lastModified": 1725862543,
+        "narHash": "sha256-tq5GovIMh1CaC4wtf7qdnzyab+tlpIspuR13FHAVibA=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "76fe6d715d8e1883f5088e928e1355514d930e68",
+        "rev": "b60e6590f9d54041660d5dc86242721eb568371d",
         "type": "github"
       },
       "original": {
@@ -1989,7 +2008,7 @@
     },
     "opam-nix": {
       "inputs": {
-        "flake-compat": "flake-compat_5",
+        "flake-compat": "flake-compat_6",
         "flake-utils": "flake-utils_6",
         "mirage-opam-overlays": [
           "ocaml-flake",
@@ -2240,7 +2259,7 @@
     },
     "pre-commit-hooks-nix": {
       "inputs": {
-        "flake-compat": "flake-compat_6",
+        "flake-compat": "flake-compat_7",
         "gitignore": "gitignore_4",
         "nixpkgs": [
           "nixpkgs"
@@ -2291,7 +2310,7 @@
     },
     "pre-commit-hooks_3": {
       "inputs": {
-        "flake-compat": "flake-compat_4",
+        "flake-compat": "flake-compat_5",
         "flake-utils": [
           "nix-topology",
           "flake-utils"
@@ -2419,11 +2438,11 @@
     "rust-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1725762472,
-        "narHash": "sha256-thdxLVdcfrJNMFV3Ej9mDIh6QgHyoYswiW0SFNwod8A=",
+        "lastModified": 1725848835,
+        "narHash": "sha256-u4lCr+tOEWhsFiww5G04U5jUNzaQJi0/ZMIDGiLeT14=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "57a1564c924ee4acbffe0ad3d65c7e90d3e77cd8",
+        "rev": "2ef910a6276a2f34513d18f2f826a8dea72c3b3f",
         "type": "github"
       },
       "original": {
