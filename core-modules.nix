@@ -6,10 +6,61 @@
   in flakeModules.empty-site. (It's _comparatively_ empty.)
  */
 
-{ lib, ... }: {
+{ ... }: {
   config.perSystem = { config, ... }:
     let
       inputs = config.render.officialFlakeInputs;
+
+      commonExtras = { lib, config, ... }:
+        let
+          inherit (lib) mkOption types;
+        in
+        {
+          options = {
+            extraName = mkOption {
+              type = types.str;
+              description = ''
+                Name of the extra, opt-in module.
+              '';
+            };
+            sourceSubpath = mkOption {
+              type = types.str;
+              description = ''
+                The path to the source file, relative to the flake's root.
+              '';
+              default = "/extras/${config.extraName}.nix";
+            };
+          };
+          config = {
+            _module.args.name = lib.mkForce "flake-parts";
+            title = "flake-parts.${config.extraName}";
+            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${config.sourceSubpath}";
+            flake = inputs.flake-parts;
+            getModules = f: [ f.flakeModules.${config.extraName} ];
+            attributePath = [ "flakeModules" config.extraName ];
+            installationDeclareInput = false;
+            filterTransformOptions =
+              { sourceName, sourcePath, baseUrl, coreOptDecls }:
+              let sourcePathStr = toString sourcePath + config.sourceSubpath;
+              in
+              opt:
+              let
+                declarations = lib.concatMap
+                  (decl:
+                    if lib.hasPrefix sourcePathStr (toString decl)
+                    then
+                      let subpath = lib.removePrefix sourcePathStr (toString decl);
+                      in [{ url = baseUrl + subpath; name = sourceName + subpath; }]
+                    else [ ]
+                  )
+                  opt.declarations;
+              in
+              if declarations == [ ]
+              then opt // { visible = false; }
+              else opt // { inherit declarations; };
+            menu.enable = false;
+          };
+        };
     in
     {
       render.inputs = {
@@ -25,16 +76,12 @@
           menu.enable = false;
         };
 
-        flake-parts-easyOverlay =
-          let sourceSubpath = "/extras/easyOverlay.nix";
-          in
-          {
-            _module.args.name = lib.mkForce "flake-parts";
-            flake = inputs.flake-parts;
-            title = "flake-parts.easyOverlay";
-            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${sourceSubpath}";
-            getModules = f: [ f.flakeModules.easyOverlay ];
-            intro = ''
+        flake-parts-easyOverlay = { ... }: {
+          imports = [ commonExtras ];
+          extraName = "easyOverlay";
+          separateEval = true;
+          intro =
+            ''
               ## WARNING
 
               This module does NOT make _consuming_ an overlay easy. This module is intended for _creating_ overlays.
@@ -71,80 +118,51 @@
 
               It has an unfortunate name and may be renamed. Alternatively, its functionality may be moved out of flake-parts, into some Nixpkgs module. Certainly until then, feel free to use the module if you understand what it does.
             '';
-            installationDeclareInput = false;
-            attributePath = [ "flakeModules" "easyOverlay" ];
-            separateEval = true;
-            filterTransformOptions =
-              { sourceName, sourcePath, baseUrl, coreOptDecls }:
-              let sourcePathStr = toString sourcePath + sourceSubpath;
-              in
-              opt:
-              let
-                declarations = lib.concatMap
-                  (decl:
-                    if lib.hasPrefix sourcePathStr (toString decl)
-                    then
-                      let subpath = lib.removePrefix sourcePathStr (toString decl);
-                      in [{ url = baseUrl + subpath; name = sourceName + subpath; }]
-                    else [ ]
-                  )
-                  opt.declarations;
-              in
-              if declarations == [ ]
-              then opt // { visible = false; }
-              else opt // { inherit declarations; };
-            menu.enable = false;
-          };
+        };
 
-        flake-parts-flakeModules =
-          let sourceSubpath = "/extras/flakeModules.nix";
-          in
-          {
-            _module.args.name = lib.mkForce "flake-parts";
-            flake = inputs.flake-parts;
-            title = "flake-parts.flakeModules";
-            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${sourceSubpath}";
-            getModules = f: [ f.flakeModules.flakeModules ];
-            intro = ''
+        flake-parts-flakeModules = { ... }: {
+          imports = [ commonExtras ];
+          extraName = "flakeModules";
+          intro =
+            ''
               Adds the `flakeModules` attribute and `flakeModule` alias.
 
               This module makes deduplication and `disabledModules` work, even if the definitions are inline modules or [`importApply`](../define-module-in-separate-file.html#importapply).
             '';
-            installationDeclareInput = false;
-            attributePath = [ "flakeModules" "easyOverlay" ];
-            separateEval = true;
-            filterTransformOptions =
-              { sourceName, sourcePath, baseUrl, coreOptDecls }:
-              let sourcePathStr = toString sourcePath + sourceSubpath;
-              in
-              opt:
-              let
-                declarations = lib.concatMap
-                  (decl:
-                    if lib.hasPrefix sourcePathStr (toString decl)
-                    then
-                      let subpath = lib.removePrefix sourcePathStr (toString decl);
-                      in [{ url = baseUrl + subpath; name = sourceName + subpath; }]
-                    else [ ]
-                  )
-                  opt.declarations;
-              in
-              if declarations == [ ]
-              then opt // { visible = false; }
-              else opt // { inherit declarations; };
-            menu.enable = false;
-          };
+        };
 
-        flake-parts-partitions =
-          let sourceSubpath = "/extras/partitions.nix";
-          in
-          {
-            _module.args.name = lib.mkForce "flake-parts";
-            flake = inputs.flake-parts;
-            title = "flake-parts.partitions";
-            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${sourceSubpath}";
-            getModules = f: [ f.flakeModules.partitions ];
-            intro = ''
+        flake-parts-modules = { ... }: {
+          imports = [ commonExtras ];
+          extraName = "modules";
+          intro =
+            ''
+              This module provides a generic `modules` flake output attribute, that can host modules for any module system application.
+
+              Furthermore, it adds basic type checking so that the modules can't be imported into the wrong [class](https://nixos.org/manual/nixpkgs/stable/index.html#module-system-lib-evalModules-param-class) of configurations.
+              For example, if a Home Manager module would be loaded into a NixOS configuration, that becomes a simple type error, instead of a complicated message about undeclared options.
+
+              Example:
+
+              ```nix
+              { withSystem, ... }: {
+                flake.modules.nixos.myPreferences = ./nixos/preferences.nix;
+                flake.modules.nixos.myService = { pkgs, ... }: {
+                  imports = [ ./nixos/services/myService.nix ];
+                  services.myService.package =
+                    withSystem pkgs.stdenv.hostPlatform.system ({ config, ... }:
+                      config.packages.default;
+                    );
+                };
+              }
+              ```
+            '';
+        };
+
+        flake-parts-partitions = { ... }: {
+          imports = [ commonExtras ];
+          extraName = "partitions";
+          intro =
+            ''
               This module provides a performance optimization, and a way to reduce the size of the main `flake.lock` that is [currently](https://github.com/NixOS/nix/issues/7730) getting copied into all consuming flakes' lock files, which bothers some users.
 
               The goals of this module are:
@@ -204,29 +222,7 @@
               Fortunately this fundamental limitation only applies one "layer" at a time. Every submodule has its own set of modules or `imports` and that allows us to still load modules lazily, as long as we provide the means for those modules to affect the root (here: the flake) in a controlled way. That is what this module does. It loads the "optional" modules into a separate submodule, and provides an option to load parts of that (sub)module evaluation into the root.
 
             '';
-            installationDeclareInput = false;
-            attributePath = [ "flakeModules" "partitions" ];
-            filterTransformOptions =
-              { sourceName, sourcePath, baseUrl, coreOptDecls }:
-              let sourcePathStr = toString sourcePath + sourceSubpath;
-              in
-              opt:
-              let
-                declarations = lib.concatMap
-                  (decl:
-                    if lib.hasPrefix sourcePathStr (toString decl)
-                    then
-                      let subpath = lib.removePrefix sourcePathStr (toString decl);
-                      in [{ url = baseUrl + subpath; name = sourceName + subpath; }]
-                    else [ ]
-                  )
-                  opt.declarations;
-              in
-              if declarations == [ ]
-              then opt // { visible = false; }
-              else opt // { inherit declarations; };
-            menu.enable = false;
-          };
+        };
       };
     };
 }
