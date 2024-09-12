@@ -20,5 +20,6 @@
     - [`flake-parts` (built in)](./options/flake-parts.md)
       - [`flakeModules`](./options/flake-parts-flakeModules.md)
       - [`easyOverlay` (warning)](./options/flake-parts-easyOverlay.md)
+      - [`modules`](./options/flake-parts-modules.md)
       - [`partitions`](./options/flake-parts-partitions.md)
 <!-- module list will be concatenated to the end -->

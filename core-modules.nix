@@ -135,6 +135,60 @@
             menu.enable = false;
           };
 
+        flake-parts-modules =
+          let sourceSubpath = "/extras/modules.nix";
+          in
+          {
+            _module.args.name = lib.mkForce "flake-parts";
+            flake = inputs.flake-parts;
+            title = "flake-parts.modules";
+            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${sourceSubpath}";
+            getModules = f: [ f.flakeModules.modules ];
+            intro = ''
+              This module provides a generic `modules` flake output attribute, that can host modules for any module system application.
+
+              Furthermore, it adds basic type checking so that the modules can't be imported into the wrong [class](https://nixos.org/manual/nixpkgs/stable/index.html#module-system-lib-evalModules-param-class) of configurations.
+              For example, if a Home Manager module would be loaded into a NixOS configuration, that becomes a simple type error, instead of a complicated message about undeclared options.
+
+              Example:
+
+              ```nix
+              { withSystem, ... }: {
+                flake.modules.nixos.myPreferences = ./nixos/preferences.nix;
+                flake.modules.nixos.myService = { pkgs, ... }: {
+                  imports = [ ./nixos/services/myService.nix ];
+                  services.myService.package =
+                    withSystem pkgs.stdenv.hostPlatform.system ({ config, ... }:
+                      config.packages.default;
+                    );
+                };
+              }
+              ```
+            '';
+            installationDeclareInput = false;
+            attributePath = [ "flakeModules" "modules" ];
+            filterTransformOptions =
+              { sourceName, sourcePath, baseUrl, coreOptDecls }:
+              let sourcePathStr = toString sourcePath + sourceSubpath;
+              in
+              opt:
+              let
+                declarations = lib.concatMap
+                  (decl:
+                    if lib.hasPrefix sourcePathStr (toString decl)
+                    then
+                      let subpath = lib.removePrefix sourcePathStr (toString decl);
+                      in [{ url = baseUrl + subpath; name = sourceName + subpath; }]
+                    else [ ]
+                  )
+                  opt.declarations;
+              in
+              if declarations == [ ]
+              then opt // { visible = false; }
+              else opt // { inherit declarations; };
+            menu.enable = false;
+          };
+
         flake-parts-partitions =
           let sourceSubpath = "/extras/partitions.nix";
           in
