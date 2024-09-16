@@ -11,7 +11,7 @@
     devenv.url = "github:hercules-ci/devenv/flake-module";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
-    dream2nix_legacy.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
+    dream2nix_legacy.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     dream2nix_legacy.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
     emanote.url = "github:srid/emanote";
@@ -33,13 +33,13 @@
     ocaml-flake.url = "github:9glenda/ocaml-flake";
     ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
-    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
-    pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
+    git-hooks-nix.url = "github:cachix/git-hooks.nix";
+    git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
     process-compose-flake.url = "github:Platonic-systems/process-compose-flake";
     pydev.url = "github:oceansprint/pydev";
     pydev.inputs.nixpkgs.follows = "nixpkgs";
-    pydev.inputs.pre-commit-hooks-nix.follows = "pre-commit-hooks-nix";
+    pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
     std.url = "github:divnix/std";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
@@ -374,15 +374,15 @@
           '';
         };
 
-        pre-commit-hooks-nix = {
-          baseUrl = "https://github.com/cachix/pre-commit-hooks.nix/blob/master";
+        git-hooks-nix = {
+          baseUrl = "https://github.com/cachix/git-hooks.nix/blob/master";
           intro = ''
             Configure pre-commit hooks.
 
             Generates a configuration for [pre-commit](https://pre-commit.com),
             provides a script to activate it, and adds a [check](flake-parts.html#opt-perSystem.checks).
 
-            Pre-defined hooks are maintained at [`cachix/pre-commit-hooks.nix`](https://github.com/cachix/pre-commit-hooks.nix).
+            Pre-defined hooks are maintained at [`cachix/git-hooks.nix`](https://github.com/cachix/git-hooks.nix).
           '';
         };
 
@@ -448,7 +448,7 @@
         ./dev-module.nix
         ./deploy-module.nix
         inputs.hercules-ci-effects.flakeModule
-        inputs.pre-commit-hooks-nix.flakeModule
+        inputs.git-hooks-nix.flakeModule
       ];
       systems = [
         # Supported, see `ciSystems`
