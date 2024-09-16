@@ -1,1 +1,4 @@
 /getting-things.html    /cheat-sheet.html
+
+/options/pre-commit-hooks-nix /options/git-hooks-nix
+/*.html /:splat 302

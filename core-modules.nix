@@ -186,7 +186,7 @@
                 imports = [
                   ./nix/development.nix
                   inputs.hercules-ci-effects.flakeModule
-                  inputs.pre-commit-hooks-nix.flakeModule
+                  inputs.git-hooks-nix.flakeModule
                 ];
               };
               ```
@@ -198,9 +198,9 @@
                 description = "Private inputs for development purposes. These are used by the top level flake in the `dev` partition, but do not appear in consumers' lock files.";
                 inputs = {
                   hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
-                  pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
+                  git-hooks-nix.url = "github:cachix/git-hooks.nix";
                   # See https://github.com/ursi/get-flake/issues/4
-                  pre-commit-hooks-nix.inputs.nixpkgs.follows = "";
+                  git-hooks-nix.inputs.nixpkgs.follows = "";
                 };
 
                 # This flake is only used for its inputs.
