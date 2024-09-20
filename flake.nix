@@ -35,6 +35,8 @@
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
+    pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
+    pkgs-by-name-for-flake-parts.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
     process-compose-flake.url = "github:Platonic-systems/process-compose-flake";
     pydev.url = "github:oceansprint/pydev";
@@ -199,6 +201,18 @@
           attributePath = [ "flakeModules" "empty-site" ];
           getModules = _: [ publishedModules.empty-site ];
           sourcePath = builtins.path { name = "source"; path = ./.; };
+        };
+
+        git-hooks-nix = {
+          baseUrl = "https://github.com/cachix/git-hooks.nix/blob/master";
+          intro = ''
+            Configure pre-commit hooks.
+
+            Generates a configuration for [pre-commit](https://pre-commit.com),
+            provides a script to activate it, and adds a [check](flake-parts.html#opt-perSystem.checks).
+
+            Pre-defined hooks are maintained at [`cachix/git-hooks.nix`](https://github.com/cachix/git-hooks.nix).
+          '';
         };
 
         haskell-flake = {
@@ -374,15 +388,45 @@
           '';
         };
 
-        git-hooks-nix = {
-          baseUrl = "https://github.com/cachix/git-hooks.nix/blob/master";
+        pkgs-by-name-for-flake-parts = {
+          title = "pkgs-by-name-for-flake-parts";
+          baseUrl = "https://github.com/drupol/pkgs-by-name-for-flake-parts/blob/main";
+          # The installation instruction are already part of the example, which is nicer. (TODO @roberth: integrate this style)
+          installation = "";
           intro = ''
-            Configure pre-commit hooks.
+            [pkgs-by-name-for-flake-parts](https://github.com/drupol/pkgs-by-name-for-flake-parts) is a flake-parts
+            that can autoload Nix packages under a particular directory.
 
-            Generates a configuration for [pre-commit](https://pre-commit.com),
-            provides a script to activate it, and adds a [check](flake-parts.html#opt-perSystem.checks).
+            It transform a directory tree containing package files suitable for callPackage into a matching nested attribute set of derivations.
+            Find the documentation and example in the [manual](https://nixos.org/manual/nixpkgs/stable/index.html#function-library-lib.filesystem.packagesFromDirectoryRecursive).
 
-            Pre-defined hooks are maintained at [`cachix/git-hooks.nix`](https://github.com/cachix/git-hooks.nix).
+            Quick example how to use it:
+
+            ```nix
+            {
+              inputs = {
+                flake-parts.url = "github:hercules-ci/flake-parts";
+                nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+                # (1) add `pkgs-by-name-for-flake-parts` input
+                pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
+              };
+
+              outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+                systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
+
+                # (2) import pkgs-by-name-for-flake-parts module
+                imports = [
+                  inputs.pkgs-by-name-for-flake-parts.flakeModule
+                ];
+
+                perSystem = { config, self', inputs', pkgs, system, ... }: {
+                  # (3) point to your directory containing Nix packages
+                  pkgsDirectory = ./nix/pkgs-by-name;
+                };
+              };
+            }
+            ```
           '';
         };
 
@@ -420,7 +464,7 @@
             Add definitions from the [Standard](https://github.com/divnix/std#readme) DevOps framework to your flake.
 
             It organizes and disciplines your Nix and thereby speeds you up.
-            It also comes with great horizontal integrations of high quality 
+            It also comes with great horizontal integrations of high quality
             vertical DevOps tooling crafted by the Nix Ecosystem.
           '';
           # FIXME?
@@ -437,7 +481,7 @@
              - Cache which files have changed for super fast re-formatting.
              - Just type treefmt in any folder and it reformats the whole code tree.
 
-            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself. 
+            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself.
           '';
         };
 
