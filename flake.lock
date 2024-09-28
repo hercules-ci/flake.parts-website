@@ -2187,6 +2187,21 @@
         "type": "github"
       }
     },
+    "pkgs-by-name-for-flake-parts": {
+      "locked": {
+        "lastModified": 1726843639,
+        "narHash": "sha256-3ztPGGVbSyGHAycwJbgzpH0JoeC+tvU1pFjOuBGyHSE=",
+        "owner": "drupol",
+        "repo": "pkgs-by-name-for-flake-parts",
+        "rev": "d7f356eba1e202e850f6abb10c9cd8bf3f5db8a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drupol",
+        "repo": "pkgs-by-name-for-flake-parts",
+        "type": "github"
+      }
+    },
     "poetry2nix": {
       "flake": false,
       "locked": {
@@ -2428,6 +2443,7 @@
         "nix-topology": "nix-topology",
         "nixpkgs": "nixpkgs_5",
         "ocaml-flake": "ocaml-flake",
+        "pkgs-by-name-for-flake-parts": "pkgs-by-name-for-flake-parts",
         "proc-flake": "proc-flake",
         "process-compose-flake": "process-compose-flake",
         "pydev": "pydev",
