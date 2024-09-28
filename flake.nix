@@ -8,7 +8,9 @@
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
     agenix-shell.url = "github:aciceri/agenix-shell";
+    agenix-shell.inputs.nixpkgs.follows = "nixpkgs";
     devenv.url = "github:hercules-ci/devenv/flake-module";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
     dream2nix_legacy.inputs.pre-commit-hooks.follows = "git-hooks-nix";
@@ -16,11 +18,15 @@
     dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
     emanote.url = "github:srid/emanote";
     emanote.inputs.nixpkgs.follows = "nixpkgs";
+    # This didn't work: "error: cannot find flake 'flake:ema' in the flake registries" (???)
+    # emanote.inputs.ema.inputs.emanote.follows = "emanote";
+    emanote.inputs.ema.follows = ""; # appears unneeded
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
-    ez-configs.inputs.nixpkgs-darwin.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
+    hercules-ci-effects.inputs.nixpkgs.follows = "nixpkgs";
+    hercules-ci-effects.inputs.flake-parts.follows = "flake-parts";
     make-shell.url = "github:nicknovitski/make-shell";
     mission-control.url = "github:Platonic-Systems/mission-control";
     mkdocs-flake.url = "github:applicative-systems/mkdocs-flake";
@@ -36,14 +42,15 @@
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
-    pkgs-by-name-for-flake-parts.inputs.nixpkgs.follows = "nixpkgs";
     proc-flake.url = "github:srid/proc-flake";
     process-compose-flake.url = "github:Platonic-systems/process-compose-flake";
     pydev.url = "github:oceansprint/pydev";
     pydev.inputs.nixpkgs.follows = "nixpkgs";
     pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
     std.url = "github:divnix/std";
+    std.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ flake-parts, ... }:
