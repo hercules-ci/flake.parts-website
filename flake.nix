@@ -8,7 +8,9 @@
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
     agenix-shell.url = "github:aciceri/agenix-shell";
+    agenix-shell.inputs.nixpkgs.follows = "nixpkgs";
     devenv.url = "github:hercules-ci/devenv/flake-module";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
     dream2nix_legacy.inputs.pre-commit-hooks.follows = "git-hooks-nix";
@@ -20,6 +22,8 @@
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
+    hercules-ci-effects.inputs.nixpkgs.follows = "nixpkgs";
+    hercules-ci-effects.inputs.flake-parts.follows = "flake-parts";
     make-shell.url = "github:nicknovitski/make-shell";
     mission-control.url = "github:Platonic-Systems/mission-control";
     mkdocs-flake.url = "github:applicative-systems/mkdocs-flake";
@@ -41,7 +45,9 @@
     pydev.inputs.nixpkgs.follows = "nixpkgs";
     pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
     std.url = "github:divnix/std";
+    std.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ flake-parts, ... }:
