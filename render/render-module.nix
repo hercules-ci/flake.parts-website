@@ -55,7 +55,7 @@ in
       };
 
       eval = evalWith {
-        modules = concatLists (mapAttrsToList (name: inputCfg: inputCfg.getModules inputCfg.flake) cfg.inputs);
+        modules = concatLists (mapAttrsToList (name: inputCfg: lib.optionals (!inputCfg.separateEval) (inputCfg.getModules inputCfg.flake)) cfg.inputs);
       };
       evalWith = { modules }: inputs.flake-parts.lib.evalFlakeModule
         {
