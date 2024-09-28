@@ -286,7 +286,7 @@
         };
 
         mission-control = {
-          baseUrl = "https://github.com/Platonic-Systems/mission-control/blob/main";
+          baseUrl = "https://github.com/Platonic-Systems/mission-control/blob/master";
           intro = ''
             A flake-parts module for your Nix devshell scripts.
 
