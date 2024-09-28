@@ -245,6 +245,11 @@
 
             Multi-crate workspaces are supported.
           '';
+          attributePaths = [
+            [ "flakeModules" "default" ]
+            [ "flakeModules" "nixpkgs" ]
+          ];
+          separateEval = true;
         };
 
         hercules-ci-effects = {
