@@ -47,6 +47,7 @@
     pydev.url = "github:oceansprint/pydev";
     pydev.inputs.nixpkgs.follows = "nixpkgs";
     pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
+    rust-flake.url = "github:juspay/rust-flake";
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
