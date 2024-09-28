@@ -18,6 +18,9 @@
     dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
     emanote.url = "github:srid/emanote";
     emanote.inputs.nixpkgs.follows = "nixpkgs";
+    # This didn't work: "error: cannot find flake 'flake:ema' in the flake registries" (???)
+    # emanote.inputs.ema.inputs.emanote.follows = "emanote";
+    emanote.inputs.ema.follows = ""; # appears unneeded
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
