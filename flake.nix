@@ -265,7 +265,7 @@
         };
 
         mission-control = {
-          baseUrl = "https://github.com/Platonic-Systems/mission-control/blob/main";
+          baseUrl = "https://github.com/Platonic-Systems/mission-control/blob/master";
           intro = ''
             A flake-parts module for your Nix devshell scripts.
 
@@ -420,7 +420,7 @@
             Add definitions from the [Standard](https://github.com/divnix/std#readme) DevOps framework to your flake.
 
             It organizes and disciplines your Nix and thereby speeds you up.
-            It also comes with great horizontal integrations of high quality 
+            It also comes with great horizontal integrations of high quality
             vertical DevOps tooling crafted by the Nix Ecosystem.
           '';
           # FIXME?
@@ -437,7 +437,7 @@
              - Cache which files have changed for super fast re-formatting.
              - Just type treefmt in any folder and it reformats the whole code tree.
 
-            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself. 
+            This module is defined in [`numtide/treefmt-nix`](https://github.com/numtide/treefmt-nix). The `treefmt` repo is about the [tool](https://github.com/numtide/treefmt) itself.
           '';
         };
 
