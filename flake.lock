@@ -1230,11 +1230,11 @@
     },
     "mission-control": {
       "locked": {
-        "lastModified": 1718815759,
-        "narHash": "sha256-hzLbxU580EaxKmkbQkiaMF3NoIzrcmVryGul5WSQatA=",
+        "lastModified": 1727538070,
+        "narHash": "sha256-M05ezjs1OaRNg0iJjdM2BZdZo0rAeYIrICONAYd0vt8=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "db5e2cc39c6799b301412d69182b9221c65146a8",
+        "rev": "b39297d74f55a8dc707de6319f09ac4ddac3756a",
         "type": "github"
       },
       "original": {
@@ -1837,11 +1837,11 @@
     },
     "pkgs-by-name-for-flake-parts": {
       "locked": {
-        "lastModified": 1727511447,
-        "narHash": "sha256-+1lAGx01SbbFFkXyQkmopUHTXSnQEYkSJ4cY9Ox4dFE=",
+        "lastModified": 1727519927,
+        "narHash": "sha256-3SNX6BuaisoX9PKYI+fh3geZ3jBgKKkAtHcWuHRU0+o=",
         "owner": "drupol",
         "repo": "pkgs-by-name-for-flake-parts",
-        "rev": "1e0dbeb19e497b19188384156cfc2d771a0e0c1c",
+        "rev": "91debb07d81ff25b8e3b48914b6abd6f11dc26e2",
         "type": "github"
       },
       "original": {
