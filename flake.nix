@@ -8,19 +8,25 @@
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
     agenix-shell.url = "github:aciceri/agenix-shell";
+    agenix-shell.inputs.nixpkgs.follows = "nixpkgs";
     devenv.url = "github:hercules-ci/devenv/flake-module";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
-    dream2nix_legacy.inputs.pre-commit-hooks.follows = "pre-commit-hooks-nix";
+    dream2nix_legacy.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     dream2nix_legacy.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
     emanote.url = "github:srid/emanote";
     emanote.inputs.nixpkgs.follows = "nixpkgs";
+    # This didn't work: "error: cannot find flake 'flake:ema' in the flake registries" (???)
+    # emanote.inputs.ema.inputs.emanote.follows = "emanote";
+    emanote.inputs.ema.follows = ""; # appears unneeded
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
-    ez-configs.inputs.nixpkgs-darwin.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
+    hercules-ci-effects.inputs.nixpkgs.follows = "nixpkgs";
+    hercules-ci-effects.inputs.flake-parts.follows = "flake-parts";
     make-shell.url = "github:nicknovitski/make-shell";
     mission-control.url = "github:Platonic-Systems/mission-control";
     mkdocs-flake.url = "github:applicative-systems/mkdocs-flake";
@@ -33,16 +39,18 @@
     ocaml-flake.url = "github:9glenda/ocaml-flake";
     ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
-    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
-    pre-commit-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
+    git-hooks-nix.url = "github:cachix/git-hooks.nix";
+    git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
+    pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
     proc-flake.url = "github:srid/proc-flake";
     process-compose-flake.url = "github:Platonic-systems/process-compose-flake";
     pydev.url = "github:oceansprint/pydev";
     pydev.inputs.nixpkgs.follows = "nixpkgs";
-    pydev.inputs.pre-commit-hooks-nix.follows = "pre-commit-hooks-nix";
-    rust-flake.url = "github:juspay/rust-flake";
+    pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
     std.url = "github:divnix/std";
+    std.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ flake-parts, ... }:
@@ -200,6 +208,18 @@
           attributePath = [ "flakeModules" "empty-site" ];
           getModules = _: [ publishedModules.empty-site ];
           sourcePath = builtins.path { name = "source"; path = ./.; };
+        };
+
+        git-hooks-nix = {
+          baseUrl = "https://github.com/cachix/git-hooks.nix/blob/master";
+          intro = ''
+            Configure pre-commit hooks.
+
+            Generates a configuration for [pre-commit](https://pre-commit.com),
+            provides a script to activate it, and adds a [check](flake-parts.html#opt-perSystem.checks).
+
+            Pre-defined hooks are maintained at [`cachix/git-hooks.nix`](https://github.com/cachix/git-hooks.nix).
+          '';
         };
 
         haskell-flake = {
@@ -387,15 +407,45 @@
           '';
         };
 
-        pre-commit-hooks-nix = {
-          baseUrl = "https://github.com/cachix/pre-commit-hooks.nix/blob/master";
+        pkgs-by-name-for-flake-parts = {
+          title = "pkgs-by-name-for-flake-parts";
+          baseUrl = "https://github.com/drupol/pkgs-by-name-for-flake-parts/blob/main";
+          # The installation instruction are already part of the example, which is nicer. (TODO @roberth: integrate this style)
+          installation = "";
           intro = ''
-            Configure pre-commit hooks.
+            [pkgs-by-name-for-flake-parts](https://github.com/drupol/pkgs-by-name-for-flake-parts) is a flake-parts
+            that can autoload Nix packages under a particular directory.
 
-            Generates a configuration for [pre-commit](https://pre-commit.com),
-            provides a script to activate it, and adds a [check](flake-parts.html#opt-perSystem.checks).
+            It transform a directory tree containing package files suitable for callPackage into a matching nested attribute set of derivations.
+            Find the documentation and example in the [manual](https://nixos.org/manual/nixpkgs/stable/index.html#function-library-lib.filesystem.packagesFromDirectoryRecursive).
 
-            Pre-defined hooks are maintained at [`cachix/pre-commit-hooks.nix`](https://github.com/cachix/pre-commit-hooks.nix).
+            Quick example how to use it:
+
+            ```nix
+            {
+              inputs = {
+                flake-parts.url = "github:hercules-ci/flake-parts";
+                nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+                # (1) add `pkgs-by-name-for-flake-parts` input
+                pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
+              };
+
+              outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+                systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
+
+                # (2) import pkgs-by-name-for-flake-parts module
+                imports = [
+                  inputs.pkgs-by-name-for-flake-parts.flakeModule
+                ];
+
+                perSystem = { config, self', inputs', pkgs, system, ... }: {
+                  # (3) point to your directory containing Nix packages
+                  pkgsDirectory = ./nix/pkgs-by-name;
+                };
+              };
+            }
+            ```
           '';
         };
 
@@ -461,7 +511,7 @@
         ./dev-module.nix
         ./deploy-module.nix
         inputs.hercules-ci-effects.flakeModule
-        inputs.pre-commit-hooks-nix.flakeModule
+        inputs.git-hooks-nix.flakeModule
       ];
       systems = [
         # Supported, see `ciSystems`
