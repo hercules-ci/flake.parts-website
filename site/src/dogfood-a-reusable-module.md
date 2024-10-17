@@ -6,38 +6,25 @@ You can distribute reusable module logic through flakes using flake attributes, 
 However, importing from `self` is not possible, because such an import could affect the `self` attribute set.
 To use your own exported module, you have to reference it directly.
 
-```
-┌─────────┐   ┌───────────────────────────────────┐
-│ imports │   │ config.flake.flakeModules.default │
-└─────┬───┘   └─────────────────┬─────────────────┘
-      │                         │
-      │      ┌──────────────────┘
-      │      │
-┌─────▼──────▼─────┐
-│ flake-module.nix │
-└──────────────────┘
+```mermaid
+flowchart TD;
+
+imports --> flake-module.nix;
+config.flake.flakeModules.default --> flake-module.nix;
 ```
 
 If your module does not need anything from the local flake's lexical scope, you might implement the references in the diagram above.
 But if you do need to reference, say, a package from your local flake, then you need to apply one of the solutions from [Define a Module in a Separate File](define-module-in-separate-file.md).
 Instead of the arrows joining at the file name, we'll need a `let` binding.
 
-```
-┌─────────┐   ┌───────────────────────────────────┐
-│ imports │   │ config.flake.flakeModules.default │
-└─────┬───┘   └─────────────────┬─────────────────┘
-      │                         │
-      │       ┌─────────────────┘
-      │       │
-┌─────▼───────▼─────────┐
-│ let flakeModule = ... │
-└─────────┬─────────────┘
-          │
-          │
-          │
-┌─────────▼────────┐
-│ flake-module.nix │
-└──────────────────┘
+```mermaid
+flowchart TD;
+
+imports --> flakeModule;
+flakeModule ["let flakeModule = ..."];
+config.flake.flakeModules.default --> flakeModule;
+flakeModule -> flake-module.nix;
+
 ```
 
 ## Example with `importApply`
