@@ -43,7 +43,7 @@
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
     proc-flake.url = "github:srid/proc-flake";
-    process-compose-flake.url = "github:Platonic-systems/process-compose-flake?rev=40a3d1b892e4669ac23d215ef1ab5db6e6a63136";
+    process-compose-flake.url = "github:Platonic-systems/process-compose-flake";
     pydev.url = "github:oceansprint/pydev";
     pydev.inputs.nixpkgs.follows = "nixpkgs";
     pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
