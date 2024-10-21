@@ -47,6 +47,7 @@
     pydev.url = "github:oceansprint/pydev";
     pydev.inputs.nixpkgs.follows = "nixpkgs";
     pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
+    rust-flake.url = "github:juspay/rust-flake";
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
@@ -232,6 +233,23 @@
 
             Multiple projects can be declared to represent each package set, which is great for GHCJS frontends.
           '';
+        };
+
+        rust-flake = {
+          baseUrl = "https://github.com/juspay/rust-flake/blob/main";
+          intro = ''
+            [`rust-flake`](https://github.com/juspay/rust-flake) scans your flake files for Rust projects and
+            turns them into packages using [crane](https://crane.dev/).
+
+            It also provides [`checks`](flake-parts.html#opt-perSystem.checks) (clippy) and [`devShells`](flake-parts.html#opt-perSystem.devShells)
+
+            Multi-crate workspaces are supported.
+          '';
+          attributePaths = [
+            [ "flakeModules" "default" ]
+            [ "flakeModules" "nixpkgs" ]
+          ];
+          separateEval = true;
         };
 
         hercules-ci-effects = {

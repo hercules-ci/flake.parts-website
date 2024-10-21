@@ -55,7 +55,7 @@ in
       };
 
       eval = evalWith {
-        modules = concatLists (mapAttrsToList (name: inputCfg: inputCfg.getModules inputCfg.flake) cfg.inputs);
+        modules = concatLists (mapAttrsToList (name: inputCfg: lib.optionals (!inputCfg.separateEval) (inputCfg.getModules inputCfg.flake)) cfg.inputs);
       };
       evalWith = { modules }: inputs.flake-parts.lib.evalFlakeModule
         {
@@ -219,7 +219,14 @@ in
 
                 ```nix
                 imports = [
-                  inputs.${config.sourceName}.${lib.concatMapStringsSep "." lib.strings.escapeNixIdentifier config.attributePath}
+                  ${
+                    lib.strings.concatMapStringsSep
+                      "\n  "
+                      (attributePath:
+                        "inputs.${config.sourceName}.${lib.concatMapStringsSep "." lib.strings.escapeNixIdentifier attributePath}"
+                      )
+                      config.attributePaths
+                  }
                 ];
                 ```
 
@@ -248,20 +255,27 @@ in
             description = ''
               Get the modules to render.
             '';
-            default = flake: [
+            default = flake:
               (builtins.addErrorContext "while getting modules for input '${name}'"
-                (lib.getAttrFromPath config.attributePath flake)
+                (map (p: lib.getAttrFromPath p flake) config.attributePaths)
               )
-            ];
-            defaultText = lib.literalMD "Derived from `config.attributePath`, `<name>`";
+            ;
+            defaultText = lib.literalMD "Derived from `config.attributePaths`, `<name>`";
           };
 
           attributePath = mkOption {
-            type = types.listOf types.str;
+            default = [ "flakeModule" ];
+            description = ''
+              Default value for `attributePaths`.
+            '';
+          };
+
+          attributePaths = mkOption {
+            type = types.listOf (types.listOf types.str);
             description = ''
               Flake output attribute path to import.
             '';
-            default = [ "flakeModule" ];
+            default = [ config.attributePath ];
             example = [ "flakeModules" "default" ];
           };
 
