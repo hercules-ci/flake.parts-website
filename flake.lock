@@ -1219,11 +1219,11 @@
         "flake-compat": "flake-compat_5"
       },
       "locked": {
-        "lastModified": 1725847848,
-        "narHash": "sha256-bS4OEJHFBxr6pi92K02jgNMh5q0hH2DNc33hUgh0M7U=",
+        "lastModified": 1729528653,
+        "narHash": "sha256-bXso1pRcMxzJlEhfcDR/9oYOdkoXx/niNIMV4Y+FMmI=",
         "owner": "nicknovitski",
         "repo": "make-shell",
-        "rev": "b6874fcad88297eadc83a68d2f0d0b924332019f",
+        "rev": "dad639e47f32e66a3e080a249fc618086bd5cdeb",
         "type": "github"
       },
       "original": {
@@ -2417,11 +2417,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729242555,
-        "narHash": "sha256-6jWSWxv2crIXmYSEb3LEVsFkCkyVHNllk61X4uhqfCs=",
+        "lastModified": 1729613947,
+        "narHash": "sha256-XGOvuIPW1XRfPgHtGYXd5MAmJzZtOuwlfKDgxX5KT3s=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "d986489c1c757f6921a48c1439f19bfb9b8ecab5",
+        "rev": "aac86347fb5063960eccb19493e0cadcdb4205ca",
         "type": "github"
       },
       "original": {
