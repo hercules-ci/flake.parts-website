@@ -1036,11 +1036,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1731805534,
-        "narHash": "sha256-QS+dOZzsqLJ8NjhLCHp3zKD+d9nUThL/pcA4U0TlYBs=",
+        "lastModified": 1731869727,
+        "narHash": "sha256-pGoMqkV9CyYgMMOeDZEgeEfrZiwrwy+bc28mGoUuz2M=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "c0c29512592c4e4b06b32ca1393217416b5a5dc6",
+        "rev": "c984756f8dd2146be274b4845f2cc211c9bbb0e3",
         "type": "github"
       },
       "original": {
@@ -1349,11 +1349,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1731824122,
-        "narHash": "sha256-5z/ryMD9NUK6SDnkM3CGsWSvz3vvaPNn+lCdMrpagBo=",
+        "lastModified": 1731874250,
+        "narHash": "sha256-rORrRm24EYCnAjwbMNTxbTflj2OJgVRfKj8imqK5/iM=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "7672f90452ca1c487091e3ecd308abd2fe10f202",
+        "rev": "93320192e714789d6234ca06b6b5a5901d635029",
         "type": "github"
       },
       "original": {
