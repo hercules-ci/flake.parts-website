@@ -1432,11 +1432,11 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1732148608,
-        "narHash": "sha256-xRREJI5oHSe5h8PIic+IyEduZJHbppeiBiuZ2NdGRuI=",
+        "lastModified": 1732192922,
+        "narHash": "sha256-xQO/3I99TFdiXTN5VoS28NpbNlCQWQUvxmPQHlfkzmU=",
         "owner": "oddlama",
         "repo": "nix-topology",
-        "rev": "114dee2955392bb8b07210bcdf3d548a62c4d0ba",
+        "rev": "2b107e98bbde932a363874e0ef5b1739a932bbc5",
         "type": "github"
       },
       "original": {
@@ -2362,11 +2362,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732111664,
-        "narHash": "sha256-XWHuPWcP59QnHEewdZJXBX1TA2lAP78Vz4daG6tfIr4=",
+        "lastModified": 1732187120,
+        "narHash": "sha256-XdW2mYXvPHYtZ8oQqO3tRYtxx7kI0Hs3NU64IwAtD68=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "62003fdad7a5ab7b6af3ea9bd7290e4c220277d0",
+        "rev": "37f8f47cb618eddee0c0dd31a582b1cd3013c7f6",
         "type": "github"
       },
       "original": {
