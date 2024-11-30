@@ -36,6 +36,10 @@
     nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
     nix-topology.url = "github:oddlama/nix-topology";
     nix-topology.inputs.nixpkgs.follows = "nixpkgs";
+    nix-unit.url = "github:nix-community/nix-unit";
+    nix-unit.inputs.flake-parts.follows = "flake-parts";
+    nix-unit.inputs.nixpkgs.follows = "nixpkgs";
+    nix-unit.inputs.treefmt-nix.follows = "treefmt-nix";
     ocaml-flake.url = "github:9glenda/ocaml-flake";
     ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
@@ -391,6 +395,15 @@
             information from your hosts.
 
             After including this flake-parts module, you can build your diagram by running `nix build .#topology.<current-system>.config.output`.
+          '';
+        };
+
+        nix-unit = {
+          title = "nix-unit";
+          baseUrl = "https://github.com/nix-community/nix-unit/blob/main";
+          attributePath = [ "modules" "flake" "default" ];
+          intro = ''
+            Run [nix-unit](https://nix-community.github.io/nix-unit/) tests in [`checks`](flake-parts.md#opt-perSystem.checks).
           '';
         };
 
