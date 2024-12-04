@@ -677,11 +677,11 @@
         "nixpkgs-lib": "nixpkgs-lib_3"
       },
       "locked": {
-        "lastModified": 1733269028,
-        "narHash": "sha256-kVq/jAKKtbvWwbL9wf0SKDxtxsC5Gb+nlIYEFnyXhGA=",
+        "lastModified": 1733312601,
+        "narHash": "sha256-4pDvzqnegAfRkPwO3wmwBhVi/Sye1mzps0zHWYnP88c=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "e37654df08605b510ad84eceaafcc7248495e843",
+        "rev": "205b12d8b7cd4802fbcb8e8ef6a0f1408781a4f9",
         "type": "github"
       },
       "original": {
@@ -903,11 +903,11 @@
         "nixpkgs-stable": "nixpkgs-stable_3"
       },
       "locked": {
-        "lastModified": 1732021966,
-        "narHash": "sha256-mnTbjpdqF0luOkou8ZFi2asa1N3AA2CchR/RqCNmsGE=",
+        "lastModified": 1733318908,
+        "narHash": "sha256-SVQVsbafSM1dJ4fpgyBqLZ+Lft+jcQuMtEL3lQWx2Sk=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "3308484d1a443fc5bc92012435d79e80458fe43c",
+        "rev": "6f4e2a2112050951a314d2733a994fbab94864c6",
         "type": "github"
       },
       "original": {
@@ -1234,11 +1234,11 @@
     },
     "mission-control": {
       "locked": {
-        "lastModified": 1727581548,
-        "narHash": "sha256-LDAHv2KECDaf9hf6oFV2dMCqPzEaYFcmeQCOnA+/eh8=",
+        "lastModified": 1733325739,
+        "narHash": "sha256-1PR6oZWgac07V+Og6hXzrnPe7YsLv/U8BgKEIkA2Wy8=",
         "owner": "Platonic-Systems",
         "repo": "mission-control",
-        "rev": "781a209a8cdeb9e63a26d19b2e3b75565266db97",
+        "rev": "ee451c1e78fc29b888b28f172c067fafdb20241b",
         "type": "github"
       },
       "original": {
@@ -1349,11 +1349,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1733293048,
-        "narHash": "sha256-VKvAzi/Nqol3TAKemPdtw/fJeaPYB/c4X/7RliFzqio=",
+        "lastModified": 1733324782,
+        "narHash": "sha256-7/7ZEcNFVTFpVV7pK/SFSQfeNOusNKzH/fROMvKR6b0=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "f8e9f0b75d6ebaf7ac3fb20d02dee5e23bd0ac94",
+        "rev": "96b788d5acba0cff01c8bb6e955e97e6c260fc58",
         "type": "github"
       },
       "original": {
@@ -2013,11 +2013,11 @@
     },
     "process-compose-flake": {
       "locked": {
-        "lastModified": 1731079499,
-        "narHash": "sha256-ir7WTVpG999N07wkOCs1kwZsQKitOv3CNDqNalCMK3c=",
+        "lastModified": 1733325752,
+        "narHash": "sha256-79tzPuXNRo1NUllafYW6SjeLtjqfnLGq7tHCM7cAXNg=",
         "owner": "Platonic-systems",
         "repo": "process-compose-flake",
-        "rev": "018783e68c89f94dbe11ce918d6206e9e4138787",
+        "rev": "1012530b582f1bd3b102295c799358d95abf42d7",
         "type": "github"
       },
       "original": {
