@@ -32,6 +32,9 @@ in
             _module.args.pkgs = pkgsStub // {
               _type = "pkgs";
               inherit lib;
+              postgresql = {
+                inherit (pkgs.postgresql) pkgs;
+              };
               formats = lib.mapAttrs
                 (formatName: formatFn:
                   formatArgs:
