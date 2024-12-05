@@ -404,6 +404,8 @@
           attributePath = [ "modules" "flake" "default" ];
           intro = ''
             Run [nix-unit](https://nix-community.github.io/nix-unit/) tests in [`checks`](flake-parts.md#opt-perSystem.checks).
+
+            See also the [complete example / template](https://nix-community.github.io/nix-unit/examples/flake-parts.html).
           '';
         };
 
