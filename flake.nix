@@ -110,6 +110,7 @@
         clan = {
           title = "clan";
           baseUrl = "https://git.clan.lol/clan/clan-core/src/branch/main";
+          flakeRef = "https://git.clan.lol/clan/clan-core/archive/main.tar.gz";
           attributePath = [ "flakeModules" "default" ];
           intro = ''
             [Clan](https://clan.lol) is a multi-machine configuration framework for NixOS with a focus on
