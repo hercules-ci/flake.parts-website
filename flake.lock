@@ -1203,11 +1203,11 @@
         "flake-compat": "flake-compat_5"
       },
       "locked": {
-        "lastModified": 1731391731,
-        "narHash": "sha256-5XOfn5gZCngyOAOpTdEzkbS/xBgdnjaG5YH15rioDmI=",
+        "lastModified": 1733933815,
+        "narHash": "sha256-9JjM7eT66W4NJAXpGUsdyAFXhBxFWR2Z9LZwUa7Hli0=",
         "owner": "nicknovitski",
         "repo": "make-shell",
-        "rev": "6c5aedcc79aad0ae98cad1b784e8336eff488300",
+        "rev": "ffeceae9956df03571ea8e96ef77c2924f13a63c",
         "type": "github"
       },
       "original": {
