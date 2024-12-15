@@ -903,11 +903,11 @@
         "nixpkgs-stable": "nixpkgs-stable_3"
       },
       "locked": {
-        "lastModified": 1734190932,
-        "narHash": "sha256-nIweyhgHbDMJSH6zlciTe2abEzDKWkW28B6/qM9UWOU=",
+        "lastModified": 1734279981,
+        "narHash": "sha256-NdaCraHPp8iYMWzdXAt5Nv6sA3MUzlCiGiR586TCwo0=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "c2b3567b03baf0999a1dd14f7e7ab34b46297d68",
+        "rev": "aa9f40c906904ebd83da78e7f328cd8aeaeae785",
         "type": "github"
       },
       "original": {
@@ -1036,11 +1036,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1733672669,
-        "narHash": "sha256-cJa3mhmWLj1+DLmb3Bkq+5cCkeBAsbTkSKf0XvlMo9w=",
+        "lastModified": 1734289596,
+        "narHash": "sha256-wX2Avmrt2UvxA/6VXZFqMXOxXY3EBPewCbO/FR2KSVQ=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "b13eb3f9b8f4666e2d7c9641d1f914e45afe575c",
+        "rev": "760b7514e25da1893667a446df8e001f0e461383",
         "type": "github"
       },
       "original": {
@@ -1453,11 +1453,11 @@
         "pre-commit-hooks": "pre-commit-hooks_3"
       },
       "locked": {
-        "lastModified": 1733959595,
-        "narHash": "sha256-wf/wOaOHS+LodCg+aNh93J08BNryEgs5V1hrCK6cBxg=",
+        "lastModified": 1734266385,
+        "narHash": "sha256-k9P9Sa6jw/Xre8UDp7Ukk75h4Tcq8ZrK+nz6A2MC1IM=",
         "owner": "oddlama",
         "repo": "nix-topology",
-        "rev": "00731fc2d7c2f7f031e212944ca4afc8f5d8f2d3",
+        "rev": "ba6f61e594a85eabebf1c8f373923b59b3b07448",
         "type": "github"
       },
       "original": {
