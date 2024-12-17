@@ -903,11 +903,11 @@
         "nixpkgs-stable": "nixpkgs-stable_3"
       },
       "locked": {
-        "lastModified": 1734379367,
-        "narHash": "sha256-Keu8z5VgT5gnCF4pmB+g7XZFftHpfl4qOn7nqBcywdE=",
+        "lastModified": 1734425854,
+        "narHash": "sha256-nzE5UbJ41aPEKf8R2ZFYtLkqPmF7EIUbNEdHMBLg0Ig=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "0bb4be58f21ff38fc3cdbd6c778eb67db97f0b99",
+        "rev": "0ddd26d0925f618c3a5d85a4fa5eb1e23a09491d",
         "type": "github"
       },
       "original": {
@@ -1036,11 +1036,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1734289596,
-        "narHash": "sha256-wX2Avmrt2UvxA/6VXZFqMXOxXY3EBPewCbO/FR2KSVQ=",
+        "lastModified": 1734464164,
+        "narHash": "sha256-5JCCyrgy7IMnipyYMQzIAXncGt2XVlW1aK71A+FTXDs=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "760b7514e25da1893667a446df8e001f0e461383",
+        "rev": "e280b39efdd72b6a5bdaa982b67f150c819be642",
         "type": "github"
       },
       "original": {
@@ -1349,11 +1349,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1734416226,
-        "narHash": "sha256-YlNTeg1BtfIdPzWczN6u6O+4gEI9Ko5AnMWHBPrbnAM=",
+        "lastModified": 1734442520,
+        "narHash": "sha256-lZIC3ShkYHZKPMpmApyAHMVnEGGf+FbBhyQgolOVWyg=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "e80797e7c0dad08066cf5817734a8e93da731f27",
+        "rev": "54cb7b7548a14e3aa143c080e79bb285bff00265",
         "type": "github"
       },
       "original": {
