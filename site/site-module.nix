@@ -29,7 +29,7 @@
     packages = {
       default = pkgs.stdenvNoCC.mkDerivation {
         name = "site";
-        nativeBuildInputs = [ pkgs.mdbook pkgs.mdbook-linkcheck ];
+        nativeBuildInputs = [ pkgs.mdbook pkgs.mdbook-linkcheck pkgs.mdbook-pagetoc ];
         src = ./.;
         buildPhase = ''
           runHook preBuild
