@@ -8,8 +8,8 @@ title = "flake-parts"
 [output.html]
 git-repository-url = "https://github.com/hercules-ci/flake-parts"
 edit-url-template = "https://github.com/hercules-ci/flake.parts-website/edit/main/site/{path}"
-additional-js = [ "no-edit-options.js" ]
-additional-css = [ "flake-parts.css" ]
+additional-js = [ "no-edit-options.js", "theme/pagetoc.js" ]
+additional-css = [ "flake-parts.css", "theme/pagetoc.css" ]
 no-section-label = true
 
 [output.html.print]
@@ -17,3 +17,6 @@ enable = false  # big single page; don't need that
 
 [output.linkcheck]
 follow-web-links = false # no Internet during the build
+
+[preprocessor.pagetoc]
+# enabled, no config
