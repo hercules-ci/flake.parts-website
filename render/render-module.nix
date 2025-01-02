@@ -353,7 +353,6 @@ in
               inherit coreOptDecls;
             };
             warningsAreErrors = true; # not sure if feasible long term
-            markdownByDefault = true;
           };
           rendered =
             let
@@ -369,8 +368,13 @@ in
             checkEmpty pkgs.stdenv.mkDerivation (finalAttrs: {
               name = "option-doc-${config.sourceName}";
               nativeBuildInputs = [ pkgs.libxslt.bin pkgs.pandoc ];
-              optionsDoc = config._nixosOptionsDoc.optionsMarkdown.overrideAttrs {
-                anchorPrefix = "opt-";
+              optionsDoc = config._nixosOptionsDoc.optionsCommonMark.overrideAttrs {
+                extraArgs = [
+                  "--anchor-prefix"
+                  "opt-"
+                  "--anchor-style"
+                  "legacy"
+                ];
               };
               inherit (config) title preface;
               passAsFile = [ "preface" ];
