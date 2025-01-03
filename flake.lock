@@ -1704,16 +1704,16 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1735854125,
-        "narHash": "sha256-7f+0UcZmc7nrr9CJdIv7c56eEnAUqxYI/J5+RPuT8nc=",
-        "owner": "roberth",
+        "lastModified": 1735908114,
+        "narHash": "sha256-8+FSHUPJGpR2WVGjFn2FLVBcJ0EO1h6yivUTmF0CBho=",
+        "owner": "hercules-ci",
         "repo": "nixpkgs",
-        "rev": "e2078ef31e1a02e23fe261a9a07fe419fd4a2192",
+        "rev": "6b227056beb558aa6319108f509882c7bd973982",
         "type": "github"
       },
       "original": {
-        "owner": "roberth",
-        "ref": "nixos-option-doc-markdown-with-anchors",
+        "owner": "hercules-ci",
+        "ref": "patches-2025-01-03",
         "repo": "nixpkgs",
         "type": "github"
       }
