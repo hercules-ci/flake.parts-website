@@ -2,14 +2,13 @@
   description = "The https://flake.parts website";
 
   inputs = {
-    # https://github.com/NixOS/nixpkgs/pull/300309
-    nixpkgs.url = "github:NixOS/nixpkgs/640f2068a7b9d0034f376f6d10efb87a82d57f92";
+    nixpkgs.url = "github:hercules-ci/nixpkgs/patches-2025-01-03";
 
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
     agenix-shell.url = "github:aciceri/agenix-shell";
     agenix-shell.inputs.nixpkgs.follows = "nixpkgs";
-    devenv.url = "github:hercules-ci/devenv/flake-module";
+    devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
