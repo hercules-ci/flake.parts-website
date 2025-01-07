@@ -233,11 +233,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736184348,
-        "narHash": "sha256-LvuuwJBlZjLgjl6uzhfXP0rBveoNx7q0nz21xYb1AII=",
+        "lastModified": 1736273305,
+        "narHash": "sha256-lZDdyP3Y9VBCYMTiA7rOXUuXnngLwqoZDHjTrRHeb8g=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "07219f00c633f756d1f0cc5bb6c4c311b5c4cb0d",
+        "rev": "cc48e044747cef4e4f69897e20a100adf5b716a3",
         "type": "github"
       },
       "original": {
@@ -1423,11 +1423,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1736230587,
-        "narHash": "sha256-4CC8WYhJ9EqGNxypM+3YKoj0MvJ9+97Ij/UG+qx9MLE=",
+        "lastModified": 1736265071,
+        "narHash": "sha256-YGRPT3cV1iyiTGJ2j0O/DnkwLK46NfuEkOYNJW1dpE4=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "28331caaa4129f3fe2739538574745fa558e73e2",
+        "rev": "e586403832d95f40f27ad96ff02561c9f2b14daf",
         "type": "github"
       },
       "original": {
