@@ -2365,16 +2365,15 @@
         "terranix-examples": []
       },
       "locked": {
-        "lastModified": 1736860696,
+        "lastModified": 1736894800,
         "narHash": "sha256-Wt3MohH6lx3dQnpYdkq1r3kopWaKVCiKesAzI10Jek0=",
         "owner": "terranix",
         "repo": "terranix",
-        "rev": "c637f3f26e803abc4041c0b95113f2b9258c3da0",
+        "rev": "cd369149ebe821ed81f58410f889e369820eb1a4",
         "type": "github"
       },
       "original": {
         "owner": "terranix",
-        "ref": "pull/111/head",
         "repo": "terranix",
         "type": "github"
       }
