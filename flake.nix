@@ -53,6 +53,12 @@
     rust-flake.url = "github:juspay/rust-flake";
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
+    terranix.url = "github:terranix/terranix/pull/111/head";
+    terranix.inputs.bats-assert.follows = "";
+    terranix.inputs.bats-support.follows = "";
+    terranix.inputs.flake-parts.follows = "flake-parts";
+    terranix.inputs.nixpkgs.follows = "nixpkgs";
+    terranix.inputs.terranix-examples.follows = "";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -508,6 +514,15 @@
           '';
           # FIXME?
           isEmpty = true;
+        };
+
+        terranix = {
+          title = "terranix";
+          baseUrl = "https://github.com/terranix/terranix/blob/main";
+          attributePath = [ "flakeModule" ];
+          intro = ''
+            [terranix](https://terranix.org/) is a terraform.json generator with a nix-like feeling.
+          '';
         };
 
         treefmt-nix = {

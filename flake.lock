@@ -2155,6 +2155,7 @@
         "pydev": "pydev",
         "rust-flake": "rust-flake",
         "std": "std",
+        "terranix": "terranix",
         "treefmt-nix": "treefmt-nix_4"
       }
     },
@@ -2332,6 +2333,49 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_5": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "terranix": {
+      "inputs": {
+        "bats-assert": [],
+        "bats-support": [],
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems_5",
+        "terranix-examples": []
+      },
+      "locked": {
+        "lastModified": 1736860696,
+        "narHash": "sha256-Wt3MohH6lx3dQnpYdkq1r3kopWaKVCiKesAzI10Jek0=",
+        "owner": "terranix",
+        "repo": "terranix",
+        "rev": "c637f3f26e803abc4041c0b95113f2b9258c3da0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "terranix",
+        "ref": "pull/111/head",
+        "repo": "terranix",
         "type": "github"
       }
     },
