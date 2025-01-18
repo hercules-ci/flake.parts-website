@@ -2,7 +2,7 @@
   description = "The https://flake.parts website";
 
   inputs = {
-    nixpkgs.url = "github:hercules-ci/nixpkgs/patches-2025-01-03";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
