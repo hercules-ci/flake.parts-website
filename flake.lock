@@ -1580,6 +1580,36 @@
         "type": "github"
       }
     },
+    "nixops4": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nix": [],
+        "nix-cargo-integration": [
+          "nix-cargo-integration"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-old": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1737543314,
+        "narHash": "sha256-ni+0E8p1BSDy+di3ligbwyQXvQFX3ocjEeN4WPoaRSQ=",
+        "owner": "nixops4",
+        "repo": "nixops4",
+        "rev": "939393b8ef7e46728a6e801f8941d793bdf14c39",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixops4",
+        "repo": "nixops4",
+        "type": "github"
+      }
+    },
     "nixos-unified": {
       "locked": {
         "lastModified": 1729697921,
@@ -2143,6 +2173,7 @@
         "nix-cargo-integration": "nix-cargo-integration",
         "nix-topology": "nix-topology",
         "nix-unit": "nix-unit",
+        "nixops4": "nixops4",
         "nixpkgs": "nixpkgs_3",
         "ocaml-flake": "ocaml-flake",
         "pkgs-by-name-for-flake-parts": "pkgs-by-name-for-flake-parts",
