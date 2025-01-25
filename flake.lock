@@ -416,6 +416,21 @@
         "type": "github"
       }
     },
+    "easy-hosts": {
+      "locked": {
+        "lastModified": 1737821617,
+        "narHash": "sha256-gbFIcZqphSaW7ctIZgKzir233ak2JBe3dnzxONisstM=",
+        "owner": "tgirlcloud",
+        "repo": "easy-hosts",
+        "rev": "ec4fc980fc8d8d7954f0cc824e58297c3bf7b992",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tgirlcloud",
+        "repo": "easy-hosts",
+        "type": "github"
+      }
+    },
     "emanote": {
       "inputs": {
         "commonmark-simple": "commonmark-simple",
@@ -2131,6 +2146,7 @@
         "devenv": "devenv",
         "devshell": "devshell_2",
         "dream2nix_legacy": "dream2nix_legacy",
+        "easy-hosts": "easy-hosts",
         "emanote": "emanote",
         "ez-configs": "ez-configs",
         "flake-parts": "flake-parts_7",

@@ -15,6 +15,7 @@
     dream2nix_legacy.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     dream2nix_legacy.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
+    easy-hosts.url = "github:tgirlcloud/easy-hosts";
     emanote.url = "github:srid/emanote";
     emanote.inputs.nixpkgs.follows = "nixpkgs";
     # This didn't work: "error: cannot find flake 'flake:ema' in the flake registries" (???)
@@ -179,6 +180,17 @@
             [`dream2nix`](https://github.com/nix-community/dream2nix#readme) scans your flake files and turns them into packages.
 
             NOTE: a new version of dream2nix, v1, is in the works, and we're figuring out how best to use it.
+          '';
+        };
+
+        easy-hosts = {
+          baseUrl = "https://github.com/tgirlcloud/easy-hosts/blob/main";
+          intro = ''
+            [`easy-hosts`](https://github.com/tgirlcloud/easy-hosts/blob/main)
+            lets you define multiple nixos and darwin configurations
+            agnosticly. Whilst providing a nice user interface via shared
+            configurations and perClass configurations meaning that easy-hosts
+            remains highly extensible.
           '';
         };
 
