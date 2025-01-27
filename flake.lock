@@ -228,11 +228,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737908954,
-        "narHash": "sha256-yrXs3TjsI2pNh0Ud+7hDNlHdoB4pb6/qN2sws2dBa9o=",
+        "lastModified": 1737999381,
+        "narHash": "sha256-Vi53EAQ9LOon0boDA2AhtTi2/CKz+rWbXAv+EXMxR9I=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "52448c52aa63ebdae05dc08fcc2a112911ac7886",
+        "rev": "b6eaeaca6233887e7db51a2cc7b6ada81c7fadb7",
         "type": "github"
       },
       "original": {
@@ -486,11 +486,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737481314,
-        "narHash": "sha256-z9IfbGyKfrinOwDMEf4tffC2rLPNuzQZzB8WQ6o5Z9o=",
+        "lastModified": 1737976685,
+        "narHash": "sha256-YGDoq5mHjaUiv79oICntM3nybdzvvBRZGe5cZ6kY73w=",
         "owner": "ehllie",
         "repo": "ez-configs",
-        "rev": "b92cd0f807613afe2ebdcdd777edadbd839dde4e",
+        "rev": "84cce474cc25b451e77fc05a1a3d32c47706ea3a",
         "type": "github"
       },
       "original": {
@@ -1555,11 +1555,11 @@
         "pre-commit-hooks": "pre-commit-hooks_2"
       },
       "locked": {
-        "lastModified": 1737379892,
-        "narHash": "sha256-M5FfyuvKAd5K8H0IZedlXaN04IvJesmWRhE9sviQNCQ=",
+        "lastModified": 1737990355,
+        "narHash": "sha256-cITucU5YxIytTDwZX3t8+pMrizgFts7uD6mC9OzIPw0=",
         "owner": "oddlama",
         "repo": "nix-topology",
-        "rev": "21dceaf1a116f648a286a66516612c7e2b726306",
+        "rev": "731c0e3352b31d3359fa9b78b2dc73f671bcc074",
         "type": "github"
       },
       "original": {
