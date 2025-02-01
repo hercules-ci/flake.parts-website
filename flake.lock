@@ -228,11 +228,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738232507,
-        "narHash": "sha256-AFzzs8DypasqcQZ3vLPxh6uO/ZniPWKk4bJkSAUpgTg=",
+        "lastModified": 1738414267,
+        "narHash": "sha256-7B+rkQlQ8zIzVgJRiu49ZFST6NBWt+JsnQZ/Q4W3qlI=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "8b611a15df98b6225eec53be7d24bf39d3ab494d",
+        "rev": "3f49b4afbb9a80b1e81fb6071f59dac152177efa",
         "type": "github"
       },
       "original": {
@@ -418,11 +418,11 @@
     },
     "easy-hosts": {
       "locked": {
-        "lastModified": 1738271711,
-        "narHash": "sha256-KKnkJg6wV7bIc8dBB6jv8ODfWqCIvNdiuWtYviLzBzY=",
+        "lastModified": 1738416402,
+        "narHash": "sha256-b+hMMBbn8uD99Rq2JH5WsI41oPSVjgvpMilrI1dosKA=",
         "owner": "tgirlcloud",
         "repo": "easy-hosts",
-        "rev": "0d5d68e498d44806f8d9f41554db68c891909349",
+        "rev": "ae98bf34ebe6457efb07abc437dceff2c349f934",
         "type": "github"
       },
       "original": {
@@ -449,11 +449,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1738285064,
-        "narHash": "sha256-3O7Xu/pYjD24A4YikN47G+9ROkOidtpe7pe8Z2axSgM=",
+        "lastModified": 1738428221,
+        "narHash": "sha256-n8YN65q1ogyrgVAEmOiCFlhfFtgwOYeQ+EOoMMdsmpc=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "ea63b0402008b19a0c85f6fbcbc7eeae3d4c22d6",
+        "rev": "dda84f04569099ee8f1ceb2ee1d82aabd52f14a5",
         "type": "github"
       },
       "original": {
