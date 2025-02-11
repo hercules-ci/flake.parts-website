@@ -40,6 +40,12 @@
     nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.inputs.treefmt-nix.follows = "treefmt-nix";
+    nixops4.url = "github:nixops4/nixops4";
+    nixops4.inputs.flake-parts.follows = "flake-parts";
+    nixops4.inputs.nix.follows = "";
+    nixops4.inputs.nix-cargo-integration.follows = "nix-cargo-integration";
+    nixops4.inputs.nixpkgs.follows = "nixpkgs";
+    nixops4.inputs.nixpkgs-old.follows = "nixpkgs";
     ocaml-flake.url = "github:9glenda/ocaml-flake";
     ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
@@ -423,6 +429,17 @@
             Run [nix-unit](https://nix-community.github.io/nix-unit/) tests in [`checks`](flake-parts.md#opt-perSystem.checks).
 
             See also the [complete example / template](https://nix-community.github.io/nix-unit/examples/flake-parts.html).
+          '';
+        };
+
+        nixops4 = {
+          title = "nixops4";
+          baseUrl = "https://github.com/nixops4/nixops4/blob/main";
+          attributePath = [ "modules" "flake" "default" ];
+          intro = ''
+            [NixOps4](https://nixops.dev) is a platform for any kind of deployment in much the same way Nix is a platform for any build.
+
+            **⚠️ It is currently in development and changing**
           '';
         };
 
