@@ -228,11 +228,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1739121339,
-        "narHash": "sha256-je4UmLOUx0bhaKAvfv/ishW79UfSygLg9H8zdUsonvY=",
+        "lastModified": 1739444039,
+        "narHash": "sha256-J7PLowc4pCdEkXEWtm72bC6gNNlT7sgNAq5YMZmvvkg=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "73409f3726be3988adffc9556e9cdcb0a2a6b225",
+        "rev": "1235cd13f47df6ad19c8a183c6eabc1facb7c399",
         "type": "github"
       },
       "original": {
@@ -418,11 +418,11 @@
     },
     "easy-hosts": {
       "locked": {
-        "lastModified": 1738500011,
-        "narHash": "sha256-tpYwro3iLCVWbKSIs2P4DAlA1hRs4XLgZYL2v8Bdjg4=",
+        "lastModified": 1739315072,
+        "narHash": "sha256-m0Lzdrj95GbdmKhqlTKkr4vvHy2Ghdi1GxISOKqUeSA=",
         "owner": "tgirlcloud",
         "repo": "easy-hosts",
-        "rev": "5f1824597e4db164a5b7d3feb3a3c7d0a01d5699",
+        "rev": "e96af44cae1f48a1a94f2471faee92caf22aa45f",
         "type": "github"
       },
       "original": {
@@ -1108,11 +1108,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1738519333,
-        "narHash": "sha256-QK7DIUmUC76cEBlntkDyBrhrZMD5fioCT2Xd6RbA8a8=",
+        "lastModified": 1739207785,
+        "narHash": "sha256-+RV7luQhPTk+LkBuETRU6f8ppLXqhTmLCoSUG8GezIk=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "dcca937807b7190934118ae476865301885aef15",
+        "rev": "555acccfd5a159cb5f9479cc8ff15ae275a60d21",
         "type": "github"
       },
       "original": {
@@ -1190,11 +1190,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738237977,
-        "narHash": "sha256-oJN/yvRL7G0WlR/hTkQIjFbPkzCV+sFnNB/38Tb9RL4=",
+        "lastModified": 1739595404,
+        "narHash": "sha256-0CjCfbq0yHWexOrpO06e2WU1r5JAqR6ffy1zgM3NksI=",
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
-        "rev": "6d1b6d5d59758b4f5f05745f774fc13cdc59da43",
+        "rev": "06519cec8fb32d219006da6eacd255504a9996af",
         "type": "github"
       },
       "original": {
@@ -1430,11 +1430,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1739081646,
-        "narHash": "sha256-yFQEsMgrJqjyBt8du8FyhLwJXIT7gDBLenzCncZTwZ4=",
+        "lastModified": 1739600066,
+        "narHash": "sha256-jtDhNje1/T3s2rmEbz4jTgWKZ1baHudhcV9pjKegFfQ=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "20364c029570a1fa6d946f8a590619b3771693f5",
+        "rev": "657e2c292da73445adef3ff907ca2e2d12508092",
         "type": "github"
       },
       "original": {
@@ -1701,11 +1701,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1739020877,
-        "narHash": "sha256-mIvECo/NNdJJ/bXjNqIh8yeoSjVLAuDuTUzAo7dzs8Y=",
+        "lastModified": 1739446958,
+        "narHash": "sha256-+/bYK3DbPxMIvSL4zArkMX0LQvS7rzBKXnDXLfKyRVc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a79cfe0ebd24952b580b1cf08cd906354996d547",
+        "rev": "2ff53fe64443980e139eaa286017f53f88336dd0",
         "type": "github"
       },
       "original": {
@@ -2198,11 +2198,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1739068147,
-        "narHash": "sha256-3DtLkjQFlIUOXw3TBH+iP0jglpqO6Lv2KaQc+ADg39I=",
+        "lastModified": 1739586408,
+        "narHash": "sha256-UN9hRKRE1eLU8C0cioTZubaCZQTA8NDc8/4vCpS5pS0=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "f61820fa2c3844d6940cce269a6afdec30aa2e6c",
+        "rev": "3dbc0ce1c0690b83cfb9a9a51fbe90c3bc8f9916",
         "type": "github"
       },
       "original": {
@@ -2376,11 +2376,11 @@
         "terranix-examples": []
       },
       "locked": {
-        "lastModified": 1736894800,
-        "narHash": "sha256-Wt3MohH6lx3dQnpYdkq1r3kopWaKVCiKesAzI10Jek0=",
+        "lastModified": 1739437924,
+        "narHash": "sha256-lRp8/Udbu8c7aR0DGCmteCXJtXsHcQAiVi6GckjEh5c=",
         "owner": "terranix",
         "repo": "terranix",
-        "rev": "cd369149ebe821ed81f58410f889e369820eb1a4",
+        "rev": "bb56d576da73a2226961eff14f5530b72ca9e2e3",
         "type": "github"
       },
       "original": {
