@@ -40,9 +40,6 @@
     nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.inputs.treefmt-nix.follows = "treefmt-nix";
-    ocaml-flake.url = "github:9glenda/ocaml-flake";
-    ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
-    ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
@@ -423,25 +420,6 @@
             Run [nix-unit](https://nix-community.github.io/nix-unit/) tests in [`checks`](flake-parts.md#opt-perSystem.checks).
 
             See also the [complete example / template](https://nix-community.github.io/nix-unit/examples/flake-parts.html).
-          '';
-        };
-
-        ocaml-flake = {
-          title = "ocaml-flake";
-          baseUrl = "https://github.com/9glenda/ocaml-flake";
-          attributePath = [ "flakeModule" ];
-          intro = ''
-            [`ocaml-flake`](https://github.com/9glenda/ocaml-flake) uses [`opam-nix`](https://github.com/tweag/opam-nix) to build ocaml packages. The module structure is inspired by [`haskell-flake`](https://community.flake.parts/haskell-flake).
-
-            Since the flake is fairly new future versions may introduce breaking changes.
-          '';
-          installation = ''
-            ## Installation
-            To initialize a new dune project using `ocaml-flake` simply run:
-            ```sh
-            nix flake init -t github:9glenda/ocaml-flake#simple
-            ```
-            This will set up a devshell and package for you.
           '';
         };
 
