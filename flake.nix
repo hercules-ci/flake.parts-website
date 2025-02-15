@@ -40,7 +40,7 @@
     nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.inputs.treefmt-nix.follows = "treefmt-nix";
-    ocaml-flake.url = "github:9glenda/ocaml-flake";
+    ocaml-flake.url = "https://flakehub.com/f/9glenda/ocaml-flake/0.2.2.tar.gz";
     ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
@@ -427,12 +427,12 @@
         };
 
         ocaml-flake = {
+          archived = true;
           title = "ocaml-flake";
           baseUrl = "https://github.com/9glenda/ocaml-flake";
           attributePath = [ "flakeModule" ];
           intro = ''
             [`ocaml-flake`](https://github.com/9glenda/ocaml-flake) uses [`opam-nix`](https://github.com/tweag/opam-nix) to build ocaml packages. The module structure is inspired by [`haskell-flake`](https://community.flake.parts/haskell-flake).
-
             Since the flake is fairly new future versions may introduce breaking changes.
           '';
           installation = ''
