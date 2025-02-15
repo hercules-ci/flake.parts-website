@@ -173,6 +173,13 @@ in
               Stuff between the title and the options.
             '';
             default = ''
+              ${lib.optionalString config.archived ''
+                <div class="warning">
+
+                This module has been archived because it appears to be unmaintained.
+
+                </div>
+              ''}
 
               ${config.intro}
 
@@ -321,6 +328,14 @@ in
             '';
           };
 
+          archived = mkOption {
+            type = types.bool;
+            default = false;
+            description = ''
+              Whether this module is archived.
+            '';
+          };
+
           menu = {
             title = mkOption {
               type = types.str;
@@ -438,18 +453,29 @@ in
                 };
                 passAsFile = [ "menu" ];
                 menu =
-                  lib.concatStringsSep
-                    "\n"
-                    (lib.filter
-                      (x: x != "")
-                      (lib.mapAttrsToList
-                        (name: inputCfg:
-                          lib.optionalString inputCfg.menu.enable
-                            "    - [${inputCfg.menu.title}](options/${name}.md)"
-                        )
-                        cfg.inputs
-                      )
-                    );
+                  let
+                    inputsToMenuItems =
+                      inputs:
+                      lib.concatStringsSep
+                        "\n"
+                        (lib.filter
+                          (x: x != "")
+                          (lib.mapAttrsToList
+                            (name: inputCfg:
+                            lib.optionalString inputCfg.menu.enable
+                              "    - [${inputCfg.menu.title}](options/${name}.md)"
+                            )
+                            inputs
+                          )
+                        );
+                    normalInputs = lib.filterAttrs (name: inputCfg: !inputCfg.archived) cfg.inputs;
+                    archivedInputs = lib.filterAttrs (name: inputCfg: inputCfg.archived) cfg.inputs;
+                  in
+                  ''
+                    ${inputsToMenuItems normalInputs}
+                      - [Archived]()
+                    ${inputsToMenuItems archivedInputs}
+                  '';
               }
               ''
                 mkdir $out
