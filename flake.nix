@@ -288,7 +288,7 @@
 
         nixos-healthchecks = {
           baseUrl = "https://github.com/mrVanDalo/nixos-healthchecks/blob/main";
-          attributePaths = [ [ "flakeModule" ]  [ "nixosModules" "default" ] ];
+          attributePaths = [ [ "flakeModule" ] [ "nixosModules" "default" ] ];
           intro = ''
             [nixos-healthchecks](https://github.com/mrVanDalo/nixos-healthchecks)
             provide NixOS-Options to verify if your services are running correctly.
