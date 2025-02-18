@@ -43,6 +43,9 @@
     nixos-healthchecks.url = "github:mrVanDalo/nixos-healthchecks";
     nixos-healthchecks.inputs.nixpkgs.follows = "nixpkgs";
     nixos-healthchecks.inputs.flake-parts.follows = "flake-parts";
+    ocaml-flake.url = "https://flakehub.com/f/9glenda/ocaml-flake/0.2.2.tar.gz";
+    ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
+    ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
