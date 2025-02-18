@@ -1658,6 +1658,30 @@
         "type": "github"
       }
     },
+    "nixos-healthchecks": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix_5"
+      },
+      "locked": {
+        "lastModified": 1739598659,
+        "narHash": "sha256-HcR9D2T1EZyb4l83UIodxqbxe+hE+ahseWuW3+Mg+Uw=",
+        "owner": "mrVanDalo",
+        "repo": "nixos-healthchecks",
+        "rev": "91d79a446bc2e0bab83731bda4b64aa9992e04bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mrVanDalo",
+        "repo": "nixos-healthchecks",
+        "type": "github"
+      }
+    },
     "nixos-unified": {
       "locked": {
         "lastModified": 1729697921,
@@ -2221,6 +2245,7 @@
         "nix-cargo-integration": "nix-cargo-integration",
         "nix-topology": "nix-topology",
         "nix-unit": "nix-unit",
+        "nixos-healthchecks": "nixos-healthchecks",
         "nixpkgs": "nixpkgs_3",
         "ocaml-flake": "ocaml-flake",
         "pkgs-by-name-for-flake-parts": "pkgs-by-name-for-flake-parts",
@@ -2230,7 +2255,7 @@
         "rust-flake": "rust-flake",
         "std": "std",
         "terranix": "terranix",
-        "treefmt-nix": "treefmt-nix_5"
+        "treefmt-nix": "treefmt-nix_6"
       }
     },
     "rust-flake": {
@@ -2559,6 +2584,27 @@
       }
     },
     "treefmt-nix_5": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos-healthchecks",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1727431250,
+        "narHash": "sha256-uGRlRT47ecicF9iLD1G3g43jn2e+b5KaMptb59LHnvM=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "879b29ae9a0378904fbbefe0dadaed43c8905754",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_6": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"

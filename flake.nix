@@ -40,6 +40,9 @@
     nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.inputs.treefmt-nix.follows = "treefmt-nix";
+    nixos-healthchecks.url = "github:mrVanDalo/nixos-healthchecks";
+    nixos-healthchecks.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-healthchecks.inputs.flake-parts.follows = "flake-parts";
     ocaml-flake.url = "https://flakehub.com/f/9glenda/ocaml-flake/0.2.2.tar.gz";
     ocaml-flake.inputs.nixpkgs.follows = "nixpkgs";
     ocaml-flake.inputs.treefmt-nix.follows = "treefmt-nix";
@@ -283,6 +286,29 @@
           '';
         };
 
+        nixos-healthchecks = {
+          baseUrl = "https://github.com/mrVanDalo/nixos-healthchecks/blob/main";
+          attributePaths = [ [ "flakeModule" ] [ "nixosModules" "default" ] ];
+          intro = ''
+            [nixos-healthchecks](https://github.com/mrVanDalo/nixos-healthchecks)
+            provide NixOS-Options to verify if your services are running correctly.
+
+            ```nix
+            healthchecks.http.nextcloud = {
+              url = "https://example.com/login";
+              expectedContent = "Login";
+            };
+            services.nextcloud = { ... };
+            ```
+
+            Than run
+
+            ```shell
+              nix run .#healthchecks
+            ```
+
+          '';
+        };
         make-shell = {
           baseUrl = "https://github.com/nicknovitski/make-shell/blob/main";
           attributePath = [ "flakeModules" "default" ];
