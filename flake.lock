@@ -1171,11 +1171,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1739713768,
-        "narHash": "sha256-P8I3uARBkSra86d5lgTo7cK+ET27zVee1BxWrym+9z8=",
+        "lastModified": 1740325125,
+        "narHash": "sha256-isWfa0ZxT4BLd00uVgBGZ4YHahODtQkc564ooHBSxmU=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "b40fcefa008ffa7205058f542a577cc218bec9a4",
+        "rev": "4e9d319e78c00511cfbd48cc5ef4fb9c4df0dd95",
         "type": "github"
       },
       "original": {
@@ -1788,11 +1788,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1739866667,
-        "narHash": "sha256-EO1ygNKZlsAC9avfcwHkKGMsmipUk1Uc0TbrEZpkn64=",
+        "lastModified": 1740126099,
+        "narHash": "sha256-ozoOtE2hGsqh4XkTJFsrTkNxkRgShxpQxDynaPZUGxk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "73cf49b8ad837ade2de76f87eb53fc85ed5d4680",
+        "rev": "32fb99ba93fea2798be0e997ea331dd78167f814",
         "type": "github"
       },
       "original": {
@@ -2170,11 +2170,11 @@
     },
     "process-compose-flake": {
       "locked": {
-        "lastModified": 1733325752,
-        "narHash": "sha256-79tzPuXNRo1NUllafYW6SjeLtjqfnLGq7tHCM7cAXNg=",
+        "lastModified": 1740324671,
+        "narHash": "sha256-djc+wRG9L70jlW95Ck4GKr7nTPp1drfsXshJkYZAd9s=",
         "owner": "Platonic-systems",
         "repo": "process-compose-flake",
-        "rev": "1012530b582f1bd3b102295c799358d95abf42d7",
+        "rev": "2a17e49b8a5d32278ed77e4a881f992472be18a1",
         "type": "github"
       },
       "original": {
