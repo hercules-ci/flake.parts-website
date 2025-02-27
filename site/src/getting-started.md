@@ -21,7 +21,8 @@ then slide `mkFlake` between your outputs function head and body,
 
 ```nix
 outputs = inputs@{ flake-parts, ... }:
-  flake-parts.lib.mkFlake { inherit inputs; } {
+  # https://flake.parts/module-arguments.html
+  flake-parts.lib.mkFlake { inherit inputs; } (top@{ config, withSystem, moduleWithSystem, ... }: {
     imports = [
       # Optional: use external flake logic, e.g.
       # inputs.foo.flakeModules.default
@@ -42,7 +43,7 @@ outputs = inputs@{ flake-parts, ... }:
       #   foo = config.packages.foo;
       # };
     };
-  };
+  });
 ```
 
 Now you can start using the flake-parts options.
