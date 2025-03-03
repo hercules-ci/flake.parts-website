@@ -451,11 +451,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1740948402,
-        "narHash": "sha256-TajfXzdxc09QAnwzZundrlCRgtHNGfivj8qJCy0y0AA=",
+        "lastModified": 1740948698,
+        "narHash": "sha256-OJbTweoZVOvRenm378BqwORrH4iPPbb/zD64f0o+J9c=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "b69bf3bf2d94673046f06b01c56f4197f924bfb0",
+        "rev": "7e567e04135406a7f8d4e2c66a5d1aa593f0c3e6",
         "type": "github"
       },
       "original": {
@@ -1493,11 +1493,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1740896131,
-        "narHash": "sha256-RZzPKSJIPXc/IUOhIZrZ9FaxtQo9FaS7J86MlTI4vU0=",
+        "lastModified": 1740982643,
+        "narHash": "sha256-R3KOiPni1OxM9zoZZi9ZlYAYAWkfloyk/rJYffGQKHg=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "057d06ae6a38ebf43b69f6f0fa5a02570b5c76fc",
+        "rev": "ae58ea1f7a14899ce2427a717f398d4fac87b233",
         "type": "github"
       },
       "original": {
@@ -2286,11 +2286,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740882709,
-        "narHash": "sha256-VC+8GxWK4p08jjIbmsNfeFQajW2lsiOR/XQiOOvqgvs=",
+        "lastModified": 1740969088,
+        "narHash": "sha256-BajboqzFnDhxVT0SXTDKVJCKtFP96lZXccBlT/43mao=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "f4d5a693c18b389f0d58f55b6f7be6ef85af186f",
+        "rev": "20fdb02098fdda9a25a2939b975abdd7bc03f62d",
         "type": "github"
       },
       "original": {
