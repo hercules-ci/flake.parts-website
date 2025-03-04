@@ -1266,6 +1266,26 @@
         "type": "github"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1741056285,
+        "narHash": "sha256-/JKDMVqq8PIqcGonBVKbKq1SooV3kzGmv+cp3rKAgPA=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "70fbbf05a5594b0a72124ab211bff1d502c89e3f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "incl": {
       "inputs": {
         "nixlib": [
@@ -2239,6 +2259,7 @@
         "git-hooks-nix": "git-hooks-nix_2",
         "haskell-flake": "haskell-flake_2",
         "hercules-ci-effects": "hercules-ci-effects",
+        "home-manager": "home-manager",
         "make-shell": "make-shell",
         "mission-control": "mission-control",
         "mkdocs-flake": "mkdocs-flake",

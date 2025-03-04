@@ -24,6 +24,8 @@
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
     haskell-flake.url = "github:srid/haskell-flake";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     hercules-ci-effects.inputs.nixpkgs.follows = "nixpkgs";
     hercules-ci-effects.inputs.flake-parts.follows = "flake-parts";
@@ -257,6 +259,19 @@
 
             Multiple projects can be declared to represent each package set, which is great for GHCJS frontends.
           '';
+        };
+
+        home-manager = {
+          baseUrl = "https://github.com/nix-community/home-manager/blob/master";
+          intro = ''
+            [`home-manager`](https://nix-community.github.io/home-manager/) is a tool for managing home directories and user profiles using Nix.
+            To quote, this includes programs, configuration files, environment variables and, well… arbitrary files.
+
+            For simple setups where the home manager flake outputs are defined in one file, you may not need to import this module.
+
+            For more details and an example, see [Home Manager: flake-parts module](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-flake-parts-module).
+          '';
+          attributePath = [ "flakeModules" "home-manager" ];
         };
 
         rust-flake = {
