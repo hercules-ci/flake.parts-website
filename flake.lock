@@ -11,11 +11,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1741201737,
-        "narHash": "sha256-bLuBf/K4yGokkrMIvEUy4SCh8UJ0AC+Fpd67yEIabW4=",
+        "lastModified": 1741545559,
+        "narHash": "sha256-K28WBQoi1XSFfuakma+TJveihNbhpYMZUGYwvjAmic8=",
         "owner": "oddlama",
         "repo": "agenix-rekey",
-        "rev": "e7b93c191080cd8089f6e60124ed822a8366a69a",
+        "rev": "86f26bd7401b8c1e1bde2b9479e88d3b532488d8",
         "type": "github"
       },
       "original": {
@@ -1171,11 +1171,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1741200839,
-        "narHash": "sha256-45psZ9Xd+50w9KrZmg1y5yH7MTm0J5pKWGD7GcRdPm0=",
+        "lastModified": 1741528687,
+        "narHash": "sha256-NPxvw+FaxMPgwGGGiTbmNpfjFhR1HwPRWTBJJufWQ6Q=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "b6508f818abb14a4df436378ff24e3e3afc9cbd0",
+        "rev": "f66fe097c01b4ac20a28b4f26e760dffd5891967",
         "type": "github"
       },
       "original": {
@@ -1273,11 +1273,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1741502651,
-        "narHash": "sha256-7u8FF20WRvQsmfTuNuCerRzstuZ0XgkwWPkq+GoRfiA=",
+        "lastModified": 1741543064,
+        "narHash": "sha256-AjXyS3ACxWAd+h3NSkrflN+uC0Tq1XFqox472RF6yh0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1fd39a105575ea997b32a043a0dd2c49294add5b",
+        "rev": "db4386d686fb0b2788e7422e6a2299deace9c4b1",
         "type": "github"
       },
       "original": {
