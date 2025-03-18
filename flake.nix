@@ -6,7 +6,7 @@
 
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
-    agenix-shell.url = "github:roberth/agenix-shell/forward-local-inputs";
+    agenix-shell.url = "github:aciceri/agenix-shell";
     agenix-shell.inputs.nixpkgs.follows = "nixpkgs";
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";

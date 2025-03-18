@@ -36,16 +36,15 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1742284557,
-        "narHash": "sha256-Vaqf8R9AHTT8+5vSr7lEeFaAgooRv0PXqYKrQdiQMdo=",
-        "owner": "roberth",
+        "lastModified": 1742287644,
+        "narHash": "sha256-DrSXLX1HRSm/66+V1AZCDREIGp0IXzHYGMM8PLX9YxM=",
+        "owner": "aciceri",
         "repo": "agenix-shell",
-        "rev": "f61d40607f4500bb91ea7f97143287a582edbeab",
+        "rev": "a9bf98a9f19735021af0011d7f85275ed23de52d",
         "type": "github"
       },
       "original": {
-        "owner": "roberth",
-        "ref": "forward-local-inputs",
+        "owner": "aciceri",
         "repo": "agenix-shell",
         "type": "github"
       }
