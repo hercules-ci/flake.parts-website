@@ -1443,11 +1443,11 @@
         "poetry2nix": "poetry2nix_2"
       },
       "locked": {
-        "lastModified": 1740125116,
-        "narHash": "sha256-s2ZojMn5n/EDXa1kMJhtF57m46FboQ2lId/17W4rnTs=",
+        "lastModified": 1742554843,
+        "narHash": "sha256-+/eAa92WwoyUgxmmyliZwsbNFRf6QAlNCGP8MAuxVoI=",
         "owner": "applicative-systems",
         "repo": "mkdocs-flake",
-        "rev": "5f48a8ddf10a98f5a756019f10104aff1307fe79",
+        "rev": "059b6aa75950fe50e39674de255a69da9ce03f7d",
         "type": "github"
       },
       "original": {
