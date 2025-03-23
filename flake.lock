@@ -421,11 +421,11 @@
     },
     "easy-hosts": {
       "locked": {
-        "lastModified": 1742651822,
-        "narHash": "sha256-wnI8FLMizwJPyhQFsrRlS0JZCZR5E5Gzt0MK9/MspDA=",
+        "lastModified": 1742736765,
+        "narHash": "sha256-840idRti6HSFsTywPkku4ak8KtwiPw+XiFFRdaT4CWk=",
         "owner": "tgirlcloud",
         "repo": "easy-hosts",
-        "rev": "86f421eb61b95ee06c5c7f6acffa8515242dce09",
+        "rev": "7acbedf9c7e5ee1981647d0917dee3c8db52ccb5",
         "type": "github"
       },
       "original": {
