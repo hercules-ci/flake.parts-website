@@ -1,5 +1,31 @@
 {
   "nodes": {
+    "actions-nix": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "pre-commit-hooks": [
+          "git-hooks-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743358233,
+        "narHash": "sha256-sO3otFhEZEs3noGFtDBBmuudSXkhiGnDQvHMdUWq2Xg=",
+        "owner": "nialov",
+        "repo": "actions.nix",
+        "rev": "5116e1b301d14ea3977326fc4bb667a364147985",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nialov",
+        "repo": "actions.nix",
+        "type": "github"
+      }
+    },
     "agenix-rekey": {
       "inputs": {
         "devshell": "devshell",
@@ -2322,6 +2348,7 @@
     },
     "root": {
       "inputs": {
+        "actions-nix": "actions-nix",
         "agenix-rekey": "agenix-rekey",
         "agenix-shell": "agenix-shell",
         "devenv": "devenv",
