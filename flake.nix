@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    actions-nix.url = "github:nialov/actions.nix";
+    actions-nix.inputs.nixpkgs.follows = "nixpkgs";
+    actions-nix.inputs.flake-parts.follows = "flake-parts";
+    actions-nix.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
     agenix-shell.url = "github:aciceri/agenix-shell";
@@ -85,6 +89,16 @@
     flake-parts.lib.mkFlake { inherit inputs; } ({ lib, ... }: {
       perSystem.render.inputs = {
 
+        actions-nix = {
+          title = "actions.nix";
+          baseUrl = "https://github.com/nialov/actions.nix/blob/master";
+          attributePath = [ "flakeModules" "default" ];
+          intro = ''
+            [`actions-nix`](https://github.com/nialov/actions.nix) is a nix
+            module that converts `nix` configuration into GitHub/Gitea action
+            syntax `yaml`. Use `nix` for workflow definition instead of `yaml`.
+          '';
+        };
         agenix-rekey = {
           title = "agenix-rekey";
           baseUrl = "https://github.com/oddlama/agenix-rekey/blob/main";
