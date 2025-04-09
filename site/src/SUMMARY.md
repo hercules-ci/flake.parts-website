@@ -16,7 +16,7 @@
   - [Overlays](./overlays.md)
 - [Reference Documentation]()
   - [Module Arguments](./module-arguments.md)
-  - [Options](./options/flake-parts.md)
+  - [Options]()
     - [`flake-parts` (built in)](./options/flake-parts.md)
       - [`flakeModules`](./options/flake-parts-flakeModules.md)
       - [`easyOverlay` (warning)](./options/flake-parts-easyOverlay.md)
