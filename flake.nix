@@ -63,7 +63,9 @@
     rust-flake.url = "github:juspay/rust-flake";
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
-    terranix.url = "github:terranix/terranix";
+    # https://github.com/terranix/terranix/pull/121
+    terranix.url = "github:roberth/terranix/fix-docs-eval";
+    # terranix.url = "github:terranix/terranix";
     terranix.inputs.bats-assert.follows = "";
     terranix.inputs.bats-support.follows = "";
     terranix.inputs.flake-parts.follows = "flake-parts";
