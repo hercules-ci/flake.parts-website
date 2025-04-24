@@ -27,7 +27,7 @@ in
       pkgsStub = lib.mapAttrs failPkgAttr pkgs;
 
       fixups = { lib, flake-parts-lib, ... }: {
-        options.perSystem = flake-parts-lib.mkPerSystemOption {
+        options.perSystem = flake-parts-lib.mkPerSystemOption ({ config, ... }: {
           config = {
             _module.args.pkgs = pkgsStub // {
               _type = "pkgs";
@@ -35,6 +35,8 @@ in
               postgresql = {
                 inherit (pkgs.postgresql) pkgs;
               };
+              # no-op
+              appendOverlays = _ignored: config._module.args.pkgs;
               formats = lib.mapAttrs
                 (formatName: formatFn:
                   formatArgs:
@@ -54,7 +56,7 @@ in
                 pkgs.formats;
             };
           };
-        };
+        });
       };
 
       eval = evalWith {
