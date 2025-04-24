@@ -233,11 +233,11 @@
     },
     "crane_3": {
       "locked": {
-        "lastModified": 1736566337,
-        "narHash": "sha256-SC0eDcZPqISVt6R0UfGPyQLrI0+BppjjtQ3wcSlk0oI=",
+        "lastModified": 1745454774,
+        "narHash": "sha256-oLvmxOnsEKGtwczxp/CwhrfmQUG2ym24OMWowcoRhH8=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "9172acc1ee6c7e1cbafc3044ff850c568c75a5a3",
+        "rev": "efd36682371678e2b6da3f108fdb5c613b3ec598",
         "type": "github"
       },
       "original": {
@@ -1214,11 +1214,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1745126465,
-        "narHash": "sha256-1wW1gVO4rY8EF5oekg20rJXQJ5dxVT8sIIC47834j90=",
+        "lastModified": 1745483421,
+        "narHash": "sha256-A4Mn43UWnC4t0aToloInehsi48FCPN6EyfG8ktG6hNY=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "31b6c4d3078f5a19a066964ea86c3b56c0d1e9b3",
+        "rev": "0953e5446704d318a41c1b2f3545dcf354b3563d",
         "type": "github"
       },
       "original": {
@@ -1575,11 +1575,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1745389067,
-        "narHash": "sha256-r1qYFwdYd0vQ1+tBYT8ZldjWkgtqOJBWJ20hkICaxnQ=",
+        "lastModified": 1745475473,
+        "narHash": "sha256-agOKeQ5/wwJaMA3akk+X5NBlazK/KYf+4qmsQBmEWsA=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "feb9f572fd9caef55bf3a81894b957cab75c297c",
+        "rev": "36f8235765940ea5739a5f1030c1381082f514c8",
         "type": "github"
       },
       "original": {
@@ -1876,11 +1876,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1745234285,
-        "narHash": "sha256-GfpyMzxwkfgRVN0cTGQSkTC0OHhEkv3Jf6Tcjm//qZ0=",
+        "lastModified": 1745391562,
+        "narHash": "sha256-sPwcCYuiEopaafePqlG826tBhctuJsLx/mhKKM5Fmjo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c11863f1e964833214b767f4a369c6e6a7aba141",
+        "rev": "8a2f738d9d1f1d986b5a4cd2fd2061a7127237d7",
         "type": "github"
       },
       "original": {
@@ -1892,11 +1892,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1715447595,
-        "narHash": "sha256-VsVAUQOj/cS1LCOmMjAGeRksXIAdPnFIjCQ0XLkCsT0=",
+        "lastModified": 1745234285,
+        "narHash": "sha256-GfpyMzxwkfgRVN0cTGQSkTC0OHhEkv3Jf6Tcjm//qZ0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "062ca2a9370a27a35c524dc82d540e6e9824b652",
+        "rev": "c11863f1e964833214b767f4a369c6e6a7aba141",
         "type": "github"
       },
       "original": {
@@ -2405,11 +2405,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1741121204,
-        "narHash": "sha256-oMJsdsRzvO6l5oHqzXjhSe7D8ld06yAXwRPPrX/n/KI=",
+        "lastModified": 1745474556,
+        "narHash": "sha256-ZOK3isVPOsJoAXw7dWnWq31elONt2xF1Q9THLfhKA7w=",
         "owner": "juspay",
         "repo": "rust-flake",
-        "rev": "ea753dade9e283809d11c63082840657eb766e97",
+        "rev": "f69408a404f09afe0d85be88eddff07a054c2397",
         "type": "github"
       },
       "original": {
@@ -2426,11 +2426,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745375696,
-        "narHash": "sha256-zFRCHNRJ1Ei8GD3iP+wcedkJzLo84OO7JEu/gmhSllU=",
+        "lastModified": 1745462120,
+        "narHash": "sha256-TbVjPOl+Cg5vZ7TIn1KpQ8SOfHKD6OEgu84b6YSCfKE=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "19d1b5002d43c019880dd5cc0f8420efd20d5faf",
+        "rev": "79d3acd1a7e67fb9315fa5c5556eb6adf93dc2da",
         "type": "github"
       },
       "original": {
@@ -2447,11 +2447,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736700680,
-        "narHash": "sha256-9gmWIb8xsycWHEYpd2SiVIAZnUULX6Y+IMMZBcDUCQU=",
+        "lastModified": 1745462120,
+        "narHash": "sha256-TbVjPOl+Cg5vZ7TIn1KpQ8SOfHKD6OEgu84b6YSCfKE=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "5d1865c0da63b4c949f383d982b6b43519946e8f",
+        "rev": "79d3acd1a7e67fb9315fa5c5556eb6adf93dc2da",
         "type": "github"
       },
       "original": {
