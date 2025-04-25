@@ -2605,16 +2605,15 @@
         "terranix-examples": []
       },
       "locked": {
-        "lastModified": 1745514661,
-        "narHash": "sha256-0r9P5U3gTwH49YiZ0IIuFr0E+yt/WP3LvAZiPFwZT5A=",
-        "owner": "roberth",
+        "lastModified": 1745593106,
+        "narHash": "sha256-S06+W67u/13zT0Ltse+dPCs/vkiM7Rt9c9eNWZAx/Y4=",
+        "owner": "terranix",
         "repo": "terranix",
-        "rev": "a157f4c3941f8d08cb2d0a0cafcc867eaddb46b3",
+        "rev": "b860913b83d56ba46f6045a7baed2964bc749fc3",
         "type": "github"
       },
       "original": {
-        "owner": "roberth",
-        "ref": "fix-docs-eval",
+        "owner": "terranix",
         "repo": "terranix",
         "type": "github"
       }
