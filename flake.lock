@@ -37,11 +37,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1742656338,
-        "narHash": "sha256-Vkg5dyXKwoAfEVlKPxbCbdTCF9sXmTySZBSL28Kcdmo=",
+        "lastModified": 1745745529,
+        "narHash": "sha256-x2hZSCPX4L9PfALJQ0bMQA13ZLZyAZhiM1gUH+HvSU4=",
         "owner": "oddlama",
         "repo": "agenix-rekey",
-        "rev": "b677dbe0d675c68a19dedbc771aff22de76b11ea",
+        "rev": "9f57da199bb2f42b6aec564f2b628b57fc018044",
         "type": "github"
       },
       "original": {
@@ -257,11 +257,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745604263,
-        "narHash": "sha256-aima9vLLpnVH3vyoCsgsoEZLo5ZPceQkCeQk77J9Bz4=",
+        "lastModified": 1745750098,
+        "narHash": "sha256-uEG2QbIrPX7w/5IXQVNwUeg1RAquDwwm5Appr65iGOE=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "36807c727e743e7a00999922e7f737a0cc4e05ac",
+        "rev": "312f0eb723d9b2a1539f175bca9f11f1e4f0a673",
         "type": "github"
       },
       "original": {
@@ -1316,11 +1316,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745703610,
-        "narHash": "sha256-KgaGPlmjJItZ+Xf8mSoRmrsso+sf3K54n9oIP9Q17LY=",
+        "lastModified": 1745782215,
+        "narHash": "sha256-mx27J2HYQT+nGXTyUWKrUuxRzpr1FVVr59ZH4oNzOyw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2f5819a962489e037a57835f63ed6ff8dbc2d5fb",
+        "rev": "7b2aae3fb39928aecc5e41c10a9c87c4881614d5",
         "type": "github"
       },
       "original": {
@@ -2593,23 +2593,20 @@
     },
     "terranix": {
       "inputs": {
-        "bats-assert": [],
-        "bats-support": [],
         "flake-parts": [
           "flake-parts"
         ],
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems_5",
-        "terranix-examples": []
+        "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1745613718,
-        "narHash": "sha256-+seuqmtLgVP8+u7bSylwFESiU5jeLbKizcFz0Nii/TM=",
+        "lastModified": 1745783272,
+        "narHash": "sha256-BPGEM7RN58GFI6+y9GhG3E/7DEfNo9GvvYM3PJ/x5wU=",
         "owner": "terranix",
         "repo": "terranix",
-        "rev": "c2ec64292b10dfa3e131dc737595da4a2ef5207a",
+        "rev": "81d8ff31bb1f5329180068ab450bc06ecbd4683c",
         "type": "github"
       },
       "original": {
@@ -2752,11 +2749,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744961264,
-        "narHash": "sha256-aRmUh0AMwcbdjJHnytg1e5h5ECcaWtIFQa6d9gI85AI=",
+        "lastModified": 1745780832,
+        "narHash": "sha256-jGzkZoJWx+nJnPe0Z2xQBUOqMKuR1slVFQrMjFTKgeM=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "8d404a69efe76146368885110f29a2ca3700bee6",
+        "rev": "b2b6c027d708fbf4b01c9c11f6e80f2800b5a624",
         "type": "github"
       },
       "original": {
