@@ -1181,6 +1181,33 @@
         "type": "github"
       }
     },
+    "gitlab-ci": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "import-tree": "import-tree",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746900330,
+        "narHash": "sha256-sAJwLpEK/WzliCMn9slrFRK0LpMNyBYGqXAkiw/0Hc8=",
+        "ref": "refs/heads/master",
+        "rev": "017d72bd5d252e6bd67d38525de895dbde73d9c7",
+        "revCount": 18,
+        "type": "git",
+        "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
+      }
+    },
     "gomod2nix": {
       "flake": false,
       "locked": {
@@ -1326,6 +1353,21 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "import-tree": {
+      "locked": {
+        "lastModified": 1745565707,
+        "narHash": "sha256-ccFeWWQ9RLgCd1k+xwV/ASUkJ7AGTTaGDhlRWZgytxY=",
+        "owner": "vic",
+        "repo": "import-tree",
+        "rev": "ed504db425c363b13f13d5ca52f1a2600c4a7703",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vic",
+        "repo": "import-tree",
         "type": "github"
       }
     },
@@ -2376,6 +2418,7 @@
         "ez-configs": "ez-configs",
         "flake-parts": "flake-parts_7",
         "git-hooks-nix": "git-hooks-nix_2",
+        "gitlab-ci": "gitlab-ci",
         "haskell-flake": "haskell-flake_2",
         "hercules-ci-effects": "hercules-ci-effects",
         "home-manager": "home-manager",
