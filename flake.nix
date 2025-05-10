@@ -27,6 +27,10 @@
     emanote.inputs.ema.follows = ""; # appears unneeded
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
+    gitlab-ci.url = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci";
+    gitlab-ci.inputs.flake-parts.follows = "flake-parts";
+    gitlab-ci.inputs.nixpkgs.follows = "nixpkgs";
+    gitlab-ci.inputs.treefmt-nix.follows = "treefmt-nix";
     haskell-flake.url = "github:srid/haskell-flake";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -260,6 +264,16 @@
             provides a script to activate it, and adds a [check](flake-parts.html#opt-perSystem.checks).
 
             Pre-defined hooks are maintained at [`cachix/git-hooks.nix`](https://github.com/cachix/git-hooks.nix).
+          '';
+        };
+
+        gitlab-ci = {
+          baseUrl = "https://gitlab.horizon-haskell.net/nix/gitlab-ci";
+          intro = ''
+            Creates an app called `.#gitlab-ci` that prints a GitLab dynamic pipeline to
+            stdout.
+
+            For examples see the [README](https://gitlab.horizon-haskell.net/nix/gitlab-ci)."
           '';
         };
 
