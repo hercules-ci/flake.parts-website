@@ -435,6 +435,7 @@ in
                 ''}
               '';
               passthru.file = finalAttrs.finalPackage + "/options.md";
+              passthru.config = config;
             });
         };
       };
