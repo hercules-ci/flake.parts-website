@@ -157,7 +157,7 @@
               [Clan](https://clan.lol) is a multi-machine configuration framework for NixOS with a focus on
               VPNs, automatic secret and backup management.
 
-              Checkout our [documentation](https://docs.clan.lol/manual/flake-parts/) for more information on using the flake-parts module and
+              Check out our [documentation](https://docs.clan.lol/manual/flake-parts/) for more information on using the flake-parts module and
               also our [getting started guide](https://docs.clan.lol/getting-started) for general information.
             '';
           };
