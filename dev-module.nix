@@ -13,6 +13,8 @@
           pkgs.lychee
         ];
         shellHook = ''
+          # Configure this repo to ignore certain revisions in git blame
+          git config blame.ignoreRevsFile .git-blame-ignore-revs
           ${config.pre-commit.installationScript}
         '';
       };
