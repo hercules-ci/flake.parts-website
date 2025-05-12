@@ -1,6 +1,7 @@
 top@{ config, inputs, lib, flake-parts-lib, ... }:
 let
   inherit (lib)
+    mkIf
     mkOption
     types
     concatMap
@@ -443,9 +444,20 @@ in
     {
       options = {
         render = {
+          enable = mkOption {
+            type = types.bool;
+            description = "Whether to install the rendered docs to `perSystem.packages`.";
+            default = true;
+            example = false;
+          };
           inputs = mkOption {
-            description = "Which modules to render.";
             type = types.attrsOf (types.submodule inputModule);
+            description = ''
+              Which modules to render.
+
+              The rendered docs are installed as `perSystem.packages.generated-docs-<name>`,
+              unless [`enable`](#opt-perSystem.render.enable) is set to false.
+            '';
           };
           officialFlakeInputs = mkOption {
             type = types.raw;
@@ -456,60 +468,74 @@ in
             '';
             readOnly = true;
           };
+          output = mkOption {
+            type = types.package;
+            description = ''
+              The generated-docs package.
+
+              Contains the rendered docs for all of [`inputs`](#opt-perSystem.render.inputs),
+              along with a `menu.md` summary file.
+
+              Installed as `perSystem.packages.generated-docs`,
+              unless [`enable`](#opt-perSystem.render.enable) is set to false.
+            '';
+            readOnly = true;
+          };
         };
       };
       config = {
-        packages = lib.mapAttrs' (name: inputCfg: { name = "generated-docs-${name}"; value = inputCfg.rendered; }) cfg.inputs // {
-          generated-docs =
-            pkgs.runCommand "generated-docs"
-              {
-                passthru = {
-                  inherit config;
-                  inherit eval;
-                  # This won't be in sync with the actual nixosOptionsDoc
-                  # invocations, but it's useful for troubleshooting.
-                  allOptionsPerhaps = (pkgs.nixosOptionsDoc {
-                    options = opts;
-                  }).optionsNix;
-                };
-                passAsFile = [ "menu" ];
-                menu =
-                  let
-                    inputsToMenuItems =
-                      inputs:
-                      lib.concatStringsSep
-                        "\n"
-                        (lib.filter
-                          (x: x != "")
-                          (lib.mapAttrsToList
-                            (name: inputCfg:
-                            lib.optionalString inputCfg.menu.enable
-                              "    - [${inputCfg.menu.title}](options/${name}.md)"
-                            )
-                            inputs
-                          )
-                        );
-                    normalInputs = lib.filterAttrs (name: inputCfg: !inputCfg.archived) cfg.inputs;
-                    archivedInputs = lib.filterAttrs (name: inputCfg: inputCfg.archived) cfg.inputs;
-                  in
-                  ''
-                    ${inputsToMenuItems normalInputs}
-                      - [Archived]()
-                    ${inputsToMenuItems archivedInputs}
-                  '';
-              }
+        packages = mkIf cfg.enable (
+          lib.mapAttrs' (name: inputCfg: { name = "generated-docs-${name}"; value = inputCfg.rendered; }) cfg.inputs
+          // { generated-docs = cfg.output; }
+        );
+        render.output = pkgs.runCommand "generated-docs"
+          {
+            passthru = {
+              inherit config;
+              inherit eval;
+              # This won't be in sync with the actual nixosOptionsDoc
+              # invocations, but it's useful for troubleshooting.
+              allOptionsPerhaps = (pkgs.nixosOptionsDoc {
+                options = opts;
+              }).optionsNix;
+            };
+            passAsFile = [ "menu" ];
+            menu =
+              let
+                inputsToMenuItems =
+                  inputs:
+                  lib.concatStringsSep
+                    "\n"
+                    (lib.filter
+                      (x: x != "")
+                      (lib.mapAttrsToList
+                        (name: inputCfg:
+                        lib.optionalString inputCfg.menu.enable
+                          "    - [${inputCfg.menu.title}](options/${name}.md)"
+                        )
+                        inputs
+                      )
+                    );
+                normalInputs = lib.filterAttrs (name: inputCfg: !inputCfg.archived) cfg.inputs;
+                archivedInputs = lib.filterAttrs (name: inputCfg: inputCfg.archived) cfg.inputs;
+              in
               ''
-                mkdir $out
-                ${lib.concatStringsSep "\n"
-                  (lib.mapAttrsToList
-                    (name: inputCfg: ''
-                      cp ${inputCfg.rendered.file} $out/${name}.html
-                    '')
-                    cfg.inputs)
-                }
-                cp $menuPath $out/menu.md
+                ${inputsToMenuItems normalInputs}
+                  - [Archived]()
+                ${inputsToMenuItems archivedInputs}
               '';
-        };
+          }
+          ''
+            mkdir $out
+            ${lib.concatStringsSep "\n"
+              (lib.mapAttrsToList
+                (name: inputCfg: ''
+                  cp ${inputCfg.rendered.file} $out/${name}.html
+                '')
+                cfg.inputs)
+            }
+            cp $menuPath $out/menu.md
+          '';
       };
     });
 }
