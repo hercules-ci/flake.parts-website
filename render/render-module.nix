@@ -381,7 +381,25 @@ in
                   (config.isEmpty != (config._nixosOptionsDoc.optionsNix == { }))
                   (if config.isEmpty # ie expected
                   then "The input ${name} now has options. Please remove `isEmpty = true;` from the input."
-                  else "Did not find any options to render for ${name}. If this is intentional, set `isEmpty = true;` on the input."
+                  else ''
+                    Did not find any options to render for ${name}.
+
+                    If this is intentional, set `isEmpty = true;` on the input. Otherwise, set `_file` to a subpath of the containing flake.
+
+                    Otherwise, the two most likely causes are:
+                    - All options are in `config.perSystem` instead of `options.perSystem`
+                    - The module is "anonymous", i.e. the module system does not know in which
+                      file the options are declared.
+
+                    In the latter case, make sure that the module isn't just specified in a file,
+                    but loaded in such a way that the module system is aware of the file name.
+                    e.g.
+                      change: flakeModules.default = import ./flake-module.nix;
+                          to: flakeModules.default = ./flake-module.nix;
+                    or
+                      change: flakeModule = { ... }: { foo = true; };
+                          to: flakeModule = { ... }: { _file = __curPos.file; foo = true; };
+                  ''
                   );
             in
 
@@ -417,6 +435,7 @@ in
                 ''}
               '';
               passthru.file = finalAttrs.finalPackage + "/options.md";
+              passthru.config = config;
             });
         };
       };
