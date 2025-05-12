@@ -2,7 +2,7 @@
   perSystem = { config, pkgs, ... }: {
     devShells.default = pkgs.mkShell {
       nativeBuildInputs = [
-        pkgs.nixpkgs-fmt
+        pkgs.nixfmt-rfc-style
         pkgs.pre-commit
         pkgs.hci
         pkgs.netlify-cli
@@ -16,7 +16,7 @@
     };
     pre-commit = {
       settings = {
-        hooks.nixpkgs-fmt.enable = true;
+        hooks.nixfmt-rfc-style.enable = true;
       };
     };
   };
