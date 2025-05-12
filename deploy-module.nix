@@ -1,8 +1,21 @@
-{ config, lib, inputs, withSystem, ... }:
 {
-  herculesCI = herculesCI@{ config, ... }: {
-    onPush.default.outputs.effects.netlifyDeploy =
-      withSystem "x86_64-linux" ({ config, pkgs, hci-effects, ... }:
+  config,
+  lib,
+  inputs,
+  withSystem,
+  ...
+}:
+{
+  herculesCI =
+    herculesCI@{ config, ... }:
+    {
+      onPush.default.outputs.effects.netlifyDeploy = withSystem "x86_64-linux" (
+        {
+          config,
+          pkgs,
+          hci-effects,
+          ...
+        }:
         hci-effects.netlifyDeploy {
           content = config.packages.default;
           secretName = "default-netlify";
@@ -10,5 +23,5 @@
           productionDeployment = herculesCI.config.repo.branch == "main";
         }
       );
-  };
+    };
 }
