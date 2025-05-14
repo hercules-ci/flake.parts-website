@@ -328,8 +328,14 @@ in
               '';
               default = [ config.attributePath ];
               example = [
-                "flakeModules"
-                "default"
+                [
+                  "flakeModules"
+                  "nixos"
+                ]
+                [
+                  "flakeModules"
+                  "home-manager"
+                ]
               ];
             };
 
