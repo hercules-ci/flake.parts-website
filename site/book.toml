@@ -14,6 +14,7 @@ edit-url-template = "https://github.com/hercules-ci/flake.parts-website/edit/mai
 additional-js = [ "no-edit-options.js", "theme/pagetoc.js" ]
 additional-css = [ "flake-parts.css", "theme/pagetoc.css" ]
 no-section-label = true
+hash-files = true
 
 [output.html.print]
 enable = false  # big single page; don't need that
