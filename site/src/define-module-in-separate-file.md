@@ -1,4 +1,3 @@
-
 # Define a Module in a Separate File
 
 To avoid writing huge files, you'll want to separate some logic into modules.
@@ -16,6 +15,7 @@ In the separate file, replace all variables that would come from the lexical sco
 Example:
 
 `nixos-module.nix`
+
 ```nix
 { lib, config, ... }: {
   options = {
@@ -30,6 +30,7 @@ Example:
 ```
 
 Flake module:
+
 ```nix
 { withSystem, ... }: {
   flake.nixosModules.default = { pkgs, ... }: {
@@ -51,6 +52,7 @@ The `importApply` function can pass extra variables to a module to import.
 Instead of loading a file containing a module, it loads file containing _a function to_ a module, and applies it.
 
 `nixos-module.nix`
+
 ```nix
 { localFlake, withSystem }:
 { lib, config, ... }: {
@@ -68,6 +70,7 @@ Instead of loading a file containing a module, it loads file containing _a funct
 ```
 
 Flake module:
+
 ```nix
 { flake-parts-lib, self, withSystem, ... }:
 let
@@ -80,4 +83,4 @@ in
 
 ## See Also
 
- - [Dogfooding a Reusable Flake Module](dogfood-a-reusable-module.md), which helps avoid an infinite recursion.
+- [Dogfooding a Reusable Flake Module](dogfood-a-reusable-module.md), which helps avoid an infinite recursion.

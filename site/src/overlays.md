@@ -3,17 +3,20 @@
 Overlays in Nixpkgs allow the customization of the entire package set in a consistent manner. For example, if you set a library's attribute in an overlay, this change will be applied to all packages that previously depended on that attribute. This is in contrast with the way the Flake `packages` attribute works. Such definitions do not feed back into the Nixpkgs package set.
 
 Advantages of overlays:
- - The original attribute won't be around anymore. This almost guarantees that
-   the original value won't be used anywhere else.
- - The dependencies are more coherent, resulting in fewer "diamond dependency" conflicts
+
+- The original attribute won't be around anymore. This almost guarantees that
+  the original value won't be used anywhere else.
+- The dependencies are more coherent, resulting in fewer "diamond dependency" conflicts
 
 Advantages of the flake `packages` attribute without `inputs.<input>.follows`:
- - A package definition won't interfere with other packages.
- - The packages will be used with the dependencies that its CI built it with, resulting in fewer build problems.
+
+- A package definition won't interfere with other packages.
+- The packages will be used with the dependencies that its CI built it with, resulting in fewer build problems.
 
 Advantages of the flake `packages` attribute with `inputs.<input>.follows`:
- - A package definition won't interfere with other packages.
- - The dependencies are more coherent, resulting in fewer "diamond dependency" conflicts
+
+- A package definition won't interfere with other packages.
+- The dependencies are more coherent, resulting in fewer "diamond dependency" conflicts
 
 Neither option is perfect.
 
@@ -38,7 +41,6 @@ perSystem = { system, ... }: {
 };
 ```
 
-
 ## Defining an overlay
 
 While overlays are about packages, and therefore dependent on the choice of `system`, they are not defined under a system attribute. Instead they are in a top level attribute.
@@ -54,7 +56,7 @@ final: prev: {
 }
 ```
 
-A manually defined overlay (more on automation later), can make use of `perSystem` as follows: 
+A manually defined overlay (more on automation later), can make use of `perSystem` as follows:
 
 ```nix
 { withSystem, ... }: {
@@ -99,9 +101,8 @@ The `final` module argument is only defined when [`easyOverlay`] is imported. It
 
 ## See also
 
- - [`easyOverlay`]
- - [`perSystem.overlayAttrs`]
-
+- [`easyOverlay`]
+- [`perSystem.overlayAttrs`]
 
 [`easyOverlay`]: options/flake-parts-easyOverlay.md
 [`overlayAttrs`]: options/flake-parts-easyOverlay.md#opt-perSystem.overlayAttrs
