@@ -19,28 +19,17 @@ h1.menu-title::before {
 }
 
 /* Tweak the toc sidebar */
-@media only screen and (min-width:1440px) {
+@media only screen and (min-width: 1440px) {
   .pagetoc {
     width: var(--toc-width) !important;
   }
   main {
-    --stock-spare-width:
-      calc(1440px - var(--content-max-width) - var(--sidebar-width) - 180px) + (100vw - 1440px);
-    --toc-width:
-      calc(
-        clamp(
-          0px,
-          var(--stock-spare-width) * 0.8,
-          500px));
+    --stock-spare-width: calc(
+        1440px - var(--content-max-width) - var(--sidebar-width) - 180px
+      ) +
+      (100vw - 1440px);
+    --toc-width: calc(clamp(0px, var(--stock-spare-width) * 0.8, 500px));
     --spare-width: calc(var(--stock-spare-width) - var(--toc-width));
-    margin-left:
-      calc(
-        clamp(
-          0px,
-          var(--spare-width)
-            / 2 ,
-          50%
-        )
-      ) !important;
+    margin-left: calc(clamp(0px, var(--spare-width) / 2, 50%)) !important;
   }
 }

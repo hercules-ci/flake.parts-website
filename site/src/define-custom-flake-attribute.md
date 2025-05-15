@@ -1,4 +1,3 @@
-
 # Defining a custom flake output attribute
 
 ## When should I declare a custom flake output?
