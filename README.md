@@ -1,4 +1,3 @@
-
 # Source of [flake.parts](https://flake.parts)
 
 This is in a separate repo to prevent commit churn in the [flake-parts repo](https://github.com/hercules-ci/flake-parts),
