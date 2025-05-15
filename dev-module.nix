@@ -1,11 +1,19 @@
+{ lib, inputs, ... }:
 {
+  imports = [
+    inputs.treefmt-nix.flakeModule
+  ];
+
   perSystem =
-    { config, pkgs, ... }:
+    {
+      self',
+      config,
+      pkgs,
+      ...
+    }:
     {
       devShells.default = pkgs.mkShell {
         nativeBuildInputs = [
-          pkgs.nixfmt-rfc-style
-          pkgs.pre-commit
           pkgs.hci
           pkgs.netlify-cli
           pkgs.pandoc
@@ -18,9 +26,20 @@
           ${config.pre-commit.installationScript}
         '';
       };
+
+      treefmt = {
+        projectRootFile = "flake.nix";
+        programs = {
+          nixfmt.enable = true;
+        };
+      };
+
       pre-commit = {
         settings = {
-          hooks.nixfmt-rfc-style.enable = true;
+          hooks.fmt = {
+            enable = true;
+            entry = lib.getExe self'.formatter;
+          };
         };
       };
     };
