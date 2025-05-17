@@ -149,6 +149,18 @@
             '';
           };
 
+        flake-parts-flakeModulesSansAlias =
+          { ... }:
+          {
+            imports = [ commonExtras ];
+            extraName = "flakeModulesSansAlias";
+            intro = ''
+              Adds the `flakeModules` attribute.
+
+              This module makes deduplication and `disabledModules` work, even if the definitions are inline modules or [`importApply`](../define-module-in-separate-file.html#importapply).
+            '';
+          };
+
         flake-parts-modules =
           { ... }:
           {
