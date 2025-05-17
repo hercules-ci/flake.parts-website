@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    flake-parts.url = "github:mightyiam/flake-parts/safe-flake-module-alias";
+
     actions-nix.url = "github:nialov/actions.nix";
     actions-nix.inputs.nixpkgs.follows = "nixpkgs";
     actions-nix.inputs.flake-parts.follows = "flake-parts";
