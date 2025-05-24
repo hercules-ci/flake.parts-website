@@ -1531,11 +1531,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1744989007,
-        "narHash": "sha256-+O9rnxIn5oFyD0+4UQ2Mw/Z2s6i49I9CA8fiUySc9Y4=",
+        "lastModified": 1748072100,
+        "narHash": "sha256-nHkJqIQ7efbi54oz2HDLk7npLtAXikz4Yxhv49Ocg5w=",
         "owner": "applicative-systems",
         "repo": "mkdocs-flake",
-        "rev": "8cffadd0f0b8bf88896de0dc0dd3a018cd17e1e5",
+        "rev": "9be2e32e61fcde17620ccd7b5e1e82041556a7e7",
         "type": "github"
       },
       "original": {
@@ -1617,11 +1617,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1747981089,
-        "narHash": "sha256-OwTWQNWHz09iS6nDT4pNFt8RlUBoJiZHZ7smPLfDv1c=",
+        "lastModified": 1748067367,
+        "narHash": "sha256-kNsEU5tM11ZAvAU6MI/oZ8unZSat2I+Xo/ez8aK3SCQ=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "cd5ce2776262e1efabc2871b7518c358809772dc",
+        "rev": "64209325f09c67cb39d1db0305bc4860734b39af",
         "type": "github"
       },
       "original": {
@@ -1793,11 +1793,11 @@
         "treefmt-nix": "treefmt-nix_5"
       },
       "locked": {
-        "lastModified": 1747379861,
-        "narHash": "sha256-AfJucVeJxzR5HaxvfUIrj/wSpyzvnaYAi7wEgQq/ltk=",
+        "lastModified": 1748037021,
+        "narHash": "sha256-eL9FVzPsHrWp6d8nZairRlrg0Mu4qAgMYvQrXgNutZ4=",
         "owner": "mrVanDalo",
         "repo": "nixos-healthchecks",
-        "rev": "762fd8fe4a072e1c66bc061f4cf4574ec3fa94f9",
+        "rev": "0493a4d81588934547b08919b6149c3e76467afb",
         "type": "github"
       },
       "original": {
@@ -2392,11 +2392,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743438845,
-        "narHash": "sha256-1GSaoubGtvsLRwoYwHjeKYq40tLwvuFFVhGrG8J9Oek=",
+        "lastModified": 1746540146,
+        "narHash": "sha256-QxdHGNpbicIrw5t6U3x+ZxeY/7IEJ6lYbvsjXmcxFIM=",
         "owner": "pyproject-nix",
         "repo": "pyproject.nix",
-        "rev": "8063ec98edc459571d042a640b1c5e334ecfca1e",
+        "rev": "e09c10c24ebb955125fda449939bfba664c467fd",
         "type": "github"
       },
       "original": {
@@ -2469,11 +2469,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747967795,
-        "narHash": "sha256-76s4jDRbQzxRO+5y8ilMp5V30qVgY9R6n8U7aOap8ig=",
+        "lastModified": 1748054080,
+        "narHash": "sha256-rwFiLLNCwkj9bqePtH1sMqzs1xmohE0Ojq249piMzF4=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "f1d5bfa8c692cacd798a3e1fb93d54c1b9ac701a",
+        "rev": "2221d8d53c128beb69346fa3ab36da3f19bb1691",
         "type": "github"
       },
       "original": {
@@ -2833,11 +2833,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744797880,
-        "narHash": "sha256-gt9JBkYjZAEvGwCG7RMAAAr0j2RsaRmOMj/vV0briXk=",
+        "lastModified": 1747949765,
+        "narHash": "sha256-1v8SFHOwUCvHDXFmQRjHZYawY19nxmtZ7zH/kwAGgj0=",
         "owner": "pyproject-nix",
         "repo": "uv2nix",
-        "rev": "3583e037163491ecd833f1d5d3eedf3869543c5d",
+        "rev": "ec0502250b48116fd3aa8e1347a2d0254bacd05e",
         "type": "github"
       },
       "original": {
