@@ -243,6 +243,20 @@
 
             '';
           };
+
+        flake-parts-touchup =
+          { config, ... }:
+          {
+            imports = [ commonExtras ];
+            extraName = "touchup";
+            sourceSubpath = "/extras/${config.extraName}";
+            intro = ''
+              A convenient way to make changes to the flake outputs, the result of `mkFlake`, without having to set up expressions around `mkFlake`.
+              Usually you don't even have to write any functions, and never recursive ones.
+
+              Examples are provided in the [`touchup`](#opt-touchup) option below.
+            '';
+          };
       };
     };
 }
