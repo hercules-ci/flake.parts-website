@@ -803,16 +803,18 @@
         "nixpkgs-lib": "nixpkgs-lib_2"
       },
       "locked": {
-        "lastModified": 1743550720,
-        "narHash": "sha256-hIshGgKZCgWh6AYJpJmRgFdR3WUbkY04o82X05xqQiY=",
+        "lastModified": 1748354513,
+        "narHash": "sha256-ozii6oVFruUTitXGVL972An7JRuAK7CXQBLKIV+VmXw=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "c621e8422220273271f52058f618c94e405bb0f5",
+        "rev": "ac5c43f7c09f989198220886c7c8338af6b6b1fb",
         "type": "github"
       },
       "original": {
-        "id": "flake-parts",
-        "type": "indirect"
+        "owner": "hercules-ci",
+        "ref": "formatter-and-touchups",
+        "repo": "flake-parts",
+        "type": "github"
       }
     },
     "flake-parts_8": {
