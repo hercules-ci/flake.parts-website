@@ -254,6 +254,9 @@
               A convenient way to make changes to the flake outputs, the result of `mkFlake`, without having to set up expressions around `mkFlake`.
               Usually you don't even have to write any functions, and never recursive ones.
 
+              This module should not be imported or used by reusable modules.
+              For example, while it can be used as an alternative to auto-wiring controls that e.g. disable the generation of a `devShell.default`, it can not resolve the conflict of multiple modules doing that, and a special-purpose boolean option for that is easier to use.
+
               Examples are provided in the [`touchup`](#opt-touchup) option below.
             '';
           };
