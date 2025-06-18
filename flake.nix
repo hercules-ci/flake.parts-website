@@ -27,6 +27,7 @@
     emanote.inputs.ema.follows = ""; # appears unneeded
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
+    files.url = "github:mightyiam/files";
     gitlab-ci.url = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci";
     gitlab-ci.inputs.flake-parts.follows = "flake-parts";
     gitlab-ci.inputs.nixpkgs.follows = "nixpkgs";
@@ -254,6 +255,15 @@
               [`ez-configs`](https://github.com/ehllie/ez-configs) lets you define multiple nixos,
               darwin, and home manager configurations, and reuse common modules using your flake directory structure.
             '';
+          };
+
+          files = {
+            attributePath = [
+              "flakeModules"
+              "default"
+            ];
+            baseUrl = "https://github.com/mightyiam/files/blob/main";
+            intro = lib.readFile "${inputs.files}/README.md";
           };
 
           "flake.parts-website" = {
