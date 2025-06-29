@@ -222,6 +222,8 @@ in
                   </div>
                 ''}
 
+                [🌐 repository](${config.baseUrl})
+
                 ${config.intro}
 
                 ${config.installation}
