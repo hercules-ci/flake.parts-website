@@ -54,10 +54,7 @@
 
       pre-commit = {
         settings = {
-          hooks.fmt = {
-            enable = true;
-            entry = lib.getExe self'.formatter;
-          };
+          hooks.treefmt.enable = true;
         };
       };
     };
