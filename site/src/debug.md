@@ -1,4 +1,3 @@
-
 # Explore and debug option values
 
 Sometimes the public interface of a flake is not enough. To inspect all option values, you can enable [`debug`](options/flake-parts.html#opt-debug) and explore otherwise private values with the repl.
@@ -17,7 +16,7 @@ Sometimes the public interface of a flake is not enough. To inspect all option v
     }
     ```
 
-2. Load the flake
+2.  Load the flake
 
     ```
     $ nix repl
@@ -60,7 +59,7 @@ nix-repl> currentSystem.options.pre-commit.settings.files
 ## Where is a top level value defined?
 
 ```
-nix-repl> debug.options.system.files  
+nix-repl> debug.options.system.files
 [ "/nix/store/3na6c6mmyw2yf5chzwwwrp54b8yf96ry-source/flake.nix" ]
 
 ```
@@ -68,11 +67,11 @@ nix-repl> debug.options.system.files
 ## Where is a top level option declared?
 
 ```
-nix-repl> debug.options.systems.declarations 
+nix-repl> debug.options.systems.declarations
 [ "/nix/store/3na6c6mmyw2yf5chzwwwrp54b8yf96ry-source/modules/perSystem.nix" ]
 
 ```
 
 ## See also
 
- - The [`debug` option](options/flake-parts.html#opt-debug) reference.
+- The [`debug` option](options/flake-parts.html#opt-debug) reference.

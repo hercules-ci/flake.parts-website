@@ -1,4 +1,3 @@
-
 # Best Practices for Module Writing
 
 Like in NixOS, writing a configuration is quite different from writing a reusable module.
@@ -13,12 +12,14 @@ This way, the user is free to, for example, bundle up their inputs into a distri
 ## Do not traverse `inputs`
 
 By scanning through all the `inputs`, you cause two kinds of problems
- - You trigger the fetching of all direct dependencies, even though some may not need to be fetched.
- - You are making an assumption about the role in which an input is used.
+
+- You trigger the fetching of all direct dependencies, even though some may not need to be fetched.
+- You are making an assumption about the role in which an input is used.
 
 By recursing into inputs, you make the problem literally **exponentially** worse:
- - Your module logic becomes susceptible to changes deep inside your dependencies' dependencies. Whereas you might have gotten away with an assumption about the role of direct dependencies, making the same assumptions about dependencies and dependencies' dependencies is unlikely to work out well.
- - You trigger the fetching of potentially all transitive dependencies. Instead of a performance inconvenience, we now have a ecosystem-wide scaling problem.
+
+- Your module logic becomes susceptible to changes deep inside your dependencies' dependencies. Whereas you might have gotten away with an assumption about the role of direct dependencies, making the same assumptions about dependencies and dependencies' dependencies is unlikely to work out well.
+- You trigger the fetching of potentially all transitive dependencies. Instead of a performance inconvenience, we now have a ecosystem-wide scaling problem.
 
 Also note that even if you don't explicitly recurse into the transitive inputs, this behavior still arises if your inputs don't adhere to the rule.
 

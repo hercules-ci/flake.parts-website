@@ -1,4 +1,3 @@
-
 # Module Arguments
 
 The module system allows modules and submodules to be defined using plain
@@ -73,7 +72,7 @@ Enter the scope of a system. Example:
 
 # `perSystem` module parameters
 
-##  `pkgs`
+## `pkgs`
 
 Default: `inputs.nixpkgs.legacyPackages.${system}`.
 

@@ -47,6 +47,7 @@ This flake shows how to export a flake module that references its own flake, ins
 The example only demonstrates the principle, by reexporting a locally defined package in the user's flake.
 
 `flake.nix`:
+
 ```nix
 {
   inputs = {
@@ -76,6 +77,7 @@ The example only demonstrates the principle, by reexporting a locally defined pa
 ```
 
 `flake-module.nix`:
+
 ```nix
 # The importApply argument. Use this to reference things defined locally,
 # as opposed to the flake where this is imported.
