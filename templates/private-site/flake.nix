@@ -21,23 +21,14 @@
         "aarch64-darwin"
         "x86_64-darwin"
       ];
-      perSystem =
-        {
-          config,
-          self',
-          inputs',
-          pkgs,
-          system,
-          ...
-        }:
-        {
-          render.inputs.my-flake-module = {
-            # TODO: update
-            baseUrl = "https://github.com/foo/my-flake-module/blob/main";
-            intro = ''
-              My private flake-parts module, with docs rendered here.
-            '';
-          };
+      perSystem = {
+        render.inputs.my-flake-module = {
+          # TODO: update
+          baseUrl = "https://github.com/foo/my-flake-module/blob/main";
+          intro = ''
+            My private flake-parts module, with docs rendered here.
+          '';
         };
+      };
     };
 }

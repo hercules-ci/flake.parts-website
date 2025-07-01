@@ -1,6 +1,4 @@
 top@{
-  config,
-  inputs,
   lib,
   flake-parts-lib,
   ...
@@ -13,7 +11,6 @@ let
     concatMap
     concatLists
     mapAttrsToList
-    attrValues
     hasPrefix
     removePrefix
     ;
@@ -183,7 +180,7 @@ in
                   match = builtins.match "https://github.com/([^/]*)/([^/]*)/blob/([^/]*)" config.baseUrl;
                   owner = lib.elemAt match 0;
                   repo = lib.elemAt match 1;
-                  branch = lib.elemAt match 2; # ignored for now because they're all default branches
+                  # branch = lib.elemAt match 2; # ignored for now because they're all default branches
                 in
                 if match != null then
                   "github:${owner}/${repo}"

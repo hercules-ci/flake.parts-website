@@ -3,10 +3,7 @@
   options.perSystem = flake-parts-lib.mkPerSystemOption (
     {
       config,
-      self',
-      inputs',
       pkgs,
-      lib,
       ...
     }:
     {

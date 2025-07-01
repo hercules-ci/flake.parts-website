@@ -50,7 +50,7 @@
                 sourceName,
                 sourcePath,
                 baseUrl,
-                coreOptDecls,
+                ...
               }:
               let
                 sourcePathStr = toString sourcePath + config.sourceSubpath;
