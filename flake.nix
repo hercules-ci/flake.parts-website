@@ -69,11 +69,8 @@
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
     terranix.url = "github:terranix/terranix";
-    terranix.inputs.bats-assert.follows = "";
-    terranix.inputs.bats-support.follows = "";
     terranix.inputs.flake-parts.follows = "flake-parts";
     terranix.inputs.nixpkgs.follows = "nixpkgs";
-    terranix.inputs.terranix-examples.follows = "";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
