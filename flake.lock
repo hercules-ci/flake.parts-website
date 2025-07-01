@@ -1410,6 +1410,21 @@
         "type": "github"
       }
     },
+    "input-branches": {
+      "locked": {
+        "lastModified": 1751365220,
+        "narHash": "sha256-+af8lomTMYfxWGXiu8peQjhEIfhq7eQmXBJ25ViFf6M=",
+        "owner": "mightyiam",
+        "repo": "input-branches",
+        "rev": "ea6fa2c8a3d2bbd6d93ce4baf4689a3efb13240b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mightyiam",
+        "repo": "input-branches",
+        "type": "github"
+      }
+    },
     "lib": {
       "locked": {
         "lastModified": 1722128034,
@@ -2410,6 +2425,7 @@
         "haskell-flake": "haskell-flake_2",
         "hercules-ci-effects": "hercules-ci-effects",
         "home-manager": "home-manager",
+        "input-branches": "input-branches",
         "make-shell": "make-shell",
         "mission-control": "mission-control",
         "mkdocs-flake": "mkdocs-flake",
