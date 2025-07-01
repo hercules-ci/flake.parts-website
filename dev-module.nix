@@ -1,4 +1,4 @@
-{ lib, inputs, ... }:
+{ inputs, ... }:
 {
   imports = [
     inputs.treefmt-nix.flakeModule
@@ -6,7 +6,6 @@
 
   perSystem =
     {
-      self',
       config,
       pkgs,
       ...
@@ -36,6 +35,7 @@
         programs = {
           nixfmt.enable = true;
           prettier.enable = true;
+          nixf-diagnose.enable = true;
         };
 
         settings = {
