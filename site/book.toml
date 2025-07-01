@@ -23,3 +23,6 @@ follow-web-links = false # no Internet during the build
 
 [preprocessor.pagetoc]
 # enabled, no config
+
+[preprocessor.alerts]
+# enabled, no config

@@ -43,6 +43,7 @@
           name = "site";
           nativeBuildInputs = [
             pkgs.mdbook
+            pkgs.mdbook-alerts
             pkgs.mdbook-linkcheck
             pkgs.mdbook-pagetoc
           ];
