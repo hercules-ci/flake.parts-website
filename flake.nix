@@ -78,20 +78,20 @@
 
   outputs =
     inputs@{ flake-parts, ... }:
-    let
-      publishedModules = {
-        empty-site = {
-          imports = [
-            ./render/render-module.nix
-            ./site/site-module.nix
-            ./core-modules.nix
-          ];
-          perSystem.render.officialFlakeInputs = inputs;
-        };
-      };
-    in
     flake-parts.lib.mkFlake { inherit inputs; } (
       { lib, ... }:
+      let
+        publishedModules = {
+          empty-site = {
+            imports = [
+              ./render/render-module.nix
+              ./site/site-module.nix
+              ./core-modules.nix
+            ];
+            perSystem.render.officialFlakeInputs = inputs;
+          };
+        };
+      in
       {
         perSystem.render.inputs = {
 
