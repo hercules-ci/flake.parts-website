@@ -49,7 +49,7 @@ You'll find that most modules only need one or two such options.
 
 The `importApply` function can pass extra variables to a module to import.
 
-Instead of loading a file containing a module, it loads file containing _a function to_ a module, and applies it.
+Instead of loading a file containing a module, it loads a file containing _a function to_ a module, and applies it.
 
 `nixos-module.nix`
 
