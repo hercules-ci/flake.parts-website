@@ -123,7 +123,7 @@ in
               in
               [
                 {
-                  url = baseUrl + subpath;
+                  ${if baseUrl == null then null else "url"} = baseUrl + subpath;
                   name = sourceName + subpath;
                 }
               ]
@@ -173,21 +173,8 @@ in
               description = ''
                 Flake reference string that refers to the flake to import, used in the generated text for the installation instructions, see {option}`installation`.
               '';
-              default =
-                # This only works for github for now, but we can set a non-default
-                # value in the list just fine.
-                let
-                  match = builtins.match "https://github.com/([^/]*)/([^/]*)/blob/([^/]*)" config.baseUrl;
-                  owner = lib.elemAt match 0;
-                  repo = lib.elemAt match 1;
-                  # branch = lib.elemAt match 2; # ignored for now because they're all default branches
-                in
-                if match != null then
-                  "github:${owner}/${repo}"
-                else
-                  throw "Couldn't figure out flakeref for ${name}: ${config.baseUrl}";
               defaultText = lib.literalMD ''
-                Determined from `config.baseUrl`.
+                Figured out automatically when a forge module is imported.
               '';
             };
 
@@ -292,9 +279,20 @@ in
             };
 
             baseUrl = mkOption {
-              type = types.str;
+              type = types.nullOr types.str;
               description = ''
                 URL prefix for source location links.
+                When `null`, source location links are omitted.
+              '';
+              default = null;
+              defaultText = lib.literalMD ''
+                Figured out automatically when a forge module is imported
+                (see existing usage),
+                but only for an input whose corresponding flake input
+                has a `rev` attribute.
+                For example, building with the `--override-input`
+                flag with a path to a dirty repository results in this
+                defaulting to `null`.
               '';
             };
 
@@ -342,6 +340,12 @@ in
                 A package containing the generated documentation page.
               '';
               readOnly = true;
+            };
+
+            rev = mkOption {
+              type = types.nullOr types.str;
+              default = (top.inputs.${name} or { }).rev or null;
+              internal = true;
             };
 
             _nixosOptionsDoc = mkOption {
@@ -498,7 +502,12 @@ in
             example = false;
           };
           inputs = mkOption {
-            type = types.attrsOf (types.submodule inputModule);
+            type = types.attrsOf (
+              types.submoduleWith {
+                modules = [ inputModule ];
+                class = "flakePartsRenderInput";
+              }
+            );
             description = ''
               Which modules to render.
 
@@ -587,4 +596,63 @@ in
       };
     }
   );
+  config.flake.modules.flakePartsRenderInput = {
+    github =
+      inputArgs:
+      let
+        cfg = inputArgs.config;
+      in
+      {
+        options = {
+          owner = lib.mkOption {
+            type = lib.types.str;
+          };
+          repo = lib.mkOption {
+            type = lib.types.str;
+          };
+        };
+        config = {
+          baseUrl = lib.mkIf (cfg.rev != null) (
+            lib.mkOverride 1400 "https://github.com/${cfg.owner}/${cfg.repo}/blob/${cfg.rev}${cfg.sourceSubpath or ""}"
+          );
+
+          flakeRef = lib.mkOptionDefault "github:${cfg.owner}/${cfg.repo}";
+        };
+      };
+
+    gitlab =
+      inputArgs:
+      let
+        cfg = inputArgs.config;
+      in
+      {
+        options = {
+          forgeRoot = lib.mkOption {
+            type = lib.types.str;
+            default = "https://gitlab.com/";
+          };
+          owner = lib.mkOption {
+            type = lib.types.str;
+          };
+          repo = lib.mkOption {
+            type = lib.types.str;
+          };
+        };
+        config = {
+          baseUrl = lib.mkIf (cfg.rev != null) (
+            lib.mkOverride 1400 "${cfg.forgeRoot}${cfg.owner}/${cfg.repo}/-/blob/${cfg.rev}"
+          );
+
+          flakeRef = lib.mkOptionDefault (
+            let
+              path_ = "${cfg.owner}/${cfg.repo}";
+            in
+            if cfg.forgeRoot == inputArgs.options.forgeRoot.default then
+              "gitlab:${path_}"
+            else
+              "git+${cfg.forgeRoot}${path_}"
+          );
+        };
+      };
+  };
 }
