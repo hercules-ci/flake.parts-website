@@ -259,11 +259,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753201456,
-        "narHash": "sha256-dwx5SvXyo7bd8sR4qe4kAKVmoYDKrGDeLymMoR6rObY=",
+        "lastModified": 1753300020,
+        "narHash": "sha256-jRO3ELwG+FfYDBTDDhBJNjGuJjB4IgziuB1JWoz6l1A=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "39662b2c5b94ad06573c9aac4fe9f671260d1587",
+        "rev": "90266818017f7a6885edc75eb4a13b68862675ea",
         "type": "github"
       },
       "original": {
@@ -481,11 +481,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1753222316,
-        "narHash": "sha256-HR94h+jEp+npHBzUv4eUYg4rstyX5jvrjQG7VOTw0jg=",
+        "lastModified": 1753298660,
+        "narHash": "sha256-rE84s+P4hx4AtriCPagexOQ7KsqIYsLyXGVx+QyzWFw=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "a2de4d76c5ca79f38d52bccb787e0dc68660d081",
+        "rev": "7d505ee7ecfdbce87daff982034561f6a4625abc",
         "type": "github"
       },
       "original": {
@@ -1464,11 +1464,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753181343,
-        "narHash": "sha256-CLQfNtUqirNVSYoW/kYbvL4PeeNasmZonaPnjO3+1YQ=",
+        "lastModified": 1753294394,
+        "narHash": "sha256-1Dfgq09lHZ8AdYB2Deu/mYP1pMNpob8CgqT5Mzo44eI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0cdfcdbb525b77b951c889b6131047bc374f48fe",
+        "rev": "1fde6fb1be6cd5dc513dc1c287d69e4eb2de973e",
         "type": "github"
       },
       "original": {
@@ -1550,15 +1550,16 @@
     "lvar": {
       "flake": false,
       "locked": {
-        "lastModified": 1745122737,
-        "narHash": "sha256-ZnYXkkPmnNvt4tA45JgSC7dpttmqhUo4AHfEjB1r1gE=",
+        "lastModified": 1753226155,
+        "narHash": "sha256-Uwg5s0SlxLp83bXHA+6TIQV+L+lu8lwMpBdNuiuk7hg=",
         "owner": "srid",
         "repo": "lvar",
-        "rev": "047a24c4dcd7f85f9c18058f6be991cea531870e",
+        "rev": "cd110d4823ee7b8bbbf115a47c79bc304c3309cd",
         "type": "github"
       },
       "original": {
         "owner": "srid",
+        "ref": "0.2.0.0",
         "repo": "lvar",
         "type": "github"
       }
