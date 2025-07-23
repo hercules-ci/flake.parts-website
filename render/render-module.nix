@@ -650,7 +650,7 @@ in
             if cfg.forgeRoot == inputArgs.options.forgeRoot.default then
               "gitlab:${path_}"
             else
-              "git+${cfg.forgeRoot}${path_}"
+              "gitlab:${path_}?host=${cfg.forgeRoot}"
           );
         };
       };
