@@ -259,11 +259,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753386188,
-        "narHash": "sha256-x6VQB+z3brzYWscvY/UenGFv+FXc/G/5y1IT1TwtUms=",
+        "lastModified": 1753461480,
+        "narHash": "sha256-XUC45ix/hwYcZ5TrjnhSMWV0wxSbGa3Co/Oan9tQyOk=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "a19c43648f108256e442e46dc32d4eee57c71ac3",
+        "rev": "3344ada87942ace7f386cd15b7ad6991484bc3f0",
         "type": "github"
       },
       "original": {
@@ -1308,27 +1308,6 @@
         "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
       }
     },
-    "globset": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "rust-flake",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1744379919,
-        "narHash": "sha256-ieaQegt7LdMDFweeHhRaUQFYyF0U3pWD/XiCvq5L5U8=",
-        "owner": "pdtpartners",
-        "repo": "globset",
-        "rev": "4e21c96ab1259b8cd864272f96a8891b589c8eda",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pdtpartners",
-        "repo": "globset",
-        "type": "github"
-      }
-    },
     "gomod2nix": {
       "flake": false,
       "locked": {
@@ -1464,11 +1443,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753387274,
-        "narHash": "sha256-Y1hAI9h+9DLBbgKvZBsHaeptFIcRw4iC6ySPmzyqmlM=",
+        "lastModified": 1753470191,
+        "narHash": "sha256-hOUWU5L62G9sm8NxdiLWlLIJZz9H52VuFiDllHdwmVA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a35f6b60430ff0c7803bd2a727df84c87569c167",
+        "rev": "a1817d1c0e5eabe7dfdfe4caa46c94d9d8f3fdb6",
         "type": "github"
       },
       "original": {
@@ -2559,16 +2538,15 @@
     "rust-flake": {
       "inputs": {
         "crane": "crane_3",
-        "globset": "globset",
         "nixpkgs": "nixpkgs_2",
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1752775370,
-        "narHash": "sha256-CKeXHfcs+FJETxO0tsbz0Q67uNmxsUZuXBI9+SzQsSU=",
+        "lastModified": 1753452911,
+        "narHash": "sha256-RH4yXESFQlukshBBtYqU6OX4aUjZ9jeoVM10Q3wKHAE=",
         "owner": "juspay",
         "repo": "rust-flake",
-        "rev": "53461c6361bf8d926001f68d1d3f4a29f574faa4",
+        "rev": "4363629e1780acf28556bcdd38e96034a4fa0455",
         "type": "github"
       },
       "original": {
@@ -2908,11 +2886,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753006367,
-        "narHash": "sha256-tzbhc4XttkyEhswByk5R38l+ztN9UDbnj0cTcP6Hp9A=",
+        "lastModified": 1753439394,
+        "narHash": "sha256-Bv9h1AJegLI8uAhiJ1sZ4XAndYxhgf38tMgCQwiEpmc=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "421b56313c65a0815a52b424777f55acf0b56ddf",
+        "rev": "2673921c03d6e75fdf4aa93e025772608d1482cf",
         "type": "github"
       },
       "original": {
