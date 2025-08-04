@@ -449,11 +449,11 @@
     },
     "easy-hosts": {
       "locked": {
-        "lastModified": 1754295439,
-        "narHash": "sha256-O7hWaa2xBOFFhZGiznoibRQNfqwOLbSq4qZpZCn7SL8=",
+        "lastModified": 1754325342,
+        "narHash": "sha256-KsnaGvCWW5JY4ORH7SrBTTlJC9fRmHpDW6sNnQF2f6c=",
         "owner": "tgirlcloud",
         "repo": "easy-hosts",
-        "rev": "9f928f7053cfe99304435cdfb8803d553e0a216b",
+        "rev": "e82ffc035b41f46d0ec32b0e54c3db814f2bd80a",
         "type": "github"
       },
       "original": {
@@ -1931,11 +1931,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1753939845,
-        "narHash": "sha256-K2ViRJfdVGE8tpJejs8Qpvvejks1+A4GQej/lBk5y7I=",
+        "lastModified": 1754214453,
+        "narHash": "sha256-Q/I2xJn/j1wpkGhWkQnm20nShYnG7TI99foDBpXm1SY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "94def634a20494ee057c76998843c015909d6311",
+        "rev": "5b09dc45f24cf32316283e62aec81ffee3c3e376",
         "type": "github"
       },
       "original": {
@@ -2542,11 +2542,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1753452911,
-        "narHash": "sha256-RH4yXESFQlukshBBtYqU6OX4aUjZ9jeoVM10Q3wKHAE=",
+        "lastModified": 1754334528,
+        "narHash": "sha256-YNVR1GtmcVsXQmAFwvY5zUSq6Suoo/i0xLCdXYLnzOA=",
         "owner": "juspay",
         "repo": "rust-flake",
-        "rev": "4363629e1780acf28556bcdd38e96034a4fa0455",
+        "rev": "050986c99c6a84567f18a49395bac3aebb635bde",
         "type": "github"
       },
       "original": {
