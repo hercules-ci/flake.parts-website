@@ -1,13 +1,16 @@
 # Module Arguments
 
-The module system allows modules and submodules to be defined using plain
-attribute sets, or functions that return attribute sets. When a module is a
-function, various attributes may be passed to it.
+The module system allows modules and submodules to be defined using plain attribute sets, or functions that return attribute sets.
+When a module is a function, the module system and flake-parts pass various attributes to it.
+These attributes are called _module arguments_.
+
+This page documents the available arguments.
+
+Note that if you use the `args@{ ... }` or `args:` syntax, you only receive the arguments you explicitly name in the function signature; see [below](#how-module-function-arguments-work) for details.
 
 # Top-level Module Arguments
 
-Top-level refers to the module passed to `mkFlake`, or any of the modules
-imported into it using `imports`.
+Top-level refers to the module passed to `mkFlake`, or any of the modules imported into it using `imports`.
 
 The standard module system arguments are available in all modules and submodules. These are chiefly `config`, `options`, `lib`.
 
@@ -25,7 +28,7 @@ global variables.
 { moduleWithSystem, ... }:
 {
   nixosModules.default = moduleWithSystem (
-    perSystem@{ config }:  # NOTE: only explicit params will be in perSystem
+    perSystem@{ config, ... }:  # NOTE: only explicitly named parameters will be in perSystem; see below
     nixos@{ ... }:
     {
       services.foo.package = perSystem.config.packages.foo;
@@ -70,13 +73,13 @@ Enter the scope of a system. Example:
 }
 ```
 
-# `perSystem` module parameters
+# `perSystem` Module Parameters
 
 ## `pkgs`
 
 Default: `inputs.nixpkgs.legacyPackages.${system}`.
 
-Can be set via `config._module.args.pkgs`.
+Set via `config._module.args.pkgs`.
 
 Example:
 
@@ -92,7 +95,7 @@ The flake `inputs` parameter, but with `system` pre-selected. Note the last char
 
 `inputs.foo.packages.x86_64-linux.hello` -> `inputs'.foo.packages.hello`
 
-How? `system` selection is handled by the extensible function [`perInput`](options/flake-parts.html#opt-perInput).
+`system` selection is handled by the extensible function [`perInput`](options/flake-parts.html#opt-perInput).
 
 Example:
 
@@ -132,3 +135,77 @@ perSystem = { system, ... }: {
     in checked nixos.config.system.path;
 };
 ```
+
+## How Module Function Arguments Work
+
+The Nix module system determines which arguments to pass to a module function by using `builtins.functionArgs`.
+This means only the parameters you explicitly name in your function signature will be available.
+
+### Examples
+
+**This doesn't capture all module arguments:**
+
+```nix
+perSystem =
+  # A perSystem definition is also a module
+  args: {
+    # args will NOT contain module arguments like pkgs, self', inputs', etc.
+    # despite being defined:
+    _module.args.pkgs = import ...;
+    packages.example = args.pkgs.hello;  # Error: attribute 'pkgs' missing
+  };
+```
+
+**This does work:**
+
+```nix
+perSystem = { pkgs, self', inputs', ... }: {
+  # Named arguments are available
+  packages.example = pkgs.hello;
+  packages.fromOther = inputs'.other-flake.packages.something;
+};
+```
+
+**This works, but is not recommended:**
+
+```nix
+perSystem = args@{ pkgs, self', inputs', ... }: {
+  # Not recommended, as the availability of `args` can lead to confusion
+  packages.example = args.pkgs.hello;
+  packages.fromOther = args.inputs'.other-flake.packages.something;
+};
+```
+
+### Obtaining All Module Arguments
+
+In the context of `perSystem`, you can obtain all module arguments using the internal option `allModuleArgs`:
+
+```nix
+perSystem = { config, ... }: {
+  # Access all perSystem module arguments
+  packages.example = config.allModuleArgs.pkgs.hello;
+
+  # This includes custom arguments defined with _module.args
+  packages.custom = config.allModuleArgs.myCustomArg;
+
+  # You can even access the entire set of module arguments
+  foo = config.allModuleArgs;
+};
+```
+
+`allModuleArgs` is available because flake-parts provides it for the `perSystem` submodule evaluation, similar to how it works with the `withSystem` function.
+
+This is not provided for the top level flake-parts configuration; only `perSystem`.
+
+### Rationale
+
+Nix evaluates the attribute set passed to a function like `args@{ foo, ... }` strictly (before returning the function body) in order to efficiently check the function call's argument, to make sure it's an attribute set, and that it has the listed attribtes, like `foo`.
+
+This means it needs to evaluate the argument before returning the function body.
+However, the module system would face a circular dependency when passing the module arguments using a straightforward function call: it can't know all available module argument names until it has evaluated the modules, but it can't evaluate module functions without passing them their arguments.
+
+To solve this, the module system uses `builtins.functionArgs` to inspect what arguments a module function expects, and constructs the argument set accordingly. If a module argument is not defined in any module or `specialArgs`, the attribute for it is present, but instead of a value, evaluating it will throw an exception.
+
+In a normal Nix function invocation, an `args@` binding would bind to the original argument set, which, as discussed, is not the complete set of module arguments.
+
+Unfortunately, the module system cannot know whether such a binding is present in the function definition, so it cannot warn about this potential issue.
