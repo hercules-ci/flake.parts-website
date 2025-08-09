@@ -7,11 +7,13 @@
     actions-nix.url = "github:nialov/actions.nix";
     actions-nix.inputs.nixpkgs.follows = "nixpkgs";
     actions-nix.inputs.flake-parts.follows = "flake-parts";
-    actions-nix.inputs.pre-commit-hooks.follows = "git-hooks-nix";
+    actions-nix.inputs.git-hooks.follows = "git-hooks-nix";
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
+    agenix-rekey.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     agenix-shell.url = "github:aciceri/agenix-shell";
     agenix-shell.inputs.nixpkgs.follows = "nixpkgs";
+    agenix-shell.inputs.git-hooks-nix.follows = "git-hooks-nix";
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
@@ -48,6 +50,7 @@
     nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
     nix-topology.url = "github:oddlama/nix-topology";
     nix-topology.inputs.nixpkgs.follows = "nixpkgs";
+    nix-topology.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     nix-unit.url = "github:nix-community/nix-unit";
     nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
