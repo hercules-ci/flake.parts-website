@@ -16,6 +16,10 @@
     agenix-shell.inputs.git-hooks-nix.follows = "git-hooks-nix";
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
+    clan.url = "https://git.clan.lol/clan/clan-core/archive/main.tar.gz";
+    clan.inputs.treefmt-nix.follows = "treefmt-nix";
+    clan.inputs.flake-parts.follows = "flake-parts";
+    clan.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
     dream2nix_legacy.inputs.pre-commit-hooks.follows = "git-hooks-nix";
@@ -140,6 +144,23 @@
               It provides options used to define a `shellHook` that, when added to your `devShell`, automatically decrypts secrets and export them.
 
               [Here](https://github.com/aciceri/agenix-shell/blob/master/templates/basic/flake.nix)'s a template you can start from.
+            '';
+          };
+
+          clan = {
+            title = "clan";
+            baseUrl = "https://git.clan.lol/clan/clan-core/src/branch/main";
+            flakeRef = "https://git.clan.lol/clan/clan-core/archive/main.tar.gz";
+            attributePath = [
+              "flakeModules"
+              "default"
+            ];
+            intro = ''
+              [Clan](https://clan.lol) is a multi-machine configuration framework for NixOS with a focus on
+              VPNs, automatic secret and backup management.
+
+              Check out our [documentation](https://docs.clan.lol/manual/flake-parts/) for more information on using the flake-parts module and
+              also our [getting started guide](https://docs.clan.lol/getting-started) for general information.
             '';
           };
 
