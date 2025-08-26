@@ -17,7 +17,7 @@
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
-    devshell.inputs.nixpkgs.follows = "nixpkgs"; # https://github.com/NixOS/nix/issues/7730
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix_legacy.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     dream2nix_legacy.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
@@ -26,7 +26,8 @@
     emanote.inputs.nixpkgs.follows = "nixpkgs";
     # This didn't work: "error: cannot find flake 'flake:ema' in the flake registries" (???)
     # emanote.inputs.ema.inputs.emanote.follows = "emanote";
-    emanote.inputs.ema.follows = ""; # appears unneeded
+    emanote.inputs.ema.follows = "";
+    # appears unneeded
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
     files.url = "github:mightyiam/files";
@@ -55,6 +56,11 @@
     nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.inputs.treefmt-nix.follows = "treefmt-nix";
+    nixops4.url = "github:nixops4/nixops4";
+    nixops4.inputs.flake-parts.follows = "flake-parts";
+    nixops4.inputs.nix.follows = "";
+    nixops4.inputs.nix-cargo-integration.follows = "nix-cargo-integration";
+    nixops4.inputs.nixpkgs.follows = "nixpkgs";
     nixos-healthchecks.url = "github:mrVanDalo/nixos-healthchecks";
     nixos-healthchecks.inputs.nixpkgs.follows = "nixpkgs";
     nixos-healthchecks.inputs.flake-parts.follows = "flake-parts";
@@ -561,6 +567,21 @@
               Run [nix-unit](https://nix-community.github.io/nix-unit/) tests in [`checks`](flake-parts.md#opt-perSystem.checks).
 
               See also the [complete example / template](https://nix-community.github.io/nix-unit/examples/flake-parts.html).
+            '';
+          };
+
+          nixops4 = {
+            title = "nixops4";
+            baseUrl = "https://github.com/nixops4/nixops4/blob/main";
+            attributePath = [
+              "modules"
+              "flake"
+              "default"
+            ];
+            intro = ''
+              [NixOps4](https://nixops.dev) is a platform for any kind of deployment in much the same way Nix is a platform for any build.
+
+              **⚠️ It is currently in development and changing**
             '';
           };
 
