@@ -55,12 +55,19 @@ Instead of loading a file containing a module, it loads a file containing _a fun
 
 ```nix
 { localFlake, withSystem }:
-{ lib, config, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options = {
     services.foo = {
       package = mkOption {
-        default = withSystem ({ config, ... }: config.packages.default);
+        default = withSystem pkgs.stdenv.hostPlatform.system (
+          { config, ... }: config.packages.default
+        );
         defaultText = lib.literalMD "`packages.default` from the foo flake";
       };
     };
