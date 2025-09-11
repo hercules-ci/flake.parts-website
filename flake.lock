@@ -358,6 +358,26 @@
         "type": "github"
       }
     },
+    "disko": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1757508292,
+        "narHash": "sha256-7lVWL5bC6xBIMWWDal41LlGAG+9u2zUorqo3QCUL4p4=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "146f45bee02b8bd88812cfce6ffc0f933788875a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
     "dmerge": {
       "inputs": {
         "haumea": [
@@ -2272,6 +2292,7 @@
         "agenix-shell": "agenix-shell",
         "devenv": "devenv",
         "devshell": "devshell_2",
+        "disko": "disko",
         "dream2nix_legacy": "dream2nix_legacy",
         "easy-hosts": "easy-hosts",
         "emanote": "emanote",

@@ -18,6 +18,8 @@
     devenv.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix_legacy.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     dream2nix_legacy.inputs.nixpkgs.follows = "nixpkgs";
     dream2nix_legacy.url = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
@@ -194,6 +196,27 @@
 
               See also the [`devshell` project page](https://github.com/numtide/devshell)
             '';
+          };
+
+          disko = {
+            title = "disko";
+            baseUrl = "https://github.com/nix-community/disko/blob/master";
+            intro = ''
+              **Declarative disk partitioning**
+
+              Adds the `diskoConfigurations` flake output.
+
+              When using disko with Flakes, the configuration is discovered first under the [`diskoConfigurations`] flake output attribute or else from the disko module of a NixOS configuration of that name under [`nixosConfigurations`].
+
+              See [disko README](https://github.com/nix-community/disko/tree/master#readme)
+
+              [`diskoConfigurations`]: #opt-flake.diskoConfigurations
+              [`nixosConfigurations`]: flake-parts.html#opt-flake.nixosConfigurations
+            '';
+            attributePath = [
+              "flakeModules"
+              "default"
+            ];
           };
 
           dream2nix = {
