@@ -61,6 +61,7 @@ To make docs available, use this syntax:
 
 ## Publish on flake.parts
 
+1. Check that you've added a license to the project. <details><blockquote>Without a license attached, people will be able to look at it, and fork it (because both of that is allowed via GitHub's own Terms of Service), but they may not use it in their own projects, modify it or otherwise do anything else with it. You alone have the exclusive copyright.</blockquote><br/> &mdash; [GitHub Guide on Open Source Licensing](https://github.com/readme/guides/open-source-licensing) </details>
 1. Clone `https://github.com/hercules-ci/flake.parts-website`, or for via ssh: `git@github.com:hercules-ci/flake.parts-website`
 1. Add your flake to the `inputs` in `flake.nix`
 1. Define the details in `render.inputs` in `flake.nix`.
