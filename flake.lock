@@ -39,11 +39,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1759174959,
-        "narHash": "sha256-8JmI3y3B/PTeKzEDmHestjQlbvULTnLarIL42Pnte78=",
+        "lastModified": 1759255832,
+        "narHash": "sha256-+8RmfVC7+9bYwUnodGSbRaSGyvkGB/lkFe03xvyvu38=",
         "owner": "oddlama",
         "repo": "agenix-rekey",
-        "rev": "38dc6311bb3d54422c72ec097707e7a534f6d97a",
+        "rev": "cdf62e6ee25c0bba7bf391dace328346a7c27609",
         "type": "github"
       },
       "original": {
@@ -1290,11 +1290,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759172751,
-        "narHash": "sha256-E8W8sRXfrvkFW26GuuiWq6QfReU7m5+cngwHuRo/3jc=",
+        "lastModified": 1759261733,
+        "narHash": "sha256-G104PUPKBgJmcu4NWs0LUaPpSOTD4jiq4mamLWu3Oc0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "12fa8548feefa9a10266ba65152fd1a787cdde8f",
+        "rev": "5a21f4819ee1be645f46d6b255d49f4271ef6723",
         "type": "github"
       },
       "original": {
@@ -1734,11 +1734,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758325095,
-        "narHash": "sha256-5j85sKBmwtAz35+QtLWtUqkAkcK0+uokKIItHKe0nbw=",
+        "lastModified": 1759240826,
+        "narHash": "sha256-beTGUaQZMzi5oVu+WOadfIFzw2ssy0Yu8Izn8bQvOgs=",
         "owner": "nixops4",
         "repo": "nixops4",
-        "rev": "8f8daeb99614cf894ada6f36d0059b6ce04e821a",
+        "rev": "ebaa1fd2f0a7b40bac3f162d4ed480d81537d3c1",
         "type": "github"
       },
       "original": {
