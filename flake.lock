@@ -243,11 +243,11 @@
     },
     "crane_3": {
       "locked": {
-        "lastModified": 1758758545,
-        "narHash": "sha256-NU5WaEdfwF6i8faJ2Yh+jcK9vVFrofLcwlD/mP65JrI=",
+        "lastModified": 1759511609,
+        "narHash": "sha256-uU6Dq5OUgI9pEiMDwZZhvsoxYD+36xKIkYyFXDr//6A=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "95d528a5f54eaba0d12102249ce42f4d01f4e364",
+        "rev": "c5b48a59ccd5179ea626f47b05d2828c37fb31b7",
         "type": "github"
       },
       "original": {
@@ -268,11 +268,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759527603,
-        "narHash": "sha256-l+GzFw3yXDpcRv9qz+c1VR44lLVj8WXncjPa9RXbFrw=",
+        "lastModified": 1759625163,
+        "narHash": "sha256-nNAeInXjrCziM5Kv3qWU22OrBQJNKnOFY5Kb32zRItg=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "ce82fad570fd74ac5dfe3ce587ee8b37e918d71f",
+        "rev": "aa9968386bc65519c174cfef1ae4b3464c19ba0a",
         "type": "github"
       },
       "original": {
@@ -1187,11 +1187,11 @@
     },
     "haskell-flake_2": {
       "locked": {
-        "lastModified": 1759022640,
-        "narHash": "sha256-blv+xY7A3BVxxKHfJjCXb9KaTzPHlb9SWfs0WqDvKZE=",
+        "lastModified": 1759631705,
+        "narHash": "sha256-uxTQb5A+xlioXAHHBq6vxay/FglT23jl1lI/SHcScf8=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "1c26ac95f69e563781feccd6610fd7637bebbd10",
+        "rev": "548a4712e7b3eea03e0977362f90cbf2e9b30157",
         "type": "github"
       },
       "original": {
@@ -1883,11 +1883,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1758690382,
-        "narHash": "sha256-NY3kSorgqE5LMm1LqNwGne3ZLMF2/ILgLpFr1fS4X3o=",
+        "lastModified": 1759381078,
+        "narHash": "sha256-gTrEEp5gEspIcCOx9PD8kMaF1iEmfBcTbO0Jag2QhQs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e643668fd71b949c53f8626614b21ff71a07379d",
+        "rev": "7df7ff7d8e00218376575f0acdcc5d66741351ee",
         "type": "github"
       },
       "original": {
@@ -2351,11 +2351,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1759028837,
-        "narHash": "sha256-kUVZJqzYpQ5+OauDv/e2vMDognmhPWeqCI3uIbhi1OA=",
+        "lastModified": 1759628990,
+        "narHash": "sha256-yxsKahlZkX6amvRX2J8TbNDR2kH2reG1+HDY8qSzt3A=",
         "owner": "juspay",
         "repo": "rust-flake",
-        "rev": "79e7c8ef50cf83fe60d5d4f673351c14778048fa",
+        "rev": "17e25c51f711fd57e465331d68a81b5b2d4602e5",
         "type": "github"
       },
       "original": {
@@ -2393,11 +2393,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758940228,
-        "narHash": "sha256-sTS04L9LKqzP1oiVXYDwcMzfFSF0DnSJQFzZBpEgLFE=",
+        "lastModified": 1759544920,
+        "narHash": "sha256-yQwP0JOHi3Icq09GG5ufGuGrq2zIijglVFj3kkF2MHA=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "5bfedf3fbbf5caf8e39f7fcd62238f54d82aa1e2",
+        "rev": "bd3a63bbff2c4cb3cd48e9d49f54c2ccad457f70",
         "type": "github"
       },
       "original": {
