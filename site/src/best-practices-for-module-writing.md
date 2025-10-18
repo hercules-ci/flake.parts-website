@@ -33,7 +33,7 @@ When integrating an existing library, it might be easy to add its options in the
 
 Most modules are about some piece of software that it integrates. Ideally the flake module is bundled into the same flake. This simplifies the wiring that users have to do, especially when they want to use a patched version. It's also a bit more efficient as far as fetching is concerned.
 
-## Do not use overlay general option names
+## Do not use overly general option names
 
 Most modules will put all their options inside a "namespace" named after their module instead. This way, option path collisions are unlikely to occur.
 
