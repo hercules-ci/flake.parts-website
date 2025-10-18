@@ -35,7 +35,7 @@ The `config` parameter is conceptually simpler and lets you access all options i
 >
 > Anything you can do at the top level, you can do in `perSystem` as well, although you may have to `@` match those module arguments.
 >
-> For example, add change the top level function header to e.g. `toplevel@{ config, ... }: /*...*/` so you can access `toplevel.config` despite plain `config` being shadowed by `perSystem = { config, ... }: /*...*/`.
+> For example, change the top level function header to e.g. `toplevel@{ config, ... }: /*...*/` so you can access `toplevel.config` despite plain `config` being shadowed by `perSystem = { config, ... }: /*...*/`.
 
 Examples:
 
