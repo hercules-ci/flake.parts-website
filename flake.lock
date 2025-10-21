@@ -268,11 +268,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1760987569,
-        "narHash": "sha256-RAYg2y8R5yiSYQJhZWUf7rEopgXcyGDaOLTlCN/LfT4=",
+        "lastModified": 1761038840,
+        "narHash": "sha256-A3ZTxqKJ1yh2ivCzkhRXOAjd4iDxBNGH0VIGmD/lkeo=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "829e3dba0dbf0f50772f95e683e5aeb9c93f0314",
+        "rev": "d815b7839fe595c336813f586c574459553e9ea1",
         "type": "github"
       },
       "original": {
@@ -510,11 +510,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1760453640,
-        "narHash": "sha256-c3bTNdCbEWnqC9Hr2F+1XWCBb/3onAA3TplFqQDafRs=",
+        "lastModified": 1761077016,
+        "narHash": "sha256-pWSs8TbdR1QyRn/zsml+/Ncv9+lUkG5zYm8dYMj2n1w=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "58a7dadf567172cec512f290f1f8e6bb628905a7",
+        "rev": "d81793c9893d31f8f5972eae8288e19589693f5e",
         "type": "github"
       },
       "original": {
@@ -1141,11 +1141,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759920592,
-        "narHash": "sha256-+M6/CGmsQ1lZmDLcdvem0duz6ofYEiS5AzSbCb1aD+s=",
+        "lastModified": 1761051329,
+        "narHash": "sha256-yeU9QlKlS/GO942Tx2eCZx9XQQWw0hGWHql1HhiAFvU=",
         "ref": "refs/heads/master",
-        "rev": "b6addf8ccd78052e826491dfe46dac92243a826b",
-        "revCount": 31,
+        "rev": "0c0014d8197219feb5853b13c4119df733fe2c8d",
+        "revCount": 33,
         "type": "git",
         "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
       },
@@ -1290,11 +1290,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761005073,
-        "narHash": "sha256-r6qbieh8iC1q1eCaWv15f4UIp8SeGffwswhNSA1Qk3s=",
+        "lastModified": 1761066098,
+        "narHash": "sha256-Fd65ryxzMRsNQ0MqaiT/b3TdinUOKUJ4PyCwnoKcvF0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "84e1adb0cdd13f5f29886091c7234365e12b1e7f",
+        "rev": "13b2744e117993dc5066c1710585dcb99877684f",
         "type": "github"
       },
       "original": {
@@ -2199,11 +2199,11 @@
     },
     "process-compose-flake": {
       "locked": {
-        "lastModified": 1758658658,
-        "narHash": "sha256-y5GSCqlGe/uZzlocCPZcjc7Gj+mTq7m0P6xPGx88+No=",
+        "lastModified": 1761063998,
+        "narHash": "sha256-l14CiQZM2ZpWp6leugJ5/GKU1aydT/xrvyKRMgYc0ak=",
         "owner": "Platonic-systems",
         "repo": "process-compose-flake",
-        "rev": "e968a94633788f5d9595d727f41c2baf0714be7b",
+        "rev": "d1839830cd4a814830a27b3cb58437306747bbd3",
         "type": "github"
       },
       "original": {
