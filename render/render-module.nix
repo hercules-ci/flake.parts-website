@@ -80,7 +80,10 @@ in
         );
       };
       evalWith =
-        { modules }:
+        {
+          modules,
+          extraInputs ? { },
+        }:
         inputs.flake-parts.lib.evalFlakeModule
           {
             inputs = {
@@ -88,7 +91,8 @@ in
               self = eval.config.flake // {
                 outPath = throw "The `self.outPath` attribute is not available when generating documentation, because the documentation should not depend on the specifics of the flake files where it is loaded. This error is generally caused by a missing `defaultText` on one or more options in the trace. Please run this evaluation with `--show-trace`, and look for `while evaluating the default value of option` and add a `defaultText` to one or more of the options involved.";
               };
-            };
+            }
+            // extraInputs;
           }
           {
             imports = modules ++ [
@@ -383,6 +387,31 @@ in
               '';
             };
 
+            extraInputs = mkOption {
+              type = types.attrsOf types.raw;
+              default = { };
+              description = ''
+                Extra flake inputs to provide to the module evaluation.
+
+                This is a last resort. Modules should generally query availability of other
+                modules by looking for their options with `options ? foo.bar` and degrading
+                gracefully when optional integrations are not available.
+
+                Use this only when a module unconditionally requires specific inputs during
+                evaluation and cannot be modified to degrade gracefully.
+              '';
+            };
+
+            warningsAreErrors = mkOption {
+              type = types.bool;
+              default = true;
+              description = ''
+                Whether to treat documentation warnings as errors.
+
+                Set to false for modules with incomplete documentation.
+              '';
+            };
+
             menu = {
               title = mkOption {
                 type = types.str;
@@ -408,6 +437,7 @@ in
                 if config.separateEval then
                   (evalWith {
                     modules = config.getModules config.flake;
+                    extraInputs = config.extraInputs;
                   }).options
                 else
                   opts;
@@ -416,7 +446,7 @@ in
                 inherit (config) sourceName baseUrl sourcePath;
                 inherit coreOptDecls;
               };
-              warningsAreErrors = true; # not sure if feasible long term
+              warningsAreErrors = config.warningsAreErrors;
             };
             rendered =
               let
