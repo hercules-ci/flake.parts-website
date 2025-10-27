@@ -118,6 +118,10 @@
               module that converts `nix` configuration into GitHub/Gitea action
               syntax `yaml`. Use `nix` for workflow definition instead of `yaml`.
             '';
+            separateEval = true;
+            extraInputs = {
+              inherit (inputs) treefmt-nix;
+            };
           };
           agenix-rekey = {
             title = "agenix-rekey";
@@ -161,6 +165,12 @@
               See also the [setup guide at devenv.sh](https://devenv.sh/guides/using-with-flake-parts/).
             '';
             fixupAnchorsBaseUrl = "https://devenv.sh/reference/options/";
+            separateEval = true;
+            extraInputs = {
+              inherit (inputs) treefmt-nix;
+            };
+            # treefmt integration has undocumented options
+            warningsAreErrors = false;
           };
 
           devshell = {
