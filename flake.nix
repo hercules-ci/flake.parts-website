@@ -48,6 +48,10 @@
     mission-control.url = "github:Platonic-Systems/mission-control";
     mkdocs-flake.url = "github:applicative-systems/mkdocs-flake";
     mkdocs-flake.inputs.nixpkgs.follows = "nixpkgs";
+    nix-bindings-rust.url = "github:nixops4/nix-bindings-rust";
+    nix-bindings-rust.inputs.nix-cargo-integration.follows = "nix-cargo-integration";
+    nix-bindings-rust.inputs.nixpkgs.follows = "nixpkgs";
+    nix-bindings-rust.inputs.flake-parts.follows = "flake-parts";
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
     nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
@@ -556,6 +560,24 @@
               ```
 
               For more information, please refer to the [mkdocs-flake documentation: flake.parts integration](https://applicative-systems.github.io/mkdocs-flake/integration/flake-parts.html).
+            '';
+          };
+
+          nix-bindings-rust = {
+            title = "nix-bindings-rust";
+            baseUrl = "https://github.com/nixops4/nix-bindings-rust/blob/master";
+            attributePath = [
+              "modules"
+              "flake"
+              "default"
+            ];
+            intro = ''
+              A small support module that takes care of the `nix-bindings-rust` dependency in `nix-cargo-integration` projects.
+
+              - Provides a module that configures the Nix dependency
+              - Provides `checks.<system>.dependency-nix-bindings-*` to ensure that tests are run
+
+              See [the README](https://github.com/nixops4/nix-bindings-rust#readme).
             '';
           };
 
