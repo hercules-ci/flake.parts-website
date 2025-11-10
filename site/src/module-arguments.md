@@ -8,15 +8,47 @@ This page documents the available arguments.
 
 Note that if you use the `args@{ ... }` or `args:` syntax, you only receive the arguments you explicitly name in the function signature; see [below](#how-module-function-arguments-work) for details.
 
+# General Module Arguments
+
+These arguments are available in all modules and submodules, provided by the standard Nix module system.
+
+See the [NixOS manual](https://nixos.org/manual/nixos/unstable/#sec-writing-modules) for an introduction to the module system.
+
+## `config`
+
+The values of the current module scope, containing the merged result of all option definitions from all modules.
+
+In top-level modules, `config` contains the entire flake configuration. In `perSystem` modules, it contains configuration that's specialized towards the given `system`.
+
+## `options`
+
+The option declarations of the current module scope. This is primarily useful for inspecting option metadata or creating references to options in documentation.
+
+`"${options.foo}"` renders a full option path towards `foo`.
+
+## `lib`
+
+The Nixpkgs library functions, taken from flake-parts' `nixpkgs-lib` input.
+
+Commonly used for utility functions like `lib.mkIf`, `lib.mkOption`, `lib.types`, and many others.
+
+See the [Nixpkgs manual](https://nixos.org/manual/nixpkgs/unstable/#id-1.4) for documentation of available functions.
+
+For the `nixpkgs-lib` input, you may specify a flake that only contains `lib`, or a whole Nixpkgs flake. By default, just `lib` gives you slightly faster shell tab completion as of writing.
+
+To promote modularity and not create unnecessary, "strange" dependency constraints on `lib`, you are recommended not to override it. You may select a different version of it using Flake [`follows`](https://nix.dev/manual/nix/latest/command-ref/new-cli/nix3-flake.html#flake-inputs).
+
+## More
+
+See the [Nixpkgs manual](https://nixos.org/manual/nixpkgs/unstable/#module-system-module-arguments) for documentation of more rarely used general module arguments.
+
 # Top-level Module Arguments
 
 Top-level refers to the module passed to `mkFlake`, or any of the modules imported into it using `imports`.
 
-The standard module system arguments are available in all modules and submodules. These are chiefly `config`, `options`, `lib`.
-
 ## `getSystem`
 
-A function from [system](./system.md) string to the `config` of the appropriate `perSystem`.
+A function from a [system](./system.md) string to the `config` of the appropriate `perSystem`.
 
 ## `moduleWithSystem`
 
@@ -50,7 +82,7 @@ Enter the scope of a system. Example:
   flake.nixosConfigurations.foo = withSystem "x86_64-linux" (ctx@{ config, inputs', ... }:
     inputs.nixpkgs.lib.nixosSystem {
       # Expose `packages`, `inputs` and `inputs'` as module arguments.
-      # Use specialArgs permits use in `imports`.
+      # Using specialArgs permits use in `imports`.
       # Note: if you publish modules for reuse, do not rely on specialArgs, but
       # on the flake scope instead. See also https://flake.parts/define-module-in-separate-file.html
       specialArgs = {
@@ -136,12 +168,12 @@ perSystem = { system, ... }: {
 };
 ```
 
-## How Module Function Arguments Work
+# How Module Function Arguments Work
 
 The Nix module system determines which arguments to pass to a module function by using `builtins.functionArgs`.
 This means only the parameters you explicitly name in your function signature will be available.
 
-### Examples
+## Examples
 
 **This doesn't capture all module arguments:**
 
@@ -176,7 +208,7 @@ perSystem = args@{ pkgs, self', inputs', ... }: {
 };
 ```
 
-### Obtaining All Module Arguments
+## Obtaining All Module Arguments
 
 In the context of `perSystem`, you can obtain all module arguments using the internal option `allModuleArgs`:
 
@@ -197,9 +229,9 @@ perSystem = { config, ... }: {
 
 This is not provided for the top level flake-parts configuration; only `perSystem`.
 
-### Rationale
+## Rationale
 
-Nix evaluates the attribute set passed to a function like `args@{ foo, ... }` strictly (before returning the function body) in order to efficiently check the function call's argument, to make sure it's an attribute set, and that it has the listed attribtes, like `foo`.
+Nix evaluates the attribute set passed to a function like `args@{ foo, ... }` strictly (before returning the function body) in order to efficiently check the function call's argument, to make sure it's an attribute set, and that it has the listed attributes, like `foo`.
 
 This means it needs to evaluate the argument before returning the function body.
 However, the module system would face a circular dependency when passing the module arguments using a straightforward function call: it can't know all available module argument names until it has evaluated the modules, but it can't evaluate module functions without passing them their arguments.
