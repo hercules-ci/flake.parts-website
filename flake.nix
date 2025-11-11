@@ -427,16 +427,14 @@
                - ready to go, configurable continuous deployment jobs
             '';
           };
-
           nixos-healthchecks = {
             baseUrl = "https://github.com/mrVanDalo/nixos-healthchecks/blob/main";
             attributePaths = [
               [ "flakeModule" ]
-              [
-                "nixosModules"
-                "default"
-              ]
+              # TODO: would be nice to render somehow: [ "nixosModules" "default" ]
             ];
+            # FIXME: get module to use mkPerSystemOption
+            isEmpty = true;
             intro = ''
               [nixos-healthchecks](https://github.com/mrVanDalo/nixos-healthchecks)
               provide NixOS-Options to verify if your services are running correctly.
