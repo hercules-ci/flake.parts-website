@@ -17,10 +17,11 @@
 - [Reference Documentation]()
   - [Module Arguments](./module-arguments.md)
   - [Options]()
-    - [`flake-parts` (built in)](./options/flake-parts.md)
+    - [`flake-parts` built in](./options/flake-parts.md)
+    - [`flake-parts` optional]()
       - [`bundlers`](./options/flake-parts-bundlers.md)
       - [`flakeModules`](./options/flake-parts-flakeModules.md)
-      - [`easyOverlay` (warning)](./options/flake-parts-easyOverlay.md)
+      - [`easyOverlay`](./options/flake-parts-easyOverlay.md)
       - [`modules`](./options/flake-parts-modules.md)
       - [`partitions`](./options/flake-parts-partitions.md)
 
