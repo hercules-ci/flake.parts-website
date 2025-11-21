@@ -92,6 +92,32 @@
           menu.enable = false;
         };
 
+        flake-parts-bundlers =
+          { ... }:
+          {
+            imports = [ commonExtras ];
+            extraName = "bundlers";
+            intro = ''
+              Adds the `bundlers` flake output attribute.
+
+              Use [`nix bundle`](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-bundle.html) to create self-contained executables from derivations.
+
+              Example:
+
+              ```nix
+              perSystem = { pkgs, ... }: {
+                bundlers.default = drv:
+                  pkgs.runCommand "bundle-''${drv.name}" { } '''
+                    mkdir -p $out
+                    cp -r ''${drv}/* $out/
+                  ''';
+              };
+              ```
+
+              Then run `nix bundle --bundler .# nixpkgs#hello` to bundle `hello` using your default bundler.
+            '';
+          };
+
         flake-parts-easyOverlay =
           { ... }:
           {
