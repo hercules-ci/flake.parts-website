@@ -33,6 +33,9 @@
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
     files.url = "github:mightyiam/files";
+    github-actions-nix.url = "github:synapdeck/github-actions-nix";
+    github-actions-nix.inputs.nixpkgs.follows = "nixpkgs";
+    github-actions-nix.inputs.flake-parts.follows = "flake-parts";
     gitlab-ci.url = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci";
     gitlab-ci.inputs.flake-parts.follows = "flake-parts";
     gitlab-ci.inputs.nixpkgs.follows = "nixpkgs";
@@ -344,6 +347,17 @@
               provides a script to activate it, and adds a [check](flake-parts.html#opt-perSystem.checks).
 
               Pre-defined hooks are maintained at [`cachix/git-hooks.nix`](https://github.com/cachix/git-hooks.nix).
+            '';
+          };
+
+          github-actions-nix = {
+            baseUrl = "https://github.com/synapdeck/github-actions-nix";
+            flakeRef = "github:synapdeck/github-actions-nix";
+            intro = ''
+              This module generates GitHub Actions workflow files from type-safe Nix configurations. Unlike
+              [`actions.nix`](actions-nix.html), it works as a standalone flake-parts module without tying you to other
+              modules while still letting you define workflows as Nix attribute sets that get converted to YAML files
+              for .github/workflows/.
             '';
           };
 

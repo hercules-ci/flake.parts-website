@@ -1236,6 +1236,29 @@
         "type": "github"
       }
     },
+    "github-actions-nix": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763842377,
+        "narHash": "sha256-G1gvEV1WPQXCGrb+jMXXd0XqeMR/Da5jc/aJ7hoE6ZI=",
+        "owner": "synapdeck",
+        "repo": "github-actions-nix",
+        "rev": "c44042abd06caecdd8fceaf32755ed755f8843fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "synapdeck",
+        "repo": "github-actions-nix",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -2668,6 +2691,7 @@
         "files": "files",
         "flake-parts": "flake-parts_7",
         "git-hooks-nix": "git-hooks-nix",
+        "github-actions-nix": "github-actions-nix",
         "gitlab-ci": "gitlab-ci",
         "haskell-flake": "haskell-flake_2",
         "hercules-ci-effects": "hercules-ci-effects",
