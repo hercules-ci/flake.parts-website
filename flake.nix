@@ -360,7 +360,7 @@
               for .github/workflows/.
             '';
           };
-          
+
           gitlab-ci = {
             baseUrl = "https://gitlab.horizon-haskell.net/nix/gitlab-ci";
             flakeRef = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci";
