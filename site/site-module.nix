@@ -4,8 +4,12 @@
     {
       config,
       pkgs,
+      system,
       ...
     }:
+    let
+      pkgs-mdbook = inputs.nixpkgs-mdbook-0-5.legacyPackages.${system};
+    in
     {
 
       /*
@@ -39,10 +43,7 @@
         default = pkgs.stdenvNoCC.mkDerivation {
           name = "site";
           nativeBuildInputs = [
-            pkgs.mdbook
-            pkgs.mdbook-alerts
-            pkgs.mdbook-linkcheck
-            pkgs.mdbook-pagetoc
+            pkgs-mdbook.mdbook
           ];
           src = ./.;
           buildPhase = ''
@@ -68,8 +69,7 @@
             done
             sed -e 's/<!-- module list will be concatenated to the end -->//g' -i src/SUMMARY.md
             cat ${config.packages.generated-docs}/menu.md >> src/SUMMARY.md
-            mdbook build --dest-dir $TMPDIR/out
-            cp -r $TMPDIR/out/html $out
+            mdbook build --dest-dir $out
             cp _redirects $out
 
             echo '<html><head><script>window.location.pathname = window.location.pathname.replace(/options.html$/, "") + "options/flake-parts.html"</script></head><body><a href="options/flake-parts.html">to the options</a></body></html>' \
