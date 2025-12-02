@@ -13,6 +13,11 @@ h1.menu-title::before {
   --links: #058;
   --sidebar-active: #0af;
 }
+/* Widen initial menu bar width. It's wider than usual - primary use case
+   of site: find module and read its toc. */
+:root {
+  --sidebar-target-width: min(30% + 200px, 60%);
+}
 .sidebar .sidebar-scrollbox {
   /* We don't use numbers, so we can take a consistent amount of space */
   padding: var(--page-padding) !important;
