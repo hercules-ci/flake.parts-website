@@ -80,6 +80,26 @@
           dontInstall = true;
         };
       };
+
+      apps =
+        let
+          opener = if pkgs.stdenv.isDarwin then "open" else "xdg-open";
+          openApp = {
+            type = "app";
+            program = "${pkgs.writeShellScript "open-manual" ''
+              path="${config.packages.default}/index.html"
+              if ! ${opener} "$path"; then
+                echo "Failed to open manual with ${opener}. Manual is located at:"
+                echo "$path"
+              fi
+            ''}";
+            meta.description = "Open this version of the flake.parts website in your browser";
+          };
+        in
+        {
+          open = openApp;
+          default = openApp;
+        };
     }
   );
 }
