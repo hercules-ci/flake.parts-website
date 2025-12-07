@@ -59,6 +59,9 @@
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
     nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
+    nix-oci.url = "github:dauliac/nix-oci";
+    nix-oci.inputs.nixpkgs.follows = "nixpkgs";
+    nix-oci.inputs.flake-parts.follows = "flake-parts";
     nix-topology.url = "github:oddlama/nix-topology";
     nix-topology.inputs.nixpkgs.follows = "nixpkgs";
     nix-topology.inputs.pre-commit-hooks.follows = "git-hooks-nix";
@@ -605,6 +608,21 @@
               ## Installation
 
               See the [readme](https://github.com/yusdacra/nix-cargo-integration#readme).
+            '';
+          };
+
+          nix-oci = {
+            title = "nix-oci";
+            baseUrl = "https://github.com/dauliac/nix-oci/blob/master";
+            attributePath = [ "flakeModule" ];
+            intro = ''
+              **nix-oci** is a [flake-parts](https://github.com/hercules-ci/flake-parts) module designed to streamline the management of OCI (Open Container Initiative) repositories using the Nix package manager.
+              By leveraging [nix2container](https://github.com/nlewo/nix2container) as its backend, nix-oci facilitates the declarative creation and handling of container images, ensuring reproducibility and efficiency in containerized environments.
+            '';
+            installation = ''
+              ## Installation
+
+              See the [readme](https://github.com/dauliac/nix-oci).
             '';
           };
 
