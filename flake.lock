@@ -1807,11 +1807,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1765001919,
-        "narHash": "sha256-S5k0HAxjq2sbf5BC5DOly66joE08HfiyEJD8v2U3yLc=",
+        "lastModified": 1765088307,
+        "narHash": "sha256-RnoKJXOf0OXLq9sHdxfZzywhd6Nan59ELjV8px2pBkk=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "0feff946314851edc88b9c783ad7d2dccd49abcc",
+        "rev": "df0e6949748031277efc29cec25bf2dabeac9fcb",
         "type": "github"
       },
       "original": {
@@ -2371,7 +2371,7 @@
         "rev": "0c9951cfb8547e6101a58a35558e020f067f1871",
         "revCount": 61,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/9glenda/ocaml-flake/0.2.2/018b9a82-26e4-7990-8aa8-65d2b7c28df1/source.tar.gz?rev=0c9951cfb8547e6101a58a35558e020f067f1871&revCount=61"
+        "url": "https://api.flakehub.com/f/pinned/9glenda/ocaml-flake/0.2.2/018b9a82-26e4-7990-8aa8-65d2b7c28df1/source.tar.gz"
       },
       "original": {
         "type": "tarball",
@@ -2810,11 +2810,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764988672,
-        "narHash": "sha256-FIJtt3Zil89/hLy9i7f0R2xXcJDPc3CeqiiCLfsFV0Y=",
+        "lastModified": 1765075567,
+        "narHash": "sha256-KFDCdQcHJ0hE3Nt5Gm5enRIhmtEifAjpxgUQ3mzSJpA=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "086fd19a68e80fcc8a298e9df4674982e4c498a6",
+        "rev": "769156779b41e8787a46ca3d7d76443aaf68be6f",
         "type": "github"
       },
       "original": {
