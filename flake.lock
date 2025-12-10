@@ -2254,11 +2254,11 @@
     },
     "nixpkgs-mdbook-0-5": {
       "locked": {
-        "lastModified": 1764642088,
-        "narHash": "sha256-jL2x3qC6IVt9dbULbs8ByeyMC67RztNOxJWCtgQWWw8=",
+        "lastModified": 1765383787,
+        "narHash": "sha256-BYjz3PpWM5N4w4mkoUNLfuI2F1NoHjsARmEyPCG0wJY=",
         "owner": "roberth",
         "repo": "nixpkgs",
-        "rev": "e2467b980139fc6b512ac52a1c1603731dd7abf6",
+        "rev": "70075689d87d876ee86415b498f1c7e5c7598e6f",
         "type": "github"
       },
       "original": {
