@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-mdbook-0-5.url = "github:roberth/nixpkgs/mdbook-0.5";
 
     actions-nix.url = "github:nialov/actions.nix";
     actions-nix.inputs.nixpkgs.follows = "nixpkgs";

@@ -2251,22 +2251,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-mdbook-0-5": {
-      "locked": {
-        "lastModified": 1766392940,
-        "narHash": "sha256-FHzUk53WsRYu2v0FEJZd0+td5Ly/r7I/MUouUkTpqVw=",
-        "owner": "roberth",
-        "repo": "nixpkgs",
-        "rev": "bcbe96f8a64090e9d1d0ebf7be7e1f38602a9b3d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "roberth",
-        "ref": "mdbook-0.5",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-regression": {
       "locked": {
         "lastModified": 1643052045,
@@ -2769,7 +2753,6 @@
         "nixops4": "nixops4",
         "nixos-healthchecks": "nixos-healthchecks",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-mdbook-0-5": "nixpkgs-mdbook-0-5",
         "ocaml-flake": "ocaml-flake",
         "pkgs-by-name-for-flake-parts": "pkgs-by-name-for-flake-parts",
         "proc-flake": "proc-flake",

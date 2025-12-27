@@ -4,12 +4,8 @@
     {
       config,
       pkgs,
-      system,
       ...
     }:
-    let
-      pkgs-mdbook = inputs.nixpkgs-mdbook-0-5.legacyPackages.${system};
-    in
     {
 
       /*
@@ -43,7 +39,7 @@
         default = pkgs.stdenvNoCC.mkDerivation {
           name = "site";
           nativeBuildInputs = [
-            pkgs-mdbook.mdbook
+            pkgs.mdbook
           ];
           src = ./.;
           buildPhase = ''
