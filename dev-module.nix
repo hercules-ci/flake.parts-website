@@ -40,6 +40,10 @@
 
         settings = {
           on-unmatched = "fatal";
+          formatter.nixf-diagnose.options = [
+            "-i"
+            "sema-primop-overridden"
+          ];
           global.excludes = [
             "*.gitignore"
             "*.png"
