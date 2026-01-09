@@ -22,9 +22,18 @@
         "x86_64-darwin"
       ];
       perSystem = {
-        render.inputs.my-flake-module = {
-          # TODO: update
-          baseUrl = "https://github.com/foo/my-flake-module/blob/main";
+        render.inputs.my-flake-module = input: {
+          imports = [
+            inputs.flake-parts-website.modules.flakePartsRenderInput.github
+            # Or GitLab:
+            # inputs.flake-parts-website.modules.flakePartsRenderInput.gitlab
+          ];
+          owner = "me";
+          repo = "my-flake-module";
+          # Otherwise, remove `imports`, `owner`, and `repo` and specify:
+          # baseUrl = lib.mkIf (
+          #   input.config.rev != null
+          # ) "https://my-forge.com/me/my-repo/-/blob/${input.config.rev}";
           intro = ''
             My private flake-parts module, with docs rendered here.
           '';
