@@ -1743,11 +1743,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768499768,
-        "narHash": "sha256-smXOC3DUcc61i23QFhUiQz3cbJrj/ceoB2rZomji530=",
+        "lastModified": 1768663776,
+        "narHash": "sha256-ZQNEPPb3ccPQv+nsF12GSHwZtK3JTSnFJdLBjl/l2cs=",
         "owner": "nixops4",
         "repo": "nix-bindings-rust",
-        "rev": "77464849268750bcaff1bf035f13a3c518c291ef",
+        "rev": "553f6fbfa76f74832c062fd236125dab6aad8735",
         "type": "github"
       },
       "original": {
