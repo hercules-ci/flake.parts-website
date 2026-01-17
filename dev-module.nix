@@ -25,7 +25,7 @@
         shellHook = ''
           # Configure this repo to ignore certain revisions in git blame
           git config blame.ignoreRevsFile ${ignoreRevsFile}
-          ${config.pre-commit.installationScript}
+          ${config.pre-commit.shellHook}
         '';
       };
 
