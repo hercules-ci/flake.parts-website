@@ -63,7 +63,6 @@
     nix-oci.inputs.flake-parts.follows = "flake-parts";
     nix-topology.url = "github:oddlama/nix-topology";
     nix-topology.inputs.nixpkgs.follows = "nixpkgs";
-    nix-topology.inputs.pre-commit-hooks.follows = "git-hooks-nix";
     nix-unit.url = "github:nix-community/nix-unit";
     nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
