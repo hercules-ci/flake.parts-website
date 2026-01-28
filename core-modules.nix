@@ -214,7 +214,7 @@
               The goals of this module are:
 
               - **Do not load irrelevant modules** when you evaluate an attribute of an already locked flake, it . If the flake was locked remotely, the sources for those dependencies would still have to be fetched.
-                This is achieved by moving some `imports` and their related definitons into [`partitions.<name>.module`](#opt-partitions._name_.module) and defining [`partitionAttrs.<attr>`](#opt-partitionedAttrs) to point to that partition.
+                This is achieved by moving some `imports` and their related definitions into [`partitions.<name>.module`](#opt-partitions._name_.module) and defining [`partitionAttrs.<attr>`](#opt-partitionedAttrs) to point to that partition.
 
               - **Don't copy irrelevant lock entries** when you lock a flake that has the current flake as its input.
                 This can be achieved by moving inputs into a subflake whose only responsibility is to provide the inputs, and then pointing [`partitions.<name>.extraInputsFlake`](#opt-partitions._name_.extraInputsFlake) to that subflake.
