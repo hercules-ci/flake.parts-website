@@ -27,7 +27,7 @@
           }
           ''
             echo Checking $site
-            lychee --offline --config $config $site || {
+            lychee --offline --root-dir $site --config $config $site || {
               # When verbose (-v), https://github.com/NixOS/nix/issues/10289
               r=$?; sleep 1; return $r;
             }
