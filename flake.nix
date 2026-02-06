@@ -58,7 +58,7 @@
     nix-cargo-integration.url = "github:yusdacra/nix-cargo-integration";
     nix-cargo-integration.inputs.nixpkgs.follows = "nixpkgs";
     nix-cargo-integration.inputs.dream2nix.follows = "dream2nix_legacy";
-    nix-oci.url = "github:dauliac/nix-oci";
+    nix-oci.url = "github:dauliac/nix-oci/ff0c5db7a3caa6587b7ed1b5c0289eaf0d3ab4f4";
     nix-oci.inputs.nixpkgs.follows = "nixpkgs";
     nix-oci.inputs.flake-parts.follows = "flake-parts";
     nix-topology.url = "github:oddlama/nix-topology";
