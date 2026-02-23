@@ -98,26 +98,30 @@
 
   outputs =
     inputs@{ flake-parts, ... }:
-    let
-      publishedModules = {
-        empty-site = {
-          imports = [
-            ./render/render-module.nix
-            ./site/site-module.nix
-            ./core-modules.nix
-          ];
-          perSystem.render.officialFlakeInputs = inputs;
-        };
-      };
-    in
     flake-parts.lib.mkFlake { inherit inputs; } (
-      { lib, ... }:
+      { lib, config, ... }:
+      let
+        inherit (config.flake.modules.flakePartsRenderInput) github gitlab;
+
+        publishedModules = {
+          empty-site = {
+            imports = [
+              ./render/render-module.nix
+              ./site/site-module.nix
+              ./core-modules.nix
+            ];
+            perSystem.render.officialFlakeInputs = inputs;
+          };
+        };
+      in
       {
         perSystem.render.inputs = {
 
           actions-nix = {
             title = "actions.nix";
-            baseUrl = "https://github.com/nialov/actions.nix/blob/master";
+            imports = [ github ];
+            owner = "nialov";
+            repo = "actions.nix";
             attributePath = [
               "flakeModules"
               "default"
@@ -134,7 +138,9 @@
           };
           agenix-rekey = {
             title = "agenix-rekey";
-            baseUrl = "https://github.com/oddlama/agenix-rekey/blob/main";
+            imports = [ github ];
+            owner = "oddlama";
+            repo = "agenix-rekey";
             attributePath = [ "flakeModule" ];
             intro = ''
               This is an extension for [agenix](https://github.com/ryantm/agenix) which allows you to get
@@ -151,7 +157,9 @@
 
           agenix-shell = {
             title = "agenix-shell";
-            baseUrl = "https://github.com/aciceri/agenix-shell/blob/master";
+            imports = [ github ];
+            owner = "aciceri";
+            repo = "agenix-shell";
             attributePath = [
               "flakeModules"
               "default"
@@ -166,7 +174,9 @@
 
           devenv = {
             title = "devenv";
-            baseUrl = "https://github.com/cachix/devenv/blob/main";
+            imports = [ github ];
+            owner = "cachix";
+            repo = "devenv";
             attributePath = [ "flakeModule" ];
             intro = ''
               [`devenv`](https://devenv.sh) provides a devShell with many options, and container packages.
@@ -184,7 +194,9 @@
 
           devshell = {
             title = "devshell";
-            baseUrl = "https://github.com/numtide/devshell/blob/main";
+            imports = [ github ];
+            owner = "numtide";
+            repo = "devshell";
             intro = ''
               Simple per-project developer environments.
 
@@ -240,8 +252,9 @@
 
           dream2nix = {
             title = "dream2nix";
-            baseUrl = "https://github.com/nix-community/dream2nix/blob/main";
-            flakeRef = "github:nix-community/dream2nix";
+            imports = [ github ];
+            owner = "nix-community";
+            repo = "dream2nix";
             # FIXME all below
             intro = ''
               This page is a placeholder while dream2nix v2 is in the works.
@@ -262,7 +275,9 @@
 
           dream2nix_legacy = {
             title = "dream2nix legacy";
-            baseUrl = "https://github.com/nix-community/dream2nix/blob/c9c8689f09aa95212e75f3108788862583a1cf5a";
+            imports = [ github ];
+            owner = "nix-community";
+            repo = "dream2nix";
             flakeRef = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
             attributePath = [ "flakeModuleBeta" ];
             intro = ''
@@ -273,7 +288,9 @@
           };
 
           easy-hosts = {
-            baseUrl = "https://github.com/tgirlcloud/easy-hosts/blob/main";
+            imports = [ github ];
+            owner = "tgirlcloud";
+            repo = "easy-hosts";
             intro = ''
               [`easy-hosts`](https://github.com/tgirlcloud/easy-hosts/blob/main)
               lets you define multiple nixos and darwin configurations
@@ -284,7 +301,9 @@
           };
 
           emanote = {
-            baseUrl = "https://github.com/srid/emanote/blob/master";
+            imports = [ github ];
+            owner = "srid";
+            repo = "emanote";
             intro = ''
               [`Emanote`](https://github.com/srid/emanote) renders your Markdown
               files as a nice static site with hot reload.
@@ -299,7 +318,9 @@
           };
 
           ez-configs = {
-            baseUrl = "https://github.com/ehllie/ez-configs/blob/main";
+            imports = [ github ];
+            owner = "ehllie";
+            repo = "ez-configs";
             intro = ''
               [`ez-configs`](https://github.com/ehllie/ez-configs) lets you define multiple nixos,
               darwin, and home manager configurations, and reuse common modules using your flake directory structure.
@@ -311,12 +332,17 @@
               "flakeModules"
               "default"
             ];
-            baseUrl = "https://github.com/mightyiam/files/blob/main";
+            imports = [ github ];
+            owner = "mightyiam";
+            repo = "files";
             intro = lib.readFile "${inputs.files}/README.md";
           };
 
           "flake.parts-website" = {
-            baseUrl = "https://github.com/hercules-ci/flake.parts-website/blob/main";
+            imports = [ github ];
+            owner = "hercules-ci";
+            repo = "flake.parts-website";
+            rev = lib.mkIf (inputs.self ? rev) inputs.self.rev;
             intro = ''
               This module is used to build the flake.parts website.
 
@@ -341,7 +367,9 @@
           };
 
           git-hooks-nix = {
-            baseUrl = "https://github.com/cachix/git-hooks.nix/blob/master";
+            imports = [ github ];
+            owner = "cachix";
+            repo = "git-hooks.nix";
             intro = ''
               Configure pre-commit hooks.
 
@@ -364,8 +392,10 @@
           };
 
           gitlab-ci = {
-            baseUrl = "https://gitlab.horizon-haskell.net/nix/gitlab-ci";
-            flakeRef = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci";
+            imports = [ gitlab ];
+            forgeRoot = "https://gitlab.horizon-haskell.net/";
+            owner = "nix";
+            repo = "gitlab-ci";
             intro = ''
               Creates an app called `.#gitlab-ci` that prints a GitLab dynamic pipeline to
               stdout.
@@ -375,7 +405,9 @@
           };
 
           haskell-flake = {
-            baseUrl = "https://github.com/srid/haskell-flake/blob/master";
+            imports = [ github ];
+            owner = "srid";
+            repo = "haskell-flake";
             intro = ''
               [`haskell-flake`](https://community.flake.parts/haskell-flake) scans your flake files for Haskell projects and
               turns them into packages using the Nixpkgs Haskell infrastructure.
@@ -387,7 +419,9 @@
           };
 
           home-manager = {
-            baseUrl = "https://github.com/nix-community/home-manager/blob/master";
+            imports = [ github ];
+            owner = "nix-community";
+            repo = "home-manager";
             intro = ''
               [Home Manager](https://nix-community.github.io/home-manager/) is a tool for managing home directories and user profiles using Nix.
               To quote, this includes programs, configuration files, environment variables and, well… arbitrary files.
@@ -407,12 +441,16 @@
               "flakeModules"
               "default"
             ];
-            baseUrl = "https://github.com/mightyiam/input-branches/blob/main";
+            imports = [ github ];
+            owner = "mightyiam";
+            repo = "input-branches";
             intro = lib.readFile "${inputs.input-branches}/README.md";
           };
 
           rust-flake = {
-            baseUrl = "https://github.com/juspay/rust-flake/blob/main";
+            imports = [ github ];
+            owner = "juspay";
+            repo = "rust-flake";
             intro = ''
               [`rust-flake`](https://github.com/juspay/rust-flake) scans your flake files for Rust projects and
               turns them into packages using [crane](https://crane.dev/).
@@ -435,7 +473,9 @@
           };
 
           hercules-ci-effects = {
-            baseUrl = "https://github.com/hercules-ci/hercules-ci-effects/blob/master";
+            imports = [ github ];
+            owner = "hercules-ci";
+            repo = "hercules-ci-effects";
             intro = ''
               This module provides
                - a mergeable `herculesCI` attribute; read by [Hercules CI](https://hercules-ci.com) and the [`hci`](https://docs.hercules-ci.com/hercules-ci-agent/hci/) command,
@@ -444,7 +484,9 @@
             '';
           };
           nixos-healthchecks = {
-            baseUrl = "https://github.com/mrVanDalo/nixos-healthchecks/blob/main";
+            imports = [ github ];
+            owner = "mrVanDalo";
+            repo = "nixos-healthchecks";
             attributePaths = [
               [ "flakeModule" ]
               # TODO: would be nice to render somehow: [ "nixosModules" "default" ]
@@ -472,7 +514,9 @@
             '';
           };
           make-shell = {
-            baseUrl = "https://github.com/nicknovitski/make-shell/blob/main";
+            imports = [ github ];
+            owner = "nicknovitski";
+            repo = "make-shell";
             attributePath = [
               "flakeModules"
               "default"
@@ -516,7 +560,9 @@
           };
 
           mission-control = {
-            baseUrl = "https://github.com/Platonic-Systems/mission-control/blob/master";
+            imports = [ github ];
+            owner = "Platonic-Systems";
+            repo = "mission-control";
             intro = ''
               A flake-parts module for your Nix devshell scripts.
 
@@ -530,7 +576,9 @@
 
           mkdocs-flake = {
             title = "mkdocs-flake";
-            baseUrl = "https://github.com/applicative-systems/mkdocs-flake/blob/main";
+            imports = [ github ];
+            owner = "applicative-systems";
+            repo = "mkdocs-flake";
             intro = ''
               [mkdocs-flake](https://applicative-systems.github.io/mkdocs-flake/) adds documentation targets for your project [mkdocs](https://www.mkdocs.org/) documentation.
               The provided mkdocs distribution comes pre-packaged with the latest [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) and many useful plugins.
@@ -597,7 +645,9 @@
 
           nix-cargo-integration = {
             title = "nix-cargo-integration";
-            baseUrl = "https://github.com/yusdacra/nix-cargo-integration/blob/master";
+            imports = [ github ];
+            owner = "yusdacra";
+            repo = "nix-cargo-integration";
             attributePath = [ "flakeModule" ];
             intro = ''
               Easily integrate your Rust projects into Nix.
@@ -626,7 +676,9 @@
 
           nix-topology = {
             title = "nix-topology";
-            baseUrl = "https://github.com/oddlama/nix-topology/blob/main";
+            imports = [ github ];
+            owner = "oddlama";
+            repo = "nix-topology";
             attributePath = [ "flakeModule" ];
             intro = ''
               With nix-topology you can automatically generate infrastructure and network diagrams as SVGs
@@ -641,7 +693,9 @@
 
           nix-unit = {
             title = "nix-unit";
-            baseUrl = "https://github.com/nix-community/nix-unit/blob/main";
+            imports = [ github ];
+            owner = "nix-community";
+            repo = "nix-unit";
             attributePath = [
               "modules"
               "flake"
@@ -690,7 +744,9 @@
 
           pkgs-by-name-for-flake-parts = {
             title = "pkgs-by-name-for-flake-parts";
-            baseUrl = "https://github.com/drupol/pkgs-by-name-for-flake-parts/blob/main";
+            imports = [ github ];
+            owner = "drupol";
+            repo = "pkgs-by-name-for-flake-parts";
             # The installation instruction are already part of the example, which is nicer. (TODO @roberth: integrate this style)
             installation = "";
             intro = ''
@@ -731,7 +787,9 @@
           };
 
           proc-flake = {
-            baseUrl = "https://github.com/srid/proc-flake/blob/master";
+            imports = [ github ];
+            owner = "srid";
+            repo = "proc-flake";
             intro = ''
               A module for running multiple processes in a dev shell.
 
@@ -742,7 +800,9 @@
           };
 
           process-compose-flake = {
-            baseUrl = "https://github.com/Platonic-Systems/process-compose-flake/blob/main";
+            imports = [ github ];
+            owner = "Platonic-Systems";
+            repo = "process-compose-flake";
             intro = ''
               This flake-parts module allows you to declare one or more process-compose configurations using Nix attribute sets. It will generate corresponding packages that wrap the [process-compose](https://github.com/F1bonacc1/process-compose) binary with the given configuration.
 
@@ -752,14 +812,18 @@
 
           pydev = {
             title = "pydev";
-            baseUrl = "https://github.com/oceansprint/pydev/blob/main";
+            imports = [ github ];
+            owner = "oceansprint";
+            repo = "pydev";
             intro = ''
               [pydev](https://github.com/oceansprint/pydev) is an opinionated environment for developing Python packages.
             '';
           };
 
           std = {
-            baseUrl = "https://github.com/divnix/std/blob/main";
+            imports = [ github ];
+            owner = "divnix";
+            repo = "std";
             intro = ''
               Add definitions from the [Standard](https://github.com/divnix/std#readme) DevOps framework to your flake.
 
@@ -773,7 +837,9 @@
 
           terranix = {
             title = "terranix";
-            baseUrl = "https://github.com/terranix/terranix/blob/main";
+            imports = [ github ];
+            owner = "terranix";
+            repo = "terranix";
             attributePath = [ "flakeModule" ];
             intro = ''
               [terranix](https://terranix.org/) is a terraform.json generator with a nix-like feeling.
@@ -781,7 +847,9 @@
           };
 
           treefmt-nix = {
-            baseUrl = "https://github.com/numtide/treefmt-nix/blob/master";
+            imports = [ github ];
+            owner = "numtide";
+            repo = "treefmt-nix";
             intro = ''
               When working on large code trees, it's common to have multiple code formatters run against it. And have one script that loops over all of them. `treefmt` makes that nicer.
 
@@ -797,6 +865,7 @@
         };
         imports = [
           inputs.flake-parts.flakeModules.flakeModules
+          inputs.flake-parts.flakeModules.modules
           publishedModules.empty-site
           ./dev-module.nix
           ./deploy-module.nix
