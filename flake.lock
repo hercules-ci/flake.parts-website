@@ -270,11 +270,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772672556,
-        "narHash": "sha256-ngmAwVxtgnYXafGE7fkUr9t5G5C0ym++IPx6ygGgGtQ=",
+        "lastModified": 1772738982,
+        "narHash": "sha256-9MN0FV0XeYJV7kFtUxY6uQMxbZmlrPQLUm3yLbEEJ7Q=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "33c37b337bb50e5eb86ef93433eaf1cc677ca481",
+        "rev": "22ec127af85396b04af045ec20d004d11a0675af",
         "type": "github"
       },
       "original": {
@@ -1397,11 +1397,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772687513,
-        "narHash": "sha256-q6tIOjLJU4WdV28ObWOMX7TsC/f1KvvA5Wh3g6ouA5M=",
+        "lastModified": 1772711803,
+        "narHash": "sha256-0LosXnzZiSgRqen6vIiEGvcC/gYYjC2n2gJH38CjJ90=",
         "ref": "refs/heads/master",
-        "rev": "f6c4e4c2834e6c9aecdf159e7c37a56d426122f6",
-        "revCount": 54,
+        "rev": "0735995c4ca988088728136e0657526b7694b0c9",
+        "revCount": 61,
         "type": "git",
         "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
       },
