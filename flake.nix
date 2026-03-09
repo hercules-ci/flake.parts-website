@@ -36,7 +36,7 @@
     github-actions-nix.url = "github:synapdeck/github-actions-nix";
     github-actions-nix.inputs.nixpkgs.follows = "nixpkgs";
     github-actions-nix.inputs.flake-parts.follows = "flake-parts";
-    gitlab-ci.url = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci";
+    gitlab-ci.url = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci?rev=ad72a34fece20da6bdfa17b6b945b936b9a30280";
     gitlab-ci.inputs.flake-parts.follows = "flake-parts";
     gitlab-ci.inputs.nixpkgs.follows = "nixpkgs";
     gitlab-ci.inputs.treefmt-nix.follows = "treefmt-nix";

@@ -1406,6 +1406,7 @@
         "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
       },
       "original": {
+        "rev": "ad72a34fece20da6bdfa17b6b945b936b9a30280",
         "type": "git",
         "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
       }
