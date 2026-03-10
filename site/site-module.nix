@@ -17,6 +17,7 @@
         pkgs.runCommand "linkcheck"
           {
             nativeBuildInputs = [ pkgs.lychee ];
+            SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
             site = config.packages.default;
             config = (pkgs.formats.toml { }).generate "lychee.toml" {
               include_fragments = true;
