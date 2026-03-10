@@ -67,6 +67,13 @@
             sed -e 's/<!-- module list will be concatenated to the end -->//g' -i src/SUMMARY.md
             cat ${config.packages.generated-docs}/menu.md >> src/SUMMARY.md
             mdbook build --dest-dir $out
+
+            # mdbook hashes asset filenames but doesn't rewrite url() in additional CSS
+            favicons=($out/favicon-*.svg)
+            test "''${#favicons[@]}" -eq 1 || { echo "expected exactly one favicon-*.svg, got ''${#favicons[@]}"; exit 1; }
+            [[ "$favicons" != *'*'* ]] || { echo "favicon glob did not match any files"; exit 1; }
+            sed -i "s|favicon\.svg|$(basename "$favicons")|g" $out/*.css
+
             cp _redirects $out
 
             echo '<html><head><script>window.location.pathname = window.location.pathname.replace(/options.html$/, "") + "options/flake-parts.html"</script></head><body><a href="options/flake-parts.html">to the options</a></body></html>' \
