@@ -388,11 +388,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1774763318,
-        "narHash": "sha256-fLlQQ1BGiJ8oDhTDrPW/X3jAGqKiL6CbJSvEtdDxHDk=",
+        "lastModified": 1774816935,
+        "narHash": "sha256-MJ1kZGA/BZ9Xy+lsppMcw19jCf9zB9lmfwmCDhiC7Dg=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "177d0848dc5f1de11796e0ae3183af6d456c5246",
+        "rev": "a4cf85b989fff0bafe5858c879e5343493a86019",
         "type": "github"
       },
       "original": {
