@@ -266,6 +266,21 @@
         "type": "github"
       }
     },
+    "config-parts": {
+      "locked": {
+        "lastModified": 1775346367,
+        "narHash": "sha256-ReCl150GxICPXBZVkk7SoMSMlUJy5n5DbGdwKbus3QA=",
+        "owner": "b3nb5n",
+        "repo": "config-parts",
+        "rev": "d5fb6643d9ee05653f4918f8e937e069ca86736c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "b3nb5n",
+        "repo": "config-parts",
+        "type": "github"
+      }
+    },
     "crane": {
       "flake": false,
       "locked": {
@@ -3499,6 +3514,7 @@
         "actions-nix": "actions-nix",
         "agenix-rekey": "agenix-rekey",
         "agenix-shell": "agenix-shell",
+        "config-parts": "config-parts",
         "devenv": "devenv",
         "devshell": "devshell_4",
         "disko": "disko",
