@@ -709,11 +709,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1777163313,
-        "narHash": "sha256-k4WxRhYi0n3hheV/DtWV53qTMdA2NhWNEdQ/KjcBXL4=",
+        "lastModified": 1777229703,
+        "narHash": "sha256-DrGrASAaIgief3nUPJQZ0V6EualG929S5UCtpz17yjM=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "51993925f8120c6c1fa40b5c6061ac05c459054f",
+        "rev": "dc55cd87c6959153bba7ede8466f07033e590af0",
         "type": "github"
       },
       "original": {
@@ -2026,11 +2026,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777151655,
-        "narHash": "sha256-Th3a5OZyEy4kCoyLfefnt+2dwRIrFQqYgMsayF9qzFw=",
+        "lastModified": 1777218285,
+        "narHash": "sha256-d2FY71SBVKVbT1PsfXA71jz0vD520NijS4lrcvUMeGk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "6f59831b23d03bbf4fbd13ad167ae25da294cc14",
+        "rev": "c55c498c9aa205b16cca78b57a7275625726d532",
         "type": "github"
       },
       "original": {
@@ -2570,11 +2570,11 @@
         "treefmt-nix": "treefmt-nix_8"
       },
       "locked": {
-        "lastModified": 1776254777,
-        "narHash": "sha256-LAKvxarQ7JewSO07Kk2PXl+yWEwq8q7iksVMtagJHEI=",
+        "lastModified": 1777199299,
+        "narHash": "sha256-TIU/XazmNkl4nXlC7wrKkZ3DzyqBWWHMGYG7OyIbwyg=",
         "owner": "dauliac",
         "repo": "nix-oci",
-        "rev": "72095fab599d56ea38eb0b608817bdf028c3f03e",
+        "rev": "a9e45090503161188e239676914e72e7aa901cb2",
         "type": "github"
       },
       "original": {
