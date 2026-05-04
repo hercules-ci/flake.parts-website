@@ -24,5 +24,6 @@
       - [`easyOverlay`](./options/flake-parts-easyOverlay.md)
       - [`modules`](./options/flake-parts-modules.md)
       - [`partitions`](./options/flake-parts-partitions.md)
+      - [`touchup`](./options/flake-parts-touchup.md)
 
 <!-- module list will be concatenated to the end -->
