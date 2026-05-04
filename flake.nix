@@ -33,14 +33,19 @@
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
     files.url = "github:mightyiam/files";
+    ghc-common-hadrian.url = "git+https://gitlab.horizon-haskell.net/nix/ghc-common-hadrian";
+    ghc-common-hadrian.inputs.nixica.follows = "nixica";
+    ghc-common-hadrian.inputs.nixpkgs.follows = "nixpkgs";
     github-actions-nix.url = "github:synapdeck/github-actions-nix";
     github-actions-nix.inputs.nixpkgs.follows = "nixpkgs";
     github-actions-nix.inputs.flake-parts.follows = "flake-parts";
-    gitlab-ci.url = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci?rev=ad72a34fece20da6bdfa17b6b945b936b9a30280";
-    gitlab-ci.inputs.flake-parts.follows = "flake-parts";
+    gitlab-ci.url = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci";
+    gitlab-ci.inputs.nixica.follows = "nixica";
     gitlab-ci.inputs.nixpkgs.follows = "nixpkgs";
-    gitlab-ci.inputs.treefmt-nix.follows = "treefmt-nix";
     haskell-flake.url = "github:srid/haskell-flake";
+    haskell-make-package-set.url = "git+https://gitlab.horizon-haskell.net/nix/haskell-make-package-set";
+    haskell-make-package-set.inputs.nixica.follows = "nixica";
+    haskell-make-package-set.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
@@ -51,6 +56,10 @@
     mission-control.url = "github:Platonic-Systems/mission-control";
     mkdocs-flake.url = "github:applicative-systems/mkdocs-flake";
     mkdocs-flake.inputs.nixpkgs.follows = "nixpkgs";
+    nixica.url = "git+https://gitlab.horizon-haskell.net/nix/nixica";
+    nixica.inputs.nixpkgs.follows = "nixpkgs";
+    nixica.inputs.flake-parts.follows = "flake-parts";
+    nixica.inputs.treefmt-nix.follows = "treefmt-nix";
     nix-bindings-rust.url = "github:nixops4/nix-bindings-rust";
     nix-bindings-rust.inputs.nix-cargo-integration.follows = "nix-cargo-integration";
     nix-bindings-rust.inputs.nixpkgs.follows = "nixpkgs";
@@ -340,6 +349,16 @@
             };
           };
 
+          ghc-common-hadrian = {
+            baseUrl = "https://gitlab.horizon-haskell.net/nix/ghc-common-hadrian";
+            flakeRef = "git+https://gitlab.horizon-haskell.net/nix/ghc-common-hadrian";
+            intro = ''
+              Creates a ghc derivation from source using the
+              [common-hadrian](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/ghc/common-hadrian.nix)
+              build script from nixpkgs.
+            '';
+          };
+
           git-hooks-nix = {
             baseUrl = "https://github.com/cachix/git-hooks.nix/blob/master";
             intro = ''
@@ -383,6 +402,16 @@
               It also provides [`checks`](flake-parts.html#opt-perSystem.checks) and [`devShells`](flake-parts.html#opt-perSystem.devShells)
 
               Multiple projects can be declared to represent each package set, which is great for GHCJS frontends.
+            '';
+          };
+
+          haskell-make-package-set = {
+            baseUrl = "https://gitlab.horizon-haskell.net/nix/haskell-make-package-set";
+            flakeRef = "git+https://gitlab.horizon-haskell.net/nix/haskell-make-package-set";
+            intro = ''
+              Creates a haskell package set using the
+              [make-package-set](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/haskell-modules/make-package-set.nix)
+              function from nixpkgs.
             '';
           };
 

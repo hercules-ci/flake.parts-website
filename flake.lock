@@ -1439,6 +1439,29 @@
         "type": "github"
       }
     },
+    "ghc-common-hadrian": {
+      "inputs": {
+        "nixica": [
+          "nixica"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775222902,
+        "narHash": "sha256-pCNIHJapvdFF30EuR7PgGCObI65QzT2j0Fq/E5j6xN8=",
+        "ref": "refs/heads/master",
+        "rev": "f5103af4075206253ff39fc2e82e66f4549e9ab7",
+        "revCount": 33,
+        "type": "git",
+        "url": "https://gitlab.horizon-haskell.net/nix/ghc-common-hadrian"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gitlab.horizon-haskell.net/nix/ghc-common-hadrian"
+      }
+    },
     "ghc-utils": {
       "flake": false,
       "locked": {
@@ -1842,28 +1865,23 @@
     },
     "gitlab-ci": {
       "inputs": {
-        "flake-parts": [
-          "flake-parts"
+        "nixica": [
+          "nixica"
         ],
-        "import-tree": "import-tree",
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "treefmt-nix": [
-          "treefmt-nix"
         ]
       },
       "locked": {
-        "lastModified": 1772641088,
-        "narHash": "sha256-Dq1YrXqwO5tUzMyMpGZ98Dkxo3TOjM2ezX18icgpyAs=",
+        "lastModified": 1775161099,
+        "narHash": "sha256-cLsqRurXJCofxbOwJDsnLjCo/lu6Kw9O1ZuZ4ydLaGA=",
         "ref": "refs/heads/master",
-        "rev": "ad72a34fece20da6bdfa17b6b945b936b9a30280",
-        "revCount": 35,
+        "rev": "cab2a9cc5c3b5f4f634eaa31f0e9876c1c8c70ff",
+        "revCount": 149,
         "type": "git",
         "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
       },
       "original": {
-        "rev": "ad72a34fece20da6bdfa17b6b945b936b9a30280",
         "type": "git",
         "url": "https://gitlab.horizon-haskell.net/nix/gitlab-ci"
       }
@@ -1912,6 +1930,29 @@
         "owner": "srid",
         "repo": "haskell-flake",
         "type": "github"
+      }
+    },
+    "haskell-make-package-set": {
+      "inputs": {
+        "nixica": [
+          "nixica"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775222921,
+        "narHash": "sha256-DTHry/6MuBVr32Eh3V9ZYJ6nN9v5O51xLuzpdjsWULI=",
+        "ref": "refs/heads/master",
+        "rev": "92c45961420c814890d18597ea44d059d5f051fd",
+        "revCount": 21,
+        "type": "git",
+        "url": "https://gitlab.horizon-haskell.net/nix/haskell-make-package-set"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gitlab.horizon-haskell.net/nix/haskell-make-package-set"
       }
     },
     "haumea": {
@@ -2040,11 +2081,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1752730890,
-        "narHash": "sha256-GES8fapSLGz36MMPRVNkSUWXUTtqvGQNXHjRmRLfJUY=",
+        "lastModified": 1763762820,
+        "narHash": "sha256-ZvYKbFib3AEwiNMLsejb/CWs/OL/srFQ8AogkebEPF0=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "6ebb8cb87987b20264c09296166543fd3761d274",
+        "rev": "3c23749d8013ec6daa1d7255057590e9ca726646",
         "type": "github"
       },
       "original": {
@@ -2070,11 +2111,11 @@
     },
     "import-tree_3": {
       "locked": {
-        "lastModified": 1763762820,
-        "narHash": "sha256-ZvYKbFib3AEwiNMLsejb/CWs/OL/srFQ8AogkebEPF0=",
+        "lastModified": 1772999353,
+        "narHash": "sha256-dPb0WxUhFaz6wuR3B6ysqFJpsu8txKDPZvS47AT2XLI=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "3c23749d8013ec6daa1d7255057590e9ca726646",
+        "rev": "545a4df146fce44d155573e47f5a777985acf912",
         "type": "github"
       },
       "original": {
@@ -2527,7 +2568,7 @@
         "flake-file": "flake-file",
         "flake-parts": "flake-parts_13",
         "get-flake": "get-flake",
-        "import-tree": "import-tree_3",
+        "import-tree": "import-tree_2",
         "nix-unit": "nix-unit",
         "nixpkgs": [
           "nix-oci",
@@ -2560,7 +2601,7 @@
         "flake-parts": [
           "flake-parts"
         ],
-        "import-tree": "import-tree_2",
+        "import-tree": "import-tree",
         "nix-lib": "nix-lib",
         "nix2container": "nix2container",
         "nixpkgs": [
@@ -2796,6 +2837,33 @@
         "owner": "nix-community",
         "repo": "nixd",
         "type": "github"
+      }
+    },
+    "nixica": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "import-tree": "import-tree_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775077024,
+        "narHash": "sha256-CjOPszD6W9aX3p0U8mpSX/xugR9fLEaPqRSi4x7DQow=",
+        "ref": "refs/heads/master",
+        "rev": "21b916eec21d6ffe7b1395dbae2be6b58a4b0f6d",
+        "revCount": 39,
+        "type": "git",
+        "url": "https://gitlab.horizon-haskell.net/nix/nixica"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gitlab.horizon-haskell.net/nix/nixica"
       }
     },
     "nixops4": {
@@ -3655,10 +3723,12 @@
         "ez-configs": "ez-configs",
         "files": "files",
         "flake-parts": "flake-parts_9",
+        "ghc-common-hadrian": "ghc-common-hadrian",
         "git-hooks-nix": "git-hooks-nix",
         "github-actions-nix": "github-actions-nix",
         "gitlab-ci": "gitlab-ci",
         "haskell-flake": "haskell-flake_2",
+        "haskell-make-package-set": "haskell-make-package-set",
         "hercules-ci-effects": "hercules-ci-effects",
         "home-manager": "home-manager_2",
         "input-branches": "input-branches",
@@ -3670,6 +3740,7 @@
         "nix-oci": "nix-oci",
         "nix-topology": "nix-topology",
         "nix-unit": "nix-unit_2",
+        "nixica": "nixica",
         "nixops4": "nixops4",
         "nixos-healthchecks": "nixos-healthchecks",
         "nixpkgs": "nixpkgs_8",
