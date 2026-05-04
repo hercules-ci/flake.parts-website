@@ -203,6 +203,23 @@
             '';
           };
 
+        flake-parts-touchup =
+          { ... }:
+          {
+            imports = [ commonExtras ];
+            extraName = "touchup";
+            sourceSubpath = "/extras/touchup";
+            intro = ''
+              Controls which attributes appear in the flake output and how they are transformed.
+
+              The touchup configuration forms a tree that mirrors the flake output structure.
+              At each level, `attr` targets specific attributes by name, and `any` applies to all attributes at that level.
+              Attributes can be removed (`enable = false`) or post-processed (`finish`).
+
+              This is useful for hiding attributes from `nix flake check` or `nix flake show` that are only meant for internal use, or for working around strictness issues in the Nix CLI.
+            '';
+          };
+
         flake-parts-partitions =
           { ... }:
           {
