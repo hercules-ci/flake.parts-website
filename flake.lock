@@ -266,6 +266,21 @@
         "type": "github"
       }
     },
+    "conan-flake": {
+      "locked": {
+        "lastModified": 1778008262,
+        "narHash": "sha256-skXbDzfmMwQC8P7AluLicHq3WJZkEV/BsUINSFbNKM8=",
+        "ref": "refs/heads/main",
+        "rev": "2888c6837c5bdb8d1f3a945c7e3e133a257bc8be",
+        "revCount": 35,
+        "type": "git",
+        "url": "https://codeberg.org/tarcisio/conan-flake"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/tarcisio/conan-flake"
+      }
+    },
     "crane": {
       "flake": false,
       "locked": {
@@ -3646,6 +3661,7 @@
         "actions-nix": "actions-nix",
         "agenix-rekey": "agenix-rekey",
         "agenix-shell": "agenix-shell",
+        "conan-flake": "conan-flake",
         "devenv": "devenv",
         "devshell": "devshell_4",
         "disko": "disko",

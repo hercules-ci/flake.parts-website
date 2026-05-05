@@ -14,6 +14,7 @@
     agenix-shell.url = "github:aciceri/agenix-shell";
     agenix-shell.inputs.nixpkgs.follows = "nixpkgs";
     agenix-shell.inputs.git-hooks-nix.follows = "git-hooks-nix";
+    conan-flake.url = "git+https://codeberg.org/tarcisio/conan-flake";
     devenv.url = "github:cachix/devenv";
     devenv.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
@@ -161,6 +162,16 @@
               It provides options used to define a `shellHook` that, when added to your `devShell`, automatically decrypts secrets and export them.
 
               [Here](https://github.com/aciceri/agenix-shell/blob/master/templates/basic/flake.nix)'s a template you can start from.
+            '';
+          };
+
+          conan-flake = {
+            baseUrl = "https://codeberg.org/tarcisio/conan-flake";
+            flakeRef = "git+https://codeberg.org/tarcisio/conan-flake";
+            intro = ''
+              [`conan-flake`](https://codeberg.org/tarcisio/conan-flake) is a Nix module for configuring the Conan C/C++ package manager.
+
+              For examples see the [README](https://codeberg.org/tarcisio/conan-flake).
             '';
           };
 
