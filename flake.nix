@@ -169,9 +169,11 @@
             baseUrl = "https://codeberg.org/tarcisio/conan-flake";
             flakeRef = "git+https://codeberg.org/tarcisio/conan-flake";
             intro = ''
-              [`conan-flake`](https://codeberg.org/tarcisio/conan-flake) is a Nix module for configuring the Conan C/C++ package manager.
+              **Declarative Configuration for the Conan C/C++ Package Manager**
 
-              For examples see the [README](https://codeberg.org/tarcisio/conan-flake).
+              The [`conan-flake`](https://codeberg.org/tarcisio/conan-flake) module provides options used to generate a configuration for the [Conan C/C++ Package Manager](https://conan.io/) and defines a `devShell` ([`conan.outputs.devShell`](conan-flake.md#opt-perSystem.conan.outputs.devShell)) that can be used directly, or passed in the `inputsFrom` option as a way to compose with other `devShell`s.
+
+              For examples see the [conan-flake README](https://codeberg.org/tarcisio/conan-flake/src/branch/main/README.md).
             '';
           };
 
