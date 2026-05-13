@@ -326,6 +326,9 @@
             ];
             baseUrl = "https://github.com/mightyiam/files/blob/main";
             intro = lib.readFile "${inputs.files}/README.md";
+            flake = inputs.files // {
+              flakeModules.default = "${inputs.files}/flake-module.nix";
+            };
           };
 
           "flake.parts-website" = {
@@ -620,6 +623,7 @@
 
               See the [readme](https://github.com/yusdacra/nix-cargo-integration#readme).
             '';
+            warningsAreErrors = false;
           };
 
           nix-oci = {
