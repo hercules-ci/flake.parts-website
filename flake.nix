@@ -620,6 +620,7 @@
 
               See the [readme](https://github.com/yusdacra/nix-cargo-integration#readme).
             '';
+            warningsAreErrors = false;
           };
 
           nix-oci = {
