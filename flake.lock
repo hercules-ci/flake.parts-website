@@ -724,11 +724,11 @@
         "unionmount": "unionmount"
       },
       "locked": {
-        "lastModified": 1778783482,
-        "narHash": "sha256-UoFnxFJ7onDyjf4fNBkMpIizjaflHrJJkP48w1X3Fh4=",
+        "lastModified": 1778844009,
+        "narHash": "sha256-AkTPllEo7ZHzhD2lrtGimISCIGDkqNccznMiKDmluns=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "d383051af6336d1664321a679749721da30e7824",
+        "rev": "64a8635e8fd69de932d27dc4c823c49ae0eac594",
         "type": "github"
       },
       "original": {
@@ -2102,11 +2102,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778805320,
-        "narHash": "sha256-nGFJ01m2CTBKD4ABtcY4vLhHrRN91LKr/pn41PcU78A=",
+        "lastModified": 1778876681,
+        "narHash": "sha256-9XOIxYLBp+sJsPWNnNyk1aVfYXuuRJZ4Anpplm9Tn8g=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "9846abe15e7d0d36b8acbd4d05f2b87461744c92",
+        "rev": "c7fad8197070948d8aa02cb8922240ee129cab2e",
         "type": "github"
       },
       "original": {
