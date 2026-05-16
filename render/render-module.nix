@@ -251,39 +251,69 @@ in
               description = ''
                 Installation paragraph between installation and options.
               '';
-              default = ''
-                ## Installation
+              default = lib.concatLines (
+                lib.flatten [
+                  ''
+                    ## Installation
+                  ''
+                  (map
+                    (
+                      {
+                        heading,
+                        flakeFalse,
+                        imports,
+                      }:
+                      ''
+                        ${lib.optionalString (config.attributePaths != [ ]) ''
+                          ### ${heading}
 
-                ${
-                  if config.installationDeclareInput then
-                    ''
-                      To use these options, add to your flake inputs:
+                          ${
+                            if config.installationDeclareInput then
+                              ''
+                                To use these options, add to your flake inputs:
 
-                      ```nix
-                      ${config.sourceName}.url = "${config.flakeRef}";
-                      ```
+                                ```nix
+                                ${config.sourceName}.url = "${config.flakeRef}";${flakeFalse}
+                                ```
 
-                      and inside the `mkFlake`:
-                    ''
-                  else
-                    ''
-                      To use these options, add inside the `mkFlake`:
-                    ''
-                }
+                                and inside the `mkFlake`:
+                              ''
+                            else
+                              ''
+                                To use these options, add inside the `mkFlake`:
+                              ''
+                          }
 
-                ```nix
-                imports = [
-                  ${lib.strings.concatMapStringsSep "\n  " (
-                    attributePath:
-                    "inputs.${config.sourceName}.${
-                      lib.concatMapStringsSep "." lib.strings.escapeNixIdentifier attributePath
-                    }"
-                  ) config.attributePaths}
-                ];
-                ```
-
-                Run `nix flake lock` and you're set.
-              '';
+                          ```nix
+                          imports = [
+                            ${imports}
+                          ];
+                          ```
+                        ''}
+                      ''
+                    )
+                    [
+                      {
+                        heading = "As flake input";
+                        flakeFalse = "";
+                        imports = lib.strings.concatMapStringsSep "\n  " (
+                          attributePath:
+                          "inputs.${config.sourceName}.${
+                            lib.concatMapStringsSep "." lib.strings.escapeNixIdentifier attributePath
+                          }"
+                        ) config.attributePaths;
+                      }
+                      {
+                        heading = "As non-flake input";
+                        flakeFalse = "\nflake = false;";
+                        imports = lib.strings.concatMapStringsSep "\n  " (
+                          filePath: ''(inputs.${config.sourceName} + "/${filePath}")''
+                        ) config.filePaths;
+                      }
+                    ]
+                  )
+                ]
+              );
               defaultText = lib.literalMD "Generated";
             };
 
@@ -310,9 +340,12 @@ in
               default =
                 flake:
                 (builtins.addErrorContext "while getting modules for input '${name}'" (
-                  map (p: lib.getAttrFromPath p flake) config.attributePaths
+                  lib.concatLists [
+                    (map (p: lib.getAttrFromPath p flake) config.attributePaths)
+                    (map (p: flake + "/" + p) config.filePaths)
+                  ]
                 ));
-              defaultText = lib.literalMD "Derived from `config.attributePaths`, `<name>`";
+              defaultText = lib.literalMD "Derived from `config.attributePaths`, `config.filePaths`, `<name>`";
             };
 
             attributePath = mkOption {
@@ -338,6 +371,15 @@ in
                   "home-manager"
                 ]
               ];
+            };
+
+            filePaths = mkOption {
+              description = ''
+                File paths to import.
+              '';
+              type = types.listOf types.str;
+              default = [ "flake-module.nix" ];
+              example = [ "modules/flake.nix" ];
             };
 
             rendered = mkOption {
