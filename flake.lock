@@ -210,11 +210,11 @@
     },
     "conan-flake": {
       "locked": {
-        "lastModified": 1778013297,
-        "narHash": "sha256-JVVR90C0Ri2VEyHe5dBSVrvXvPySx9cGwGNrVNnow2Q=",
+        "lastModified": 1779747287,
+        "narHash": "sha256-zZ8qMfO8haUopuQKoZdVsScGNUStC9U8PwN82tu3GQU=",
         "ref": "refs/heads/main",
-        "rev": "61d35eb742bcb23046bd134f7478a7ecdc55506e",
-        "revCount": 37,
+        "rev": "5b2b1767dd1a54452c165a3b625b711c89f5b086",
+        "revCount": 51,
         "type": "git",
         "url": "https://codeberg.org/tarcisio/conan-flake"
       },
@@ -305,11 +305,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1779717400,
-        "narHash": "sha256-B/jXOCq7m0TlWp1J1mVwlk4qSz4gSa25kDf1D0HqG88=",
+        "lastModified": 1779749056,
+        "narHash": "sha256-AtocdrunzuxTvSDn+82RntEhrs6TicM6Z4/zNQS9KKg=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "3fe1f122a2884a6995014d952d039367d6d77001",
+        "rev": "099ac65fcef79e88127bdc06adbd1ea94255274a",
         "type": "github"
       },
       "original": {
@@ -640,11 +640,11 @@
         "treefmt-nix": "treefmt-nix_4"
       },
       "locked": {
-        "lastModified": 1779717778,
-        "narHash": "sha256-gsMtjrqNf/lMHcNvuGe5eoMocPJZu8CjctlK77o4URU=",
+        "lastModified": 1779757996,
+        "narHash": "sha256-liOvTj9cegOqBLP7DGpa+grSUapUJtLX4xwhcoXiy/0=",
         "owner": "mightyiam",
         "repo": "files",
-        "rev": "0439d156c2b8abb36d2369c42b0a610efa941150",
+        "rev": "9e069ca826ee1a45e1a9f4f45035fbd23ebcec2f",
         "type": "github"
       },
       "original": {
