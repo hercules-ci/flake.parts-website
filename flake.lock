@@ -305,11 +305,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1779931123,
-        "narHash": "sha256-ZJ855S3iWO6FkGQjmzR+kToGVBEJrm7NQG6/PEovTvs=",
+        "lastModified": 1779995347,
+        "narHash": "sha256-clASMT4ByGv5maS8xOgU1Y55R0pKUNMfSq5HEdJ6bV8=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "40574661afa960888226da4d122a74132fb36835",
+        "rev": "bb9f187856091b52f56220bb90ff4b40cfa80b52",
         "type": "github"
       },
       "original": {
@@ -1681,11 +1681,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779726696,
-        "narHash": "sha256-/p37CB5n6Wpw250b0Lq0CYwNq2D8uGKzDoBulyLcQqA=",
+        "lastModified": 1779969295,
+        "narHash": "sha256-HwIJ3tOcwSMiV75L7KqJXciXR9UfT+d7rwOZMX7cTnA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1a95e2efb477959b70b4a14c51035975c0481df6",
+        "rev": "61e2c9659324181e0f0ed911958c536333b1d4f6",
         "type": "github"
       },
       "original": {
@@ -2074,11 +2074,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1779874241,
-        "narHash": "sha256-uA7LkIGlSwWUU1FcmxPLQGMlfFhMO6ofVilsesZaQ6E=",
+        "lastModified": 1779999520,
+        "narHash": "sha256-hVreRVIR3qpWR19xj84DuOWYpeAZt/YLcjxIZS98kLU=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "cfb26861b8fd1f8795f79e26a4f48abd13c0d01f",
+        "rev": "ea456231c6efe92de6b1ea0a806cd808f317b0cd",
         "type": "github"
       },
       "original": {
@@ -3262,11 +3262,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779851998,
-        "narHash": "sha256-UkkMh3bX9QW4Luqkm98nUaOqKWrU6i65mUnph3WeSSw=",
+        "lastModified": 1779992051,
+        "narHash": "sha256-4YWGv/0NkAdtTW1MXfaLYpfC9BhpCy9k1pWkR0xI9uw=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "6cddd512fa2bf7231f098d3a2f92f6e4cff71e0a",
+        "rev": "e93ad0df1073b2c969a8f0c1f10b84e870469d40",
         "type": "github"
       },
       "original": {
@@ -3453,11 +3453,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1773700838,
-        "narHash": "sha256-6KFxpxyXjcqhOexc7ZeaXVWdDtGb6zO8HtjBEci9DfU=",
+        "lastModified": 1779965098,
+        "narHash": "sha256-Jh0Zk+g0pEbNopADEtqvrnhrl83rlNFHpn3Zhz4s+VM=",
         "owner": "terranix",
         "repo": "terranix",
-        "rev": "306ce146bf0324dc3b3c45c095036b6f0e26bf35",
+        "rev": "36ed5bdee452978d0e9c4450de872483ab541006",
         "type": "github"
       },
       "original": {
