@@ -210,11 +210,11 @@
     },
     "conan-flake": {
       "locked": {
-        "lastModified": 1779747287,
-        "narHash": "sha256-zZ8qMfO8haUopuQKoZdVsScGNUStC9U8PwN82tu3GQU=",
+        "lastModified": 1780015989,
+        "narHash": "sha256-v+1oZTUa9od5PPV+mXyGYu54ESnI8Q5qBfcosnC6+64=",
         "ref": "refs/heads/main",
-        "rev": "5b2b1767dd1a54452c165a3b625b711c89f5b086",
-        "revCount": 51,
+        "rev": "7503ce8246f7ae98a685c848688b0558c68b3ede",
+        "revCount": 60,
         "type": "git",
         "url": "https://codeberg.org/tarcisio/conan-flake"
       },
