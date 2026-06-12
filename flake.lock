@@ -210,11 +210,11 @@
     },
     "conan-flake": {
       "locked": {
-        "lastModified": 1781200404,
-        "narHash": "sha256-RsxCqeoT5+d0Ew8zP6TtIi3a3pB1BaQnk7MMqzcqKko=",
+        "lastModified": 1781236232,
+        "narHash": "sha256-+7Cu8po/NWNk8wMxb9KUDkyeOHpssWt8Gc4C4Y4t1QQ=",
         "ref": "refs/heads/main",
-        "rev": "a0049d964435468f9faf08a2eb24eb9c6b4f312f",
-        "revCount": 258,
+        "rev": "e441420093a44cabc8df010f326b6245a2d03a0f",
+        "revCount": 264,
         "type": "git",
         "url": "https://codeberg.org/tarcisio/conan-flake"
       },
@@ -2743,11 +2743,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1780749050,
-        "narHash": "sha256-3av0pIjlOWQ6rDbNOmpUSvbNnJkGORQKKjb4LtCZsIY=",
+        "lastModified": 1781074563,
+        "narHash": "sha256-md8WlXOlfnIeHeOScMTTHFyf2d6iaTwPl2apR5EQ3P4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a799d3e3886da994fa307f817a6bc705ae538eeb",
+        "rev": "9ae611a455b90cf061d8f332b977e387bda8e1ca",
         "type": "github"
       },
       "original": {
