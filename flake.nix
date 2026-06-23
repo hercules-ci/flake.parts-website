@@ -47,7 +47,6 @@
     hercules-ci-effects.url = "github:hercules-ci/hercules-ci-effects";
     hercules-ci-effects.inputs.nixpkgs.follows = "nixpkgs";
     hercules-ci-effects.inputs.flake-parts.follows = "flake-parts";
-    input-branches.url = "github:mightyiam/input-branches";
     make-shell.url = "github:nicknovitski/make-shell";
     mission-control.url = "github:Platonic-Systems/mission-control";
     mkdocs-flake.url = "github:applicative-systems/mkdocs-flake";
@@ -416,15 +415,6 @@
               "flakeModules"
               "home-manager"
             ];
-          };
-
-          input-branches = {
-            attributePath = [
-              "flakeModules"
-              "default"
-            ];
-            baseUrl = "https://github.com/mightyiam/input-branches/blob/main";
-            intro = lib.readFile "${inputs.input-branches}/README.md";
           };
 
           rust-flake = {
