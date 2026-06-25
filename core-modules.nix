@@ -9,9 +9,9 @@
 { ... }:
 {
   config.perSystem =
-    { config, ... }:
+    perSystemArgs:
     let
-      inputs = config.render.officialFlakeInputs;
+      inputs = perSystemArgs.config.render.officialFlakeInputs;
 
       commonExtras =
         { lib, config, ... }:
