@@ -1,4 +1,12 @@
-{ inputs, flake-parts-lib, ... }:
+{
+  lib,
+  inputs,
+  flake-parts-lib,
+  ...
+}:
+let
+  inherit (lib) mkOption types;
+in
 {
   options.perSystem = flake-parts-lib.mkPerSystemOption (
     {
@@ -7,6 +15,46 @@
       ...
     }:
     {
+      options = {
+        bookToml = {
+          value = mkOption {
+            readOnly = true;
+            internal = true;
+            type = types.toml;
+            default = {
+              book = {
+                authors = [
+                  "Robert Hensing"
+                  "Various module authors"
+                ];
+                language = "en";
+                src = "src";
+                title = "flake-parts";
+              };
+              build.create-missing = false;
+              output = {
+                html = {
+                  #additional-css = [ "flake-parts.css" ];
+                  additional-css = [ "flake-parts.css" ];
+                  additional-js = [ "no-edit-options.js" ];
+                  edit-url-template = "https://github.com/hercules-ci/flake.parts-website/edit/main/site/{path}";
+                  git-repository-url = "https://github.com/hercules-ci/flake-parts";
+                  no-section-label = true;
+                  print.enable = false; # big single page; don't need that
+                };
+              };
+            };
+          };
+
+          file = mkOption {
+            readOnly = true;
+            internal = true;
+            type = types.package;
+            default = pkgs.writers.writeTOML "book.toml" config.bookToml.value;
+          };
+        };
+      };
+
       config = {
 
         /*
@@ -46,6 +94,8 @@
             src = ./.;
             buildPhase = ''
               runHook preBuild
+
+              cp ${config.bookToml.file} book.toml
 
               {
                 while read ln; do
