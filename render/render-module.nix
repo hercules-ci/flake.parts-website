@@ -25,15 +25,14 @@ let
 in
 {
   options.perSystem = flake-parts-lib.mkPerSystemOption (
-    {
-      config,
+    perSystemArgs@{
       pkgs,
       lib,
       ...
     }:
     let
-      cfg = config.render;
-      inputs = config.render.officialFlakeInputs // top.inputs;
+      cfg = perSystemArgs.config.render;
+      inputs = perSystemArgs.config.render.officialFlakeInputs // top.inputs;
 
       pkgsStub = lib.mapAttrs failPkgAttr pkgs;
 
@@ -105,7 +104,7 @@ in
 
       opts = eval.options;
 
-      coreOptDecls = config.render.inputs.flake-parts._nixosOptionsDoc.optionsNix;
+      coreOptDecls = perSystemArgs.config.render.inputs.flake-parts._nixosOptionsDoc.optionsNix;
 
       filterTransformOptions =
         {
@@ -576,7 +575,7 @@ in
           pkgs.runCommand "generated-docs"
             {
               passthru = {
-                inherit config;
+                inherit (perSystemArgs) config;
                 inherit eval;
                 # This won't be in sync with the actual nixosOptionsDoc
                 # invocations, but it's useful for troubleshooting.
