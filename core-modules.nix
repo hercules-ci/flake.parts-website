@@ -14,7 +14,7 @@
       inputs = perSystemArgs.config.render.officialFlakeInputs;
 
       commonExtras =
-        { lib, config, ... }:
+        commonExtrasArgs@{ lib, ... }:
         let
           inherit (lib) mkOption types;
         in
@@ -31,18 +31,18 @@
               description = ''
                 The path to the source file, relative to the flake's root.
               '';
-              default = "/extras/${config.extraName}.nix";
+              default = "/extras/${commonExtrasArgs.config.extraName}.nix";
             };
           };
           config = {
             _module.args.name = lib.mkForce "flake-parts";
-            title = "flake-parts.${config.extraName}";
-            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${config.sourceSubpath}";
+            title = "flake-parts.${commonExtrasArgs.config.extraName}";
+            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${commonExtrasArgs.config.sourceSubpath}";
             flake = inputs.flake-parts;
-            getModules = f: [ f.flakeModules.${config.extraName} ];
+            getModules = f: [ f.flakeModules.${commonExtrasArgs.config.extraName} ];
             attributePath = [
               "flakeModules"
-              config.extraName
+              commonExtrasArgs.config.extraName
             ];
             installationDeclareInput = false;
             filterTransformOptions =
@@ -53,7 +53,7 @@
                 ...
               }:
               let
-                sourcePathStr = toString sourcePath + config.sourceSubpath;
+                sourcePathStr = toString sourcePath + commonExtrasArgs.config.sourceSubpath;
               in
               opt:
               let
