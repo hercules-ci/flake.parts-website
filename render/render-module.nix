@@ -39,36 +39,33 @@ in
       fixups =
         { lib, flake-parts-lib, ... }:
         {
-          options.perSystem = flake-parts-lib.mkPerSystemOption (
-            { config, ... }:
-            {
-              config = {
-                _module.args.pkgs = pkgsStub // {
-                  _type = "pkgs";
-                  inherit lib;
-                  postgresql = {
-                    inherit (pkgs.postgresql) pkgs;
-                  };
-                  # no-op
-                  appendOverlays = _ignored: config._module.args.pkgs;
-                  formats = lib.mapAttrs (
-                    formatName: formatFn: formatArgs:
-                    let
-                      result = formatFn formatArgs;
-                      stubs = lib.mapAttrs (
-                        name: _:
-                        throw "The attribute `(pkgs.formats.${lib.strings.escapeNixIdentifier formatName} x).${lib.strings.escapeNixIdentifier name}` is not supported during documentation generation. Please check with `--show-trace` to see which option leads to this `${lib.strings.escapeNixIdentifier name}` reference. Often it can be cut short with a `defaultText` argument to `lib.mkOption`, or by escaping an option `example` using `lib.literalExpression`."
-                      ) result;
-                    in
-                    stubs
-                    // {
-                      inherit (result) type;
-                    }
-                  ) pkgs.formats;
+          options.perSystem = flake-parts-lib.mkPerSystemOption (fixupsArgs: {
+            config = {
+              _module.args.pkgs = pkgsStub // {
+                _type = "pkgs";
+                inherit lib;
+                postgresql = {
+                  inherit (pkgs.postgresql) pkgs;
                 };
+                # no-op
+                appendOverlays = _ignored: fixupsArgs.config._module.args.pkgs;
+                formats = lib.mapAttrs (
+                  formatName: formatFn: formatArgs:
+                  let
+                    result = formatFn formatArgs;
+                    stubs = lib.mapAttrs (
+                      name: _:
+                      throw "The attribute `(pkgs.formats.${lib.strings.escapeNixIdentifier formatName} x).${lib.strings.escapeNixIdentifier name}` is not supported during documentation generation. Please check with `--show-trace` to see which option leads to this `${lib.strings.escapeNixIdentifier name}` reference. Often it can be cut short with a `defaultText` argument to `lib.mkOption`, or by escaping an option `example` using `lib.literalExpression`."
+                    ) result;
+                  in
+                  stubs
+                  // {
+                    inherit (result) type;
+                  }
+                ) pkgs.formats;
               };
-            }
-          );
+            };
+          });
         };
 
       eval = evalWith {
