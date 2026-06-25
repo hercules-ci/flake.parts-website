@@ -143,7 +143,7 @@ in
           opt // { inherit declarations; };
 
       inputModule =
-        { config, name, ... }:
+        inputArgs@{ name, ... }:
         {
           options = {
             flake = mkOption {
@@ -160,7 +160,7 @@ in
               description = ''
                 Source path in which the modules are contained.
               '';
-              default = config.flake.outPath;
+              default = inputArgs.config.flake.outPath;
               defaultText = lib.literalExpression "config.flake.outPath";
             };
 
@@ -181,7 +181,7 @@ in
                 # This only works for github for now, but we can set a non-default
                 # value in the list just fine.
                 let
-                  match = builtins.match "https://github.com/([^/]*)/([^/]*)/blob/([^/]*)" config.baseUrl;
+                  match = builtins.match "https://github.com/([^/]*)/([^/]*)/blob/([^/]*)" inputArgs.config.baseUrl;
                   owner = lib.elemAt match 0;
                   repo = lib.elemAt match 1;
                   # branch = lib.elemAt match 2; # ignored for now because they're all default branches
@@ -189,7 +189,7 @@ in
                 if match != null then
                   "github:${owner}/${repo}"
                 else
-                  throw "Couldn't figure out flakeref for ${name}: ${config.baseUrl}";
+                  throw "Couldn't figure out flakeref for ${name}: ${inputArgs.config.baseUrl}";
               defaultText = lib.literalMD ''
                 Determined from `config.baseUrl`.
               '';
@@ -215,7 +215,7 @@ in
                 Stuff between the title and the options.
               '';
               default = ''
-                ${lib.optionalString config.archived ''
+                ${lib.optionalString inputArgs.config.archived ''
                   <div class="warning">
 
                   This module has been archived because it appears to be unmaintained.
@@ -223,9 +223,9 @@ in
                   </div>
                 ''}
 
-                ${config.intro}
+                ${inputArgs.config.intro}
 
-                ${config.installation}
+                ${inputArgs.config.installation}
 
               '';
               defaultText = lib.literalMD "`intro` followed by `installation`";
@@ -255,12 +255,12 @@ in
                 ## Installation
 
                 ${
-                  if config.installationDeclareInput then
+                  if inputArgs.config.installationDeclareInput then
                     ''
                       To use these options, add to your flake inputs:
 
                       ```nix
-                      ${config.sourceName}.url = "${config.flakeRef}";
+                      ${inputArgs.config.sourceName}.url = "${inputArgs.config.flakeRef}";
                       ```
 
                       and inside the `mkFlake`:
@@ -275,10 +275,10 @@ in
                 imports = [
                   ${lib.strings.concatMapStringsSep "\n  " (
                     attributePath:
-                    "inputs.${config.sourceName}.${
+                    "inputs.${inputArgs.config.sourceName}.${
                       lib.concatMapStringsSep "." lib.strings.escapeNixIdentifier attributePath
                     }"
-                  ) config.attributePaths}
+                  ) inputArgs.config.attributePaths}
                 ];
                 ```
 
@@ -310,7 +310,7 @@ in
               default =
                 flake:
                 (builtins.addErrorContext "while getting modules for input '${name}'" (
-                  map (p: lib.getAttrFromPath p flake) config.attributePaths
+                  map (p: lib.getAttrFromPath p flake) inputArgs.config.attributePaths
                 ));
               defaultText = lib.literalMD "Derived from `config.attributePaths`, `<name>`";
             };
@@ -327,7 +327,7 @@ in
               description = ''
                 Flake output attribute path to import.
               '';
-              default = [ config.attributePath ];
+              default = [ inputArgs.config.attributePath ];
               example = [
                 [
                   "flakeModules"
@@ -418,7 +418,7 @@ in
                 description = ''
                   Title of the menu entry.
                 '';
-                default = config.title;
+                default = inputArgs.config.title;
               };
               enable = mkOption {
                 type = types.bool;
@@ -434,57 +434,59 @@ in
           config = {
             _nixosOptionsDoc = pkgs.nixosOptionsDoc {
               options =
-                if config.separateEval then
+                if inputArgs.config.separateEval then
                   (evalWith {
-                    modules = config.getModules config.flake;
-                    extraInputs = config.extraInputs;
+                    modules = inputArgs.config.getModules inputArgs.config.flake;
+                    extraInputs = inputArgs.config.extraInputs;
                   }).options
                 else
                   opts;
               documentType = "none";
-              transformOptions = config.filterTransformOptions {
-                inherit (config) sourceName baseUrl sourcePath;
+              transformOptions = inputArgs.config.filterTransformOptions {
+                inherit (inputArgs.config) sourceName baseUrl sourcePath;
                 inherit coreOptDecls;
               };
-              warningsAreErrors = config.warningsAreErrors;
+              warningsAreErrors = inputArgs.config.warningsAreErrors;
             };
             rendered =
               let
-                checkEmpty = lib.throwIf (config.isEmpty != (config._nixosOptionsDoc.optionsNix == { })) (
-                  if
-                    config.isEmpty # ie expected
-                  then
-                    "The input ${name} now has options. Please remove `isEmpty = true;` from the input."
-                  else
-                    ''
-                      Did not find any options to render for ${name}.
+                checkEmpty =
+                  lib.throwIf (inputArgs.config.isEmpty != (inputArgs.config._nixosOptionsDoc.optionsNix == { }))
+                    (
+                      if
+                        inputArgs.config.isEmpty # ie expected
+                      then
+                        "The input ${name} now has options. Please remove `isEmpty = true;` from the input."
+                      else
+                        ''
+                          Did not find any options to render for ${name}.
 
-                      If this is intentional, set `isEmpty = true;` on the input. Otherwise, set `_file` to a subpath of the containing flake.
+                          If this is intentional, set `isEmpty = true;` on the input. Otherwise, set `_file` to a subpath of the containing flake.
 
-                      Otherwise, the two most likely causes are:
-                      - All options are in `config.perSystem` instead of `options.perSystem`
-                      - The module is "anonymous", i.e. the module system does not know in which
-                        file the options are declared.
+                          Otherwise, the two most likely causes are:
+                          - All options are in `config.perSystem` instead of `options.perSystem`
+                          - The module is "anonymous", i.e. the module system does not know in which
+                            file the options are declared.
 
-                      In the latter case, make sure that the module isn't just specified in a file,
-                      but loaded in such a way that the module system is aware of the file name.
-                      e.g.
-                        change: flakeModules.default = import ./flake-module.nix;
-                            to: flakeModules.default = ./flake-module.nix;
-                      or
-                        change: flakeModule = { ... }: { foo = true; };
-                            to: flakeModule = { ... }: { _file = __curPos.file; foo = true; };
-                    ''
-                );
+                          In the latter case, make sure that the module isn't just specified in a file,
+                          but loaded in such a way that the module system is aware of the file name.
+                          e.g.
+                            change: flakeModules.default = import ./flake-module.nix;
+                                to: flakeModules.default = ./flake-module.nix;
+                          or
+                            change: flakeModule = { ... }: { foo = true; };
+                                to: flakeModule = { ... }: { _file = __curPos.file; foo = true; };
+                        ''
+                    );
               in
 
               checkEmpty pkgs.stdenv.mkDerivation (finalAttrs: {
-                name = "option-doc-${config.sourceName}";
+                name = "option-doc-${inputArgs.config.sourceName}";
                 nativeBuildInputs = [
                   pkgs.libxslt.bin
                   pkgs.pandoc
                 ];
-                optionsDoc = config._nixosOptionsDoc.optionsCommonMark.overrideAttrs {
+                optionsDoc = inputArgs.config._nixosOptionsDoc.optionsCommonMark.overrideAttrs {
                   extraArgs = [
                     "--anchor-prefix"
                     "opt-"
@@ -492,7 +494,7 @@ in
                     "legacy"
                   ];
                 };
-                inherit (config) title preface;
+                inherit (inputArgs.config) title preface;
                 passAsFile = [ "preface" ];
                 buildCommand = ''
                   mkdir $out
@@ -508,12 +510,12 @@ in
                   EOF
                   # cat -n $out/options.md | grep caddy
                   # set -x
-                  ${lib.optionalString (config.fixupAnchorsBaseUrl != null) ''
-                    sed -i 's|(\(\\#[^o)][^p)][^t)][^-)][^)]*\))|(${config.fixupAnchorsBaseUrl}\1)|g' $out/options.md
+                  ${lib.optionalString (inputArgs.config.fixupAnchorsBaseUrl != null) ''
+                    sed -i 's|(\(\\#[^o)][^p)][^t)][^-)][^)]*\))|(${inputArgs.config.fixupAnchorsBaseUrl}\1)|g' $out/options.md
                   ''}
                 '';
                 passthru.file = finalAttrs.finalPackage + "/options.md";
-                passthru.config = config;
+                passthru.config = inputArgs.config;
               });
           };
         };
