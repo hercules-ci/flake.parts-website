@@ -33,7 +33,10 @@
     # appears unneeded
     ez-configs.url = "github:ehllie/ez-configs";
     ez-configs.inputs.nixpkgs.follows = "nixpkgs";
-    files.url = "github:mightyiam/files";
+    files = {
+      url = "github:mightyiam/files";
+      flake = false;
+    };
     github-actions-nix.url = "github:synapdeck/github-actions-nix";
     github-actions-nix.inputs.nixpkgs.follows = "nixpkgs";
     github-actions-nix.inputs.flake-parts.follows = "flake-parts";
@@ -122,6 +125,7 @@
               "flakeModules"
               "default"
             ];
+            filePaths = [ ];
             intro = ''
               [`actions-nix`](https://github.com/nialov/actions.nix) is a nix
               module that converts `nix` configuration into GitHub/Gitea action
@@ -156,6 +160,7 @@
               "flakeModules"
               "default"
             ];
+            filePaths = [ ];
             intro = ''
               [agenix-shell](https://github.com/aciceri/agenix-shell) is the [agenix](https://github.com/ryantm/agenix) counterpart for `devShell`.
               It provides options used to define a `shellHook` that, when added to your `devShell`, automatically decrypts secrets and export them.
@@ -165,6 +170,7 @@
           };
 
           conan-flake = {
+            filePaths = [ "nix/modules/flake-module.nix" ];
             baseUrl = "https://codeberg.org/tarcisio/conan-flake";
             flakeRef = "git+https://codeberg.org/tarcisio/conan-flake";
             intro = ''
@@ -179,6 +185,7 @@
           devenv = {
             title = "devenv";
             baseUrl = "https://github.com/cachix/devenv/blob/main";
+            filePaths = [ ];
             attributePath = [ "flakeModule" ];
             intro = ''
               [`devenv`](https://devenv.sh) provides a devShell with many options, and container packages.
@@ -260,6 +267,7 @@
               See [dream2nix_legacy](./dream2nix_legacy.html) for the previous API.
             '';
             installation = "";
+            filePaths = [ ];
             attributePath = [
               "modules"
               "flake-parts"
@@ -276,6 +284,7 @@
             title = "dream2nix legacy";
             baseUrl = "https://github.com/nix-community/dream2nix/blob/c9c8689f09aa95212e75f3108788862583a1cf5a";
             flakeRef = "github:nix-community/dream2nix/c9c8689f09aa95212e75f3108788862583a1cf5a";
+            filePaths = [ ];
             attributePath = [ "flakeModuleBeta" ];
             intro = ''
               [`dream2nix`](https://github.com/nix-community/dream2nix#readme) scans your flake files and turns them into packages.
@@ -296,6 +305,7 @@
           };
 
           emanote = {
+            filePaths = [ "nix/modules/flake-parts/flake-module" ];
             baseUrl = "https://github.com/srid/emanote/blob/master";
             intro = ''
               [`Emanote`](https://github.com/srid/emanote) renders your Markdown
@@ -311,6 +321,7 @@
           };
 
           ez-configs = {
+            filePaths = [ "flake-module.nix" ];
             baseUrl = "https://github.com/ehllie/ez-configs/blob/main";
             intro = ''
               [`ez-configs`](https://github.com/ehllie/ez-configs) lets you define multiple nixos,
@@ -319,15 +330,10 @@
           };
 
           files = {
-            attributePath = [
-              "flakeModules"
-              "default"
-            ];
+            attributePaths = [ ];
+            filePaths = [ "flake-module.nix" ];
             baseUrl = "https://github.com/mightyiam/files/blob/main";
             intro = lib.readFile "${inputs.files}/README.md";
-            flake = inputs.files // {
-              flakeModules.default = "${inputs.files}/flake-module.nix";
-            };
           };
 
           "flake.parts-website" = {
@@ -368,6 +374,7 @@
           };
 
           github-actions-nix = {
+            filePaths = [ "modules/github-ci.nix" ];
             baseUrl = "https://github.com/synapdeck/github-actions-nix";
             flakeRef = "github:synapdeck/github-actions-nix";
             intro = ''
@@ -379,6 +386,7 @@
           };
 
           gitlab-ci = {
+            filePaths = [ ];
             baseUrl = "https://gitlab.horizon-haskell.net/nix/gitlab-ci";
             flakeRef = "git+https://gitlab.horizon-haskell.net/nix/gitlab-ci";
             intro = ''
@@ -390,6 +398,7 @@
           };
 
           haskell-flake = {
+            filePaths = [ "nix/modules" ];
             baseUrl = "https://github.com/srid/haskell-flake/blob/master";
             intro = ''
               [`haskell-flake`](https://community.flake.parts/haskell-flake) scans your flake files for Haskell projects and
@@ -427,6 +436,7 @@
 
               Multi-crate workspaces are supported.
             '';
+            filePaths = [ ];
             attributePaths = [
               [
                 "flakeModules"
@@ -522,6 +532,7 @@
           };
 
           mission-control = {
+            filePaths = [ "nix/flake-module.nix" ];
             baseUrl = "https://github.com/Platonic-Systems/mission-control/blob/master";
             intro = ''
               A flake-parts module for your Nix devshell scripts.
@@ -535,6 +546,7 @@
           };
 
           mkdocs-flake = {
+            filePaths = [ ];
             title = "mkdocs-flake";
             baseUrl = "https://github.com/applicative-systems/mkdocs-flake/blob/main";
             intro = ''
@@ -586,6 +598,7 @@
           nix-bindings-rust = {
             title = "nix-bindings-rust";
             baseUrl = "https://github.com/nixops4/nix-bindings-rust/blob/master";
+            filePaths = [ ];
             attributePath = [
               "modules"
               "flake"
@@ -604,6 +617,7 @@
           nix-cargo-integration = {
             title = "nix-cargo-integration";
             baseUrl = "https://github.com/yusdacra/nix-cargo-integration/blob/master";
+            filePaths = [ ];
             attributePath = [ "flakeModule" ];
             intro = ''
               Easily integrate your Rust projects into Nix.
@@ -619,6 +633,7 @@
           nix-oci = {
             title = "nix-oci";
             baseUrl = "https://github.com/dauliac/nix-oci/blob/master";
+            filePaths = [ ];
             attributePath = [
               "modules"
               "flake"
@@ -653,6 +668,7 @@
           nix-unit = {
             title = "nix-unit";
             baseUrl = "https://github.com/nix-community/nix-unit/blob/main";
+            filePaths = [ ];
             attributePath = [
               "modules"
               "flake"
@@ -668,6 +684,7 @@
           nixops4 = {
             title = "nixops4";
             baseUrl = "https://github.com/nixops4/nixops4/blob/main";
+            filePaths = [ ];
             attributePath = [
               "modules"
               "flake"
@@ -753,6 +770,7 @@
           };
 
           process-compose-flake = {
+            filePaths = [ "nix/flake-module.nix" ];
             baseUrl = "https://github.com/Platonic-Systems/process-compose-flake/blob/main";
             intro = ''
               This flake-parts module allows you to declare one or more process-compose configurations using Nix attribute sets. It will generate corresponding packages that wrap the [process-compose](https://github.com/F1bonacc1/process-compose) binary with the given configuration.
@@ -762,6 +780,7 @@
           };
 
           pydev = {
+            filePaths = [ ];
             title = "pydev";
             baseUrl = "https://github.com/oceansprint/pydev/blob/main";
             intro = ''
@@ -770,6 +789,7 @@
           };
 
           std = {
+            filePaths = [ ];
             baseUrl = "https://github.com/divnix/std/blob/main";
             intro = ''
               Add definitions from the [Standard](https://github.com/divnix/std#readme) DevOps framework to your flake.
@@ -785,6 +805,7 @@
           terranix = {
             title = "terranix";
             baseUrl = "https://github.com/terranix/terranix/blob/main";
+            filePaths = [ ];
             attributePath = [ "flakeModule" ];
             intro = ''
               [terranix](https://terranix.org/) is a terraform.json generator with a nix-like feeling.

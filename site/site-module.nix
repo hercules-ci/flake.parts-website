@@ -33,13 +33,20 @@ in
               };
               build.create-missing = false;
               output.html = {
-                additional-css = [ "flake-parts.css" ];
-                additional-js = [ "no-edit-options.js" ];
+                additional-css = [
+                  "theme/tabs.css"
+                  "flake-parts.css"
+                ];
+                additional-js = [
+                  "theme/tabs.js"
+                  "no-edit-options.js"
+                ];
                 edit-url-template = "https://github.com/hercules-ci/flake.parts-website/edit/main/site/{path}";
                 git-repository-url = "https://github.com/hercules-ci/flake-parts";
                 no-section-label = true;
                 print.enable = false; # big single page; don't need that
               };
+              preprocessor.tabs = { };
             };
           };
 
@@ -87,6 +94,7 @@ in
             name = "site";
             nativeBuildInputs = [
               pkgs.mdbook
+              pkgs.mdbook-plugins
             ];
             src = ./.;
             buildPhase = ''
@@ -114,6 +122,8 @@ in
               done
               sed -e 's/<!-- module list will be concatenated to the end -->//g' -i src/SUMMARY.md
               cat ${config.packages.generated-docs}/menu.md >> src/SUMMARY.md
+
+              mdbook-tabs install
               mdbook build --dest-dir $out
 
               # mdbook hashes asset filenames but doesn't rewrite url() in additional CSS
