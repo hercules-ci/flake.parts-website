@@ -47,12 +47,12 @@ While overlays are about packages, and therefore dependent on the choice of `sys
 
 The reason for this is that they are conceptually defined as a function of not just `system`, but of a package set that includes `system`. Putting them in a `${system}` attribute would be conceptually redundant, and it would bother users of the overlay.
 
-If an overlay needs a system string, it should usually reach for `prev.stdenv.hostPlatform.system`.
+If an overlay needs a system string, it should usually reach for `final.stdenv.hostPlatform.system`.
 
 ```
 final: prev: {
-  systemStringFile = prev.writeText "system-string"
-    prev.stdenv.hostPlatform.system;
+  systemStringFile = final.writeText "system-string"
+    final.stdenv.hostPlatform.system;
 }
 ```
 
@@ -61,7 +61,7 @@ A manually defined overlay (more on automation later), can make use of `perSyste
 ```nix
 { withSystem, ... }: {
   flake.overlays.my-overlay = final: prev:
-    withSystem prev.stdenv.hostPlatform.system (
+    withSystem final.stdenv.hostPlatform.system (
       # perSystem parameters. Note that perSystem does not use `final` or `prev`.
       { config, ... }: {
         my-package = config.packages.my-package;
