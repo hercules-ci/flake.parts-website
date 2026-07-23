@@ -2957,6 +2957,32 @@
         "type": "github"
       }
     },
+    "prelude": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784725586,
+        "narHash": "sha256-srAfht5eD3egv+EoC5BMJYkaQZoIqZYIRl/dHY6du/Q=",
+        "owner": "darkmatter",
+        "repo": "prelude",
+        "rev": "fe66e24c40b48494d69bb43d8d65b757c251732a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "darkmatter",
+        "repo": "prelude",
+        "type": "github"
+      }
+    },
     "proc-flake": {
       "locked": {
         "lastModified": 1713493374,
@@ -3113,6 +3139,7 @@
         "nixpkgs": "nixpkgs_4",
         "ocaml-flake": "ocaml-flake",
         "pkgs-by-name-for-flake-parts": "pkgs-by-name-for-flake-parts",
+        "prelude": "prelude",
         "proc-flake": "proc-flake",
         "process-compose-flake": "process-compose-flake",
         "pydev": "pydev",

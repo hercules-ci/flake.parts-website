@@ -81,6 +81,10 @@
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
     git-hooks-nix.inputs.nixpkgs.follows = "nixpkgs";
     pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
+    prelude.url = "github:darkmatter/prelude";
+    prelude.inputs.flake-parts.follows = "flake-parts";
+    prelude.inputs.nixpkgs.follows = "nixpkgs";
+    prelude.inputs.treefmt-nix.follows = "treefmt-nix";
     proc-flake.url = "github:srid/proc-flake";
     process-compose-flake.url = "github:Platonic-systems/process-compose-flake";
     pydev.url = "github:oceansprint/pydev";
@@ -738,6 +742,22 @@
                 };
               }
               ```
+            '';
+          };
+
+          prelude = {
+            title = "Prelude";
+            baseUrl = "https://github.com/darkmatter/prelude/blob/main";
+            attributePath = [
+              "flakeModules"
+              "default"
+            ];
+            intro = ''
+              [`Prelude`](https://github.com/darkmatter/prelude) is a devshell UI suite for flake-parts projects.
+              It provides a configurable welcome banner and interactive command menu for project workflows,
+              so contributors can discover the available commands directly from `nix develop` or `nix run .#menu`.
+
+              See also the [Prelude configuration guide](https://github.com/darkmatter/prelude/blob/main/docs/configuration.md).
             '';
           };
 
