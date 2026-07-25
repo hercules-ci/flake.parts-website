@@ -36,7 +36,7 @@ See the [Nixpkgs manual](https://nixos.org/manual/nixpkgs/unstable/#id-1.4) for 
 
 For the `nixpkgs-lib` input, you may specify a flake that only contains `lib`, or a whole Nixpkgs flake. By default, just `lib` gives you slightly faster shell tab completion as of writing.
 
-To promote modularity and not create unnecessary, "strange" dependency constraints on `lib`, you are recommended not to override it. You may select a different version of it using Flake [`follows`](https://nix.dev/manual/nix/latest/command-ref/new-cli/nix3-flake.html#flake-inputs).
+To promote modularity and not create unnecessary, "strange" dependency constraints on `lib`, you are recommended not to override it. You may select a different version of it using Flake [`follows`](https://nix.dev/manual/nix/latest/command-ref/new-cli/nix3-flake.html#flake-inputs), or, when the version you want is not a flake input, as described in [Source `pkgs` and `lib` Without Flake Inputs](./without-flake-inputs.md#choosing-lib).
 
 ## More
 
@@ -111,7 +111,7 @@ Enter the scope of a system. Example:
 
 Default: `inputs.nixpkgs.legacyPackages.${system}`.
 
-Set via `config._module.args.pkgs`.
+Set via `config._module.args.pkgs`. This is also how you source Nixpkgs from something other than a flake input, such as an npins pin; see [Source `pkgs` and `lib` Without Flake Inputs](./without-flake-inputs.md).
 
 Example:
 

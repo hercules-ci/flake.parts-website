@@ -10,6 +10,7 @@
   - [Explore and debug option values](./debug.md)
   - [Define a Module in a Separate File](./define-module-in-separate-file.md)
   - [Define Custom Flake Attribute](./define-custom-flake-attribute.md)
+  - [Source `pkgs` and `lib` Without Flake Inputs](./without-flake-inputs.md)
   - [Generate Documentation](./generate-documentation.md)
   - [Dogfood a Reusable Flake Module](./dogfood-a-reusable-module.md)
 - [Explanation]()
