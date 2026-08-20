@@ -210,11 +210,11 @@
     },
     "conan-flake": {
       "locked": {
-        "lastModified": 1787182537,
-        "narHash": "sha256-NkiJVRkKEul7rgzg48bRySeUKGdEhDyljbdHuI/zykE=",
+        "lastModified": 1787238802,
+        "narHash": "sha256-J6Y/9sFzB3LcdJnmeOEZ0mDfQnFicXyaIgZmFK2z3i4=",
         "ref": "refs/heads/main",
-        "rev": "d11bcf11e6d673d2ccf471014086db7d16b08f9e",
-        "revCount": 478,
+        "rev": "47bf526ffa9ec72b37c52a29994e26fcd83ea5e5",
+        "revCount": 481,
         "type": "git",
         "url": "https://codeberg.org/tarcisio/conan-flake"
       },
@@ -305,11 +305,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1787159631,
-        "narHash": "sha256-pK/PYbBHT9bt7zvQ2kB83pkMibZfQadlZha7U25qtRs=",
+        "lastModified": 1787244866,
+        "narHash": "sha256-yRtH4Vs49zZE+u3CR1iBs6jTUp1o/4SdCyshZ5+ojbw=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "267cf2eb26840c5ec73bce0a82046ec8907ece11",
+        "rev": "4b10b32036245a13efdb0d77d69d6990d1c8a3f5",
         "type": "github"
       },
       "original": {
