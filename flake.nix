@@ -64,7 +64,6 @@
     nix-topology.url = "github:oddlama/nix-topology";
     nix-topology.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.url = "github:nix-community/nix-unit";
-    nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.inputs.treefmt-nix.follows = "treefmt-nix";
     nixops4.url = "github:nixops4/nixops4";
@@ -88,7 +87,6 @@
     pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
     rust-flake.url = "github:juspay/rust-flake";
     std.url = "github:divnix/std";
-    std.inputs.nixpkgs.follows = "nixpkgs";
     terranix.url = "github:terranix/terranix";
     terranix.inputs.flake-parts.follows = "flake-parts";
     terranix.inputs.nixpkgs.follows = "nixpkgs";
@@ -807,7 +805,7 @@
 
         };
         imports = [
-          inputs.flake-parts.flakeModules.flakeModules
+          inputs.flake-parts.modules.flake.modules
           publishedModules.empty-site
           ./dev-module.nix
           ./deploy-module.nix
@@ -819,7 +817,6 @@
           "x86_64-linux"
 
           # Available, but may be broken by Nixpkgs updates sometimes
-          "x86_64-darwin"
           "aarch64-linux"
           "aarch64-darwin"
         ];
@@ -839,7 +836,10 @@
           ciSystems = [ "x86_64-linux" ];
         };
 
+        # not using flakeModules module because we don't have a `default`
         flake.flakeModules = publishedModules;
+
+        flake.modules.flake = publishedModules;
         flake.templates = {
           private-site = {
             path = ./templates/private-site;
