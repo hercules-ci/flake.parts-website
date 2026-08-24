@@ -806,7 +806,7 @@
 
         };
         imports = [
-          inputs.flake-parts.flakeModules.flakeModules
+          inputs.flake-parts.modules.flake.modules
           publishedModules.empty-site
           ./dev-module.nix
           ./deploy-module.nix
@@ -837,7 +837,10 @@
           ciSystems = [ "x86_64-linux" ];
         };
 
+        # not using flakeModules module because we don't have a `default`
         flake.flakeModules = publishedModules;
+
+        flake.modules.flake = publishedModules;
         flake.templates = {
           private-site = {
             path = ./templates/private-site;
