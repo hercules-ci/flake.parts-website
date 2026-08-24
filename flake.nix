@@ -88,7 +88,6 @@
     pydev.inputs.pre-commit-hooks-nix.follows = "git-hooks-nix";
     rust-flake.url = "github:juspay/rust-flake";
     std.url = "github:divnix/std";
-    std.inputs.nixpkgs.follows = "nixpkgs";
     terranix.url = "github:terranix/terranix";
     terranix.inputs.flake-parts.follows = "flake-parts";
     terranix.inputs.nixpkgs.follows = "nixpkgs";
@@ -819,7 +818,6 @@
           "x86_64-linux"
 
           # Available, but may be broken by Nixpkgs updates sometimes
-          "x86_64-darwin"
           "aarch64-linux"
           "aarch64-darwin"
         ];
