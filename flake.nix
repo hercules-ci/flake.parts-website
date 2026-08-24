@@ -64,7 +64,6 @@
     nix-topology.url = "github:oddlama/nix-topology";
     nix-topology.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.url = "github:nix-community/nix-unit";
-    nix-unit.inputs.flake-parts.follows = "flake-parts";
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
     nix-unit.inputs.treefmt-nix.follows = "treefmt-nix";
     nixops4.url = "github:nixops4/nixops4";
