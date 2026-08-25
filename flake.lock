@@ -2014,11 +2014,11 @@
         "treefmt": "treefmt"
       },
       "locked": {
-        "lastModified": 1787553530,
-        "narHash": "sha256-7rF6UAlcUEA8FMoubyTXIRGqBp/2iIsOuSoKRLJkHvc=",
+        "lastModified": 1787639459,
+        "narHash": "sha256-/6sgfhV/kvfl4jGksm1M3xHqiKyeUMIBrlElzAHIPuU=",
         "owner": "yusdacra",
         "repo": "nix-cargo-integration",
-        "rev": "08c4da6472735fd9ddcdf12352e362b909347054",
+        "rev": "59c903bad29accd8a35e22c45677f83ef413d48d",
         "type": "github"
       },
       "original": {
@@ -2934,11 +2934,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785627969,
-        "narHash": "sha256-4dtXQk/NMePegK/nWp5NSeuZKLATItOq61lpEvmXqGw=",
+        "lastModified": 1787559586,
+        "narHash": "sha256-onL0VLf9vPllmT0H/OlURIU5r5t5WIEl7t4tVNKT0Nw=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "427bf4bd9435fdf21321c8cc628c24efc14c0f7a",
+        "rev": "9d0d87172c374f89da73c1cfe6d81ae62feac1f1",
         "type": "github"
       },
       "original": {
@@ -3241,11 +3241,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787540965,
-        "narHash": "sha256-48/4bbmK3W3Av3YPnrFb/tVQXPvBwU6kyM3Pb13VVD8=",
+        "lastModified": 1787627053,
+        "narHash": "sha256-QdVaU2WSCKsxZ0sBDIRnaaukp6Z5IMUE0gDEDoSRJd0=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "ab450d47a3f906d19de1b332915bfc6e5b29c853",
+        "rev": "132a10336af9ae819bdf640c0dd1c789b12d7107",
         "type": "github"
       },
       "original": {
