@@ -28,7 +28,6 @@ in
     {
       config,
       pkgs,
-      lib,
       ...
     }:
     let
@@ -38,7 +37,7 @@ in
       pkgsStub = lib.mapAttrs failPkgAttr pkgs;
 
       fixups =
-        { lib, flake-parts-lib, ... }:
+        { flake-parts-lib, ... }:
         {
           options.perSystem = flake-parts-lib.mkPerSystemOption (
             { config, ... }:
