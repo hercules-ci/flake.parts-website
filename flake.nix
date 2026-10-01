@@ -163,7 +163,7 @@
           };
 
           conan-flake = {
-            baseUrl = "https://codeberg.org/tarcisio/conan-flake";
+            baseUrl = "https://codeberg.org/tarcisio/conan-flake/src/branch/main";
             flakeRef = "git+https://codeberg.org/tarcisio/conan-flake";
             intro = ''
               **Declarative Configuration for the Conan C/C++ Package Manager**
