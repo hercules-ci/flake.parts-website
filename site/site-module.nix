@@ -1,8 +1,7 @@
 { inputs, flake-parts-lib, ... }:
 {
   options.perSystem = flake-parts-lib.mkPerSystemOption (
-    {
-      config,
+    perSystemArgs@{
       pkgs,
       ...
     }:
@@ -18,11 +17,11 @@
           {
             nativeBuildInputs = [ pkgs.lychee ];
             SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
-            site = config.packages.default;
+            site = perSystemArgs.config.packages.default;
             config = (pkgs.formats.toml { }).generate "lychee.toml" {
               include_fragments = "full";
               remap = [
-                "https://flake.parts file://${config.packages.default}"
+                "https://flake.parts file://${perSystemArgs.config.packages.default}"
               ];
             };
           }
@@ -61,11 +60,11 @@
             } <${inputs.flake-parts + "/README.md"} >src/README.md
 
             mkdir -p src/options
-            for f in ${config.packages.generated-docs}/*.html; do
+            for f in ${perSystemArgs.config.packages.generated-docs}/*.html; do
               cp "$f" "src/options/$(basename "$f" .html).md"
             done
             sed -e 's/<!-- module list will be concatenated to the end -->//g' -i src/SUMMARY.md
-            cat ${config.packages.generated-docs}/menu.md >> src/SUMMARY.md
+            cat ${perSystemArgs.config.packages.generated-docs}/menu.md >> src/SUMMARY.md
             mdbook build --dest-dir $out
 
             # mdbook hashes asset filenames but doesn't rewrite url() in additional CSS
@@ -91,7 +90,7 @@
           openApp = {
             type = "app";
             program = "${pkgs.writeShellScript "open-manual" ''
-              path="${config.packages.default}/index.html"
+              path="${perSystemArgs.config.packages.default}/index.html"
               if ! ${opener} "$path"; then
                 echo "Failed to open manual with ${opener}. Manual is located at:"
                 echo "$path"
