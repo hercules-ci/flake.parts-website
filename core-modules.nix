@@ -6,10 +6,10 @@
   in flakeModules.empty-site. (It's _comparatively_ empty.)
 */
 
-{ ... }:
+top@{ ... }:
 {
   config.perSystem =
-    { config, ... }:
+    perSystem@{ config, ... }:
     let
       inputs = config.render.officialFlakeInputs;
 
@@ -19,6 +19,8 @@
           inherit (lib) mkOption types;
         in
         {
+          imports = [ top.config.flake.modules.flakePartsRenderInput.github ];
+
           options = {
             extraName = mkOption {
               type = types.str;
@@ -37,7 +39,7 @@
           config = {
             _module.args.name = lib.mkForce "flake-parts";
             title = "flake-parts.${config.extraName}";
-            baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main${config.sourceSubpath}";
+            inherit (perSystem.config.render.inputs.flake-parts) owner repo;
             flake = inputs.flake-parts;
             getModules = f: [ f.flakeModules.${config.extraName} ];
             attributePath = [
@@ -65,7 +67,7 @@
                     in
                     [
                       {
-                        url = baseUrl + subpath;
+                        ${if baseUrl == null then null else "url"} = baseUrl + subpath;
                         name = sourceName + subpath;
                       }
                     ]
@@ -82,7 +84,9 @@
       render.inputs = {
         flake-parts = {
           title = "Core Options";
-          baseUrl = "https://github.com/hercules-ci/flake-parts/blob/main";
+          imports = [ top.config.flake.modules.flakePartsRenderInput.github ];
+          owner = "hercules-ci";
+          repo = "flake-parts";
           getModules = _: [ ];
           intro = ''
             These options are provided by default. They reflect what Nix expects,
