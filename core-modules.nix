@@ -6,7 +6,10 @@
   in flakeModules.empty-site. (It's _comparatively_ empty.)
 */
 
-{ ... }:
+{ lib, ... }:
+let
+  inherit (lib) mkOption types;
+in
 {
   config.perSystem =
     { config, ... }:
@@ -14,10 +17,7 @@
       inputs = config.render.officialFlakeInputs;
 
       commonExtras =
-        { lib, config, ... }:
-        let
-          inherit (lib) mkOption types;
-        in
+        { config, ... }:
         {
           options = {
             extraName = mkOption {
